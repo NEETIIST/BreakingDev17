@@ -3,6 +3,7 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
 // Import needed templates
 import '../../ui/home/home.js'
+import '../../ui/home/homeGallery.js'
 
 
 // Set up all routes in the app
