@@ -12,6 +12,7 @@ html { font-size: 14px; }
 .f-black { color:#1c1c1c; }
 .f-white { color:#ffffff; }
 .f-orange { color:#f47d3d; }
+.f-blue { color:#41516b; }
 .fs-1 { font-size: 0.6em; }
 .fs-2 { font-size: 0.8em; }
 .fs-3 { font-size: 1em; }
@@ -26,6 +27,11 @@ html { font-size: 14px; }
 //Icons
 
 
+//Links
+a {	text-decoration: none ; color:inherit ; }
+a:hover { text-decoration: none ; color:inherit ; }
+a:visited { text-decoration: none ; color:inherit ; }
+
 //Viewports
 .vh-100 { min-height: 100vh ; }
 .vh-50 { min-height: 50vh ; }
@@ -34,10 +40,10 @@ html { font-size: 14px; }
 .vw-100 { min-width: 100vw ; }
 
 //Spacers
-.spacer-2 { height: 2vh; }
-.spacer-4 { height: 4vh; }
-.spacer-6 { height: 6vh; }
-.spacer-8 { height: 8vh; }
+.spacer-2 { min-height: 2vh; }
+.spacer-4 { min-height: 4vh; }
+.spacer-6 { min-height: 6vh; }
+.spacer-8 { min-height: 8vh; }
 
 // Testing
 .black { background-color: #1c1c1c; }
