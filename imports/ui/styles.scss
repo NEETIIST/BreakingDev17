@@ -23,11 +23,13 @@ html { font-size: 14px; }
 .flh-2 { line-height: 1.1em; }
 .flh-3 { line-height: 1.2em; }
 
+//Icons
 
 
 //Viewports
 .vh-100 { min-height: 100vh ; }
 .vh-50 { min-height: 50vh ; }
+.vh-40 { min-height: 40vh ; }
 
 .vw-100 { min-width: 100vw ; }
 
@@ -40,3 +42,4 @@ html { font-size: 14px; }
 // Testing
 .black { background-color: #1c1c1c; }
 .orange { background-color: #f47d3d; }
+.white { color: white; }
