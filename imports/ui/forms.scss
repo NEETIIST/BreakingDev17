@@ -1,0 +1,41 @@
+label
+{
+	margin-bottom: 0;
+}
+
+.text-input
+{
+	color: inherit;
+	font: inherit ;
+	width: 100% ;
+	border: none;
+    border-bottom: 1px solid #ffffff;
+    background: none;
+}
+
+.text-input:focus
+{
+	border: none;
+    border-bottom: 1px solid #41516b;
+    background: none;
+    outline:none;
+}
+
+.btn-custom
+{
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    font: inherit;
+    border-radius: 0;
+    padding: 0 1px 0 1px;
+    background-color: inherit;
+    color: #41516b;
+    border-bottom: 1px solid #41516b ;
+    font-weight: 400 ;
+}
+
+.btn-custom:hover
+{
+    color: white;
+    border-bottom: 1px solid white ;
+}
