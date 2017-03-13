@@ -11,7 +11,7 @@ Meteor.methods({
     this.unblock();
 
     Email.send({
-      to: "breakingdev@neeti.tecnico.ulisboa.pt",
+      to: "neeti.isttagus@gmail.com",
       from: doc.email,
       subject: "BreakingDev - " + doc.company,
     });
