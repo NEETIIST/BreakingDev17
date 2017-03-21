@@ -8,6 +8,10 @@ Template.navbar.events({
 
 	"click #navbar-button":function(){
 		Session.set("nav", !Session.get("nav") );
+	},
+
+	"click #navbar-container":function(){
+		Session.set("nav", false );
 	}
 
 });

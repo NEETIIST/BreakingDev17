@@ -15,6 +15,11 @@
 	right: 0;
 	height: 100vh;
 	z-index: 11;
+
+	background-image:    url(navbar-crop.png);
+    background-size:     100% 100%;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center; 
 }
 
 #navbar-button
@@ -25,4 +30,10 @@
 	color: white;
 	z-index: 12 ;
 
+}
+
+#fullscreen
+{
+	min-height: 100%;
+	min-width: 100%;
 }

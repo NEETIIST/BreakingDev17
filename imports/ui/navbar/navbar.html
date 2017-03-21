@@ -1,6 +1,6 @@
 <template name="navbar">
 	
-	<i id="navbar-button" class="fa fa-bars fa-2x cp" aria-hidden="true"></i>
+	<i id="navbar-button" class="fa fa-bars cp" aria-hidden="true"></i>
 
 	{{#transition wrap="true" in="fadeIn" out="fadeOut"}}
 		{{#if nav}}
@@ -11,15 +11,22 @@
 	{{#transition wrap="true" in="slideInRight" out="slideOutRight"}}
 		{{#if nav}}
 
+			<!-- Desktop -->
 			<div id="navbar-menu" class="hidden-md-down animated out">
-				<div class="row justify-content-center align-items-center m-0 vh-100 vw-30 orange">
-					{{> menuOptions}}
+				<div class="row justify-content-end align-items-center m-0 vh-100 vw-30">
+					<div class="col-9 f-white text-right">
+						{{> menuOptions}}
+					</div>
+					<div class="col-1"></div>
 				</div>
 			</div>
 
+			<!-- Mobile -->
 			<div id="navbar-menu" class="hidden-sm-up animated out">
 				<div class="row justify-content-center align-items-center m-0 vh-100 vw-100 orange">
-					{{> menuOptions}}
+					<div class="col-10 f-white text-left">
+						{{> menuOptions}}
+					</div>
 				</div>
 			</div>
 
@@ -29,16 +36,16 @@
 </template>
 
 <template name="menuOptions">
-	<div class="col-10 f-white">
-		<p>Option 1</p>
-		<p>Option 1</p>
-		<p>Option 1</p>
-		<p>Option 1</p>
-		<p>Option 1</p>
+	
+	<p>Option 1</p>
+	<p>Option 1</p>
+	<p>Option 1</p>
+	<p>Option 1</p>
+	<p>Option 1</p>
 
-		<hr class="white">
+	<hr class="white">
 
-		<p>Option 1</p>
-	</div>
+	<p>Option 1</p>
+
 </template>
 
