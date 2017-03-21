@@ -5,6 +5,7 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 import '../../ui/home/home.js'
 import '../../ui/home/homeGallery.js'
 import '../../ui/home_sponsor/home_sponsor.js'
+import '../../ui/navbar/navbar.js'
 
 
 // Set up all routes in the app
@@ -21,6 +22,14 @@ FlowRouter.route('/sponsor', {
     BlazeLayout.render('home_sponsor');
   },
 });
+
+// Used for testing
+FlowRouter.route('/dev', {
+  name: 'dev',
+  action() {
+    BlazeLayout.render('navbar');
+  }
+})
 
 /*
 FlowRouter.notFound = {

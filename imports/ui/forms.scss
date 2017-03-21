@@ -20,22 +20,3 @@ label
     background: none;
     outline:none;
 }
-
-.btn-custom
-{
-	-webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    font: inherit;
-    border-radius: 0;
-    padding: 0 1px 0 1px;
-    background-color: inherit;
-    color: #41516b;
-    border-bottom: 1px solid #41516b ;
-    font-weight: 400 ;
-}
-
-.btn-custom:hover
-{
-    color: white;
-    border-bottom: 1px solid white ;
-}

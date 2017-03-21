@@ -1,0 +1,28 @@
+#navbar-container
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	min-width: 100vw;
+	min-height: 100vh;
+	z-index: 10;
+	background-color: rgba(28,28,28,0.7);
+}
+
+#navbar-menu
+{
+	position: fixed;
+	right: 0;
+	height: 100vh;
+	z-index: 11;
+}
+
+#navbar-button
+{
+	position: fixed;
+	top: 5%;
+	right: 5% ;
+	color: white;
+	z-index: 12 ;
+
+}

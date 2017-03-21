@@ -1,0 +1,44 @@
+<template name="navbar">
+	
+	<i id="navbar-button" class="fa fa-bars fa-2x cp" aria-hidden="true"></i>
+
+	{{#transition wrap="true" in="fadeIn" out="fadeOut"}}
+		{{#if nav}}
+			<div id="navbar-container" class="animated out"></div>	
+		{{/if}}
+	{{/transition}}
+
+	{{#transition wrap="true" in="slideInRight" out="slideOutRight"}}
+		{{#if nav}}
+
+			<div id="navbar-menu" class="hidden-md-down animated out">
+				<div class="row justify-content-center align-items-center m-0 vh-100 vw-30 orange">
+					{{> menuOptions}}
+				</div>
+			</div>
+
+			<div id="navbar-menu" class="hidden-sm-up animated out">
+				<div class="row justify-content-center align-items-center m-0 vh-100 vw-100 orange">
+					{{> menuOptions}}
+				</div>
+			</div>
+
+		{{/if}}
+	{{/transition}}
+
+</template>
+
+<template name="menuOptions">
+	<div class="col-10 f-white">
+		<p>Option 1</p>
+		<p>Option 1</p>
+		<p>Option 1</p>
+		<p>Option 1</p>
+		<p>Option 1</p>
+
+		<hr class="white">
+
+		<p>Option 1</p>
+	</div>
+</template>
+
