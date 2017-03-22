@@ -23,3 +23,12 @@ Template.navbar.helpers({
 	}
 
 });
+
+Template.menuOptions.events({
+	"click #lang_pt": function(){
+		TAPi18n.setLanguage("pt") ;
+	},
+	"click #lang_en": function(){
+		TAPi18n.setLanguage("en") ;
+	},
+})

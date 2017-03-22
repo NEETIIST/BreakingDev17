@@ -1,0 +1,24 @@
+{ 
+	//Index
+	"home_48hours": "48 hours of coding for college students from around the country",
+	"home_intro": "Lisbon's first university hackathon is back for a weekend you will not forget so soon.",
+	"home_photos": "We are setting up this year's website. Lots of exciting stuff coming up, but for now, take a look at the best pictures from last summer.",
+	"home_about_social": "Keep up to date with our social networks",
+	"home_about_email": "Or send us an email to",
+	
+	"home_organization": "Organized by:",
+	"home_support": "With support from:",
+	"home_sponsor": "And sponsored by:",
+	"home_beasponsor": "Be a sponsor",
+	"home_github": "Source-code @ GitHub",
+	"home_tools": "Made with ",
+
+	//Sponsor
+	"home_sponsor_intro": "A chance to be involved in projects made by students from the best portuguese universities.",
+	"home_sponsor_about": "Your company can be a part of BreakingDev. Join our sponsors to help make the best possible hackathon. One of our goals is also to join the best professionals in the industry with our contestants, for a one-of-a-kind hands-on experience.",
+	"home_sponsor_contact": "Fill our form below and we will get back at you as soon as possible.",
+	"home_sponsor_name": "Your name",
+	"home_sponsor_company": "Your company",
+	"home_sponsor_email": "You email address",
+	"home_sponsor_submit": "Submit"
+}

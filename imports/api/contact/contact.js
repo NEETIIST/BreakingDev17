@@ -14,16 +14,19 @@ Contact.allow({
 Contact.attachSchema(new SimpleSchema({
   name: {
     type: String,
-    label: "Nome",
+    label: "Name", 
+    i18nLabel: 'home_sponsor_name',
   },
   company: {
     type: String,
-    label: "Empresa",
+    label: "Company",
+    i18nLabel: 'home_sponsor_company',
   },
   email: {
     type: String,
     regEx: SimpleSchema.RegEx.Email,
     label: "Email",
+    i18nLabel: 'home_sponsor_email',
   }
 
 }));

@@ -1,6 +1,6 @@
-// Custom validation messages -> Must be integrated with i18n
+// Custom validation messages -> Must be integrated with i18n -> There isn't any solution to this yet
 SimpleSchema.messages({
-  required: "[label] é necessário",
+  required: "[label] é obrigatório / is required",
   minString: "[label] must be at least [min] characters",
   maxString: "[label] cannot exceed [max] characters",
   minNumber: "[label] must be at least [min]",
@@ -20,7 +20,7 @@ SimpleSchema.messages({
   expectedConstructor: "[label] must be a [type]",
   regEx: [
     {msg: "[label] failed regular expression validation"},
-    {exp: SimpleSchema.RegEx.Email, msg: "[label] deve ser um endereço válido"},
+    {exp: SimpleSchema.RegEx.Email, msg: "[label] deve ser um endereço válido / must be a valid address"},
     {exp: SimpleSchema.RegEx.WeakEmail, msg: "[label] must be a valid e-mail address"},
     {exp: SimpleSchema.RegEx.Domain, msg: "[label] must be a valid domain"},
     {exp: SimpleSchema.RegEx.WeakDomain, msg: "[label] must be a valid domain"},

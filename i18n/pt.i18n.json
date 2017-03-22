@@ -1,0 +1,24 @@
+{ 
+	//Index
+	"home_48hours": "48 horas de programação para universitários de todo o país",
+	"home_intro": "O primeiro hackaton universitário de Lisboa está de volta para mais um fim-de-semana que não vais esquecer tão cedo.",
+	"home_photos": "Estamos a preparar o site da edição deste ano. Podes contar com muitas novidades, mas por enquanto, dá uma olhadela às melhores imagens do ultimo verão.",
+	"home_about_social": "Vai sabendo mais através das nossas redes sociais",
+	"home_about_email": "Ou envia-nos um email para ",
+	
+	"home_organization": "Uma organização:",
+	"home_support": "Com o apoio:",
+	"home_sponsor": "E o patrocinio:",
+	"home_beasponsor": "Seja um patrocinador",
+	"home_github": "Source-code no Github",
+	"home_tools": "Feito com ",
+
+	//Sponsor
+	"home_sponsor_intro": "Uma oportunidade de estar envolvido nos projetos dos alunos das melhores universidades do país.",
+	"home_sponsor_about": "A sua empresa pode participar no BreakingDev sendo um dos nossos patrocinadores. Um dos nossos objetivos passa por atrair ao evento profissionais da área para uma experiência única de contacto entre os alunos participantes, trabalhadores e empresas.",
+	"home_sponsor_contact": "Deixe o seu contacto em baixo e nós iremos entrar em contacto consigo o mais depressa possível.",
+	"home_sponsor_name": "O seu nome",
+	"home_sponsor_company": "A sua empresa",
+	"home_sponsor_email": "O seu contacto de email",
+	"home_sponsor_submit": "Submeter"
+}
