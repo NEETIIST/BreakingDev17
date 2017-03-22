@@ -6,20 +6,25 @@ import '../../ui/home/home.js'
 import '../../ui/home/homeGallery.js'
 import '../../ui/home_sponsor/home_sponsor.js'
 import '../../ui/navbar/navbar.js'
+import '../../ui/base/base.js'
 
 
 // Set up all routes in the app
 FlowRouter.route('/', {
   name: 'home',
   action() {
-    BlazeLayout.render('home');
+    BlazeLayout.render('base', {main: 'home'});
+    window.scrollTo(0,0);
+    Session.set("nav", false);
   },
 });
 
 FlowRouter.route('/sponsor', {
   name: 'home_sponsor',
   action() {
-    BlazeLayout.render('home_sponsor');
+    BlazeLayout.render('base', {main: 'home_sponsor'});
+    window.scrollTo(0,0);
+    Session.set("nav", false);
   },
 });
 
@@ -27,7 +32,7 @@ FlowRouter.route('/sponsor', {
 FlowRouter.route('/dev', {
   name: 'dev',
   action() {
-    BlazeLayout.render('navbar');
+    BlazeLayout.render('base', {main: 'home'});
   }
 })
 

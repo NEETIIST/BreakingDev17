@@ -37,23 +37,39 @@
 
 <template name="menuOptions">
 	
-	<p>Option 1</p>
-	<p>Option 1</p>
-	<p>Option 1</p>
-	<p>Option 1</p>
-	<p>Option 1</p>
+	<div class="row justify-content-start justify-content-md-end align-items-center mx-0">
+		<ul id="menu-options">
+			{{#each links}}
+				{{#if activeTab}}
+					<li class="menu-redirect active" id={{name}}>
+						<span class="cp">{{_ name}}</span>
+					</li>
+				{{else}}
+					<li class="menu-redirect" id={{name}}>
+						<span class="cp">{{_ name}}</span>
+					</li>
+				{{/if}}
+			{{/each}}
+		</ul>
+	</div>
 
-	<hr class="white my-1">
+	<hr class="white my-2">
 
 	<div class="row justify-content-start justify-content-md-center align-items-center mx-0">
-		<a target="_blank" href="https://www.facebook.com/NEETI.IST/?fref=ts"><i class="fa fa-instagram f-white" aria-hidden="true"></i></a>
-		<a target="_blank" href="https://www.instagram.com/neeti_ist/"><i class="fa fa-facebook-official f-white px-1" aria-hidden="true"></i></a>
-		<a target="_blank" href="https://www.linkedin.com/company-beta/3507596/"><i class="fa fa-linkedin-square f-white" aria-hidden="true"></i></a>
+		<a target="_blank" href="https://www.instagram.com/neeti_ist/"><i class="fa fa-instagram f-white" aria-hidden="true" title="Instagram"></i></a>
+		<a target="_blank" href="https://www.facebook.com/NEETI.IST/?fref=ts"><i class="fa fa-facebook-official f-white px-1" aria-hidden="true" title="Facebook"></i></a>
+		<a target="_blank" href="https://www.linkedin.com/company-beta/3507596/"><i class="fa fa-linkedin-square f-white" aria-hidden="true" title="LinkedIn"></i></a>
 	</div>
 	<div class="row justify-content-start justify-content-md-center align-items-center mx-0 mt-1">
-		<img class="cp" id="lang_pt" src="/flags/pt.png">
-		<img class="px-1 cp" id="lang_en" src="/flags/gb.png">
+		<img class="cp" id="lang_pt" src="/flags/pt.png" title="Português">
+		<img class="px-1 cp" id="lang_en" src="/flags/gb.png" title="English">
 	</div>
 
 </template>
 
+<!--<li id="menu_index">
+				<span class="cp">{{_ "menu_index"}}</span>
+			</li>
+			<li id="menu_beasponsor">
+				<span class="cp">{{_ "menu_beasponsor"}}</span>
+			</li>-->

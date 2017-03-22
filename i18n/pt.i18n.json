@@ -20,5 +20,13 @@
 	"home_sponsor_name": "O seu nome",
 	"home_sponsor_company": "A sua empresa",
 	"home_sponsor_email": "O seu contacto de email",
-	"home_sponsor_submit": "Submeter"
+	"home_sponsor_submit": "Submeter",
+
+	//Menu
+	"menu_index": "BreakingDev",
+	"menu_beasponsor": "Seja um patrocinador",
+
+	//Testing
+	"lorem": "Lorem ipsum",
+	"lorem_ipsum" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 }

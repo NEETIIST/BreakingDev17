@@ -17,7 +17,7 @@
 	z-index: 11;
 
 	background-image:    url(navbar-crop.png);
-    background-size:     100% 100%;                      /* <------ */
+    background-size:     100% 100%;
     background-repeat:   no-repeat;
     background-position: center center; 
 }
@@ -29,11 +29,14 @@
 	right: 5% ;
 	color: white;
 	z-index: 12 ;
-
 }
 
-#fullscreen
+#menu-options
 {
-	min-height: 100%;
-	min-width: 100%;
+	list-style-type: none;
+}
+
+.active
+{
+	color:#41516b !important ;
 }

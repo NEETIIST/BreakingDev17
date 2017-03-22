@@ -2,6 +2,7 @@ import './navbar.html'
 
 Template.navbar.onCreated(function(){
 	Session.set("nav", false);
+	this.subscribe("links.all");
 })
 
 Template.navbar.events({
@@ -17,14 +18,21 @@ Template.navbar.events({
 });
 
 Template.navbar.helpers({
-
 	nav: function(){
 		return Session.get("nav");
 	}
-
 });
 
+
+
 Template.menuOptions.events({
+	//Menu
+	"click .menu-redirect": function(){
+		FlowRouter.go(this.url);
+		Session.set("tab", this.name);
+	},
+
+	//Languages
 	"click #lang_pt": function(){
 		TAPi18n.setLanguage("pt") ;
 	},
@@ -32,3 +40,15 @@ Template.menuOptions.events({
 		TAPi18n.setLanguage("en") ;
 	},
 })
+
+Template.menuOptions.helpers({
+	links: function(){
+		return Links.find({'isNavbar':true});
+	},
+	activeTab: function(){
+		if ( this.name === Session.get("tab") )
+			return true ;
+		else
+			return false ;
+	}
+});
