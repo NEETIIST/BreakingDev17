@@ -14,8 +14,6 @@ getUserLanguage = function () {
   return "pt";
 };
 
-Session.set("tab", "menu_index");
-
 Meteor.startup(function () {
     Session.set("showLoadingIndicator", true);
 

@@ -16,6 +16,7 @@ FlowRouter.route('/', {
     BlazeLayout.render('base', {main: 'home'});
     window.scrollTo(0,0);
     Session.set("nav", false);
+    Session.set("tab", "menu_index");
   },
 });
 
@@ -25,6 +26,7 @@ FlowRouter.route('/sponsor', {
     BlazeLayout.render('base', {main: 'home_sponsor'});
     window.scrollTo(0,0);
     Session.set("nav", false);
+    Session.set("tab", "menu_beasponsor");
   },
 });
 

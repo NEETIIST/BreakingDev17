@@ -29,7 +29,7 @@ Template.menuOptions.events({
 	//Menu
 	"click .menu-redirect": function(){
 		FlowRouter.go(this.url);
-		Session.set("tab", this.name);
+		//Session.set("tab", this.name);    Repeated code -> routes.js
 	},
 
 	//Languages
@@ -46,9 +46,6 @@ Template.menuOptions.helpers({
 		return Links.find({'isNavbar':true});
 	},
 	activeTab: function(){
-		if ( this.name === Session.get("tab") )
-			return true ;
-		else
-			return false ;
+		return( this.name === Session.get("tab") );
 	}
 });
