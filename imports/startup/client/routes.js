@@ -1,5 +1,6 @@
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+import { analytics } from "meteor/okgrow:analytics";
 
 // Import needed templates
 import '../../ui/home/home.js'
@@ -23,6 +24,7 @@ FlowRouter.route('/', {
 FlowRouter.route('/sponsor', {
   name: 'home_sponsor',
   action() {
+    analytics.page("Sponsor");
     BlazeLayout.render('base', {main: 'home_sponsor'});
     window.scrollTo(0,0);
     Session.set("nav", false);
