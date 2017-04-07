@@ -8,6 +8,9 @@ import '../../ui/home/homeGallery.js'
 import '../../ui/home_sponsor/home_sponsor.js'
 import '../../ui/navbar/navbar.js'
 import '../../ui/base/base.js'
+import '../../ui/user/user.js'
+import '../../ui/login/login.js'
+
 
 
 // Set up all routes in the app
@@ -32,13 +35,27 @@ FlowRouter.route('/sponsor', {
   },
 });
 
+FlowRouter.route('/login',{
+  name: 'login',
+  action(){
+    BlazeLayout.render('base', {main: 'login'});
+  },
+});
+
+FlowRouter.route('/u/:username',{
+  name: 'userProfile',
+  action() {
+    BlazeLayout.render('base', {main: 'user'});
+  }
+});
+
 // Used for testing
 FlowRouter.route('/dev', {
   name: 'dev',
   action() {
-    BlazeLayout.render('base', {main: 'home'});
+    BlazeLayout.render('base', {main: 'signup'});
   }
-})
+});
 
 /*
 FlowRouter.notFound = {
