@@ -2,3 +2,5 @@ node_modules/
 .meteor/
 settings.json
 imports/startup/server/keys.js
+
+bots/
