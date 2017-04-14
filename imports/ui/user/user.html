@@ -1,0 +1,9 @@
+<template name="user">		
+	{{#if Template.subscriptionsReady}}
+		<p>User</p>
+		<p>{{userData._id}}</p>
+		<p>{{userData.username}}</p>		
+	{{else}}
+		<p>Loading</p>
+	{{/if}}	
+</template>
