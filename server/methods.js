@@ -16,6 +16,12 @@ Meteor.methods({
       subject: "BreakingDev - Informação sobre Patrocínio",
       text: "A empresa " + doc.company + " quer mais informação sobre os pacotes de patrocínio do BreakingDev. \n O contacto foi feito pelo/a Sr(a) " + doc.name + ", com o email: " + doc.email ,
     });
-  }
+  },
   
+  upper: function (text) {
+    check(text, String);
+    //console.log(text);
+    return text.toUpperCase();
+  },
+
 });
