@@ -12,12 +12,11 @@
 		{{#if nav}}
 
 			<!-- Desktop -->
-			<div id="navbar-menu" class="hidden-md-down animated out">
-				<div class="row justify-content-end align-items-center m-0 vh-100 vw-30">
-					<div class="col-9 f-white text-right">
+			<div id="navbar-menu" class="hidden-md-down orange animated out">
+				<div class="row justify-content-end align-items-center m-0 vh-100 vw-20">
+					<div class="col-12 f-white text-center px-0">
 						{{> menuOptions}}
 					</div>
-					<div class="col-1"></div>
 				</div>
 			</div>
 
@@ -41,17 +40,25 @@
 		<ul id="menu-options" class="px-0">
 			{{#each links}}
 				{{#if activeTab}}
-					<li class="menu-redirect active" id={{name}}>
-						<span class="cp">{{_ name}}</span>
+					<li class="menu-redirect active p-2 cp" id={{name}}>
+						<i class="fa fa-2x {{icon}}" aria-hidden="true"></i>
+						<p class="m-0">{{_ name}}</p>
 					</li>
 				{{else}}
-					<li class="menu-redirect" id={{name}}>
-						<span class="cp">{{_ name}}</span>
+					<li class="menu-redirect not-active p-2 cp" id={{name}}>
+						<i class="fa fa-2x {{icon}}" aria-hidden="true"></i>
+						<p class="m-0">{{_ name}}</p>
 					</li>
 				{{/if}}
 			{{/each}}
+			<li class="px-2">
+				{{> socialLinks}}		
+			</li>
 		</ul>
 	</div>
+</template>
+
+<template name="socialLinks">
 
 	<hr class="white my-2">
 
@@ -60,16 +67,9 @@
 		<a target="_blank" href="https://www.facebook.com/NEETI.IST/?fref=ts"><i class="fa fa-facebook-official f-white px-1" aria-hidden="true" title="Facebook"></i></a>
 		<a target="_blank" href="https://www.linkedin.com/company-beta/3507596/"><i class="fa fa-linkedin-square f-white" aria-hidden="true" title="LinkedIn"></i></a>
 	</div>
-	<div class="row justify-content-start justify-content-md-center align-items-center mx-0 mt-1">
+	<div class="row justify-content-start justify-content-md-center align-items-end mx-0 mt-1">
 		<img class="cp" id="lang_pt" src="/flags/pt.png" title="Português">
 		<img class="px-1 cp" id="lang_en" src="/flags/gb.png" title="English">
 	</div>
 
 </template>
-
-<!--<li id="menu_index">
-				<span class="cp">{{_ "menu_index"}}</span>
-			</li>
-			<li id="menu_beasponsor">
-				<span class="cp">{{_ "menu_beasponsor"}}</span>
-			</li>-->

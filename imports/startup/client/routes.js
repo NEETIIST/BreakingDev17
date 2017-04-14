@@ -10,7 +10,7 @@ import '../../ui/navbar/navbar.js'
 import '../../ui/base/base.js'
 import '../../ui/user/user.js'
 import '../../ui/login/login.js'
-
+import '../../ui/adminPanel/adminPanel.js'
 
 
 // Set up all routes in the app
@@ -46,6 +46,13 @@ FlowRouter.route('/u/:username',{
   name: 'userProfile',
   action() {
     BlazeLayout.render('base', {main: 'user'});
+  }
+});
+
+FlowRouter.route('/admin',{
+  name: 'adminPanel',
+  action() {
+    BlazeLayout.render('adminPanel');
   }
 });
 

@@ -16,10 +16,10 @@
 	height: 100vh;
 	z-index: 11;
 
-	background-image:    url(navbar-crop.png);
+	//background-image:    url(navbar-crop.png);
     background-size:     100% 100%;
     background-repeat:   no-repeat;
-    background-position: center center; 
+    background-position: center center;
 }
 
 #navbar-button
@@ -34,9 +34,17 @@
 #menu-options
 {
 	list-style-type: none;
+	width: 100%;
 }
 
 .active
 {
 	color:#41516b !important ;
+	border-left: solid 0.4em #41516b;
+	background-color: #f2874d ;
+}
+
+.not-active
+{
+	border-left: solid 0.4em #f47d3d;
 }

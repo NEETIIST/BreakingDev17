@@ -15,6 +15,9 @@ Links.attachSchema(new SimpleSchema({
 	url: {
 		type: String,
 	},
+	icon: {
+		type: String,
+	},
 	isNavbar: {
 		type: Boolean,
 	}

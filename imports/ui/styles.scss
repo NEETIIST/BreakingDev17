@@ -36,9 +36,10 @@ a:visited { text-decoration: none ; color:inherit ; }
 .vh-100 { min-height: 100vh ; }
 .vh-50 { min-height: 50vh ; }
 .vh-40 { min-height: 40vh ; }
+.vh-15 { min-height: 15vh ; }
 
 .vw-100 { min-width: 100vw ; }
-.vw-30 { min-width: 30vw ; }
+.vw-20 { min-width: 20vw ; }
 
 //Spacers
 .spacer-2 { min-height: 2vh; }
@@ -49,7 +50,9 @@ a:visited { text-decoration: none ; color:inherit ; }
 // Testing
 .black { background-color: #1c1c1c; }
 .orange { background-color: #f47d3d; }
+.light-orange { background-color: #f2874d; }
 .white { background-color: white; }
+.blue { background-color: #41516b; }
 
 //Cursors
 .cp { cursor: pointer; }
