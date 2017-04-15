@@ -1,3 +1,32 @@
 <template name="adminPanel">
 	
+	<div class="row justify-content-center align-items-center m-0 text-center">
+		<div class="col-12 col-md-6 blue">
+			<p>{{_ "admin_opt_1"}}</p>
+		</div>
+		<div class="col-12 col-md-6 white">
+			<!--<p>{{_ "admin_opt_2"}}</p>-->
+			{{> navbarLinks}}
+		</div>
+		<div class="col-12 col-md-6 black">
+			<p>{{_ "admin_opt_3"}}</p>
+		</div>
+		<div class="col-12 col-md-6 orange">
+			<p>{{_ "admin_opt_4"}}</p>
+		</div>
+	</div>
+
+</template>
+
+<template name="generalOptions">
+	
+</template>
+
+<template name="navbarLinks">
+	{{#each links}}
+		<span>{{name}}</span>
+		{{#autoForm collection="Links" id=name doc=this type="update" autosave=true}}
+			{{> afQuickField name='isNavbar'}}
+		{{/autoForm}}
+	{{/each}}
 </template>
