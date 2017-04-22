@@ -15,3 +15,16 @@ Template.user.helpers({
 		return Meteor.users.findOne({'username':u});
 	},
 })
+
+Template.user.events({
+	"click #goback":function(){
+		if (document.referrer.indexOf('localhost') >= 0)
+		{	//If user was in the website before, it goes to the previous page
+			history.back();
+		}
+		else
+		{	//Otherwise, goes to the home
+			FlowRouter.go("/");	
+		}
+	},
+});
