@@ -18,7 +18,7 @@ Meteor.startup(() => {
     {
       name: 'menu_beasponsor',
       url: '/sponsor',
-      icon: 'fa-handshake-o',
+      icon: 'fa-bullhorn',
       isNavbar: true,
     },
   ];

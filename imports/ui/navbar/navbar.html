@@ -13,7 +13,7 @@
 
 			<!-- Desktop -->
 			<div id="navbar-menu" class="hidden-md-down orange animated out">
-				<div class="row justify-content-end align-items-center m-0 vh-100 vw-20">
+				<div class="row justify-content-end align-items-center m-0 vh-100 vw-10">
 					<div class="col-12 f-white text-center px-0">
 						{{> menuOptions}}
 					</div>
@@ -40,14 +40,14 @@
 		<ul id="menu-options" class="px-0">
 			{{#each links}}
 				{{#if activeTab}}
-					<li class="menu-redirect active p-2 cp" id={{name}}>
+					<li class="menu-redirect active px-3 py-2 cp" id={{name}}>
 						<i class="fa fa-2x fa-fw pl-3 pl-md-0 {{icon}}" aria-hidden="true"></i>
-						<p class="m-0 pl-3 pl-md-0">{{_ name}}</p>
+						<p class="m-0 pl-3 pl-md-0 fs-1">{{_ name}}</p>
 					</li>
 				{{else}}
-					<li class="menu-redirect not-active p-2 cp" id={{name}}>
+					<li class="menu-redirect not-active px-3 py-2 cp" id={{name}}>
 						<i class="fa fa-2x fa-fw pl-3 pl-md-0 {{icon}}" aria-hidden="true"></i>
-						<p class="m-0 pl-3 pl-md-0">{{_ name}}</p>
+						<p class="m-0 pl-3 pl-md-0 fs-1">{{_ name}}</p>
 					</li>
 				{{/if}}
 			{{/each}}
