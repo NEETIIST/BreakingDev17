@@ -39,17 +39,10 @@
 	<div class="row justify-content-start justify-content-md-end align-items-center mx-0">
 		<ul id="menu-options" class="px-0">
 			{{#each links}}
-				{{#if activeTab}}
-					<li class="menu-redirect active px-3 py-2 cp" id={{name}}>
-						<i class="fa fa-2x fa-fw pl-3 pl-md-0 {{icon}}" aria-hidden="true"></i>
-						<p class="m-0 pl-3 pl-md-0 fs-1">{{_ name}}</p>
-					</li>
-				{{else}}
-					<li class="menu-redirect not-active px-3 py-2 cp" id={{name}}>
-						<i class="fa fa-2x fa-fw pl-3 pl-md-0 {{icon}}" aria-hidden="true"></i>
-						<p class="m-0 pl-3 pl-md-0 fs-1">{{_ name}}</p>
-					</li>
-				{{/if}}
+				<li class="menu-redirect {{activeTab}} px-3 py-2 cp" id={{name}}>
+					<i class="fa fa-2x fa-fw pl-3 pl-md-0 {{icon}}" aria-hidden="true"></i>
+					<p class="m-0 pl-3 pl-md-0 fs-1">{{_ name}}</p>
+				</li>
 			{{/each}}
 			<li class="px-2">
 				{{> socialLinks}}		

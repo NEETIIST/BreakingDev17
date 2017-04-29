@@ -25,12 +25,13 @@
 	//Menu
 	"menu_index": "BreakingDev",
 	"menu_beasponsor": "Be a sponsor",
+	"menu_login": "Login",
 
 	//Admin
 	"admin_opt_1": "Soon",
 	"admin_opt_2": "Soon",
 	"admin_opt_3": "Soon",
-	"admin_opt_4": "Soon",
+	"admin_opt_4": "Soon",	
 
 	//Testing
 	"lorem": "Lorem ipsum",

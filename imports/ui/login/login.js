@@ -1,2 +1,6 @@
 import './login.html';
-import './signup.html';
+
+Template.atForm.onRendered(function() {
+	form = document.getElementById("at-pwd-form");
+	form.setAttribute( "autocomplete", "off" );
+});

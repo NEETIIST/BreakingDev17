@@ -1,0 +1,156 @@
+.at-form
+{
+	color: white;
+	font-weight: 200 ;
+    max-width: 75vw ;
+}
+
+.at-title
+{
+	text-align: center ;
+}
+
+.at-input
+{
+	margin: 1em 0 ;
+}
+
+#at-field-username_and_email
+{
+	color: inherit;
+	font: inherit ;
+	width: 100% ;
+	border: none;
+    border-bottom: 1px solid #ffffff;
+    background: none;
+}
+#at-field-username_and_email:focus
+{
+	border: none;
+    border-bottom: 1px solid #41516b;
+    background: none;
+    outline:none;
+}
+
+#at-field-password
+{
+	color: inherit;
+	font: inherit ;
+	width: 100% ;
+	border: none;
+    border-bottom: 1px solid #ffffff;
+    background: none;
+}
+
+#at-field-password:focus
+{
+	border: none;
+    border-bottom: 1px solid #41516b;
+    background: none;
+    outline:none;
+}
+
+#at-field-username
+{
+    color: inherit;
+    font: inherit ;
+    width: 100% ;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    background: none;
+}
+
+#at-field-username:focus
+{
+    border: none;
+    border-bottom: 1px solid #41516b;
+    background: none;
+    outline:none;
+}
+
+#at-field-email
+{
+    color: inherit;
+    font: inherit ;
+    width: 100% ;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    background: none;
+}
+
+#at-field-email:focus
+{
+    border: none;
+    border-bottom: 1px solid #41516b;
+    background: none;
+    outline:none;
+}
+
+#at-field-password_again
+{
+    color: inherit;
+    font: inherit ;
+    width: 100% ;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    background: none;
+}
+
+#at-field-password_again:focus
+{
+    border: none;
+    border-bottom: 1px solid #41516b;
+    background: none;
+    outline:none;
+}
+
+.at-btn
+{
+  -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    font: inherit;
+    border-radius: 0;
+    padding: 0 1px 0 1px;
+    background-color: inherit;
+    color: #41516b;
+    border: 0px ;
+    border-bottom: 1px solid #41516b ;
+    font-weight: 400 ;
+    cursor: pointer;
+    margin-bottom: 1em ;
+}
+
+.at-btn:hover
+{
+    color: white;
+    border-bottom: 1px solid white ;
+    cursor: pointer;
+}
+
+.at-signup-link
+{
+    text-align: right;
+}
+
+.at-link
+{
+  -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    font: inherit;
+    border-radius: 0;
+    padding: 0 1px 0 1px;
+    background-color: inherit;
+    color: #41516b;
+    border: 0px ;
+    border-bottom: 1px solid #41516b ;
+    font-weight: 400 ;
+    cursor: pointer;
+    margin-bottom: 1em ;
+}
+
+.at-link:hover
+{
+    color: white;
+    border-bottom: 1px solid white ;
+    cursor: pointer;
+}

@@ -13,6 +13,9 @@ AutoForm.addHooks(['contactForm'],{
 getUserLanguage = function () {
   return "pt";
 };
+getUserLanguageT9n = function () {
+  return "pt-PT";
+};
 
 Meteor.startup(function () {
     Session.set("showLoadingIndicator", true);
@@ -25,4 +28,7 @@ Meteor.startup(function () {
         // Handle the situation
         console.log(error_message);
       });
+
+    T9n.setLanguage(getUserLanguageT9n());
+
   });

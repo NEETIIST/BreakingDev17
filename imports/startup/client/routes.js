@@ -38,6 +38,10 @@ FlowRouter.route('/sponsor', {
 FlowRouter.route('/login',{
   name: 'login',
   action(){
+    analytics.page("Login");
+    window.scrollTo(0,0);
+    Session.set("nav", false);
+    Session.set("tab", "menu_login");
     BlazeLayout.render('base', {main: 'login'});
   },
 });

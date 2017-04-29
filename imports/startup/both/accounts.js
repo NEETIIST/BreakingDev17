@@ -1,4 +1,5 @@
 import { AccountsTemplates } from 'meteor/useraccounts:core';
+import { TAPi18n } from 'meteor/tap:i18n';
 
 AccountsTemplates.configure({
     // Behavior
@@ -14,7 +15,7 @@ AccountsTemplates.configure({
     showAddRemoveServices: false,
     showForgotPasswordLink: false,
     showLabels: true,
-    showPlaceholders: true,
+    showPlaceholders: false,
     showResendVerificationEmailLink: false,
 
     // Client-side Validation
@@ -33,19 +34,6 @@ AccountsTemplates.configure({
     homeRoutePath: '/',
     redirectTimeout: 4000,
 
-    // Texts
-    texts: {
-      button: {
-          signUp: "Register Now!"
-      },
-      socialSignUp: "Register",
-      socialIcons: {
-          "meteor-developer": "fa fa-rocket"
-      },
-      title: {
-          forgotPwd: "Recover Your Password"
-      },
-    },
 });
 
 var pwd = AccountsTemplates.removeField('password');

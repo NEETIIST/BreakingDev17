@@ -4,14 +4,14 @@ import { Accounts } from 'meteor/accounts-base';
 Template.user.onRendered(function() {
 	var self = this;
 	self.autorun(function(){
-		var u = FlowRouter.getParam('username');
+		var u = FlowRouter.getParam('username').toLowerCase();
 		self.subscribe('singleUserVisitor',u);
 	});
 });
 
 Template.user.helpers({
 	userData: function(){
-		var u = FlowRouter.getParam('username') ;
+		var u = FlowRouter.getParam('username').toLowerCase();
 		return Meteor.users.findOne({'username':u});
 	},
 })

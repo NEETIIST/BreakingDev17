@@ -29,15 +29,17 @@ Template.menuOptions.events({
 	//Menu
 	"click .menu-redirect": function(){
 		FlowRouter.go(this.url);
-		//Session.set("tab", this.name);    Repeated code -> routes.js
+		Session.set("tab", this.name);
 	},
 
 	//Languages
 	"click #lang_pt": function(){
-		TAPi18n.setLanguage("pt") ;
+		TAPi18n.setLanguage("pt");
+		T9n.setLanguage("pt-PT");
 	},
 	"click #lang_en": function(){
-		TAPi18n.setLanguage("en") ;
+		TAPi18n.setLanguage("en");
+		T9n.setLanguage("en");
 	},
 })
 
@@ -46,6 +48,14 @@ Template.menuOptions.helpers({
 		return Links.find({'isNavbar':true});
 	},
 	activeTab: function(){
-		return( this.name === Session.get("tab") );
+		console.log(this);
+		if( this.name === Session.get("tab") )
+		{
+			return "active";
+		}
+		else
+		{
+			return "not-active";
+		}
 	}
 });
