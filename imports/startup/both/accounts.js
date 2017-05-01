@@ -56,3 +56,15 @@ AccountsTemplates.addFields([
   },
   pwd
 ]);
+
+AccountsTemplates.configure({
+    onSubmitHook: ( error, state ) => {
+      if ( !error && (state === 'signIn' || state === 'signUp') ) {
+        // login successful, route to index
+        FlowRouter.redirect('/dash');
+      }
+    },
+    onLogoutHook: ( error, state ) => {
+      FlowRouter.redirect('/login');
+    },
+});

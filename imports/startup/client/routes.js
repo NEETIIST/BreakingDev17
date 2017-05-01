@@ -11,6 +11,7 @@ import '../../ui/base/base.js'
 import '../../ui/user/user.js'
 import '../../ui/login/login.js'
 import '../../ui/adminPanel/adminPanel.js'
+import '../../ui/dashboard/dashboard.js'
 
 
 // Set up all routes in the app
@@ -38,11 +39,19 @@ FlowRouter.route('/sponsor', {
 FlowRouter.route('/login',{
   name: 'login',
   action(){
-    analytics.page("Login");
-    window.scrollTo(0,0);
-    Session.set("nav", false);
-    Session.set("tab", "menu_login");
-    BlazeLayout.render('base', {main: 'login'});
+    if (Meteor.userId()!==null)
+    {
+      console.log("dafuq");
+      FlowRouter.redirect('/dash');
+    }
+    else
+    {
+      analytics.page("Login");
+      window.scrollTo(0,0);
+      Session.set("nav", false);
+      Session.set("tab", "menu_login");
+      BlazeLayout.render('base', {main: 'login'});
+    }
   },
 });
 
@@ -57,6 +66,24 @@ FlowRouter.route('/admin',{
   name: 'adminPanel',
   action() {
     BlazeLayout.render('adminPanel');
+  }
+});
+
+FlowRouter.route('/dash',{
+  name: 'dashboard',
+  action() {
+    if (Meteor.userId()===null)
+    {
+      FlowRouter.go('/login');
+    }
+    else
+    {
+      analytics.page("Dashboard");
+      window.scrollTo(0,0);
+      Session.set("nav", false);
+      Session.set("tab", "menu_login");
+      BlazeLayout.render('base', {main: 'dashboard'});
+    }
   }
 });
 

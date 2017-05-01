@@ -41,7 +41,12 @@
 			{{#each links}}
 				<li class="menu-redirect {{activeTab}} px-3 py-2 cp" id={{name}}>
 					<i class="fa fa-2x fa-fw pl-3 pl-md-0 {{icon}}" aria-hidden="true"></i>
-					<p class="m-0 pl-3 pl-md-0 fs-1">{{_ name}}</p>
+					{{#if isLogged}}
+						<p class="m-0 pl-3 pl-md-0 fs-1">{{loggedUser}}</p>					
+					{{else}}
+						<p class="m-0 pl-3 pl-md-0 fs-1">{{_ name}}</p>
+					{{/if}}
+					
 				</li>
 			{{/each}}
 			<li class="px-2">

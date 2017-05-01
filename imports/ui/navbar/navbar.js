@@ -41,14 +41,13 @@ Template.menuOptions.events({
 		TAPi18n.setLanguage("en");
 		T9n.setLanguage("en");
 	},
-})
+});
 
 Template.menuOptions.helpers({
 	links: function(){
 		return Links.find({'isNavbar':true});
 	},
 	activeTab: function(){
-		console.log(this);
 		if( this.name === Session.get("tab") )
 		{
 			return "active";
@@ -57,5 +56,11 @@ Template.menuOptions.helpers({
 		{
 			return "not-active";
 		}
+	},
+	isLogged: function(){
+		return (Meteor.userId()!==null)&&(this.name==="menu_login");
+	},
+	loggedUser: function(){
+		return Meteor.users.findOne({'_id':Meteor.userId()}).username;
 	}
 });
