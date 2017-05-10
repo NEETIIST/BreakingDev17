@@ -12,6 +12,7 @@ import '../../ui/user/user.js'
 import '../../ui/login/login.js'
 import '../../ui/adminPanel/adminPanel.js'
 import '../../ui/dashboard/dashboard.js'
+import '../../ui/team/team.js'
 
 
 // Set up all routes in the app
@@ -84,6 +85,13 @@ FlowRouter.route('/dash',{
       Session.set("tab", "menu_login");
       BlazeLayout.render('base', {main: 'dashboard'});
     }
+  }
+});
+
+FlowRouter.route('/t/:teamname',{
+  name: 'teamProfile',
+  action() {
+    BlazeLayout.render('base', {main: 'team'});
   }
 });
 

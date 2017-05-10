@@ -9,3 +9,5 @@ window.Contact = Contact ;
 import { Links } from '/imports/api/links/links.js';
 window.Links = Links ;
 
+import { Teams } from '/imports/api/teams/teams.js';
+window.Teams = Teams ;

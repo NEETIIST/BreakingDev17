@@ -3,6 +3,7 @@
 import './links.js';
 import './register-api.js';
 import './mail-url.js';
+import './devtests.js';
 
 import { Meteor } from 'meteor/meteor';
 
