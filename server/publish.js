@@ -11,3 +11,8 @@ Meteor.publish("singleUserVisitor", function (id) {
 Meteor.publish("singleUserAllData", function (id) {
     return Meteor.users.find({'username':id});
 });
+
+/* Waiting for userprofile final settings
+Meteor.publish("teamMembers", function(id){
+	return Meteor.users.find({'username':id}, {fields: {'username': 1}});
+}); */

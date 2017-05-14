@@ -2,8 +2,44 @@
 
 	{{#if Template.subscriptionsReady}}
 
-	<div class="row justify-content-center align-items-center m-0 vh-100 orange">
-		
+	<div class="row justify-content-md-center align-items-center m-0 py-3 vh-30 black team-top">
+		<!--
+		<div class="col-1 col-md-2 text-center">
+			<i class="fa fa-chevron-left f-white cp" id="goback" aria-hidden="true"></i>
+		</div>
+		-->
+		<div class="col-10 offset-1 col-md-3 push-md-7 my-3">
+			<img src="/gamepad.png" alt="Category Logo" class="category-pic">
+		</div>
+		<div class="col-10 offset-1 col-md-7 offset-md-0 pull-md-3">
+			<p class="fw-2 fs-6 flh-2 f-white mb-0">{{teamData.name}}</p>
+			<p class="fw-2 fs-4 flh-2 f-white mb-0">"Lorem Ipsum"</p>
+		</div>
+	</div>
+
+	<div class="row justify-content-center align-items-start m-0 orange">
+		<div class="col-10 col-md-9 mt-3">
+			<p class="fw-4 fs-2 flh-2 f-white mb-1">{{_ "team_idea"}}</p>
+			<p class="fw-2 fs-2 flh-2 f-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<p class="fw-4 fs-2 flh-2 f-white mb-1">{{_ "team_tools"}}</p>
+			<p class="fw-2 fs-2 flh-2 f-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+	</div>
+
+	<div class="row mx-0 py-3 orange justify-content-center align-items-center text-center ">
+		<div class="col-md-1"></div> 	<!-- Better way to do this? -->
+		<div class="col-10 col-md">
+			<div class="col-4 col-md-12">	
+				<img src="/profile.png" alt="User Picture" class="user-pic-small px-0">
+			</div>
+			<div class="col-6 col-md-12 my-2 mx-0">	
+				<p class="fw-2 fs-2 flh-2 f-white mb-1">@LoremIpsum</p>
+				<p class="fw-2 fs-2 flh-2 f-white mb-2">
+					<i class="fa fa-terminal fa-fw f-white mr-2" aria-hidden="true"></i>Programmer
+				</p>
+			</div>
+		</div>
+		<div class="col-md-1"></div>
 	</div>
 
 	{{else}}

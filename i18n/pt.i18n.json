@@ -33,6 +33,16 @@
 	"admin_opt_3": "Opção disponível em breve",
 	"admin_opt_4": "Opção disponível em breve",
 
+	//User Profile
+	"user_bio": "Bio:",
+	"user_skills": "Skills:",
+	"user_interests": "Interesses:",
+	"user_social": "Redes Sociais:",
+
+	//Team Profile
+	"team_idea": "Projeto:",
+	"team_tools": "Ferramentas utilizadas:",
+
 	//Testing
 	"lorem": "Lorem ipsum",
 	"lorem_ipsum" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
