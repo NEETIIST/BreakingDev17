@@ -3,10 +3,13 @@
 
 import { Meteor } from 'meteor/meteor';
 import { Teams } from '../../api/teams/teams.js';
+import { Devs } from '../../api/devs/devs.js';
 
  
 Meteor.startup(() => {
   
+  SimpleSchema.debug = true;
+
   var dataLinks =
   [
     {

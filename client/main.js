@@ -11,3 +11,6 @@ window.Links = Links ;
 
 import { Teams } from '/imports/api/teams/teams.js';
 window.Teams = Teams ;
+
+import { Devs } from '/imports/api/devs/devs.js';
+window.Devs = Devs ;

@@ -9,6 +9,7 @@ import '../../ui/home_sponsor/home_sponsor.js'
 import '../../ui/navbar/navbar.js'
 import '../../ui/base/base.js'
 import '../../ui/user/user.js'
+import '../../ui/user_profile/user_profile.js'
 import '../../ui/login/login.js'
 import '../../ui/adminPanel/adminPanel.js'
 import '../../ui/dashboard/dashboard.js'
@@ -88,7 +89,16 @@ FlowRouter.route('/dash',{
   }
 });
 
-FlowRouter.route('/t/:teamname',{
+FlowRouter.route('/u/:username/edit',{
+  name: 'userProfile_edit',
+  action() {
+    //FlowRouter.reload();    //Reload Bug
+    //location.reload();
+    BlazeLayout.render('base', {main: 'user_profile'});
+  }
+});
+
+FlowRouter.route('/t/:us',{
   name: 'teamProfile',
   action() {
     BlazeLayout.render('base', {main: 'team'});
@@ -99,7 +109,7 @@ FlowRouter.route('/t/:teamname',{
 FlowRouter.route('/dev', {
   name: 'dev',
   action() {
-    BlazeLayout.render('base', {main: 'signup'});
+    BlazeLayout.render('base', {main: 'user_profile'});
   }
 });
 
