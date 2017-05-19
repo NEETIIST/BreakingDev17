@@ -1,0 +1,25 @@
+.task
+{
+	border-radius: 0.2em;
+	border: 1px solid white;
+	background-color: #f2874d;
+}
+
+.menu-border
+{
+	border-top: 0.1em solid white;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+}
+
+
+
+.vh-12 { min-height: 12vh ; }
+.vh-88 { min-height: 88vh ; }
+
+.mid-col
+{
+	display: flex;
+  	flex-direction: column;
+  	justify-content: center;
+}
