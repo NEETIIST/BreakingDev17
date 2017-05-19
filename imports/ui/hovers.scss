@@ -20,18 +20,50 @@
 .hvr-custom
 {
   -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    font: inherit;
-    border-radius: 0;
-    padding: 0 1px 0 1px;
-    background-color: inherit;
-    color: #41516b;
-    border-bottom: 1px solid #41516b ;
-    font-weight: 400 ;
+  transition-duration: 0.4s;
+  font: inherit;
+  border-radius: 0;
+  padding: 0 1px 0 1px;
+  background-color: inherit;
+  color: #41516b;
+  border-bottom: 1px solid #41516b ;
+  font-weight: 400 ;
 }
-
 .hvr-custom:hover
 {
-    color: white;
-    border-bottom: 1px solid white ;
+  color: white;
+  border-bottom: 1px solid white ;
+}
+
+.hvr-items
+{
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  font: inherit;
+  border-radius: 0;
+  //padding: 0 1px 0 1px;
+  background-color: inherit;
+  color: white;
+  //border-bottom: 1px solid #41516b ;
+  //font-weight: 400 ;
+}
+.hvr-items:hover
+{
+  color: #41516b;
+  //border-bottom: 1px solid white ;
+}
+
+.hvr-tasks
+{
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0);
+}
+.hvr-tasks:hover
+{
+    -webkit-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.25);
+    box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.25);
 }

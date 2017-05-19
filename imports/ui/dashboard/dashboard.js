@@ -4,4 +4,4 @@ Template.dashboard.events({
 	"click #logout": function(){
 		AccountsTemplates.logout();
 	},
-})
+});
