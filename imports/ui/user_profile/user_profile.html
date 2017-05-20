@@ -1,25 +1,25 @@
 <template name="user_profile">
 
-	{{#if Template.subscriptionsReady}}
-		{{#if isOwner}}
-			{{#if isNewUser}}
-				<p class="jump">Add</p>
-				{{> quickForm collection="Devs" id="addUserProfile" type="insert"}}
+	<div class="row justify-content-center align-items-center m-0 vh-100 light-orange f-white">
+		<div class="col-9 py-3">
+			{{#if Template.subscriptionsReady}}
+				<span class="cp" id="goDash"><i class="fa fa-angle-double-left fa-fw f-white mr-2" aria-hidden="true"></i>{{_ "up_godash"}}</span>
+				<hr class="orange">
+				{{#if isOwner}}
+					{{#if isNewUser}}
+						<p class="text-center">{{_ "up_add"}}</p>
+						{{> quickForm collection="Devs" id="addUserProfile" type="insert" buttonClasses="at-btn submit"}}
+					{{else}}
+						<p class="text-center">{{_ "up_edit"}}</p>
+						{{> quickForm collection="Devs" doc=userProfile id="updateUserProfile" type="update" buttonClasses="at-btn submit" }}
+					{{/if}}
+				{{else}}
+					<p class="text-center">{{_ "up_notowner"}}</p>
+				{{/if}}
 			{{else}}
-				<p class="jump">Edit</p>
-				{{> quickForm collection="Devs" doc=userProfile id="updateUserProfile" type="update"}}		
+				<p>Loading</p>
 			{{/if}}
-		{{else}}
-			<p class="back">Not Owner</p>
-		{{/if}}
-	{{else}}
-		<p>Loading</p>
-	{{/if}}
-
-	<!-- 
-
-	{{> quickForm collection="Products" id=updateProductId type="update" doc=singleProduct autosave=false buttonClasses="btn btn-invert hvr-fade-invert mt-2 submitEditRedirect"}}
-
-	-->
+		</div>
+	</div>
 
 </template>

@@ -12,7 +12,7 @@ Devs.allow({
   },
 });
 
-Devs.attachSchema(new SimpleSchema({
+Schema = new SimpleSchema({
   user: {
     type: String,
     autoValue: function(){ return Meteor.userId(); },
@@ -24,7 +24,23 @@ Devs.attachSchema(new SimpleSchema({
   },
   name: {
     type: String,
-    label: "Name",
   },
+  age: {
+    type: SimpleSchema.Integer,
+  },
+  college: {
+    type: String,
+  },
+  course: {
+    type: String,
+  },
+  bio: {
+    type: String,
+    autoform: {
+      rows: 5
+    },
+  },
+});
 
-}));
+Devs.attachSchema(Schema);
+Schema.i18n("schemas.devs");

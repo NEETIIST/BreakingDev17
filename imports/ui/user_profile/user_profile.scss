@@ -1,0 +1,21 @@
+.form-control
+{
+	color: white;
+	font: inherit ;
+	width: 100% ;
+	border: none;
+    border-bottom: 1px solid #ffffff;
+    background: none;
+    border-radius: 0;
+    padding: 0.2em 0px 0.2em 0px ;
+}
+
+.form-control:focus
+{
+	border: none;
+    border-bottom: 1px solid #41516b;
+    background: none;
+    outline:none;
+    color: white;
+    padding: 0.2em 0px 0.2em 0px ;
+}

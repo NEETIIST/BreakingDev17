@@ -8,7 +8,6 @@ Template.user_profile.onRendered(function() {
 	let p = Meteor.users.findOne({'username':u});
 	if ( Meteor.userId() == p._id )
 	{
-		console.log("here");
 		this.subscribe('devs.single', p._id);
 	}
 
@@ -39,10 +38,7 @@ Template.user_profile.helpers({
 });
 
 Template.user_profile.events({
-	"click .jump":function(){
-		FlowRouter.go("/dash");	
-	},
-	"click .back":function(){
+	"click #goDash":function(){
 		FlowRouter.go("/dash");	
 	},
 });

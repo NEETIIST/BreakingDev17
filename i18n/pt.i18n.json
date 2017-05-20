@@ -51,6 +51,33 @@
 	"ud_contacts": "Contactos",
 	"ud_logout": "Log Out",
 
+	//User Profile
+	"up_edit": "Edita os teus dados",
+	"up_add": "Diz-nos mais sobre ti",
+	"up_godash": "Volta ao Dashboard",
+	"up_notowner": "Não podes alterar as informações de outros utilizadores",
+	"up_button": "Confirmar",
+	"schemas": {
+		"devs": {
+			"name": {
+				"label": "Nome"
+			},
+			"age": {
+				"label": "Idade"
+			},
+			"college": {
+				"label": "Faculdade"
+			},
+			"course": {
+				"label": "Curso"
+			},
+			"bio": {
+				"label": "Biografia",
+				"placeholder": "Fala-nos um pouco sobre ti"	
+			}
+		}
+  	},
+
 	//Testing
 	"lorem": "Lorem ipsum",
 	"lorem_ipsum" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
