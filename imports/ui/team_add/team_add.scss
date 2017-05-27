@@ -1,0 +1,33 @@
+.list-group-item
+{
+	border: 0 ;
+	background-color: inherit;
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+	color: white;
+}
+
+.list-group
+{
+	margin-bottom: 1rem;
+}
+
+.btn-primary
+{
+	background-color: inherit;
+	border-color: white;
+	cursor: pointer;
+}
+
+.btn-primary:hover
+{
+	background-color: #f47d3d;
+	border-color: white;
+	cursor: pointer;
+}
+
+.form-control:focus
+{
+	color: #41516b;
+}

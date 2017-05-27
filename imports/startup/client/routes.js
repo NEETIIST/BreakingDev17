@@ -14,6 +14,8 @@ import '../../ui/login/login.js'
 import '../../ui/adminPanel/adminPanel.js'
 import '../../ui/dashboard/dashboard.js'
 import '../../ui/team/team.js'
+import '../../ui/team_add/team_add.js'
+//import '../../ui/team_edit/team_edit.js'
 
 
 // Set up all routes in the app
@@ -102,6 +104,21 @@ FlowRouter.route('/t/:us',{
   name: 'teamProfile',
   action() {
     BlazeLayout.render('base', {main: 'team'});
+  }
+});
+
+// Maybe another route for this?
+FlowRouter.route('/t//add',{
+  name: 'teamProfile_add',
+  action() {
+    BlazeLayout.render('base', {main: 'team_add'});
+  }
+});
+
+FlowRouter.route('/t/:us/edit',{
+  name: 'teamProfile_edit',
+  action() {
+    BlazeLayout.render('base', {main: 'team_edit'});
   }
 });
 

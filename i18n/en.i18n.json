@@ -79,6 +79,38 @@
 		}
   	},
 
+  	//Add Team
+  	"schemas": {
+		"teams": {
+			"team_name": {
+				"label": "Team Name"
+			},
+			"members": {
+				"label": "Members"
+			},
+			"project_name": {
+				"label": "Name of the Idea"
+			},
+			"category": {
+				"label": "Category",
+				"placeholder": "Pick your category",
+				"options": {
+					"Mobile": "Mobile",
+					"Gaming": "Gaming",
+					"Web": "Web App"
+				}
+			},
+			"project": {
+				"label": "Idea",
+				"placeholder": "Describe your idea"	
+			},
+			"skills": {
+				"label": "Skills",
+				"placeholder": "Tell us some of the frameworks and/or languages that you're going to use"	
+			}
+		}
+  	},
+
 	//Testing
 	"lorem": "Lorem ipsum",
 	"lorem_ipsum" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."

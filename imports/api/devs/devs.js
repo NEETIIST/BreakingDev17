@@ -37,7 +37,7 @@ Schema = new SimpleSchema({
   bio: {
     type: String,
     autoform: {
-      rows: 5
+      rows: 4
     },
   },
 });

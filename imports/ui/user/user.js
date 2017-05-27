@@ -1,5 +1,4 @@
 import './user.html';
-import { Accounts } from 'meteor/accounts-base';
 
 Template.user.onRendered(function() {
 	var self = this;

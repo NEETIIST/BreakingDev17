@@ -1,3 +1,5 @@
+import { Meteor } from 'meteor/meteor' ;
+
 Meteor.methods({
 
   sendEmail: function (doc) {
@@ -24,4 +26,10 @@ Meteor.methods({
     return text.toUpperCase();
   },
 
+});
+
+
+/* CHECK IF WORKING AFTER DEPLOYMENT */
+Meteor.users.deny({
+  update() { return true; }
 });

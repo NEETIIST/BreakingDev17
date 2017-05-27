@@ -2,6 +2,8 @@
 // The data published should be handled with care as not to publish sensitive info to unauthorized users
 // The logged in user data is auto-published
 
+
+
 Meteor.publish("allUsers", function () {
     return Meteor.users.find({}, {fields: {'username': 1}});
 });
