@@ -24,3 +24,10 @@ Template.team_add.events({
 		FlowRouter.go("/dash");	
 	},
 });
+
+AutoForm.addHooks(['addTeam'],{
+    onSuccess: function(formType, result) {
+    	Meteor.call('setUpTeam', result , function(error, result) {});
+		FlowRouter.go("/t/"+result+"/pass");
+    }
+});

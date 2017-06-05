@@ -13,7 +13,7 @@ Template.team.onRendered(function() {
 Template.team.helpers({
 	teamData: function(){
 		var t = FlowRouter.getParam('teamname').toLowerCase();
-		return Teams.findOne({'name':t});
+		return Teams.findOne({'_id':t});
 	},
 	/* Waiting for user profile final settings
 	userData: function(){

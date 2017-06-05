@@ -15,6 +15,7 @@ import '../../ui/adminPanel/adminPanel.js'
 import '../../ui/dashboard/dashboard.js'
 import '../../ui/team/team.js'
 import '../../ui/team_add/team_add.js'
+import '../../ui/team_pass/team_pass.js'
 //import '../../ui/team_edit/team_edit.js'
 
 
@@ -122,6 +123,13 @@ FlowRouter.route('/t/:us/edit',{
   }
 });
 
+FlowRouter.route('/t/:teamname/pass',{
+  name: 'team_pass',
+  action() {
+    BlazeLayout.render('base', {main: 'team_pass'});
+  }
+});
+
 // Used for testing
 FlowRouter.route('/dev', {
   name: 'dev',
@@ -137,3 +145,4 @@ FlowRouter.notFound = {
   },
 };
 */
+

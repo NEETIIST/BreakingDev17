@@ -6,8 +6,6 @@ import { Links } from '../../api/links/links.js';
 
  
 Meteor.startup(() => {
-  
-  console.log(Meteor.users._validators.update);
 
   var dataLinks =
   [

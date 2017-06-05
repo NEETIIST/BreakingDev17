@@ -22,11 +22,5 @@ Meteor.startup(() => {
     },
   ];
 
-  dataLinks.forEach(function(team){
-    if ( Teams.find({'name':team.name}).count() === 0 )
-    {
-      Teams.insert(team);
-    }
-  });
 
 }); 

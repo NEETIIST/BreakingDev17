@@ -6,9 +6,9 @@ Meteor.publish('teams.all', function () {
 });
 
 Meteor.publish('singleTeam', function(id){
-	return Teams.find({'name':id});
+	return Teams.find({"_id":id});
 })
 
 Meteor.publish('singleTeamVisitor', function(id){
-	return Teams.find({'name':id});
+	return Teams.find({'_id':id});
 })
