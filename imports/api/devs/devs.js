@@ -40,6 +40,20 @@ Schema = new SimpleSchema({
       rows: 4
     },
   },
+  inTeam: {
+    type: Boolean,
+    autoform: {
+        type: "hidden",
+        label: false
+    },
+  },
+  team: {
+    type: String,
+    autoform: {
+        type: "hidden",
+        label: false
+    },
+  },
 });
 
 Devs.attachSchema(Schema);

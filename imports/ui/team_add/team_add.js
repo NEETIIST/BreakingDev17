@@ -3,20 +3,15 @@ import { Accounts } from 'meteor/accounts-base';
 
 Template.team_add.onRendered(function() {
 
-	let u = FlowRouter.getParam('username').toLowerCase();
-	let p = Meteor.users.findOne({'username':u});
-	if ( Meteor.userId() == p._id )
-	{
-		this.subscribe('singleTeam', p._id);
-	}
+	console.log(Meteor.userId());
+	this.subscribe('devs.single.inTeam', Meteor.userId());
 
-	/* Reload Bug -> O subsReady está a ser chamado antes de haver render
-	portanto acaba por nao ter subscricao nenhuma. Basicamente o ready nao ta a fazer nada
-	Acaba por não fazer diferença por causa do modo como navegamos no site, mas tem que ser revisto*/
 });
 
 Template.team_add.helpers({
-	
+	alreadyInTeam: function(){
+		return Devs.findOne({}).inTeam ;
+	},
 });
 
 Template.team_add.events({
@@ -28,6 +23,7 @@ Template.team_add.events({
 AutoForm.addHooks(['addTeam'],{
     onSuccess: function(formType, result) {
     	Meteor.call('setUpTeam', result , function(error, result) {});
+    	Meteor.call('userInTeam', Meteor.userId(), result, function(error,result){});
 		FlowRouter.go("/t/"+result+"/pass");
     }
 });

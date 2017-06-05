@@ -8,3 +8,7 @@ Meteor.publish('devs.all', function () {
 Meteor.publish('devs.single', function(id){
 	return Devs.find({'user':id});
 });
+
+Meteor.publish('devs.single.inTeam', function(id){
+	return Devs.find({'user':id},{fields: {'inTeam': 1}});
+});

@@ -111,6 +111,14 @@
 		}
   	},
 
+  	"at_pass_1": ", you are the captain of team ",
+  	"at_pass_2": "In your dashboard you can edit your teams information. And to invite your friends to join, all you have to do is send them the following link:",  	
+  	"at_pass_3": "Each one of you can always join in the dashboard, by selecting the right team and entering the following pin code:",
+  	"at_pass_4": "Lembramos que para a vossa inscrição ser considerada válida, todas as informações devem estar preenchidas, ter pelo menos dois membros e o teu email estar validado.",
+  	"at_pass_4": "We remind you that for the team registry to be considered valid, all information fields must be filed, the team must have at least 2 members and your email must be validated.",
+  	"at_godash": "Go to the Dashboard",
+  	"at_already": "You are already on a team, you can't create another.",
+
 	//Testing
 	"lorem": "Lorem ipsum",
 	"lorem_ipsum" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."

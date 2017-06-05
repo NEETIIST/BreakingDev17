@@ -3,14 +3,14 @@
 	<div class="row justify-content-center align-items-center m-0 vh-100 orange f-white">
 		<div class="col-10 py-3 text-center">
 			{{#if Template.subscriptionsReady}}
-				<p>{{loggedUser}} és o capitão da equipa {{teamData.team_name}}</p>
-				<span>No teu dashboard podes editar a informação da equipa. E para convidares os teus colegas a juntarem-se basta enviares-lhes este link:</span>
+				<p>{{loggedUser}}  {{_ "at_pass_1"}} {{teamData.team_name}}</p>
+				<span>{{_ "at_pass_2"}}</span>
 				<p>[JOIN PAGE LINK]</p>
-				<span>Cada um pode sempre juntar-se no seu dashboard, se selecionarem a equipa e entrarem com o seguinte código pin:</span>
+				<span>{{_ "at_pass_3"}}</span>
 				<p>1234</p>
-				<p>Lembramos que para a vossa inscrição ser considerada válida, todas as informações devem estar preenchidas, ter pelo menos dois membros e o teu email estar validado.</p>
+				<p>{{_ "at_pass_4"}}</p>
 				<hr>
-				<span class="cp" id="goDash">{{_ "up_godash"}}<i class="fa fa-angle-double-right fa-fw f-white ml-2" aria-hidden="true"></i></span>
+				<span class="cp" id="goDash">{{_ "at_godash"}}<i class="fa fa-angle-double-right fa-fw f-white ml-2" aria-hidden="true"></i></span>
 			{{else}}
 				<p>Loading</p>
 			{{/if}}

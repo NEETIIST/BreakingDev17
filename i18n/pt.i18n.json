@@ -110,6 +110,13 @@
 		}
   	},
 
+  	"at_pass_1": "és o capitão da equipa",
+  	"at_pass_2": "No teu dashboard podes editar a informação da equipa. E para convidares os teus colegas a juntarem-se basta enviares-lhes este link:",
+  	"at_pass_3": "Cada um pode sempre juntar-se no seu dashboard, se selecionarem a equipa e entrarem com o seguinte código pin:",
+  	"at_pass_4": "Lembramos que para a vossa inscrição ser considerada válida, todas as informações devem estar preenchidas, ter pelo menos dois membros e o teu email estar validado.",
+  	"at_godash": "Avança para o Dashboard",
+  	"at_already": "Já estás numa equipa, não podes criar outra.",
+
 	//Testing
 	"lorem": "Lorem ipsum",
 	"lorem_ipsum" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
