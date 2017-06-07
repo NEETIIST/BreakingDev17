@@ -3,7 +3,6 @@ import { Accounts } from 'meteor/accounts-base';
 
 Template.team_add.onRendered(function() {
 
-	console.log(Meteor.userId());
 	this.subscribe('devs.single.inTeam', Meteor.userId());
 
 });
@@ -20,10 +19,12 @@ Template.team_add.events({
 	},
 });
 
+
+// Forms Redirect and Setups
 AutoForm.addHooks(['addTeam'],{
     onSuccess: function(formType, result) {
-    	Meteor.call('setUpTeam', result , function(error, result) {});
-    	Meteor.call('userInTeam', Meteor.userId(), result, function(error,result){});
-		FlowRouter.go("/t/"+result+"/pass");
+      Meteor.call('setUpTeam', result , function(error, result) {});
+      Meteor.call('userInTeam', Meteor.userId(), result, function(error,result){});
+    FlowRouter.go("/t/"+result+"/pass");
     }
 });

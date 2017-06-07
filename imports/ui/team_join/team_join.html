@@ -1,3 +1,24 @@
 <template name="team_join">
-	<p>Join</p>
+	
+	<div class="row justify-content-center align-items-center m-0 vh-100 light-orange f-white">
+		<div class="col-9 py-3">
+			{{#if Template.subscriptionsReady}}
+				{{#if alreadyInTeam}}
+					<p class="text-center">{{_ "jt_already" alreadyInTeamName}}</p>
+				{{else if teamFull}}
+					<p class="text-center">{{_ "jt_fullteam"}}</p>
+				{{else}}
+					<p class="text-center">{{_ "jt_pin" teamData.team_name}}</p>
+					<form class="input-pin vwf-20 mx-auto">
+			        	<input type="password" class="text-input text-center" name="pin" placeholder="{{_ 'jt_pincode'}}" />
+			    	</form>
+				{{/if}}
+				<hr class="orange">
+				<span class="cp" id="goDash"><i class="fa fa-angle-double-left fa-fw f-white mr-2" aria-hidden="true"></i>{{_ "up_godash"}}</span>
+			{{else}}
+				<p>Loading</p>
+			{{/if}}
+		</div>
+	</div>
+
 </template>

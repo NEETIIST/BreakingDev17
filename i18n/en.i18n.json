@@ -119,6 +119,13 @@
   	"at_godash": "Go to the Dashboard",
   	"at_already": "You are already on a team, you can't create another.",
 
+  	//Join Team
+  	"jt_already": "You are already part of team %s, you can't join another one.",
+  	"jt_pin": "To join team %s, the team captain gave you a code. Write it down below.",
+  	"jt_pincode": "Pin Code",
+  	"jt_wrongpin": "Wrong PIN code. Try again please.",
+  	"jt_fullteam": "This team already has 4 elements.",
+
 	//Testing
 	"lorem": "Lorem ipsum",
 	"lorem_ipsum" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."

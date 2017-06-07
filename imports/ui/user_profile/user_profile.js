@@ -42,3 +42,15 @@ Template.user_profile.events({
 		FlowRouter.go("/dash");	
 	},
 });
+
+AutoForm.addHooks(['addUserProfile'],{
+    onSuccess: function(formType, result) {
+      FlowRouter.go("/dash");
+    }
+});
+
+AutoForm.addHooks(['updateUserProfile'],{
+    onSuccess: function(formType, result) {
+      FlowRouter.go("/dash");
+    }
+});

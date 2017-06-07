@@ -4,7 +4,7 @@ import { Accounts } from 'meteor/accounts-base';
 Template.team.onRendered(function() {
 	var self = this;
 	self.autorun(function(){
-		let t = FlowRouter.getParam('teamname').toLowerCase();
+		let t = FlowRouter.getParam('teamname');
 		self.subscribe('singleTeamVisitor',t);
 		//self.subscribe('teamMembers', t);
 	});
@@ -12,7 +12,7 @@ Template.team.onRendered(function() {
 
 Template.team.helpers({
 	teamData: function(){
-		var t = FlowRouter.getParam('teamname').toLowerCase();
+		var t = FlowRouter.getParam('teamname');
 		return Teams.findOne({'_id':t});
 	},
 	/* Waiting for user profile final settings

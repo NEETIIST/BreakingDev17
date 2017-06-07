@@ -46,6 +46,7 @@ Schema = new SimpleSchema({
         type: "hidden",
         label: false
     },
+    optional: true,
   },
   team: {
     type: String,
@@ -53,6 +54,7 @@ Schema = new SimpleSchema({
         type: "hidden",
         label: false
     },
+    optional: true,
   },
 });
 

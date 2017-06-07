@@ -109,13 +109,19 @@
 			}
 		}
   	},
-
   	"at_pass_1": "és o capitão da equipa",
   	"at_pass_2": "No teu dashboard podes editar a informação da equipa. E para convidares os teus colegas a juntarem-se basta enviares-lhes este link:",
   	"at_pass_3": "Cada um pode sempre juntar-se no seu dashboard, se selecionarem a equipa e entrarem com o seguinte código pin:",
   	"at_pass_4": "Lembramos que para a vossa inscrição ser considerada válida, todas as informações devem estar preenchidas, ter pelo menos dois membros e o teu email estar validado.",
   	"at_godash": "Avança para o Dashboard",
   	"at_already": "Já estás numa equipa, não podes criar outra.",
+
+  	//Join Team
+  	"jt_already": "Já fazes parte da equipa %s, não te podes juntar a outra.",
+  	"jt_pin": "Para te juntares à equipa %s o capitão de equipa deu-te um código pin. Escreve-o em baixo.",
+  	"jt_pincode": "Código PIN",
+  	"jt_wrongpin": "Código PIN errado. Tenta novamente.",
+  	"jt_fullteam": "Esta equipa já tem 4 elementos.",
 
 	//Testing
 	"lorem": "Lorem ipsum",

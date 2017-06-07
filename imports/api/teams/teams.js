@@ -33,9 +33,6 @@ Schema = new SimpleSchema({
     },
     optional: true,
 	},
-	'members.$.user': {
-		type: String,    
-	},
 	project_name: {
 		type: String,
 	},
