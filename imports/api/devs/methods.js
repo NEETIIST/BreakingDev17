@@ -6,7 +6,6 @@ import { Teams } from '../teams/teams.js';
 Meteor.methods({
 
 	userInTeam: function(username, team) {
-		console.log(team);
 		Devs.update({"user":username},{$set:{"inTeam":true}})
 		let teamName = Teams.findOne({"_id":team})._id;
 		Devs.update({"user":username},{$set:{"inTeam":true}})

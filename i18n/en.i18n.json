@@ -57,24 +57,24 @@
 	"up_godash": "Return to the Dashboard",
 	"up_notowner": "You can't change other users information",
 	"up_name": "Name",
-	"up_button": "Confirmar",
+	"up_button": "Confirm",
 	"schemas": {
 		"devs": {
 			"name": {
-				"label": "Nome"
+				"label": "Name"
 			},
 			"age": {
-				"label": "Idade"
+				"label": "Age"
 			},
 			"college": {
-				"label": "Faculdade"
+				"label": "College"
 			},
 			"course": {
-				"label": "Curso"
+				"label": "Course"
 			},
 			"bio": {
-				"label": "Biografia",
-				"placeholder": "Fala-nos um pouco sobre ti"	
+				"label": "Bio",
+				"placeholder": "Tell us a bit about you."	
 			}
 		}
   	},

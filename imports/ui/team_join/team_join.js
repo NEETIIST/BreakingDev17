@@ -44,7 +44,7 @@ Template.team_join.events({
 	    const text = target.pin.value;
 	 
 	    // Insert a task into the collection
-	    Meteor.call('joinTeam', FlowRouter.getParam('teamname'), text, Meteor.userId(), function(error,result) {
+	    Meteor.call('joinTeam', FlowRouter.getParam('teamname'), text, function(error,result) {
 	    	if (error.error === "wrong-pin") {
     			alert(TAPi18n.__("jt_wrongpin"));
   			}
