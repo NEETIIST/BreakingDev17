@@ -5,12 +5,21 @@ import { Random } from 'meteor/random'
 
 Meteor.methods({
 
-	setUpTeam: function(team_id) {
+	setUpTeam: function() {
 		// Generates random hex password and sets validated to false
+		let user =  this.userId;
+		console.log(user);
+		let team_id = Teams.findOne({ $or: [{'captain':user},{'members':user}] })._id;
 		let pin = (Random.hexString(4));
-		Teams.update({"_id":team_id},{$set:{"pincode":pin}})
-		Teams.update({"_id":team_id},{$set:{"validated":false}})
-		Teams.update({"_id":team_id},{$set:{"members":[]}})
+		if ( Teams.findOne({"_id":team_id}).setup == true )
+			throw new Meteor.Error("team-set", 'Team is already setup');
+		else
+		{
+			Teams.update({"_id":team_id},{$set:{"pincode":pin}})
+			Teams.update({"_id":team_id},{$set:{"validated":false}})
+			Teams.update({"_id":team_id},{$set:{"setup":true}})
+			Teams.update({"_id":team_id},{$set:{"members":[]}})
+		}
 	},
 
 	joinTeam: function(team_id, pin){

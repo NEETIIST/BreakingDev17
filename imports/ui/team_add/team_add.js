@@ -23,8 +23,8 @@ Template.team_add.events({
 // Forms Redirect and Setups
 AutoForm.addHooks(['addTeam'],{
     onSuccess: function(formType, result) {
-      Meteor.call('setUpTeam', result , function(error, result) {});
-      Meteor.call('userInTeam', Meteor.userId(), result, function(error,result){});
+      Meteor.call('setUpTeam', function(error, result) {});
+      Meteor.call('userInTeam', function(error,result){});
     FlowRouter.go("/t/"+result+"/pass");
     }
 });

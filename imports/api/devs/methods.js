@@ -5,13 +5,21 @@ import { Teams } from '../teams/teams.js';
 
 Meteor.methods({
 
-	userInTeam: function(username, team) {
-		Devs.update({"user":username},{$set:{"inTeam":true}})
-		let teamName = Teams.findOne({"_id":team})._id;
-		Devs.update({"user":username},{$set:{"inTeam":true}})
-		Devs.update({"user":username},{$set:{"team":teamName}})
+	userInTeam: function() {
+		let username = Meteor.userId();
+		let team = Teams.findOne({ $or: [{'captain':username},{'members':username}] })._id;
+		if ( team !== undefined )
+		{
+			Devs.update({"user":username},{$set:{"inTeam":true}})
+			Devs.update({"user":username},{$set:{"team":team}})
+		}
+		else
+		{
+			throw new Meteor.Error("user-notinteam", 'User is not in a team.');
+		}
 	},
-	userQuitTeam: function(username) {
+	userQuitTeam: function() {
+		let username = Meteor.userId();
 		Devs.update({"user":username},{$set:{"inTeam":false}})
 		Devs.update({"user":username},{$set:{"team":false}})
 	},

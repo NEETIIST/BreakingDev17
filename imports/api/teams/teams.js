@@ -22,7 +22,7 @@ Schema = new SimpleSchema({
         type: "hidden",
         label: false
     },
-    //unique: true,
+    unique: true,
   },
 	members: {
 		type: [String],
@@ -32,6 +32,7 @@ Schema = new SimpleSchema({
       type: "hidden"
     },
     optional: true,
+    unique: true,
 	},
 	project_name: {
 		type: String,
@@ -60,6 +61,14 @@ Schema = new SimpleSchema({
     },
     optional: true,
   },
+  setup: {
+    type: Boolean,
+    autoform: {
+        type: "hidden",
+        label: false
+    },
+    optional: true,
+  },
   validated: {
     type: Boolean,
     autoform: {
@@ -67,7 +76,7 @@ Schema = new SimpleSchema({
         label: false
     },
     optional: true,
-  }
+  },
 });
 
 Teams.attachSchema(Schema);
