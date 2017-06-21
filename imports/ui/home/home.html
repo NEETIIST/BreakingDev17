@@ -2,7 +2,6 @@
 
 	<div class="row justify-content-center align-items-center m-0 vh-100 black">
 		<img class="splash" src="/img/splash.png">
-		<!-- TO DO: Make the page jump when icon is clicked -->
 		<i id="downyougo" class="fa fa-chevron-down f-white hvr-sink py-3 cp" aria-hidden="true"></i>
 	</div>
 
@@ -13,21 +12,102 @@
 		</div>
 	</div>
 
-	<div class="row justify-content-center mx-0 black">
-		<div class="col-10 col-md-8 text-justify">
-			<div class="spacer-8"></div>
-			<p class="fw-2 fs-3 flh-2 f-white">{{_ "home_photos"}}</p>
-			<div class="spacer-2"></div>
-			{{> homeGallery}}
-			<div class="spacer-8"></div>
+	<div class="row justify-content-center align-items-center m-0 black f-white vh-30 cp" id="goLogin">
+		<div class="col-9 col-md-7">
+			<p class="fw-2 fs-5 flh-2">{{_ "home_signup"}}</p>
+			<p class="fw-2 fs-3 flh-2 mb-0">{{_ "home_signup_long" days}}</p>
+		</div>
+		<div class="col-1 col-md-1">
+			<i class="fa fa-chevron-right f-orange hvr-forward" aria-hidden="true"></i>
+		</div>
 
+	</div>
+
+	<div class="row justify-content-center mx-0 white">
+		<div class="col-10 col-md-8 text-left">
+			<div class="spacer-8"></div>
+			<p class="fw-2 fs-6 flh-1 text-left">{{_"home_text1"}}</p>
+			<div class="spacer-4"></div>
+			<div class="row align-items-center mx-0 px-0">
+				<div class="col-12 col-md-5 px-0">
+					<img src="img/bd16/7.jpg" class="img-fluid">
+				</div>
+				<div class="col-0 col-md-1"></div>
+				<div class="col-12 col-md-6 px-0">
+					<div class="spacer-4 hidden-lg-up"></div>
+					<p class="fw-3 fs-2 flh-2 ">{{_"home_text3"}}</p>
+					<p class="fw-3 fs-2 flh-2 ">{{_"home_text4"}}</p>
+					<p class="fw-3 fs-3 flh-2 mb-0">{{_"home_text5"}}</p>
+				</div>
+			</div>
+			<div class="spacer-8"></div>
 		</div>
 	</div>
 
-	<div class="row justify-content-center align-items-center m-0 vh-50 orange">
+	<div class="row justify-content-center mx-0 black">
+		<div class="col-10 col-md-8 text-left text-md-center">
+			<div class="spacer-8"></div>
+			<p class="fw-3 fs-3 flh-2 f-white">{{_ "home_text6"}}</p>
+			<div class="row justify-content-center mx-0 f-white">
+				<div class="col-12 col-md px-0 text-center">
+					<img src="/icons/Web.png" class="cat-icon">
+					<p>{{_ "home_cat1"}}</p>
+					<p class="fw-3 fs-2 flh-3 text-justify">{{_ "home_cat1_long"}}</p>
+				</div>
+				<div class="col-0 col-md-1"></div>
+				<div class="col-12 col-md px-0 text-center">
+					<img src="/icons/Jogos.png" class="cat-icon">
+					<p>{{_ "home_cat2"}}</p>
+					<p class="fw-3 fs-2 flh-3 text-justify">{{_ "home_cat2_long"}}</p>
+				</div>
+			</div>
+			<div class="spacer-6"></div>
+		</div>
+	</div>
+
+	<div class="row justify-content-center mx-0 white">
+		<div class="col-10 col-md-8 text-left text-md-center">
+			<div class="spacer-8"></div>
+			<p class="fw-3 fs-3 flh-2 f-black">{{_ "home_text7"}}</p>
+			<div class="row justify-content-center mx-0 f-black">
+				<div class="col-12 col-md px-0 text-center">
+					<img src="/icons/A+Alt.png" class="cat-icon">
+					<p>{{_ "home_chal1"}}</p>
+					<p class="fw-3 fs-2 flh-3 text-justify">{{_ "home_chal1_long"}}</p>
+				</div>
+				<div class="col-0 col-md-1"></div>
+				<div class="col-12 col-md px-0 text-center">
+					<img src="/icons/CrowdAlt.png" class="cat-icon">
+					<p>{{_ "home_chal2"}}</p>
+					<p class="fw-3 fs-2 flh-3 text-justify">{{_ "home_chal2_long"}}</p>
+				</div>
+			</div>
+			<div class="spacer-6"></div>
+		</div>
+	</div>
+
+	<div class="row justify-content-center mx-0 orange f-white">
+		<div class="col-10 col-md-8">
+			<div class="spacer-8"></div>
+			<div class="row align-items-center mx-0 px-0">
+				<div class="col-12 col-md-6 px-0">
+					<p class="fw-3 fs-4 flh-2 text-left">{{_"home_venue"}}</p>
+					<p class="fw-3 fs-2 flh-3 mb-0 text-justify text-md-left">{{_"home_venue_long"}} <a href="https://goo.gl/maps/Hd5E4nNnDN52">Google Maps.</a></p>
+				</div>
+				<div class="col-0 col-md-1"></div>
+				<div class="col-12 col-md-5 px-0">
+					<div class="spacer-4 hidden-lg-up"></div>					
+					<img src="img/bdev16.jpg" class="img-fluid venue">
+				</div>
+			</div>
+			<div class="spacer-8"></div>
+		</div>
+	</div>
+
+	<div class="row justify-content-center align-items-center m-0 vh-50 black">
 		<div class="col-8 col-md-7">
 			<p class="fw-2 fs-6 flh-2 f-white m-0">{{_ "home_about_social"}}</p>
-			<p class="fw-2 fs-2 flh-2 f-white mx-0 my-1 ">{{_ "home_about_email"}} <a class="f-blue fw-4 hvr-custom" href="mailto:breakingdev@neeti.tecnico.ulisboa.pt?Subject=BreakingDev%202017" target="_top">breakingdev@neeti.tecnico.ulisboa.pt</a></p>
+			<p class="fw-2 fs-2 flh-2 f-white mx-0 my-1 ">{{_ "home_about_email"}} <a class="fw-4 hvr-custom" href="mailto:breakingdev@neeti.tecnico.ulisboa.pt?Subject=BreakingDev%202017" target="_top">breakingdev@neeti.tecnico.ulisboa.pt</a></p>
 		</div>
 		<div class="col-2 col-md-1 text-center text-md-right">
 			<a target="_blank" href="https://www.instagram.com/neeti_ist/"><i class="fa fa-2x fa-instagram f-white" aria-hidden="true" title="Instagram"></i></a>
