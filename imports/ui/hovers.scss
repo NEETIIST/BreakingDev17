@@ -57,15 +57,22 @@
 {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0);
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0);
+    border-bottom: 1px solid white
 }
 .hvr-tasks:hover
 {
-    -webkit-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.25);
-    -moz-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.25);
-    box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.25);
+    border-bottom: 1px solid #f47d3d ;
+}
+
+.hvr-task-delete
+{
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    color: inherit;
+}
+.hvr-task-delete:hover
+{
+    color: #c33333;
 }
 
 /* Forward */

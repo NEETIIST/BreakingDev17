@@ -144,6 +144,12 @@
   	"jt_wrongpin": "Wrong PIN code. Try again please.",
   	"jt_fullteam": "This team already has 4 elements.",
 
+  	//Reset Password
+  	"rp_form": "Recover Password",
+  	"rp_password": "New Password",
+  	"rp_password_again": "New Password (again)",
+  	"rp_reset": "Confirm",
+
 	//Testing
 	"lorem": "Lorem ipsum",
 	"lorem_ipsum" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."

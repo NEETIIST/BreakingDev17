@@ -60,7 +60,7 @@ FlowRouter.route( '/reset-password/:token', {
     name: 'reset-password',
     action( params ) {
       AccountsTemplates.paramToken = params.token ;
-      BlazeLayout.render('base', {main: 'reset-password'});
+      BlazeLayout.render('base', {main: 'resetpassword'});
     }
 });
 

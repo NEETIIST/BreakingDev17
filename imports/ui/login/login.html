@@ -4,9 +4,26 @@
 	</div>
 </template>
 
-<template name="reset-password">		
-	<div class="row justify-content-center align-items-center m-0 vh-100 orange">
-		{{> atForm state="resetPwd"}}
+<template name="resetpassword">		
+	<div class="row justify-content-center align-items-center m-0 orange vh-100">
+		{{#if resetPassword}}
+		<div class="at-form">
+			<form action="/reset-password" class="at-form" id="resetPasswordForm" method="post">
+				<div class="at-title">
+					<h3>{{_ "rp_form"}}</h3>
+				</div>
+				<div class="at-input">
+					<label for="at-field-password">{{_ "rp_password"}}</label>
+					<input id="at-field-password" name="password" type="password" >
+				</div>
+				<div class="at-input">
+					<label for="at-field-password_again">{{_ "rp_password_again"}}</label>
+					<input id="at-field-password_again" name="password-confirm" type="password" >
+				</div>
+				<button type="submit" class="at-btn submit" id="at-btn">{{_ "rp_reset"}}</button>
+			</form>
+		</div>
+	    {{/if}}
 	</div>
 </template>
 

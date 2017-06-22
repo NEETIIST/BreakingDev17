@@ -16,7 +16,7 @@ AccountsTemplates.configure({
     showForgotPasswordLink: true,
     showLabels: true,
     showPlaceholders: false,
-    showResendVerificationEmailLink: true,
+    showResendVerificationEmailLink: false,
 
     // Client-side Validation
     continuousValidation: false,

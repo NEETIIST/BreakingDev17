@@ -1,8 +1,9 @@
 .task
 {
-	border-radius: 0.2em;
-	border: 1px solid white;
-	background-color: #f2874d;
+	//border-radius: 0.2em;
+	//border: 1px solid white;
+	//background-color: #f2874d;
+	border-bottom: 1px solid white
 }
 
 .menu-border
@@ -12,10 +13,9 @@
 	border-right: 1px solid white;
 }
 
-
-
-.vh-12 { min-height: 12vh ; }
-.vh-88 { min-height: 88vh ; }
+.vh-13 { min-height: 13vh ; }
+.vh-32 { min-height: 32vh ; }
+.vh-55 { min-height: 55vh ; }
 
 .mid-col
 {
@@ -23,3 +23,6 @@
   	flex-direction: column;
   	justify-content: center;
 }
+
+#nav-top{ border-bottom: 2px solid #f47d3d ;}
+#nav-mid{ border-bottom: 2px solid white ;}
