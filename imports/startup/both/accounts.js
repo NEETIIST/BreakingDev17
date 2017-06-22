@@ -7,16 +7,16 @@ AccountsTemplates.configure({
     enablePasswordChange: true,
     forbidClientAccountCreation: false,
     overrideLoginErrors: true,
-    sendVerificationEmail: false,
+    sendVerificationEmail: true,
     lowercaseUsername: true,
     focusFirstInput: true,
 
     // Appearance
     showAddRemoveServices: false,
-    showForgotPasswordLink: false,
+    showForgotPasswordLink: true,
     showLabels: true,
     showPlaceholders: false,
-    showResendVerificationEmailLink: false,
+    showResendVerificationEmailLink: true,
 
     // Client-side Validation
     continuousValidation: false,
@@ -25,10 +25,6 @@ AccountsTemplates.configure({
     positiveValidation: false,
     positiveFeedback: false,
     showValidating: false,
-
-    // Privacy Policy and Terms of Use
-    privacyUrl: 'privacy',
-    termsUrl: 'terms-of-use',
 
     // Redirects
     homeRoutePath: '/',
@@ -68,3 +64,35 @@ AccountsTemplates.configure({
       FlowRouter.redirect('/login');
     },
 });
+
+Accounts.emailTemplates.siteName = "BreakingDev";
+Accounts.emailTemplates.from     = "BreakingDev<no-reply@breakingdev.pt>";
+
+Accounts.emailTemplates.verifyEmail = {
+    subject() {
+        return "BreakingDev - Verificação de email";
+    },
+    text( user, url ) {
+        let emailAddress   = user.emails[0].address,
+            urlWithoutHash = url.replace( '#/', '' ),
+            supportEmail   = "geral@breakingdev.pt",
+            emailBody      = `Bem-vindo ao BreakingDev!\n\nPara verificares o teu email (${emailAddress}) segue este link:\n\n${urlWithoutHash}\n\nSe recebeste este email por engano, agradecemos que o apagues.\nCaso tenhas alguma dúvida, envia-nos um email para: ${supportEmail}.`;
+
+        return emailBody;
+    }
+};
+
+Accounts.emailTemplates.resetPassword = {
+    subject() {
+        return "BreakingDev - Recuperação de Password";
+    },
+    text( user, url ) {
+        let username   = user.username,
+            urlWithoutHash = url.replace( '#/', '' ),
+            supportEmail   = "geral@breakingdev.pt",
+            emailBody      = `Parece que te esqueceste da tua password, ${username}.\n\nPara recuperares o acesso à tua conta segue este link:\n\n${urlWithoutHash}\n\nSe recebeste este email por engano, agradecemos que o apagues.\nCaso tenhas alguma dúvida, envia-nos um email para: ${supportEmail}.`;
+
+        return emailBody;
+    }
+};
+

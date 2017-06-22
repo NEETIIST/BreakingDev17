@@ -10,17 +10,4 @@ Meteor.startup(() => {
   
   SimpleSchema.debug = true;
 
-  var dataLinks =
-  [
-    {
-      name: 'team1',
-      members: ['user1', 'user2', 'user3'],
-    },
-    {
-      name: 'team2',
-      members: ['user4', 'user5', 'user6'],
-    },
-  ];
-
-
 }); 

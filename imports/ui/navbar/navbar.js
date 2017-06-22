@@ -1,4 +1,5 @@
 import './navbar.html'
+import { Links } from '../../api/links/links.js';
 
 Template.navbar.onCreated(function(){
 	Session.set("nav", false);

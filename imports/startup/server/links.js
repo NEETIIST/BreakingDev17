@@ -16,12 +16,6 @@ Meteor.startup(() => {
       isNavbar: true,
     },
     {
-      name: 'menu_beasponsor',
-      url: '/sponsor',
-      icon: 'fa-bullhorn',
-      isNavbar: true,
-    },
-    {
       name: 'menu_login',
       url: '/login',
       icon: 'fa-user-circle-o',

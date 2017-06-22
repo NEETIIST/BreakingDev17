@@ -104,6 +104,16 @@
     outline:none;
 }
 
+.at-pwd-link
+{
+    text-align: right;
+    font-size: 0.6em;
+}
+.at-pwd-link > p
+{
+  margin-bottom: 0;
+}
+
 .at-btn
 {
   -webkit-transition-duration: 0.4s; /* Safari */

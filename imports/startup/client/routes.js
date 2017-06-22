@@ -42,12 +42,33 @@ FlowRouter.route('/sponsor', {
   },
 });
 
+FlowRouter.route( '/verify-email/:token', {
+    name: 'verify-email',
+    action( params ) {
+        Accounts.verifyEmail( params.token, ( error ) =>{
+            if ( error ) {
+                alert( error.reason, 'danger' );
+            } else {
+                FlowRouter.go( '/login' );
+                alert( 'Email verified! Thanks!', 'success' );
+            }
+        });
+    }
+});
+
+FlowRouter.route( '/reset-password/:token', {
+    name: 'reset-password',
+    action( params ) {
+      AccountsTemplates.paramToken = params.token ;
+      BlazeLayout.render('base', {main: 'reset-password'});
+    }
+});
+
 FlowRouter.route('/login',{
   name: 'login',
   action(){
     if (Meteor.userId()!==null)
     {
-      console.log("dafuq");
       FlowRouter.redirect('/dash');
     }
     else
