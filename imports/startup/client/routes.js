@@ -10,6 +10,8 @@ import '../../ui/navbar/navbar.js'
 import '../../ui/base/base.js'
 import '../../ui/user/user.js'
 import '../../ui/user_profile/user_profile.js'
+import '../../ui/user_profile_add/user_profile_add.js'
+import '../../ui/user_profile_edit/user_profile_edit.js'
 import '../../ui/login/login.js'
 import '../../ui/adminPanel/adminPanel.js'
 import '../../ui/dashboard/dashboard.js'
@@ -114,12 +116,21 @@ FlowRouter.route('/dash',{
   }
 });
 
-FlowRouter.route('/u/:username/edit',{
+FlowRouter.route('/u_/edit',{
   name: 'userProfile_edit',
   action() {
     //FlowRouter.reload();    //Reload Bug
     //location.reload();
-    BlazeLayout.render('base', {main: 'user_profile'});
+    BlazeLayout.render('base', {main: 'user_profile_edit'});
+  }
+});
+
+FlowRouter.route('/u_/add',{
+  name: 'userProfile_add',
+  action() {
+    //FlowRouter.reload();    //Reload Bug
+    //location.reload();
+    BlazeLayout.render('base', {main: 'user_profile_add'});
   }
 });
 

@@ -9,8 +9,10 @@ window.Contact = Contact ;
 import { Links } from '/imports/api/links/links.js';
 window.Links = Links ;
 
+import { Devs } from '/imports/api/devs/devs.js';
+window.Devs = Devs ;
+
 import { Teams } from '/imports/api/teams/teams.js';
 window.Teams = Teams ;
 
-import { Devs } from '/imports/api/devs/devs.js';
-window.Devs = Devs ;
+

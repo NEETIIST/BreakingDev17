@@ -1,0 +1,16 @@
+<template name="user_profile_edit">
+	
+	<div class="row justify-content-center align-items-center m-0 vh-100 light-orange f-white">
+		<div class="col-9 py-3">
+			<span class="cp" id="goDash"><i class="fa fa-angle-double-left fa-fw f-white mr-2" aria-hidden="true"></i>{{_ "up_godash"}}</span>
+			<hr class="orange">
+			<p class="text-center">{{_ "up_edit"}}</p>
+			{{#if Template.subscriptionsReady}}
+				{{> quickForm collection=Devs doc=userProfile id="updateUserProfile" type="update" buttonClasses="at-btn submit" }}
+			{{else}}
+				<p>Loading</p>
+			{{/if}}
+		</div>
+	</div>
+	
+</template>

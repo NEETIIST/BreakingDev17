@@ -1,15 +1,24 @@
 import './user_profile.html';
 import { Accounts } from 'meteor/accounts-base';
 import { Tracker } from 'meteor/tracker'
+import { Devs } from '/imports/api/devs/devs.js';
 
-Template.user_profile.onRendered(function() {
+Template.user_profile.onCreated(function() {
 
-	let u = FlowRouter.getParam('username').toLowerCase();
-	let p = Meteor.users.findOne({'username':u});
-	if ( Meteor.userId() == p._id )
-	{
-		this.subscribe('devs.single', p._id);
-	}
+	var self = this;
+	self.autorun(function(){
+		let u = FlowRouter.getParam('username').toLowerCase();
+		let p = Meteor.users.findOne({'username':u});
+		console.log(p);	
+		if ( p !== undefined )
+		{
+			if ( Meteor.userId() == p._id )
+			{
+				this.subscribe('devs.single', p._id);
+			}
+		}
+	});
+
 
 	/* Reload Bug -> O subsReady está a ser chamado antes de haver render
 	portanto acaba por nao ter subscricao nenhuma. Basicamente o ready nao ta a fazer nada
@@ -24,6 +33,11 @@ Template.user_profile.helpers({
 	},
 	isOwner: function(){
 		let u = FlowRouter.getParam('username').toLowerCase();
+		console.log(u);
+		console.log(Meteor.userId());
+		console.log(Meteor.users.findOne({'username':u}));
+		console.log(Meteor.users.findOne({'username':u})._id);
+		console.log(Meteor.users.findOne({'username':u})._id == Meteor.userId());
 		return ( Meteor.userId() == Meteor.users.findOne({'username':u})._id );
 	},
 	userProfile: function(){

@@ -6,12 +6,13 @@
 				<span class="cp" id="goDash"><i class="fa fa-angle-double-left fa-fw f-white mr-2" aria-hidden="true"></i>{{_ "up_godash"}}</span>
 				<hr class="orange">
 				{{#if isOwner}}
+					<p>Dono</p>
 					{{#if isNewUser}}
 						<p class="text-center">{{_ "up_add"}}</p>
-						{{> quickForm collection="Devs" id="addUserProfile" type="insert" buttonClasses="at-btn submit"}}
+						{{> quickForm collection=Devs id="addUserProfile" type="insert" buttonClasses="at-btn submit"}}
 					{{else}}
 						<p class="text-center">{{_ "up_edit"}}</p>
-						{{> quickForm collection="Devs" doc=userProfile id="updateUserProfile" type="update" buttonClasses="at-btn submit" }}
+						{{> quickForm collection=Devs doc=userProfile id="updateUserProfile" type="update" buttonClasses="at-btn submit" }}
 					{{/if}}
 				{{else}}
 					<p class="text-center">{{_ "up_notowner"}}</p>

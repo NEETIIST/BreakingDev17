@@ -23,4 +23,11 @@ Meteor.methods({
 		Devs.update({"user":username},{$set:{"inTeam":false}})
 		Devs.update({"user":username},{$set:{"team":false}})
 	},
+
+	userHasProfile: function(){
+		let u = Meteor.users.findOne({'_id': this.userId});
+		//console.log(u);
+		return Devs.findOne({'user':this.userId}) ? true : false ;
+		
+	}
 });

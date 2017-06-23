@@ -63,9 +63,9 @@
 
 	//User Dashboard
 	"ud_schedule": "Horários",
-	"ud_slack": "Junta-te ao Slack",
-	"ud_tagus": "Mapa do Tagus",
-	"ud_profile": "Edita o teu perfil",
+	"ud_slack": "Slack",
+	"ud_tagus": "Recinto",
+	"ud_profile": "Perfil",
 	"ud_contacts": "Contactos",
 	"ud_logout": "Log Out",
 

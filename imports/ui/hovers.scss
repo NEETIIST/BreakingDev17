@@ -37,20 +37,13 @@
 
 .hvr-items
 {
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  font: inherit;
-  border-radius: 0;
-  //padding: 0 1px 0 1px;
-  background-color: inherit;
-  color: white;
-  //border-bottom: 1px solid #41516b ;
-  //font-weight: 400 ;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-bottom: 1px solid white
 }
 .hvr-items:hover
 {
-  color: #41516b;
-  //border-bottom: 1px solid white ;
+    border-bottom: 1px solid #f47d3d ;
 }
 
 .hvr-tasks

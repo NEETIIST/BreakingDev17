@@ -6,7 +6,7 @@ Template.dashboard.events({
 		AccountsTemplates.logout();
 	},
 	"click #editProfile": function(){
-		FlowRouter.go("/u/"+Meteor.user().username+"/edit");
+		FlowRouter.go("/u_/edit");
 	}
 });
 
