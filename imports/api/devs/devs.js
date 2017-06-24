@@ -39,6 +39,30 @@ Schema = new SimpleSchema({
       rows: 4
     },
   },
+  skills: {
+    type: String,
+    autoform: {
+      rows: 2
+    },
+  },
+  interest: {
+    type: String,
+    autoform: {
+      rows: 2
+    },
+  },
+  github: {
+    type: String,
+    optional:true,
+  },
+  twitter: {
+    type: String,
+    optional:true,
+  },
+  linkedin: {
+    type: String,
+    optional:true,
+  },
   inTeam: {
     type: Boolean,
     autoform: {
@@ -57,5 +81,5 @@ Schema = new SimpleSchema({
   },
 });
 
-Devs.attachSchema(Schema);
 Schema.i18n("schemas.devs");
+Devs.attachSchema(Schema);

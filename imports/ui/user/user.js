@@ -1,18 +1,30 @@
 import './user.html';
+import { Devs } from '/imports/api/devs/devs.js';
+import { Teams } from '/imports/api/teams/teams.js';
 
 Template.user.onRendered(function() {
 	var self = this;
 	self.autorun(function(){
 		var u = FlowRouter.getParam('username').toLowerCase();
 		self.subscribe('singleUserVisitor',u);
+		self.subscribe('devs.single.alt', u);
+		self.subscribe('singleTeamName.user',u);
 	});
 });
 
 Template.user.helpers({
-	userData: function(){
-		var u = FlowRouter.getParam('username').toLowerCase();
-		return Meteor.users.findOne({'username':u});
+	username: function(){
+		return FlowRouter.getParam('username').toLowerCase();
 	},
+	userData: function(){
+		return Devs.findOne();
+	},
+	inTeam: function(){
+		return Devs.findOne().inTeam;
+	},
+	team: function(){
+		return Teams.findOne().team_name;
+	}
 })
 
 Template.user.events({
@@ -25,5 +37,8 @@ Template.user.events({
 		{	//Otherwise, goes to the home
 			FlowRouter.go("/");	
 		}
+	},
+	"click #goTeam":function(){
+		FlowRouter.go("/t/"+Teams.findOne()._id);	
 	},
 });

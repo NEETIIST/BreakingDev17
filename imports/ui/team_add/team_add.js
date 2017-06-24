@@ -1,15 +1,29 @@
 import './team_add.html';
 import { Accounts } from 'meteor/accounts-base';
+import { Devs } from '/imports/api/devs/devs.js';
+import { Teams } from '/imports/api/teams/teams.js';
 
 Template.team_add.onRendered(function() {
 
-	this.subscribe('devs.single.inTeam', Meteor.userId());
+	
 
 });
 
 Template.team_add.helpers({
+	Teams(){
+    	return Teams;
+  	},
 	alreadyInTeam: function(){
-		return Devs.findOne({}).inTeam ;
+		Meteor.call('userHasTeam', function (err, result) {
+	        if (err) {
+	            console.log(err);
+	        } else {
+	        	console.log(result);
+	            if (result === true) {
+	                return true;
+	            }
+	    	}
+		});
 	},
 });
 

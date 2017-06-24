@@ -134,7 +134,7 @@ FlowRouter.route('/u_/add',{
   }
 });
 
-FlowRouter.route('/t/:us',{
+FlowRouter.route('/t/:teamname',{
   name: 'teamProfile',
   action() {
     BlazeLayout.render('base', {main: 'team'});

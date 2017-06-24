@@ -39,7 +39,7 @@ Schema = new SimpleSchema({
 	},
 	category: {
 		type: String,
-		allowedValues: ['Mobile', 'Gaming', 'Web'],
+		allowedValues: ['Gaming', 'Web'],
 	},
 	project: {
   	type: String,
@@ -79,5 +79,5 @@ Schema = new SimpleSchema({
   },
 });
 
-Teams.attachSchema(Schema);
 Schema.i18n("schemas.teams");
+Teams.attachSchema(Schema);

@@ -9,60 +9,67 @@
 				<img src="/profile.png" alt="Profile Picture" class="user-pic">
 			</div>
 			<div class="col-10 offset-1 col-md-6 pull-md-4">
-				<p class="fw-2 fs-6 flh-2 f-white mb-0">Lorem Ipsum</p>
-				<p class="fw-2 fs-2 flh-2 f-white">@{{userData.username}}</p>
-				<!-- #if Team is true -->
-				<p class="fw-2 fs-2 flh-2 f-white mb-2">
-					<i class="fa fa-users f-white fa-fw mr-2" aria-hidden="true"></i>Team Lorem Ipsum
-				</p>
-				<!-- /if -->
+				<p class="fw-2 fs-6 flh-2 f-white mb-0">{{userData.name}}</p>
+				<p class="fw-2 fs-2 flh-2 f-white">@{{username}}</p>
+				{{#if inTeam}}
+					<p class="fw-2 fs-2 flh-2 f-white mb-2 cp" id="goTeam">
+						<i class="fa fa-users f-white fa-fw mr-2" aria-hidden="true"></i>{{team}}
+					</p>
+				{{/if}}
 				<p class="fw-2 fs-2 flh-2 f-white mb-1">
-					<i class="fa fa-graduation-cap fa-fw f-white mr-2" aria-hidden="true"></i>Lorem Ipsum Bacon
+					<i class="fa fa-graduation-cap fa-fw f-white mr-2" aria-hidden="true"></i>{{userData.college}}
 				</p>
 				<p class="fw-2 fs-2 flh-2 f-white mb-2">
-					<i class="fa fa-graduation-cap fa-fw f-black mr-2" aria-hidden="true"></i>Mestrado em Engenharia de Ipsum e Lorem Bacon
+					<i class="fa fa-graduation-cap fa-fw f-black mr-2" aria-hidden="true"></i>{{userData.course}}
 				</p>
 				<!-- #if Empresa is true -->
-				<p class="fw-2 fs-2 flh-2 f-white mb-2">
+				<!--<p class="fw-2 fs-2 flh-2 f-white mb-2">
 					<i class="fa fa-briefcase f-white fa-fw mr-2" aria-hidden="true"></i>Empresa Lorem Ipsum Bacon Pork
-				</p>
+				</p>-->
 				<!-- /if -->			
 			</div>
 		</div>
 		<div class="row justify-content-center align-items-start m-0 vh-60 orange">
 			<div class="col-10 col-md-8 my-3">
 				<p class="fw-4 fs-2 flh-2 f-white mb-1">{{_ "user_bio"}}</p>
-				<p class="fw-2 fs-2 flh-2 f-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p class="fw-2 fs-2 flh-2 f-white">{{userData.bio}}</p>
 				<p class="fw-4 fs-2 flh-2 f-white mb-1">{{_ "user_skills"}}</p>
-				<p class="fw-2 fs-2 flh-2 f-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et porttitor velit. Curabitur vestibulum quam quis metus consequat, et commodo sem consectetur. Aenean elit nunc, posuere vitae mi eu, porta.</p>
+				<p class="fw-2 fs-2 flh-2 f-white">{{userData.skills}}</p>
 				<p class="fw-4 fs-2 flh-2 f-white mb-1">{{_ "user_interests"}}</p>
-				<p class="fw-2 fs-2 flh-2 f-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et porttitor velit. Curabitur vestibulum quam quis metus consequat, et commodo sem consectetur. Aenean elit nunc, posuere vitae mi eu, porta.</p>
+				<p class="fw-2 fs-2 flh-2 f-white">{{userData.interest}}</p>
 				<hr class="white mx-0">
 				<p class="fw-4 fs-2 flh-2 f-white mb-2">{{_ "user_social"}}</p>
 				<div class="row">
-					<div class="col">
-						<p class="fw-2 fs-2 flh-2 f-white mb-1">
-							<i class="fa fa-github fa-fw f-white mr-2" aria-hidden="true"></i>
-							@IpsumBacon
-						</p>
-					</div>
-					<div class="col">
-						<p class="fw-2 fs-2 flh-2 f-white mb-1">
-							<i class="fa fa-twitter fa-fw f-white mr-2" aria-hidden="true"></i>
-							@IpsumBacon
-						</p>
-					</div>
-					<div class="col">
-						<p class="fw-2 fs-2 flh-2 f-white mb-1">
-							<i class="fa fa-linkedin fa-fw f-white mr-2" aria-hidden="true"></i>
-							/LoremIpsum
-						</p>
-					</div>
+					{{#if userData.github}}
+						<div class="col-4">
+							<a target="_blank" href="https://www.github.com/{{userData.github}}">
+								<p class="fw-2 fs-2 flh-2 f-white mb-1">
+									<i class="fa fa-github fa-fw f-white mr-2" aria-hidden="true"></i>
+									{{userData.github}}
+								</p>
+							</a>
+						</div>
+					{{/if}}
+					{{#if userData.twitter}}
+						<div class="col-4">
+							<a target="_blank" href="https://www.twitter.com/{{userData.twitter}}">
+								<p class="fw-2 fs-2 flh-2 f-white mb-1">
+									<i class="fa fa-twitter fa-fw f-white mr-2" aria-hidden="true"></i>
+									{{userData.twitter}}
+								</p>
+							</a>
+						</div>
+					{{/if}}
+					{{#if userData.linkedin}}
+						<div class="col-4">
+							<a target="_blank" href="https://www.linkedin.com/in/{{userData.linkedin}}">
+								<p class="fw-2 fs-2 flh-2 f-white mb-1">
+									<i class="fa fa-linkedin fa-fw f-white mr-2" aria-hidden="true"></i>
+									{{userData.linkedin}}
+								</p>
+							</a>
+						</div>
+					{{/if}}
 				</div>
 			</div>
 		</div>

@@ -2,13 +2,13 @@ import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 import { Teams } from './teams.js';
 import { Random } from 'meteor/random'
+import { Devs } from '/imports/api/devs/devs.js';
 
 Meteor.methods({
 
 	setUpTeam: function() {
 		// Generates random hex password and sets validated to false
 		let user =  this.userId;
-		console.log(user);
 		let team_id = Teams.findOne({ $or: [{'captain':user},{'members':user}] })._id;
 		let pin = (Random.hexString(4));
 		if ( Teams.findOne({"_id":team_id}).setup == true )
@@ -34,8 +34,13 @@ Meteor.methods({
 			Meteor.call('userInTeam', Meteor.userId(), team_id);
 		}
 		// STILL TO DO HERE:
-		// - Check user as teamed up
-		// - Redirects on the client-side
 		// - Add way to contact team captain to join
 	},
+
+	userHasTeam: function()	{
+		let u =  this.userId;
+		console.log(u);
+		console.log(Devs.findOne({'user':u}).inTeam);
+		return Devs.findOne({'user':u}).inTeam ;
+	}
 });

@@ -74,7 +74,6 @@
 	"up_add": "Tell us more about you",
 	"up_godash": "Return to the Dashboard",
 	"up_notowner": "You can't change other users information",
-	"up_name": "Name",
 	"up_button": "Confirm",
 	"schemas": {
 		"devs": {
@@ -92,13 +91,26 @@
 			},
 			"bio": {
 				"label": "Bio",
-				"placeholder": "Tell us a bit about you."	
+				"placeholder": "Tell the world a bit about you."	
+			},
+			"skills": {
+				"label": "Skills",
+				"placeholder": "What are you good at?"	
+			},
+			"interest": {
+				"label": "Interests",
+				"placeholder": "What do you care about?"	
+			},
+			"github": {
+				"label": "Github Username"
+			},
+			"twitter": {
+				"label": "Twitter Handle"
+			},
+			"linkedin": {
+				"label": "LinkedIn Username"
 			}
-		}
-  	},
-
-  	//Add Team
-  	"schemas": {
+		},
 		"teams": {
 			"team_name": {
 				"label": "Team Name"
@@ -113,7 +125,6 @@
 				"label": "Category",
 				"placeholder": "Pick your category",
 				"options": {
-					"Mobile": "Mobile",
 					"Gaming": "Gaming",
 					"Web": "Web App"
 				}
@@ -129,6 +140,7 @@
 		}
   	},
 
+  	//Add Team
   	"at_pass_1": ", you are the captain of team ",
   	"at_pass_2": "In your dashboard you can edit your teams information. And to invite your friends to join, all you have to do is send them the following link:",  	
   	"at_pass_3": "Each one of you can always join in the dashboard, by selecting the right team and entering the following pin code:",

@@ -11,8 +11,7 @@ Template.user_profile_edit.onRendered(function() {
 	Meteor.call('userHasProfile', function (err, result) {
         if (err) {
             console.log(err);
-        } else {
-        	console.log(result);
+        } else {;
             if (result === false) {
                 FlowRouter.go("/u_/add");
             }

@@ -77,9 +77,6 @@
 	"up_button": "Confirmar",
 	"schemas": {
 		"devs": {
-			"user": {
-				"label": "Utilizador"
-			},
 			"name": {
 				"label": "Nome"
 			},
@@ -96,17 +93,24 @@
 				"label": "Biografia",
 				"placeholder": "Fala-nos um pouco sobre ti"	
 			},
-			"inTeam": {
-				"label": "Tem Equipa"
+			"skills": {
+				"label": "Skills",
+				"placeholder": "Descreve alguns dos teus skills"	
 			},
-			"team": {
-				"label": "Equipa"
+			"interest": {
+				"label": "Interesses",
+				"placeholder": "Algumas coisas que te interessem"	
+			},
+			"github": {
+				"label": "Username de Github"
+			},
+			"twitter": {
+				"label": "Twitter Handle"
+			},
+			"linkedin": {
+				"label": "Username do LinkedIn"
 			}
-		}
-  	},
-
-  	//Add Team
-  	"schemas": {
+		},
 		"teams": {
 			"team_name": {
 				"label": "Nome da Equipa"
@@ -121,7 +125,6 @@
 				"label": "Categoria",
 				"placeholder": "Escolhe a tua categoria",
 				"options": {
-					"Mobile": "Mobile",
 					"Gaming": "Jogos",
 					"Web": "Web App"
 				}
@@ -136,6 +139,8 @@
 			}
 		}
   	},
+
+  	//Add Team
   	"at_pass_1": "és o capitão da equipa",
   	"at_pass_2": "No teu dashboard podes editar a informação da equipa. E para convidares os teus colegas a juntarem-se basta enviares-lhes este link:",
   	"at_pass_3": "Cada um pode sempre juntar-se no seu dashboard, se selecionarem a equipa e entrarem com o seguinte código pin:",
