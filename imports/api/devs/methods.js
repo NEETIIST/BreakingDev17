@@ -11,12 +11,12 @@ Meteor.methods({
 	},
 
 	userInTeam: function() {
-		let username = Meteor.userId();
-		let team = Teams.findOne({ $or: [{'captain':username},{'members':username}] })._id;
+		let username = this.userId;
+		let team = Teams.findOne({ $or: [{'captain':username},{'members':username}] });
 		if ( team !== undefined )
 		{
 			Devs.update({"user":username},{$set:{"inTeam":true}})
-			Devs.update({"user":username},{$set:{"team":team}})
+			Devs.update({"user":username},{$set:{"team":team._id}})
 		}
 		else
 		{

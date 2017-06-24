@@ -17,12 +17,12 @@ Schema = new SimpleSchema({
 	},
   captain: {
     type: String,
-    autoValue: function(){ return Meteor.userId(); },
     autoform: {
         type: "hidden",
         label: false
     },
     unique: true,
+    optional: true,
   },
 	members: {
 		type: [String],

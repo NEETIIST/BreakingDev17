@@ -3,14 +3,20 @@
 	<div class="row justify-content-center align-items-center m-0 vh-100 orange f-white">
 		<div class="col-10 py-3 text-center">
 			{{#if Template.subscriptionsReady}}
-				<p>{{loggedUser}}  {{_ "at_pass_1"}} {{teamData.team_name}}</p>
-				<span>{{_ "at_pass_2"}}</span>
-				<p>[JOIN PAGE LINK]</p>
-				<span>{{_ "at_pass_3"}}</span>
-				<p>1234</p>
-				<p>{{_ "at_pass_4"}}</p>
-				<hr>
-				<span class="cp" id="goDash">{{_ "at_godash"}}<i class="fa fa-angle-double-right fa-fw f-white ml-2" aria-hidden="true"></i></span>
+				{{#if isCaptain}}
+					<p>{{loggedUser}}  {{_ "at_pass_1"}} {{teamData.team_name}}</p>
+					<span>{{_ "at_pass_2"}}</span>
+					<p class="f-blue">{{pageLink}}</p>
+					<span>{{_ "at_pass_3"}}</span>
+					<p class="f-blue">{{pinCode}}</p>
+					<p>{{_ "at_pass_4"}}</p>
+					<hr>
+					<span class="cp" id="goDash">{{_ "at_godash"}}<i class="fa fa-angle-double-right fa-fw f-white ml-2" aria-hidden="true"></i></span>
+				{{else}}
+					<p>{{_ "jt_captainonly"}}</p>
+					<hr class="orange">
+					<span class="cp" id="goDash"><i class="fa fa-angle-double-left fa-fw f-white mr-2" aria-hidden="true"></i>{{_ "up_godash"}}</span>
+				{{/if}}
 			{{else}}
 				<p>Loading</p>
 			{{/if}}

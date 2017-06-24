@@ -60,6 +60,8 @@
 	//Team Profile
 	"team_idea": "Projeto:",
 	"team_tools": "Ferramentas utilizadas:",
+	"team_webdesc": "Aplicações Web",
+	"team_gamesdesc": "Jogos",
 
 	//User Dashboard
 	"ud_schedule": "Horários",
@@ -147,6 +149,7 @@
   	"at_pass_4": "Lembramos que para a vossa inscrição ser considerada válida, todas as informações devem estar preenchidas, ter pelo menos dois membros e o teu email estar validado.",
   	"at_godash": "Avança para o Dashboard",
   	"at_already": "Já estás numa equipa, não podes criar outra.",
+  	"at_noprofile": "Tens de preencher o teu perfil antes de criar uma equipa.",
 
   	//Join Team
   	"jt_already": "Já fazes parte da equipa %s, não te podes juntar a outra.",
@@ -154,6 +157,10 @@
   	"jt_pincode": "Código PIN",
   	"jt_wrongpin": "Código PIN errado. Tenta novamente.",
   	"jt_fullteam": "Esta equipa já tem 4 elementos.",
+  	"jt_noprofile": "Tens de preencher o teu perfil antes de te puderes juntar a uma equipa.",
+  	"jt_captainonly": "Para saberes a password para te juntares a esta equipa, tens de falar com o capitão.",
+  	"jt_haspin": "O capitão da equipa %s convidou-te para te juntares! Experimenta o PIN %s para confirmares.",
+  	"jt_joined": "Parabéns. És oficialmente um membro da equipa %s .",
 
   	//Reset Password
   	"rp_form": "Recuperar Password",

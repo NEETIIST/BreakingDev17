@@ -7,8 +7,14 @@
 					<p class="text-center">{{_ "jt_already" alreadyInTeamName}}</p>
 				{{else if teamFull}}
 					<p class="text-center">{{_ "jt_fullteam"}}</p>
+				{{else if noProfile}}
+					<p class="text-center">{{_ "jt_noprofile"}}</p>
 				{{else}}
-					<p class="text-center">{{_ "jt_pin" teamData.team_name}}</p>
+					{{#if hasPin}}
+						<p class="text-center">{{_ "jt_haspin" teamData.team_name trythis}}</p>
+					{{else}}
+						<p class="text-center">{{_ "jt_pin" teamData.team_name}}</p>
+					{{/if}}
 					<form class="input-pin vwf-20 mx-auto">
 			        	<input type="password" class="text-input text-center" name="pin" placeholder="{{_ 'jt_pincode'}}" />
 			    	</form>

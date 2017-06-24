@@ -170,6 +170,13 @@ FlowRouter.route('/t/:teamname/join',{
   }
 });
 
+FlowRouter.route('/t/:teamname/join/:pin',{
+  name: 'team_pass',
+  action() {
+    BlazeLayout.render('base', {main: 'team_join'});
+  }
+});
+
 // Used for testing
 FlowRouter.route('/dev', {
   name: 'dev',

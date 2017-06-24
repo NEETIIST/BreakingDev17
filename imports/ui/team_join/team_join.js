@@ -1,6 +1,8 @@
 import './team_join.html'
 
 import { Accounts } from 'meteor/accounts-base';
+import { Devs } from '/imports/api/devs/devs.js';
+import { Teams } from '/imports/api/teams/teams.js';
 
 Template.team_join.onRendered(function() {
 
@@ -8,7 +10,7 @@ Template.team_join.onRendered(function() {
 	var self = this;
 	self.autorun(function(){
 		let t = FlowRouter.getParam('teamname');
-		self.subscribe('singleTeamVisitor',t);
+		//self.subscribe('singleTeamVisitor',t);
 		self.subscribe('singleTeamName',t);
 	});
 });
@@ -27,6 +29,20 @@ Template.team_join.helpers({
 	teamFull: function(){
 		let t = FlowRouter.getParam('teamname');
 		return (Teams.findOne({"_id":t}).members.length >= 3);
+	},
+	noProfile: function(){
+		return (Devs.find({}).count() == 0 ) ;
+	},
+	hasPin: function(){
+		var re1 = new RegExp( /^[0-9A-Fa-f]+$/ );
+		let pin = FlowRouter.getParam('pin');
+		if ( pin !== undefined && re1.test(pin) && pin.length==4)
+			return true;
+		else
+			return false ;
+	},
+	trythis: function(){
+		return FlowRouter.getParam('pin');
 	},
 });
 
@@ -56,6 +72,9 @@ Template.team_join.events({
   				console.log(error.error);
   			}
 	    });
+
+	    FlowRouter.go("/dash");
+	    // MISSING AN ALERT IF SUCCESS
 	 
 	    // Clear form
 	    target.pin.value = '';

@@ -2,7 +2,7 @@
 	//Index
 	"home_48hours": "48 hours of coding for college students from around the country",
 	"home_intro": "Lisbon's first university hackathon is back for a weekend you will not forget so soon.",
-		"home_signup": "Inscreve-te já como participante ou voluntário",
+	"home_signup": "Inscreve-te já como participante ou voluntário",
 	"home_signup_long": "Cria conta no nosso site para fazeres a tua inscrição e veres as equipas que te vão fazer companhia. Já só faltam %s dias.",
 	"home_text1": "Tens uma ideia e não tens tempo nem paciência para a desenvolver sozinho?",
 	"home_text2": "O BreakingDev é a solução!",
@@ -60,6 +60,8 @@
 	//Team Profile
 	"team_idea": "Idea:",
 	"team_tools": "Tools used:",
+	"team_webdesc": "Web Aplications",
+	"team_gamesdesc": "Games",
 
 	//User Dashboard
 	"ud_schedule": "Schedule",
@@ -148,6 +150,7 @@
   	"at_pass_4": "We remind you that for the team registry to be considered valid, all information fields must be filed, the team must have at least 2 members and your email must be validated.",
   	"at_godash": "Go to the Dashboard",
   	"at_already": "You are already on a team, you can't create another.",
+  	"at_noprofile": "You have to fill your profile details before you can create a team.",
 
   	//Join Team
   	"jt_already": "You are already part of team %s, you can't join another one.",
@@ -155,6 +158,10 @@
   	"jt_pincode": "Pin Code",
   	"jt_wrongpin": "Wrong PIN code. Try again please.",
   	"jt_fullteam": "This team already has 4 elements.",
+  	"jt_noprofile": "You have to fill your profile details before you can join a team.",
+  	"jt_captainonly": "To know the password to join this team you have to speak with the captain.",
+  	"jt_haspin": "The captain of team %s invited you to join him. Try the PIN code %s to confirm.",
+  	"jt_joined": "Congratulations, you are now a member of team %s .",
 
   	//Reset Password
   	"rp_form": "Recover Password",

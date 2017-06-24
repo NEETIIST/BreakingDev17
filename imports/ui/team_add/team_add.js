@@ -4,9 +4,11 @@ import { Devs } from '/imports/api/devs/devs.js';
 import { Teams } from '/imports/api/teams/teams.js';
 
 Template.team_add.onRendered(function() {
-
 	
-
+	var self = this;
+	self.autorun(function(){
+		self.subscribe('devs.single', Meteor.userId());
+	});
 });
 
 Template.team_add.helpers({
@@ -25,6 +27,9 @@ Template.team_add.helpers({
 	    	}
 		});
 	},
+	noProfile: function(){
+		return (Devs.find({}).count() == 0 ) ;
+	},
 });
 
 Template.team_add.events({
@@ -37,8 +42,8 @@ Template.team_add.events({
 // Forms Redirect and Setups
 AutoForm.addHooks(['addTeam'],{
     onSuccess: function(formType, result) {
-      Meteor.call('setUpTeam', function(error, result) {});
-      Meteor.call('userInTeam', function(error,result){});
+      	Meteor.call('setUpTeam', result, function(error, result) {console.log(error)});
+      	Meteor.call('userInTeam', function(error,result){console.log(error)});
     FlowRouter.go("/t/"+result+"/pass");
     }
 });
