@@ -10,25 +10,23 @@ AutoForm.addHooks(['contactForm'],{
     }
 });
 
+
 getUserLanguage = function () {
-  return "pt";
-};
+    return "pt";
+    };
 getUserLanguageT9n = function () {
-  return "pt-PT";
-};
+    return "pt-PT";
+    };
 
-Meteor.startup(function () {
-    Session.set("showLoadingIndicator", true);
+Session.set("showLoadingIndicator", true);
 
-    TAPi18n.setLanguage(getUserLanguage())
-      .done(function () {
-        Session.set("showLoadingIndicator", false);
-      })
-      .fail(function (error_message) {
-        // Handle the situation
-        console.log(error_message);
-      });
-
-    T9n.setLanguage(getUserLanguageT9n());
-
+TAPi18n.setLanguage(getUserLanguage())
+  .done(function () {
+    Session.set("showLoadingIndicator", false);
+  })
+  .fail(function (error_message) {
+    // Handle the situation
+    console.log(error_message);
   });
+
+T9n.setLanguage(getUserLanguageT9n());

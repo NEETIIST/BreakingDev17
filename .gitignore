@@ -6,3 +6,5 @@ imports/startup/server/keys.js
 bots/
 
 \.idea/
+
+package\.tar\.gz
