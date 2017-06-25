@@ -15,12 +15,12 @@ Meteor.startup(() => {
       icon: 'fa-home',
       isNavbar: true,
     },
-    {
+    /*{
       name: 'menu_login',
       url: '/login',
       icon: 'fa-user-circle-o',
       isNavbar: true,
-    },
+    },*/
   ];
 
   dataLinks.forEach(function(link){

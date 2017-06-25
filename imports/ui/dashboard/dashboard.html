@@ -56,43 +56,11 @@
 			</div>
 		</div>
 	</div>	
-	<!--
-	<div class="row justify-content-center f-black m-0 py-3 white vh-55">
-		<div class="col-10">
-			<div class="row justify-content-center align-items-center m-0 py-2 text-center">
-				<div class="col-3 cp menu-item px-0 py-2">
-					<i class="fa fa-2x py-2 fa-calendar fa-fw" aria-hidden="true"></i>
-					<p class="mb-0">{{_ "ud_schedule"}}</p>
-				</div>
-				<div class="col-4 cp ">
-					<i class="fa fa-2x py-2 fa-comments-o fa-fw" aria-hidden="true"></i>
-					<p>{{_ "ud_slack"}}</p>
-				</div>
-				<div class="col-4 cp ">
-					<i class="fa fa-2x py-2 fa-map-o fa-fw" aria-hidden="true"></i>
-					<p>{{_ "ud_tagus"}}</p>
-				</div>
-				<div class="col-4 cp " id="editProfile">
-					<i class="fa fa-2x py-2 fa-pencil fa-fw" aria-hidden="true"></i>
-					<p>{{_ "ud_profile"}}</p>
-				</div>
-				<div class="col-4 cp ">
-					<i class="fa fa-2x py-2 fa-address-book-o fa-fw" aria-hidden="true"></i>
-					<p>{{_ "ud_contacts"}}</p>
-				</div>
-				<div class="col-4 cp " id="logout">
-					<i class="fa fa-2x py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
-					<p>{{_ "ud_logout"}}</p>
-				</div>
-			</div>
 
-		</div>
-	</div>
-	-->
-	<div class="row justify-content-center align-items-center f-black m-0 py-3 white vh-55" id="nav-mid">
+	<div class="row justify-content-center align-items-center f-black m-0 py-3 white vh-55 hidden-md-down" id="nav-mid">
 		<div class="col-10 col-md-2">
 			<div class="row justify-content-center align-items-center">
-				<div class="col-12">
+				<div class="col-12 col-md-12">
 					<div class="row align-items-center text-left hvr-items cp">
 						<div class="col-3">
 							<i class="fa fs-4 py-2 fa-calendar fa-fw" aria-hidden="true"></i>
@@ -150,4 +118,78 @@
 		</div>
 	</div>
 
+	<div class="row justify-content-center align-items-start f-black m-0 py-3 white vh-55 hidden-lg-up" id="nav-mid">
+		<div class="col-10 px-0">
+			<div class="row justify-content-center align-items-center my-3 mx-0">
+				<div class="col-4 my-1">
+					<div class="row justify-content-center align-items-center text-center">
+						<div class="col-3 px-0">
+							<i class="fa fs-4 py-2 fa-calendar fa-fw" aria-hidden="true"></i>
+						</div>
+						<div class="col-9 px-0">
+							<span class="fw-3 fs-3 flh-2">{{_ "ud_schedule"}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="row justify-content-center align-items-center text-center">
+						<div class="col-3 px-0">
+							<i class="fa fs-4 py-2 fa-comments-o fa-fw" aria-hidden="true"></i>
+						</div>
+						<div class="col-9 px-0">
+							<span class="fw-3 fs-3 flh-2">{{_ "ud_slack"}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="row justify-content-center align-items-center text-center">
+						<div class="col-3 px-0">
+							<i class="fa fs-4 py-2 fa-map fa-fw" aria-hidden="true"></i>
+						</div>
+						<div class="col-9 px-0">
+							<span class="fw-3 fs-3 flh-2">{{_ "ud_tagus"}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="row justify-content-center align-items-center text-center" id="editProfile">
+						<div class="col-3 px-0">
+							<i class="fa fs-4 py-2 fa-pencil fa-fw" aria-hidden="true"></i>
+						</div>
+						<div class="col-9 px-0">
+							<span class="fw-3 fs-3 flh-2">{{_ "ud_profile"}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="row justify-content-center align-items-center text-center">
+						<div class="col-3 px-0">
+							<i class="fa fs-4 py-2 fa-address-book-o fa-fw" aria-hidden="true"></i>
+						</div>
+						<div class="col-9 px-0">
+							<span class="fw-3 fs-3 flh-2">{{_ "ud_contacts"}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="row justify-content-center align-items-center text-center" id="logout">
+						<div class="col-3 px-0">
+							<i class="fa fs-4 py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
+						</div>
+						<div class="col-9 px-0">
+							<span class="fw-3 fs-3 flh-2">{{_ "ud_logout"}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center align-items-center text-justify">
+				<div class="col-12">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>
