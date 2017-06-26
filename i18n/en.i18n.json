@@ -5,7 +5,7 @@
 	"home_signup": "Inscreve-te já como participante ou voluntário",
 	"home_signup_long": "Cria conta no nosso site para fazeres a tua inscrição e veres as equipas que te vão fazer companhia. Já só faltam %s dias.",
 	"home_signup_soon": "Registrations open up soon. Keep an eye on us.",
-	"home_text1": "You have an idea, but don't the time or patience to get it done?",
+	"home_text1": "You have an idea, but don't have the time or patience to get it done?",
 	"home_text2": "O BreakingDev é a solução!",
 	"home_text3": "Gather 2 to 4 friends and bring you ideia to life with us, from September 22nd to 24th in the Taguspark Campus of Técnico Lisboa.",
 	"home_text4": "Your friends are boring and don't want to come?",
@@ -45,6 +45,7 @@
 	"menu_index": "BreakingDev",
 	"menu_beasponsor": "Be a sponsor",
 	"menu_login": "Login",
+	"menu_logout": "Logout",
 
 	//Admin
 	"admin_opt_1": "Soon",
@@ -66,11 +67,29 @@
 
 	//User Dashboard
 	"ud_schedule": "Schedule",
-	"ud_slack": "Join the Slack",
-	"ud_tagus": "Discover Tagus",
-	"ud_profile": "Edit your profile",
+	"ud_slack": "Slack",
+	"ud_tagus": "Venue",
+	"ud_profile": "Profile",
 	"ud_contacts": "Contacts",
 	"ud_logout": "Log Out",
+	"ud_team": "Team",
+	"ud_dash_slack": "Join us on the official Slack Channel for the event. We will be answering question, posting challenges and making anouncements over there.",
+	"ud_null": "Use the options to see more information.",
+
+	"ud_profile_manage": "Manage your profile",
+	"ud_profile_edit": "Edit your informations",
+	"ud_profile_view": "Check out your profile page",
+
+	"ud_team_captain": "You are the captain of team %s",
+	"ud_team_member": "You are a member of team %s",
+	"ud_team_none": "You are not in a team right now.",
+	"ud_team_view": "Check your teams profile page",
+	"ud_team_join": "Join a team",
+	"ud_team_add": "Create your team",
+	"ud_team_or": "or",
+	"ud_team_edit": "Edit your teams information",
+	"ud_team_invite": "Invite your friends for your team",
+	"ud_team_noprofile": "You can't join a team before filling your profile",
 
 	//User Profile
 	"up_edit": "Change your information",
@@ -164,11 +183,17 @@
   	"jt_haspin": "The captain of team %s invited you to join him. Try the PIN code %s to confirm.",
   	"jt_joined": "Congratulations, you are now a member of team %s .",
 
+  	//Edit team
+  	"et_notcaptain": "Only the team captain can change the team's info.",
+
   	//Reset Password
   	"rp_form": "Recover Password",
   	"rp_password": "New Password",
   	"rp_password_again": "New Password (again)",
   	"rp_reset": "Confirm",
+
+  	//Misc
+  	"loading": "A carregar...",
 
 	//Testing
 	"lorem": "Lorem ipsum",

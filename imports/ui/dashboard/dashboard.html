@@ -2,18 +2,20 @@
 	
 	<div class="row justify-content-center align-items-center text-center f-white m-0 py-3 vh-13 orange" id="nav-top">
 		<div class="col-1 col-md-1"></div>
-		<div class="col col-md">
+		<div class="col cp" id="edit_profile">
 			<i class="fa fa-id-card-o mx-3 fa-fw" aria-hidden="true"></i>
 			<span>{{loggedUser}}</span>
 		</div>
-		<div class="col col-md">
+		<div class="col">
 			<i class="fa fa-code-fork mx-3 fa-fw" aria-hidden="true"></i>
 			<span>12345</span>
 		</div>
-		<div class="col col-md">
-			<i class="fa fa-users mx-3 fa-fw" aria-hidden="true"></i>
-			<span>Lorem Ipsum</span>
-		</div>
+		{{#if inTeam}}
+			<div class="col cp" id="edit_team">
+				<i class="fa fa-users mx-3 fa-fw" aria-hidden="true"></i>
+				<span>{{teamName}}</span>
+			</div>
+		{{/if}}
 		<div class="col-1 col-md-1"></div>
 	</div>
 
@@ -69,7 +71,23 @@
 							<span class="fw-3 fs-2 flh-2">{{_ "ud_schedule"}}</span>
 						</div>
 					</div>
-					<div class="row align-items-center text-left hvr-items cp">
+					<div class="row align-items-center text-left hvr-items cp" id="edit_profile">
+						<div class="col-3">
+							<i class="fa fs-4 py-2 fa-pencil fa-fw" aria-hidden="true"></i>
+						</div>
+						<div class="col-9">
+							<span class="fw-3 fs-2 flh-2">{{_ "ud_profile"}}</span>
+						</div>
+					</div>
+					<div class="row align-items-center text-left hvr-items cp" id="edit_team">
+						<div class="col-3">
+							<i class="fa fs-4 py-2 fa-users fa-fw" aria-hidden="true"></i>
+						</div>
+						<div class="col-9">
+							<span class="fw-3 fs-2 flh-2">{{_ "ud_team"}}</span>
+						</div>
+					</div>
+					<div class="row align-items-center text-left hvr-items cp" id="slack">
 						<div class="col-3">
 							<i class="fa fs-4 py-2 fa-comments-o fa-fw" aria-hidden="true"></i>
 						</div>
@@ -85,22 +103,6 @@
 							<span class="fw-3 fs-2 flh-2">{{_ "ud_tagus"}}</span>
 						</div>
 					</div>
-					<div class="row align-items-center text-left hvr-items cp" id="editProfile">
-						<div class="col-3">
-							<i class="fa fs-4 py-2 fa-pencil fa-fw" aria-hidden="true"></i>
-						</div>
-						<div class="col-9">
-							<span class="fw-3 fs-2 flh-2">{{_ "ud_profile"}}</span>
-						</div>
-					</div>
-					<div class="row align-items-center text-left hvr-items cp">
-						<div class="col-3">
-							<i class="fa fs-4 py-2 fa-address-book-o fa-fw" aria-hidden="true"></i>
-						</div>
-						<div class="col-9">
-							<span class="fw-3 fs-2 flh-2">{{_ "ud_contacts"}}</span>
-						</div>
-					</div>
 					<div class="row align-items-center text-left hvr-items cp" id="logout">
 						<div class="col-3">
 							<i class="fa fs-4 py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
@@ -113,8 +115,8 @@
 			</div>
 		</div>
 		<div class="col-10 col-md-1 white"></div>
-		<div class="col-10 col-md-6 orange">
-
+		<div class="col-10 col-md-6">
+			{{> Template.dynamic template=dash_small}}
 		</div>
 	</div>
 
@@ -132,7 +134,27 @@
 					</div>
 				</div>
 				<div class="col-4">
-					<div class="row justify-content-center align-items-center text-center">
+					<div class="row justify-content-center align-items-center text-center" id="edit_profile">
+						<div class="col-3 px-0">
+							<i class="fa fs-4 py-2 fa-pencil fa-fw" aria-hidden="true"></i>
+						</div>
+						<div class="col-9 px-0">
+							<span class="fw-3 fs-3 flh-2">{{_ "ud_profile"}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="row justify-content-center align-items-center text-center" id="edit_team">
+						<div class="col-3 px-0">
+							<i class="fa fs-4 py-2 fa-users fa-fw" aria-hidden="true"></i>
+						</div>
+						<div class="col-9 px-0">
+							<span class="fw-3 fs-3 flh-2">{{_ "ud_team"}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="row justify-content-center align-items-center text-center" id="slack">
 						<div class="col-3 px-0">
 							<i class="fa fs-4 py-2 fa-comments-o fa-fw" aria-hidden="true"></i>
 						</div>
@@ -152,26 +174,6 @@
 					</div>
 				</div>
 				<div class="col-4">
-					<div class="row justify-content-center align-items-center text-center" id="editProfile">
-						<div class="col-3 px-0">
-							<i class="fa fs-4 py-2 fa-pencil fa-fw" aria-hidden="true"></i>
-						</div>
-						<div class="col-9 px-0">
-							<span class="fw-3 fs-3 flh-2">{{_ "ud_profile"}}</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-4">
-					<div class="row justify-content-center align-items-center text-center">
-						<div class="col-3 px-0">
-							<i class="fa fs-4 py-2 fa-address-book-o fa-fw" aria-hidden="true"></i>
-						</div>
-						<div class="col-9 px-0">
-							<span class="fw-3 fs-3 flh-2">{{_ "ud_contacts"}}</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-4">
 					<div class="row justify-content-center align-items-center text-center" id="logout">
 						<div class="col-3 px-0">
 							<i class="fa fs-4 py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
@@ -183,13 +185,106 @@
 				</div>
 			</div>
 			<div class="row justify-content-center align-items-center text-justify">
-				<div class="col-12">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat.</p>
+				<div class="col-10">
+					<hr class="orange">
+					<div class="spacer-2"></div>
+					{{> Template.dynamic template=dash_small}}
 				</div>
 			</div>
+		</div>
+	</div>
+</template>
+
+<template name="dash_profile">
+	<div class="row justify-content-center align-items-center text-center my-0">
+		<div class="col-12">
+			<p class="fw-3 fs-3 flh-2">{{_ "ud_profile_manage"}}</p>
+		</div>
+		<div class="col-6 hvr-items cp" id="dash_profile_edit">
+			<i class="fa fs-6 my-3 fa-pencil-square-o fa-fw" aria-hidden="true"></i>
+			<p class="fw-3 fs-2 flh-2">{{_ "ud_profile_edit"}}</p>
+		</div>
+		{{#if hasProfile}}
+			<div class="col-6 hvr-items cp" id="dash_profile_view">
+				<i class="fa fs-6 my-3 fa-search fa-fw" aria-hidden="true"></i>
+				<p class="fw-3 fs-2 flh-2">{{_ "ud_profile_view"}}</p>
+			</div>
+		{{/if}}
+	</div>
+</template>
+
+<template name="dash_team">
+	<div class="row justify-content-center align-items-center text-center my-0">
+		{{#if Template.subscriptionsReady}}
+			<div class="col-12">
+				{{#if isCaptain}}
+					<p class="fw-3 fs-3 flh-2">{{_ "ud_team_captain" teamName}}</p>
+				{{else}}
+					{{#if inTeam}}
+						<p class="fw-3 fs-3 flh-2">{{_ "ud_team_member" teamName}}</p>
+					{{else}}
+						<p class="fw-3 fs-3 flh-2">{{_ "ud_team_none"}}</p>
+					{{/if}}
+				{{/if}}
+			</div>
+			{{#if inTeam}}
+				<div class="col-4 hvr-items cp" id="dash_team_view">
+					<i class="fa fs-6 my-3 fa-search fa-fw" aria-hidden="true"></i>
+					<p class="fw-3 fs-2 flh-2">{{_ "ud_team_view"}}</p>
+				</div>
+			{{else}}
+				{{#if noProfile}}
+					<p class="fw-3 fs-3 flh-2">{{_ "ud_team_noprofile"}}</p>
+				{{else}}
+					<div class="col-5 hvr-items cp" id="dash_team_">
+						<i class="fa fs-6 my-3 fa-puzzle-piece fa-fw" aria-hidden="true"></i>
+						<p class="fw-3 fs-2 flh-2">{{_ "ud_team_join"}}</p>
+					</div>
+					<div class="col-1">
+						<p class="fw-3 fs-2 flh-2">{{_ "ud_team_or"}}</p>
+					</div>
+					<div class="col-5 hvr-items cp" id="dash_team_add">
+						<i class="fa fs-6 my-3 fa-plus-square-o fa-fw" aria-hidden="true"></i>
+						<p class="fw-3 fs-2 flh-2">{{_ "ud_team_add"}}</p>
+					</div>
+				{{/if}}
+			{{/if}}
+			{{#if isCaptain}}
+				<div class="col-4 hvr-items cp" id="dash_team_edit">
+					<i class="fa fs-6 my-3 fa-pencil-square-o fa-fw" aria-hidden="true"></i>
+					<p class="fw-3 fs-2 flh-2">{{_ "ud_team_edit"}}</p>
+				</div>
+				<div class="col-4 hvr-items cp" id="dash_team_pass">
+					<i class="fa fs-6 my-3 fa-user-plus fa-fw" aria-hidden="true"></i>
+					<p class="fw-3 fs-2 flh-2">{{_ "ud_team_invite"}}</p>
+				</div>
+			{{/if}}
+		{{else}}
+			<!-- Implement when possible
+			{{#transition wrap="true" in="fadeIn" out="fadeOut"}}
+				<div class="text-center f-black">
+					<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw animated in"></i>
+					<p>{{_ "loading"}}</p>
+				</div>
+			{{/transition}}
+			-->
+		{{/if}}
+	</div>
+</template>
+
+<template name="dash_slack">
+	<div class="row justify-content-center align-items-center text-justify my-0">
+		<div class="col-12">
+			<p class="fw-3 fs-2 flh-2">{{_ "ud_dash_slack"}}</p>
+			<a target="_blank" href="https://breaking-dev.slack.com"><span class="fw-3 fs-3 flh-2 hvr-items" id="slack-link">https://breaking-dev.slack.com</span></a>
+		</div>
+	</div>
+</template>
+
+<template name="dash_null">
+	<div class="row justify-content-center align-items-center text-center my-0">
+		<div class="col-12">
+			<p class="fw-3 fs-3 flh-2">{{_ "ud_null"}}</p>
 		</div>
 	</div>
 </template>

@@ -45,6 +45,7 @@
 	"menu_index": "BreakingDev",
 	"menu_beasponsor": "Patrocínios",
 	"menu_login": "Login",
+	"menu_logout": "Logout",
 
 	//Admin
 	"admin_opt_1": "Opção disponível em breve",
@@ -71,6 +72,24 @@
 	"ud_profile": "Perfil",
 	"ud_contacts": "Contactos",
 	"ud_logout": "Log Out",
+	"ud_team": "Equipa",
+	"ud_dash_slack": "Junta-te a nós no canal oficial do Slack para o BreakingDev. Vamos estar a responder a questões, lançar desafios e fazer anuncios por lá durante todo o fim-de-semana.",
+	"ud_null": "Usa as opções para veres mais informações.",
+
+	"ud_profile_manage": "Gere o teu perfil",
+	"ud_profile_edit": "Edita os teus dados",
+	"ud_profile_view": "Vê a tua página de perfil",
+
+	"ud_team_captain": "És o capitão da equipa %s",
+	"ud_team_member": "Fazes parte da equipa %s",
+	"ud_team_none": "Ainda não fazes parte de nenhuma equipa.",
+	"ud_team_view": "Vê a página de perfil da tua equipa",
+	"ud_team_join": "Junta-te a uma equipa",
+	"ud_team_add": "Cria a tua própria equipa",
+	"ud_team_or": "ou",
+	"ud_team_edit": "Edita as informações da tua equipa",
+	"ud_team_invite": "Convida os teus amigos para a tua equipa",
+	"ud_team_noprofile": "Não te podes juntar a uma equipa antes de preencheres o teu perfil",
 
 	//User Profile
 	"up_edit": "Edita os teus dados",
@@ -163,11 +182,17 @@
   	"jt_haspin": "O capitão da equipa %s convidou-te para te juntares! Experimenta o PIN %s para confirmares.",
   	"jt_joined": "Parabéns. És oficialmente um membro da equipa %s .",
 
+  	//Edit team
+  	"et_notcaptain": "Apenas o capitão da equipa pode alterar os dados.",
+
   	//Reset Password
   	"rp_form": "Recuperar Password",
   	"rp_password": "Nova Password",
   	"rp_password_again": "Nova Password (outra vez)",
   	"rp_reset": "Confirmar",
+
+  	//Misc
+  	"loading": "A carregar...",
 
 	//Testing
 	"lorem": "Lorem ipsum",

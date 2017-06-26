@@ -15,12 +15,18 @@ Meteor.startup(() => {
       icon: 'fa-home',
       isNavbar: true,
     },
-    /*{
+    {
       name: 'menu_login',
       url: '/login',
       icon: 'fa-user-circle-o',
       isNavbar: true,
-    },*/
+    },
+    {
+      name: 'menu_logout',
+      url: '/logout',
+      icon: 'fa-sign-out',
+      isNavbar: false,
+    },
   ];
 
   dataLinks.forEach(function(link){
@@ -28,6 +34,9 @@ Meteor.startup(() => {
     {
       Links.insert(link);
     }
+    // To implement when admin roles are implemented:
+    // Meteor Call restricted to admins to delete all Links
+    // This way when an update is deployed it clears previous links
   });
 
 }); 

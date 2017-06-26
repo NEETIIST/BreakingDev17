@@ -1,7 +1,7 @@
 <template name="team_add">
 
 	<div class="row justify-content-center align-items-center m-0 vh-100 light-orange f-white">
-		<div class="col-9 py-3">
+		<div class="col-10 py-3">
 			{{#if Template.subscriptionsReady}}
 				{{#if noProfile}}
 					<p class="text-center">{{_ "at_noprofile"}}</p>
@@ -17,7 +17,9 @@
 					{{> quickForm collection=Teams id="addTeam" type="insert" buttonClasses="at-btn submit"}}
 				{{/if}}
 			{{else}}
-				<p>Loading</p>
+				<div class="text-center">
+					<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw f-white"></i>
+				</div>
 			{{/if}}
 		</div>
 	</div>

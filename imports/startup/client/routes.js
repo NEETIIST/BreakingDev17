@@ -19,6 +19,7 @@ import '../../ui/team/team.js'
 import '../../ui/team_add/team_add.js'
 import '../../ui/team_pass/team_pass.js'
 import '../../ui/team_join/team_join.js'
+import '../../ui/team_edit/team_edit.js'
 //import '../../ui/team_edit/team_edit.js'
 
 
@@ -49,10 +50,10 @@ FlowRouter.route( '/verify-email/:token', {
     action( params ) {
         Accounts.verifyEmail( params.token, ( error ) =>{
             if ( error ) {
-                alert( error.reason, 'danger' );
+              alert( error.reason, 'danger' );
             } else {
-                FlowRouter.go( '/login' );
-                alert( 'Email verified! Thanks!', 'success' );
+              alert( 'Email verified! Thanks!', 'success' );
+              FlowRouter.go( '/login' );
             }
         });
     }
@@ -84,6 +85,15 @@ FlowRouter.route('/login',{
   },
 });
 
+FlowRouter.route('/logout',{
+  name: 'logout',
+  action(){
+    Session.set("dash_last","dash_null");
+    AccountsTemplates.logout();
+    FlowRouter.redirect('/login');
+  },
+});
+
 FlowRouter.route('/u/:username',{
   name: 'userProfile',
   action() {
@@ -111,7 +121,16 @@ FlowRouter.route('/dash',{
       window.scrollTo(0,0);
       Session.set("nav", false);
       Session.set("tab", "menu_login");
-      BlazeLayout.render('base', {main: 'dashboard'});
+      let last = Session.get('dash_last');
+      if ( last == undefined )
+      {
+        Session.set('dash_last','dash_null');
+        BlazeLayout.render('base', {main:"dashboard",dash_small:'dash_null'});
+      }
+      else
+      { 
+        BlazeLayout.render('base', {main:"dashboard",dash_small:last}); 
+      }
     }
   }
 });
@@ -138,6 +157,13 @@ FlowRouter.route('/t/:teamname',{
   name: 'teamProfile',
   action() {
     BlazeLayout.render('base', {main: 'team'});
+  }
+});
+
+FlowRouter.route('/t/:teamname/edit',{
+  name: 'teamProfile',
+  action() {
+    BlazeLayout.render('base', {main: 'team_edit'});
   }
 });
 

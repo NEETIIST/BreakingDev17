@@ -32,7 +32,7 @@ Template.team_pass.helpers({
 	      	Session.set('pinCode',data);
 	    });
 	    return Session.get('pinCode');
-	}
+	},
 })
 
 Template.team_pass.events({
