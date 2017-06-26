@@ -16,7 +16,14 @@ Template.team.helpers({
 		return Teams.findOne();
 	},
 	members: function(){
-		return Meteor.users.find({});
+		// BUG! Is also listing the logged user as a member
+		let members = Teams.findOne({}).members;
+		members.unshift(Teams.findOne({}).captain);
+		let list = [];
+		members.forEach(function(m){
+			list.push(Meteor.users.findOne({"_id":m}));
+		});
+		return list;
 	},
 })
 
