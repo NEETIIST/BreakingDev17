@@ -7,3 +7,9 @@ Template.home_sponsor.events({
 		FlowRouter.go("/");
 	},
 });
+
+Template.home_sponsor.helpers({
+	Contact(){
+    	return Contact;
+  	},
+});

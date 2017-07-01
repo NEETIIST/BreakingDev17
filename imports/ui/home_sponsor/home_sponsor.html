@@ -11,13 +11,13 @@
 			<p class="fw-2 fs-3 flh-2 f-white text-justify">{{_ "home_sponsor_about"}}</p>
 			<p class="fw-2 fs-3 flh-2 f-white text-justify">{{_ "home_sponsor_contact"}}</p>
 
-			{{#autoForm collection="Contact" id="contactForm" type="method" template="nothing" meteormethod="sendEmail" validation="blur"}}
+			{{#autoForm collection=Contact id="contactForm" type="method" template="nothing" meteormethod="sendEmail" validation="blur"}}
 				<fieldset>
 				{{> afQuickField name="name" class="text-input" autocomplete="off"}}
 				{{> afQuickField name="company" class="text-input" autocomplete="off"}}
 				{{> afQuickField name="email" class="text-input" autocomplete="off"}}
 				</fieldset>
-				<button type="submit" class="btn hvr-custom cp mb-3">{{_ "home_sponsor_submit"}}</button>
+				<button type="submit" class="at-btn submit cp mb-3">{{_ "home_sponsor_submit"}}</button>
 			{{/autoForm}}
 
 		</div>
