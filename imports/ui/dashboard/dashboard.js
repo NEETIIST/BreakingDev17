@@ -86,9 +86,12 @@ Template.dash_team.events({
 		FlowRouter.go("/t/"+Teams.findOne({})._id+"/edit");
 	},
 	"click #dash_team_add": function(){
-		FlowRouter.go("/t//add");
+		FlowRouter.go("/t_/add");
 	},
 	"click #dash_team_pass": function(){
 		FlowRouter.go("/t/"+Teams.findOne({})._id+"/pass");
+	},
+	"click #dash_team_find": function(){
+		FlowRouter.go("/t_/find");
 	},
 });

@@ -76,7 +76,7 @@ Accounts.emailTemplates.verifyEmail = {
 	text( user, url ) {
 			let emailAddress   = user.emails[0].address,
 					urlWithoutHash = url.replace( '#/', '' ),
-					supportEmail   = "geral@breakingdev.pt",
+					supportEmail   = "breakingdev@neeti.tecnico.ulisboa.pt",
 					emailBody      = `Bem-vindo ao BreakingDev!\n\nPara verificares o teu email (${emailAddress}) segue este link:\n\n${urlWithoutHash}\n\nSe recebeste este email por engano, agradecemos que o apagues.\nCaso tenhas alguma dúvida, envia-nos um email para: ${supportEmail}.`;
 
 			return emailBody;
@@ -90,7 +90,7 @@ Accounts.emailTemplates.resetPassword = {
 	text( user, url ) {
 			let username   = user.username,
 					urlWithoutHash = url.replace( '#/', '' ),
-					supportEmail   = "geral@breakingdev.pt",
+					supportEmail   = "breakingdev@neeti.tecnico.ulisboa.pt",
 					emailBody      = `Parece que te esqueceste da tua password, ${username}.\n\nPara recuperares o acesso à tua conta segue este link:\n\n${urlWithoutHash}\n\nSe recebeste este email por engano, agradecemos que o apagues.\nCaso tenhas alguma dúvida, envia-nos um email para: ${supportEmail}.`;
 
 			return emailBody;

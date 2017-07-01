@@ -1,0 +1,29 @@
+<template name="team_apply">
+
+	<div class="row vh-100 justify-content-center align-items-center m-0 orange f-white">
+		<div class="col-10 col-md-8 text-left">
+			<span class="cp" id="goDash"><i class="fa fa-angle-double-left fa-fw f-white mr-2" aria-hidden="true"></i>{{_ "mt_back"}}</span>
+			<hr class="orange">
+			{{#if alreadyInTeam}}
+					<p class="text-center">{{_ "jt_already" alreadyInTeamName}}</p>
+				{{else if teamFull}}
+					<p class="text-center">{{_ "jt_fullteam"}}</p>
+				{{else if noProfile}}
+					<p class="text-center">{{_ "jt_noprofile"}}</p>
+				{{else}}
+					<p class="fw-2 fs-3">{{_ "mt_apply_1" teamName}}</p>
+					<p class="fw-2 fs-3">{{_ "mt_apply_2"}}</p>
+
+					{{#autoForm collection=Team_Mail id="teamApplyForm" type="method" template="nothing" meteormethod="team_apply_mail" validation="blur"}}
+						<fieldset>
+						{{> afQuickField name="message" class="text-input" autocomplete="off" placeholder=mt_desc}}
+						{{> afQuickField name='team' value=teamId }}
+						</fieldset>
+						<button type="submit" class="at-btn submit cp mb-3">{{_ "mt_send"}}</button>
+					{{/autoForm}}
+			{{/if}}				
+
+		</div>
+	</div>
+
+</template>

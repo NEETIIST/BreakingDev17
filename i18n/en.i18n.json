@@ -170,7 +170,7 @@
   	"at_pass_4": "We remind you that for the team registry to be considered valid, all information fields must be filed, the team must have at least 2 members and your email must be validated.",
   	"at_godash": "Go to the Dashboard",
   	"at_already": "You are already on a team, you can't create another.",
-  	"at_noprofile": "You have to fill your profile details before you can create a team.",
+  	"at_noprofile": "You have to fill your profile details before you can create or join a team.",
 
   	//Join Team
   	"jt_already": "You are already part of team %s, you can't join another one.",
@@ -185,6 +185,25 @@
 
   	//Edit team
   	"et_notcaptain": "Only the team captain can change the team's info.",
+
+  	//Find Team
+  	"ft_teamlist": "These are the teams no BreakingDev:",
+  	"ft_members": "member(s)",
+  	"ft_name": "Team Name",
+  	"ft_idea": "Project",
+  	"ft_skills": "Skills Required",
+  	"ft_captain": "Speak to the team captain to join the team.",
+  	"ft_profile": "See the team page",
+  	"ft_join": "Join the team",
+  	"ft_noteams": "There are no teams (yet)",
+  	
+  	//Apply Team
+  	"mt_apply_1": "To join the team %s, the captain needs to give you permission. Send him a message with some of your details and explain why do you want to join the team.",
+  	"mt_apply_2": "If everything goes well, he will reply to your email giving you the news, and with a link for you to follow. Good luck!",
+  	"mt_message": "Write here the message:",
+  	"mt_desc":"Maybe list some of the frameworks or languages that you have worked with, and what you can add to the team.",
+  	"mt_send":"Send",
+  	"mt_back":"Team List",
 
   	//Reset Password
   	"rp_form": "Recover Password",

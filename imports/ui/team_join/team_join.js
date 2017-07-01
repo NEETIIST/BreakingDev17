@@ -11,7 +11,7 @@ Template.team_join.onRendered(function() {
 	self.autorun(function(){
 		let t = FlowRouter.getParam('teamname');
 		//self.subscribe('singleTeamVisitor',t);
-		self.subscribe('singleTeamName',t);
+		self.subscribe('singleTeamVisitor',t);
 	});
 });
 

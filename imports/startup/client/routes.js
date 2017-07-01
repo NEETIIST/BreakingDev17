@@ -20,7 +20,8 @@ import '../../ui/team_add/team_add.js'
 import '../../ui/team_pass/team_pass.js'
 import '../../ui/team_join/team_join.js'
 import '../../ui/team_edit/team_edit.js'
-//import '../../ui/team_edit/team_edit.js'
+import '../../ui/team_find/team_find.js'
+import '../../ui/team_apply/team_apply.js'
 
 
 // Set up all routes in the app
@@ -167,11 +168,24 @@ FlowRouter.route('/t/:teamname/edit',{
   }
 });
 
-// Maybe another route for this?
-FlowRouter.route('/t//add',{
+FlowRouter.route('/t/:teamname/apply',{
+  name: 'team_apply',
+  action() {
+    BlazeLayout.render('base', {main: 'team_apply'});
+  }
+});
+
+FlowRouter.route('/t_/add',{
   name: 'teamProfile_add',
   action() {
     BlazeLayout.render('base', {main: 'team_add'});
+  }
+});
+
+FlowRouter.route('/t_/find',{
+  name: 'teamProfile_add',
+  action() {
+    BlazeLayout.render('base', {main: 'team_find'});
   }
 });
 

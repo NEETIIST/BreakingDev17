@@ -177,7 +177,7 @@
   	"jt_pincode": "Código PIN",
   	"jt_wrongpin": "Código PIN errado. Tenta novamente.",
   	"jt_fullteam": "Esta equipa já tem 4 elementos.",
-  	"jt_noprofile": "Tens de preencher o teu perfil antes de te puderes juntar a uma equipa.",
+  	"jt_noprofile": "Tens de preencher o teu perfil antes de te puderes juntar ou criar uma equipa.",
   	"jt_captainonly": "Para saberes a password para te juntares a esta equipa, tens de falar com o capitão.",
   	"jt_haspin": "O capitão da equipa %s convidou-te para te juntares! Experimenta o PIN %s para confirmares.",
   	"jt_joined": "Parabéns. És oficialmente um membro da equipa %s .",
@@ -185,11 +185,30 @@
   	//Edit team
   	"et_notcaptain": "Apenas o capitão da equipa pode alterar os dados.",
 
+  	//Find Team
+  	"ft_teamlist": "Estas são as equipas inscritas no BreakingDev até agora:",
+  	"ft_members": "membro(s)",
+  	"ft_name": "Nome da Equipa",
+  	"ft_idea": "Projeto",
+  	"ft_skills": "Skills recomendadas",
+  	"ft_captain": "Fala com o capitão da equipa para te juntares",
+  	"ft_profile": "Ver a página da equipa",
+  	"ft_join": "Junta-te à equipa",
+  	"ft_noteams": "Ainda não há equipas disponíveis",
+
   	//Reset Password
   	"rp_form": "Recuperar Password",
   	"rp_password": "Nova Password",
   	"rp_password_again": "Nova Password (outra vez)",
   	"rp_reset": "Confirmar",
+
+  	//Apply Team
+  	"mt_apply_1": "Para te juntares à equipa %s, é preciso o capitão dar-te acesso. Envia-lhe uma mensagem com algumas informações sobre ti e porque é que te queres juntar à equipa.",
+  	"mt_apply_2": "Se tudo correr bem, ele responde para o teu email a dar-te as novidades, e com um link para seguires. Boa sorte!",
+  	"mt_message": "Escreve aqui a mensagem:",
+  	"mt_desc":"Diz algumas das ferramentas ou linguagens de programação que dominas, e o que é que podes acrescentar à equipa.",
+  	"mt_send":"Enviar",
+  	"mt_back":"Lista de Equipas",
 
   	//Misc
   	"loading": "A carregar...",

@@ -1,0 +1,38 @@
+<template name="team_find">
+	<div class="row justify-content-center align-items-start m-0 vh-100 white f-black">
+		<div class="col-10 py-3">
+			{{#if Template.subscriptionsReady}}
+				<span class="cp" id="goDash"><i class="fa fa-angle-double-left fa-fw f-black mr-2" aria-hidden="true"></i>{{_ "up_godash"}}</span>
+				<hr class="orange">
+				{{#if noProfile}}
+					<p class="fw-2 fs-2">{{_ "at_noprofile"}}</p>
+				{{else}}
+					<p>{{_ "ft_teamlist"}}</p>
+					<div class="row align-items-start">
+						{{#each allTeams}}
+						<div class="col-12 col-md-4 text-center mb-3 hvr-items">
+							{{#if equals category "Web"}}
+								<img src="/icons/WebAlt.png" alt="{{_ 'team_webdesc'}}" class="team-cat">
+							{{/if}}
+							{{#if equals category "Gaming"}}
+								<img src="/icons/JogosAlt.png" alt="{{_ 'team_gamesdesc'}}" class="team-cat">
+							{{/if}}
+							<p class="fw-3 fs-3 mb-0" title="{{i18n_name}}">{{team_name}}</p>
+							<p class="fw-3 fs-3 mb-0" title="{{i18n_idea}}">"{{project_name}}"</p>
+							<p class="fw-2 fs-2 mb-0" title="{{i18n_skills}}">{{skills}}</p>
+							<p class="fw-2 fs-2 mb-1">{{memberCount this}} {{_ "ft_members"}}</p>
+							<i class="fa fa-search fa-fw f-black mb-3 cp" aria-hidden="true" title="{{i18n_profile}}" id="goProfile"></i>
+							{{#if notInTeam}}
+								{{#if notFull this}}
+									<i class="fa fa-paper-plane-o fa-fw f-black mb-3 cp" aria-hidden="true" title="{{i18n_captain}}" id="goApply"></i>
+									<i class="fa fa-user-plus fa-fw f-black ml-1 mb-3 cp" aria-hidden="true" title="{{i18n_join}}" id="goJoin"></i>
+								{{/if}}
+							{{/if}}
+						</div>	
+						{{/each}}
+					</div>
+				{{/if}}
+			{{/if}}
+		</div>
+	</div>
+</template>

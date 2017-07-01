@@ -10,6 +10,12 @@ AutoForm.addHooks(['contactForm'],{
     }
 });
 
+AutoForm.addHooks(['teamApplyForm'],{
+    onSuccess: function(formType, result) {
+        alert("A tua mensagem foi enviada, agora tens de esperar que o capitão da equipa te responda.");
+        FlowRouter.go("/dash");
+    }
+}); 
 
 getUserLanguage = function () {
     return "pt";

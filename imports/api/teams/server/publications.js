@@ -19,6 +19,10 @@ Meteor.publish('singleTeamName', function(id){
 	// Add another restrictions to this field
 })
 
+Meteor.publish('allTeamsInfo', function(){
+	return Teams.find({},{fields:  {'pincode': 0}});
+})
+
 Meteor.publish('singleTeamName.user', function(id){
 	let u = Meteor.users.findOne({'username': id});
 	return Teams.find({$or:[{'captain':u._id},{'members':u._id}]},{fields: {'team_name': 1}});
