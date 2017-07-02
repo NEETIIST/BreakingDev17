@@ -98,11 +98,11 @@ Accounts.emailTemplates.resetPassword = {
 };
 
 Accounts.onLogin(function(){
-	let log = Links.findOne({"name":"menu_logout"});
-	Links.update(log._id, {$set: { "isNavbar": true },})
+	//let log = Links.findOne({"name":"menu_logout"});
+	//Links.update(log._id, {$set: { "isNavbar": true },})
 })
 
 Accounts.onLogout(function(){
-	let log = Links.findOne({"name":"menu_logout"});
-	Links.update(log._id, {$set: { "isNavbar": false },})
+	//let log = Links.findOne({"name":"menu_logout"});
+	//Links.update(log._id, {$set: { "isNavbar": false },})
 })

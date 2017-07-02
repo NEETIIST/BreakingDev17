@@ -4,6 +4,7 @@ import { analytics } from "meteor/okgrow:analytics";
 
 // Import needed templates
 import '../../ui/404/404.js'
+import '../../ui/2k16/2k16.js'
 import '../../ui/home/home.js'
 import '../../ui/home/homeGallery.js'
 import '../../ui/home_sponsor/home_sponsor.js'
@@ -218,11 +219,10 @@ FlowRouter.route('/t/:teamname/join/:pin',{
   }
 });
 
-// Used for testing
-FlowRouter.route('/dev', {
-  name: 'dev',
+FlowRouter.route('/2016', {
+  name: '2k16',
   action() {
-    BlazeLayout.render('base', {main: 'user_profile'});
+    BlazeLayout.render('base', {main: '2k16'});
   }
 });
 

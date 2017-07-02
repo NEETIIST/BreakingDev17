@@ -215,6 +215,10 @@
   	"404-1": "It seem you took a wrong turn somewhere. We're sorry for that.",
   	"404-2": "Click below to go back to the homepage",
 
+  	//2k16 Page
+  	"2k16_short": "",
+  	"2k16_long": "",
+
   	//Misc
   	"loading": "A carregar...",
 

@@ -214,6 +214,10 @@
   	"404-1": "Parece que viraste onde não devias, esta página não existe.",
   	"404-2": "Carrega em baixo para voltares à homepage.",
 
+  	//2k16 Page
+  	"2k16_short": "",
+  	"2k16_long": "",
+
   	//Misc
   	"loading": "A carregar...",
 
