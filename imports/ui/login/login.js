@@ -47,6 +47,5 @@ Template.resetpassword.events({
     }
     
     FlowRouter.go("/dash");
-    FlowRouter.reload();
   }
 });

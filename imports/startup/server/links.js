@@ -21,12 +21,12 @@ Meteor.startup(() => {
       icon: 'fa-user-circle-o',
       isNavbar: true,
     },
-    {
+    /*{
       name: 'menu_logout',
       url: '/logout',
       icon: 'fa-sign-out',
       isNavbar: false,
-    },
+    },*/
   ];
 
   dataLinks.forEach(function(link){

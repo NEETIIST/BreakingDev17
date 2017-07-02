@@ -12,6 +12,7 @@ Template.team_join.onRendered(function() {
 		let t = FlowRouter.getParam('teamname');
 		//self.subscribe('singleTeamVisitor',t);
 		self.subscribe('singleTeamVisitor',t);
+		self.subscribe('singleTeamName.user', Meteor.user().username);
 	});
 });
 

@@ -14,6 +14,7 @@ Teams.allow({
 Schema = new SimpleSchema({
 	team_name: {
 		type: String,
+    unique: true,
 	},
   captain: {
     type: String,
@@ -32,7 +33,7 @@ Schema = new SimpleSchema({
       type: "hidden"
     },
     optional: true,
-    unique: true,
+    //unique: true,
 	},
 	project_name: {
 		type: String,

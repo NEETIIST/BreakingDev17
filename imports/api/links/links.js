@@ -5,10 +5,10 @@ export const Links = new Mongo.Collection("links");
 Links.allow({
 	//Security Issues to be reviewed
 	insert: function(){
-		return true ;
+		return true;
 	},
-	update: function(){
-		return true ;
+	update: function(){	
+		return true;
 	},
 });
 

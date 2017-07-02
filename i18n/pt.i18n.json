@@ -210,6 +210,10 @@
   	"mt_send":"Enviar",
   	"mt_back":"Lista de Equipas",
 
+  	//404
+  	"404-1": "Parece que viraste onde não devias, esta página não existe.",
+  	"404-2": "Carrega em baixo para voltares à homepage.",
+
   	//Misc
   	"loading": "A carregar...",
 

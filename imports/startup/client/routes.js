@@ -3,6 +3,7 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 import { analytics } from "meteor/okgrow:analytics";
 
 // Import needed templates
+import '../../ui/404/404.js'
 import '../../ui/home/home.js'
 import '../../ui/home/homeGallery.js'
 import '../../ui/home_sponsor/home_sponsor.js'
@@ -225,11 +226,9 @@ FlowRouter.route('/dev', {
   }
 });
 
-/*
 FlowRouter.notFound = {
   action() {
-    BlazeLayout.render('404');
+    BlazeLayout.render('base', {main:"404"});
   },
 };
-*/
 
