@@ -48,10 +48,8 @@
 	"menu_logout": "Logout",
 
 	//Admin
-	"admin_opt_1": "Opção disponível em breve",
-	"admin_opt_2": "Opção disponível em breve",
-	"admin_opt_3": "Opção disponível em breve",
-	"admin_opt_4": "Opção disponível em breve",
+	"ap_user-list": "Utilizadores",
+	"ap_team-list": "Equipas",
 
 	//User Profile
 	"user_bio": "Bio:",
@@ -216,7 +214,7 @@
 
   	//2k16 Page
   	"2k16_short": "",
-  	"2k16_long": "",
+  	"2k16_intro": "",
 
   	//Misc
   	"loading": "A carregar...",

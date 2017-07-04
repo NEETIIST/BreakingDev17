@@ -1,10 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Teams } from '../teams.js';
 
-Meteor.publish('teams.all', function () {
-  return Teams.find();
-});
-
 Meteor.publish('singleTeam', function(id){
 	return Teams.find({"_id":id});
 })
@@ -34,10 +30,21 @@ Meteor.publish('singleTeamName.logged', function(id){
 
 Meteor.publish('singleTeamMembers',function(id){
 	let t = Teams.findOne({'_id':id});
-	let list = [];
-	list.push(t.captain);
-	t.members.forEach(function(m){
-		list.push(m);
-	});
-	return Meteor.users.find({'_id':{ $in : list }},{'username':1});
+	if ( t !== undefined )
+	{
+		let list = [];
+		list.push(t.captain);
+		t.members.forEach(function(m){
+			list.push(m);
+		});
+		return Meteor.users.find({'_id':{ $in : list }},{'username':1});
+	}
 })
+
+//Admin use
+Meteor.publish('teams.all', function () {
+  	if (Roles.userIsInRole( this.userId, 'admin'))
+		return Teams.find();
+	else
+		return 0 ;
+});

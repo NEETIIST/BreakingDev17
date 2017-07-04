@@ -13,3 +13,11 @@ Meteor.publish("singleUserVisitor", function (id) {
 Meteor.publish("singleUserAllData", function (id) {
     return Meteor.users.find({'username':id});
 });
+
+//Admin User
+Meteor.publish("users.all", function () {
+    if (Roles.userIsInRole( this.userId, 'admin'))
+		return Meteor.users.find();
+	else
+		return 0 ;
+});

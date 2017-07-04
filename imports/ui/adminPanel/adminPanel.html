@@ -1,32 +1,208 @@
 <template name="adminPanel">
 	
-	<div class="row justify-content-center align-items-center m-0 text-center">
-		<div class="col-12 col-md-6 blue">
-			<p>{{_ "admin_opt_1"}}</p>
-		</div>
-		<div class="col-12 col-md-6 white">
-			<!--<p>{{_ "admin_opt_2"}}</p>-->
-			{{> navbarLinks}}
-		</div>
-		<div class="col-12 col-md-6 black">
-			<p>{{_ "admin_opt_3"}}</p>
-		</div>
-		<div class="col-12 col-md-6 orange">
-			<p>{{_ "admin_opt_4"}}</p>
-		</div>
+	{{#if isInRole 'admin'}}
+		{{#if Template.subscriptionsReady}}
+
+			<div class="row justify-content-center align-items-center f-black m-0 py-3 white vh-100 hidden-md-down" id="nav-mid">
+				<div class="col-10 col-md-2">
+					<div class="row justify-content-center align-items-center">
+						<div class="col-12 col-md-12">
+							<div class="row align-items-center text-left hvr-items cp" id="ap_user-list">
+								<div class="col-3">
+									<i class="fa fs-4 py-2 fa-user fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col-9">
+									<span class="fw-3 fs-2 flh-2">{{_ "ap_user-list"}}</span>
+								</div>
+							</div>
+							<div class="row align-items-center text-left hvr-items cp" id="ap_team-list">
+								<div class="col-3">
+									<i class="fa fs-4 py-2 fa-users fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col-9">
+									<span class="fw-3 fs-2 flh-2">{{_ "ap_team-list"}}</span>
+								</div>
+							</div>
+							<div class="row align-items-center text-left hvr-items cp" id="logout">
+								<div class="col-3">
+									<i class="fa fs-4 py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col-9">
+									<span class="fw-3 fs-2 flh-2">{{_ "ud_logout"}}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-10 col-md-1 white"></div>
+				<div class="col-10 col-md-8">
+					{{> Template.dynamic template=dash_small}}
+				</div>
+			</div>
+		{{else}}
+			<div class="row justify-content-center align-items-center text-center m-0 white f-black vh-100">
+				<div class="col-12 text-center">
+					<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+					<p>{{_ "loading"}}</p>
+				</div>
+			</div>
+		{{/if}}
+	{{/if}}
+
+</template>
+
+<template name="ap_user_list">
+	<p>All Users:</p>
+	<div class="table-responsive">
+		<table class="table table-hover table-sm fw-3 fs-2">
+			<thead>
+				<tr>
+					<th>Username</th>
+					<th>Nome</th>
+					<th>Equipa</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each devs}}		
+					<tr>
+						<td>@{{username}}</td>
+						<td>{{name}}</td>
+						{{#if inTeam}}
+							<td>{{teamName}}</td>
+						{{else}}
+							<td>-</td>
+						{{/if}}
+						<td><i class="fa fa-search fa-fw f-black cp focus" aria-hidden="true"></i></td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
 	</div>
-
 </template>
 
-<template name="generalOptions">
-	
+<template name="ap_user_focus">
+	{{#each focus}}
+		<img src="/profile.png" alt="Profile Picture" class="user-pic">
+		<div class="spacer-4"></div>
+		<div class="table-responsive">
+			<table class="table table-sm fw-3 fs-2">
+				<tbody>
+					<tr>
+						<td class="vwf-20">Username:</td>
+						<td>@{{username}}</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">Name:</td>
+						<td>{{name}}</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">Idade:</td>
+						<td>{{age}}</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">Universidade:</td>
+						<td>{{college}}</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">Curso:</td>
+						<td>{{course}}</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">Skills:</td>
+						<td>{{skills}}</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">Equipa:</td>
+						{{#if inTeam}}
+							<td>{{teamName}}</td>
+						{{else}}
+							<td>-</td>
+						{{/if}}
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+	{{/each}}
 </template>
 
-<template name="navbarLinks">
-	{{#each links}}
-		<span>{{name}}</span>
-		{{#autoForm collection="Links" id=name doc=this type="update" autosave=true}}
-			{{> afQuickField name='isNavbar'}}
-		{{/autoForm}}
+<template name="ap_team_list">
+	<p>All Teams:</p>
+	<div class="table-responsive">
+		<table class="table table-hover table-sm fw-3 fs-2">
+			<thead>
+				<tr>
+					<th>Categoria</th>
+					<th>Nome</th>
+					<th>Projeto</th>
+					<th>Capitão</th>
+					<th>Membros</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each teams}}		
+					<tr>
+						<td>{{category}}</td>
+						<td>{{team_name}}</td>
+						<td>"{{project_name}}"</td>
+						<td>@{{captainUser}}</td>
+						<td>{{memberCount}}</td>
+						<td><i class="fa fa-search fa-fw f-black cp focus" aria-hidden="true"></i></td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+</template>
+
+<template name="ap_team_focus">
+	{{#each focus}}
+		{{#if equals category "Web"}}
+				<img src="/icons/WebAlt.png" alt="{{_ 'team_webdesc'}}" class="category-pic">
+		{{/if}}
+		{{#if equals category "Gaming"}}
+			<img src="/icons/JogosAlt.png" alt="{{_ 'team_gamesdesc'}}" class="category-pic">
+		{{/if}}
+		<div class="spacer-4"></div>
+		<div class="table-responsive">
+			<table class="table table-sm fw-3 fs-2">
+				<tbody>
+					<tr>
+						<td class="vwf-20">Name:</td>
+						<td>{{team_name}}</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">Category:</td>
+						<td>{{category}}</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">Nome do Projeto:</td>
+						<td>"{{project_name}}"</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">Projeto:</td>
+						<td>{{project}}</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">Skills:</td>
+						<td>{{skills}}</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">Capitão:</td>
+						<td>@{{captainUser}}</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">Membros:</td>
+						<td>
+							{{#each memberList}}
+								@{{memberUser}} - 
+							{{/each}}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	{{/each}}
 </template>

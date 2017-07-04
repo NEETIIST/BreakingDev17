@@ -4,12 +4,21 @@ import { Devs } from '/imports/api/devs/devs.js';
 import { Teams } from '/imports/api/teams/teams.js';
 
 Template.dashboard.onRendered(function() {
+
 	var self = this;
 	self.autorun(function(){
-		self.subscribe('devs.single', Meteor.userId());
-		self.subscribe('singleTeamName.logged', Meteor.userId());
+		if ( Roles.userIsInRole( Meteor.userId(), 'admin'))
+		{
+			FlowRouter.go("/admin");
+		}
+		else
+		{
+			self.subscribe('devs.single', Meteor.userId());
+			self.subscribe('singleTeamName.logged', Meteor.userId());			
+		}
 	});
 });
+
 
 Template.dashboard.events({
 	"click #logout": function(){

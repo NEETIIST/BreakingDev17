@@ -48,10 +48,8 @@
 	"menu_logout": "Logout",
 
 	//Admin
-	"admin_opt_1": "Soon",
-	"admin_opt_2": "Soon",
-	"admin_opt_3": "Soon",
-	"admin_opt_4": "Soon",	
+	"ap_user-list": "Utilizadores",
+	"ap_team-list": "Equipas",
 
 	//User Profile
 	"user_bio": "Bio:",
@@ -216,8 +214,8 @@
   	"404-2": "Click below to go back to the homepage",
 
   	//2k16 Page
-  	"2k16_short": "",
-  	"2k16_long": "",
+  	"2k16_short": "Lorem Ipsum",
+  	"2k16_intro": "Lorem Ipsum",
 
   	//Misc
   	"loading": "A carregar...",

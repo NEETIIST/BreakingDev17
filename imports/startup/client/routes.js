@@ -107,7 +107,7 @@ FlowRouter.route('/u/:username',{
 FlowRouter.route('/admin',{
   name: 'adminPanel',
   action() {
-    BlazeLayout.render('adminPanel');
+    BlazeLayout.render('base', {main:'adminPanel'});
   }
 });
 
