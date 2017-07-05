@@ -31,6 +31,18 @@ Template.adminPanel.events({
 	"click #ap_team-list": function(){
 		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_team_list"}); 
 	},
+	"click #ap_stats": function(){
+		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_stats"}); 
+	},
+});
+
+Template.ap_stats.helpers({
+	devsTotal: function(){
+		return Devs.find({"inTeam":true}).count();
+	},
+	teamsTotal: function(){
+		return Teams.find({}).count();
+	},
 });
 
 Template.ap_user_list.helpers({
@@ -38,12 +50,14 @@ Template.ap_user_list.helpers({
 		return Devs.find({});
 	},
 	username: function(){
-		console.log(this);
 		return Meteor.users.findOne({"_id":this.user}).username;
 	},
 	teamName: function(){
 		return Teams.findOne({"_id":this.team}).team_name;
-	}
+	},
+	validated: function(){
+		return Meteor.users.findOne({"_id":this.user}).emails[0].verified;
+	},
 });
 
 Template.ap_user_list.events({
@@ -63,7 +77,13 @@ Template.ap_user_focus.helpers({
 	},
 	teamName: function(){
 		return Teams.findOne({"_id":this.team}).team_name;
-	}
+	},
+	validated: function(){
+		return Meteor.users.findOne({"_id":this.user}).emails[0].verified;
+	},
+	email: function(){
+		return Meteor.users.findOne({"_id":this.user}).emails[0].address;
+	},
 });
 
 Template.ap_team_list.helpers({
@@ -98,10 +118,27 @@ Template.ap_team_focus.helpers({
 		this.members.forEach(function(m){
 			list.push(m);
 		});
-		console.log(list);
 		return list ;
 	},
 	memberUser: function(){
 		return Meteor.users.findOne({"_id":String(this)}).username;	
-	}
+	},
+	readyToValidate: function(){
+		if ( Meteor.users.findOne({"_id":this.captain}).emails[0].verified && this.members.length>1 && this.members.length<4 )
+			return true;
+		else
+			return false;
+	},
+});
+
+Template.ap_team_focus.events({
+	"click #validate": function(){
+		Teams.update(this._id,{$set:{"validated":true}});
+		alert(TAPi18n.__("ap-tf-validated"));
+	},
+	"click .focus": function(){
+		let d = Devs.findOne({"user":String(this)})
+		Session.set("focus",d._id);
+		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_user_focus"}); 	
+	},
 });

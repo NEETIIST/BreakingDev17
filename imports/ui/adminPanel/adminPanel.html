@@ -7,6 +7,14 @@
 				<div class="col-10 col-md-2">
 					<div class="row justify-content-center align-items-center">
 						<div class="col-12 col-md-12">
+							<div class="row align-items-center text-left hvr-items cp" id="ap_stats">
+								<div class="col-3">
+									<i class="fa fs-4 py-2 fa-bar-chart fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col-9">
+									<span class="fw-3 fs-2 flh-2">{{_ "ap-stats"}}</span>
+								</div>
+							</div>
 							<div class="row align-items-center text-left hvr-items cp" id="ap_user-list">
 								<div class="col-3">
 									<i class="fa fs-4 py-2 fa-user fa-fw" aria-hidden="true"></i>
@@ -35,7 +43,8 @@
 					</div>
 				</div>
 				<div class="col-10 col-md-1 white"></div>
-				<div class="col-10 col-md-8">
+				<div class="col-10 col-md-8 align-self-start">
+					<div class="spacer-4"></div>
 					{{> Template.dynamic template=dash_small}}
 				</div>
 			</div>
@@ -51,15 +60,33 @@
 
 </template>
 
+<template name="ap_stats">
+	<div class="row justify-content-center align-items-center text-center m-0">
+		<div class="col-10 col-md-4 hvr-items" title="{{_ 'ap-stats-1-info'}}">
+			<span class="fw-3 fs-3">{{_ "ap-stats-1"}}</span>
+			<p class="fw-3 fs-6">{{devsTotal}}</p>
+		</div>
+		<div class="col-10 col-md-4 hvr-items">
+			<span class="fw-3 fs-3">{{_ "ap-stats-2"}}</span>
+			<p class="fw-3 fs-6">{{teamsTotal}}</p>
+		</div>
+		<div class="col-10 col-md-4 hvr-items">
+			<span class="fw-3 fs-3">{{_ "ap-stats-3"}}</span>
+			<p class="fw-3 fs-6">0</p>
+		</div>
+	</div>
+</template>
+
 <template name="ap_user_list">
-	<p>All Users:</p>
+	<p>{{_ "ap-ul"}}</p>
 	<div class="table-responsive">
 		<table class="table table-hover table-sm fw-3 fs-2">
 			<thead>
 				<tr>
-					<th>Username</th>
-					<th>Nome</th>
-					<th>Equipa</th>
+					<th>{{_ "ap-ul-username"}}</th>
+					<th>{{_ "ap-ul-name"}}</th>
+					<th>{{_ "ap-ul-team"}}</th>
+					<th>{{_ "ap-ul-validated"}}</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -73,6 +100,13 @@
 						{{else}}
 							<td>-</td>
 						{{/if}}
+						<td>
+							{{#if validated}}
+									<i class="fa fa-check fa-fw f-green" aria-hidden="true"></i>
+							{{else}}	
+								<i class="fa fa-times fa-fw f-red" aria-hidden="true"></i>
+							{{/if}}
+						</td>
 						<td><i class="fa fa-search fa-fw f-black cp focus" aria-hidden="true"></i></td>
 					</tr>
 				{{/each}}
@@ -89,38 +123,51 @@
 			<table class="table table-sm fw-3 fs-2">
 				<tbody>
 					<tr>
-						<td class="vwf-20">Username:</td>
+						<td class="vwf-20">{{_ "ap-ul-username"}}</td>
 						<td>@{{username}}</td>
 					</tr>
 					<tr>
-						<td class="vwf-20">Name:</td>
+						<td class="vwf-20">{{_ "ap-ul-name"}}</td>
 						<td>{{name}}</td>
 					</tr>
 					<tr>
-						<td class="vwf-20">Idade:</td>
+						<td class="vwf-20">{{_ "ap-uf-age"}}</td>
 						<td>{{age}}</td>
 					</tr>
 					<tr>
-						<td class="vwf-20">Universidade:</td>
+						<td class="vwf-20">{{_ "ap-uf-college"}}</td>
 						<td>{{college}}</td>
 					</tr>
 					<tr>
-						<td class="vwf-20">Curso:</td>
+						<td class="vwf-20">{{_ "ap-uf-course"}}</td>
 						<td>{{course}}</td>
 					</tr>
 					<tr>
-						<td class="vwf-20">Skills:</td>
+						<td class="vwf-20">{{_ "ap-uf-skills"}}</td>
 						<td>{{skills}}</td>
 					</tr>
 					<tr>
-						<td class="vwf-20">Equipa:</td>
+						<td class="vwf-20">{{_ "ap-ul-team"}}</td>
 						{{#if inTeam}}
 							<td>{{teamName}}</td>
 						{{else}}
 							<td>-</td>
 						{{/if}}
 					</tr>
-
+					<tr>
+						<td class="vwf-20">{{_ "ap-uf-email"}}</td>
+						<td>{{email}}</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">{{_ "ap-ul-validated"}}</td>
+						<td>
+							{{#if validated}}
+								<i class="fa fa-check fa-fw f-green" aria-hidden="true"></i>
+							{{else}}	
+								<i class="fa fa-times fa-fw f-red" aria-hidden="true"></i>
+							{{/if}}
+						</td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
@@ -128,16 +175,17 @@
 </template>
 
 <template name="ap_team_list">
-	<p>All Teams:</p>
+	<p>{{_ "ap-tl"}}</p>
 	<div class="table-responsive">
 		<table class="table table-hover table-sm fw-3 fs-2">
 			<thead>
 				<tr>
-					<th>Categoria</th>
-					<th>Nome</th>
-					<th>Projeto</th>
-					<th>Capitão</th>
-					<th>Membros</th>
+					<th>{{_ "ap-tl-category"}}</th>
+					<th>{{_ "ap-tl-teamname"}}</th>
+					<th>{{_ "ap-tl-projectname"}}</th>
+					<th>{{_ "ap-tl-captain"}}</th>
+					<th>{{_ "ap-tl-members"}}</th>
+					<th>{{_ "ap-tl-validated"}}</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -149,7 +197,16 @@
 						<td>"{{project_name}}"</td>
 						<td>@{{captainUser}}</td>
 						<td>{{memberCount}}</td>
-						<td><i class="fa fa-search fa-fw f-black cp focus" aria-hidden="true"></i></td>
+						<td>
+							{{#if validated}}
+								<i class="fa fa-check fa-fw f-green" aria-hidden="true"></i>
+							{{else}}	
+								<i class="fa fa-times fa-fw f-red" aria-hidden="true"></i>
+							{{/if}}
+						</td>
+						<td>
+							<i class="fa fa-search fa-fw f-black cp focus" aria-hidden="true"></i>
+						</td>
 					</tr>
 				{{/each}}
 			</tbody>
@@ -170,39 +227,59 @@
 			<table class="table table-sm fw-3 fs-2">
 				<tbody>
 					<tr>
-						<td class="vwf-20">Name:</td>
+						<td class="vwf-20">{{_ "ap-tl-teamname"}}</td>
 						<td>{{team_name}}</td>
 					</tr>
 					<tr>
-						<td class="vwf-20">Category:</td>
+						<td class="vwf-20">{{_ "ap-tl-category"}}</td>
 						<td>{{category}}</td>
 					</tr>
 					<tr>
-						<td class="vwf-20">Nome do Projeto:</td>
+						<td class="vwf-20">{{_ "ap-tl-projectname"}}</td>
 						<td>"{{project_name}}"</td>
 					</tr>
 					<tr>
-						<td class="vwf-20">Projeto:</td>
+						<td class="vwf-20">{{_ "ap-tf-project"}}</td>
 						<td>{{project}}</td>
 					</tr>
 					<tr>
-						<td class="vwf-20">Skills:</td>
+						<td class="vwf-20">{{_ "ap-tf-skills"}}</td>
 						<td>{{skills}}</td>
 					</tr>
 					<tr>
-						<td class="vwf-20">Capitão:</td>
+						<td class="vwf-20">{{_ "ap-tl-captain"}}</td>
 						<td>@{{captainUser}}</td>
 					</tr>
 					<tr>
-						<td class="vwf-20">Membros:</td>
+						<td class="vwf-20">{{_ "ap-tl-members"}}</td>
 						<td>
 							{{#each memberList}}
-								@{{memberUser}} - 
+								<span class="focus cp">@{{memberUser}} - </span>
 							{{/each}}
+						</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">{{_ "ap-tl-validated"}}</td>
+						<td>
+							{{#if validated}}
+								<i class="fa fa-check fa-fw f-green" aria-hidden="true"></i>
+							{{else}}	
+								<i class="fa fa-times fa-fw f-red" aria-hidden="true"></i>
+							{{/if}}
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
+		<div class="spacer-2"></div>
+		{{#if validated}}
+			<!--Something here??-->
+		{{else}}
+			{{#if readyToValidate}}
+				<button type="button" class="btn btn-success float-right" id="validate">{{_ "ap-tf-validate"}}</button>
+			{{else}}
+				<p class="fw-3 fs-2">{{_ "ap-tf-notready"}}</p>
+			{{/if}}
+		{{/if}}
 	{{/each}}
 </template>

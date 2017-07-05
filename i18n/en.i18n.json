@@ -48,8 +48,38 @@
 	"menu_logout": "Logout",
 
 	//Admin
-	"ap_user-list": "Utilizadores",
-	"ap_team-list": "Equipas",
+	"ap_user-list": "Users",
+	"ap_team-list": "Teams",
+
+	"ap-ul": "Users List:",
+	"ap-ul-username": "Username",
+	"ap-ul-name": "Name",
+	"ap-ul-team": "Team",
+	"ap-ul-validated": "Validated",
+	"ap-uf-age": "Age",
+	"ap-uf-college": "College",
+	"ap-uf-course": "Course",
+	"ap-uf-skills": "Skills",
+	"ap-uf-email": "Email",
+
+	"ap-tl":"Teams List:",
+	"ap-tl-teamname": "Nome",
+	"ap-tl-category":"Category",
+	"ap-tl-projectname":"Project",
+	"ap-tl-captain":"Captain",
+	"ap-tl-members":"Members",
+	"ap-tl-validated": "Validated",
+	"ap-tf-skills": "Skills",
+	"ap-tf-project": "Description",
+	"ap-tf-validate": "Validate Team",
+	"ap-tf-notready": "This team cannot be validated yet. There might be missing members or the captain's email is not confirmed.",
+	"ap-tf-validated": "Team successfully validated!",
+
+	"ap-stats": "Statistics",
+	"ap-stats-1": "Contestants",
+	"ap-stats-1-info": "Already signed on teams",
+	"ap-stats-2": "Teams",
+	"ap-stats-3": "Volunteers",
 
 	//User Profile
 	"user_bio": "Bio:",
