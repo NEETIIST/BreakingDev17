@@ -61,6 +61,9 @@
 	"ap-uf-course": "Course",
 	"ap-uf-skills": "Skills",
 	"ap-uf-email": "Email",
+	"ap-uf-paid": "Payment confirmed.",
+	"ap-uf-pay": "Confirm payment",
+	"ap-uf-payment": "Payment",
 
 	"ap-tl":"Teams List:",
 	"ap-tl-teamname": "Nome",
@@ -244,8 +247,8 @@
   	"404-2": "Click below to go back to the homepage",
 
   	//2k16 Page
-  	"2k16_short": "Lorem Ipsum",
-  	"2k16_intro": "Lorem Ipsum",
+  	"2k16_short": "BreakingDev 2016",
+  	"2k16_intro": "The best pictures of Lisbon's first university students hackathon",
 
   	//Misc
   	"loading": "A carregar...",

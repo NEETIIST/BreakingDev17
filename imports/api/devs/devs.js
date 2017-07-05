@@ -14,7 +14,7 @@ Devs.allow({
 Schema = new SimpleSchema({
   user: {
     type: String,
-    autoValue: function(){ return Meteor.userId(); },
+    //autoValue: function(){ return Meteor.userId(); },
     autoform: {
         type: "hidden",
         label: false
@@ -72,6 +72,14 @@ Schema = new SimpleSchema({
     optional: true,
   },
   team: {
+    type: String,
+    autoform: {
+        type: "hidden",
+        label: false
+    },
+    optional: true,
+  },
+  payment: {
     type: String,
     autoform: {
         type: "hidden",

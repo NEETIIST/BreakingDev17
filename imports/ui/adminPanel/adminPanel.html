@@ -168,8 +168,23 @@
 							{{/if}}
 						</td>
 					</tr>
+					<tr>
+						<td class="vwf-20">{{_ "ap-uf-payment"}}</td>
+						<td>
+							{{#if payment}}
+								<i class="fa fa-check fa-fw f-green" aria-hidden="true"></i>
+							{{else}}	
+								<i class="fa fa-times fa-fw f-red" aria-hidden="true"></i>
+							{{/if}}
+						</td>
+					</tr>
 				</tbody>
 			</table>
+			{{#if payment}}
+				<!-- Something here??-->
+			{{else}}
+				<button type="button" class="btn btn-success float-right" id="pay">{{_ "ap-uf-pay"}}</button>
+			{{/if}}
 		</div>
 	{{/each}}
 </template>

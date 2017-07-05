@@ -86,6 +86,13 @@ Template.ap_user_focus.helpers({
 	},
 });
 
+Template.ap_user_focus.events({
+	"click #pay": function(){
+		Devs.update(this._id,{$set:{"payment":true}});
+		alert(TAPi18n.__("ap-uf-paid"));
+	},
+});
+
 Template.ap_team_list.helpers({
 	teams: function(){
 		return Teams.find({});

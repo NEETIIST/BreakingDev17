@@ -5,9 +5,14 @@ import { Teams } from '../teams/teams.js';
 
 Meteor.methods({
 
-	setUpDev: function(){
+	setUpDev: function(id){
 		let username = this.userId;
-		Devs.update({"user":username},{$set:{"inTeam":false}})
+		if ( Devs.findOne({"_id":id}).user === undefined )
+		{
+			Devs.update({"user":username},{$set:{"user":username}})
+			Devs.update({"user":username},{$set:{"inTeam":false}})
+			Devs.update({"user":username},{$set:{"payment":false}})
+		}
 	},
 
 	userInTeam: function() {
@@ -31,9 +36,7 @@ Meteor.methods({
 
 	userHasProfile: function(){
 		let u = Meteor.users.findOne({'_id': this.userId});
-		//console.log(u);
 		return Devs.findOne({'user':this.userId}) ? true : false ;
-		
 	}
 
 });
