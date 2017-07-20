@@ -13,8 +13,9 @@
 
 			{{#autoForm collection=Contact id="contactForm" type="method" template="nothing" meteormethod="sendEmail" validation="blur"}}
 				<fieldset>
-				{{> afQuickField name="message" class="text-input" autocomplete="off"}}
-				{{> afQuickField name='team' value =""}}
+				{{> afQuickField name="name" class="text-input" autocomplete="off"}}
+				{{> afQuickField name="company" class="text-input" autocomplete="off"}}
+				{{> afQuickField name="email" class="text-input" autocomplete="off"}}
 				</fieldset>
 				<button type="submit" class="at-btn submit cp mb-3">{{_ "home_sponsor_submit"}}</button>
 			{{/autoForm}}

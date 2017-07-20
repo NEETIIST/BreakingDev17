@@ -84,12 +84,21 @@ Template.ap_user_focus.helpers({
 	email: function(){
 		return Meteor.users.findOne({"_id":this.user}).emails[0].address;
 	},
+	admin: function(){
+		return Roles.userIsInRole( this.user, 'admin');
+	}
 });
 
 Template.ap_user_focus.events({
 	"click #pay": function(){
 		Devs.update(this._id,{$set:{"payment":true}});
 		alert(TAPi18n.__("ap-uf-paid"));
+	},
+	"click #make-admin": function(){
+		Meteor.call("makeAdmin", this.user);
+	},
+	"click #not-admin": function(){
+		Meteor.call("removeAdmin", this.user);
 	},
 });
 

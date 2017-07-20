@@ -48,6 +48,36 @@
 					{{> Template.dynamic template=dash_small}}
 				</div>
 			</div>
+			<div class="row justify-content-center align-items-start f-black m-0 py-3 white vh-100 hidden-lg-up" id="nav-mid">
+				<div class="col-12">
+					<div class="row justify-content-center align-items-center m-0">
+						<div class="col-12">
+							<div class="spacer-2"></div>
+							<div class="row text-center f-black">
+								<div class="col" id="ap_stats">
+									<i class="fa fs-5 py-2 fa-bar-chart fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col" id="ap_user-list">
+									<i class="fa fs-5 py-2 fa-user fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col" id="ap_team-list">
+									<i class="fa fs-5 py-2 fa-users fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col" id="logout">
+									<i class="fa fs-5 py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
+								</div>
+							</div>
+							<hr class="orange">
+						</div>
+					</div>
+					<div class="row justify-content-center align-items-start m-0">
+						<div class="col-12 col-md-8 align-self-start">
+							<div class="spacer-4"></div>
+							{{> Template.dynamic template=dash_small}}
+						</div>
+					</div>
+				</div>
+			</div>
 		{{else}}
 			<div class="row justify-content-center align-items-center text-center m-0 white f-black vh-100">
 				<div class="col-12 text-center">
@@ -180,11 +210,24 @@
 					</tr>
 				</tbody>
 			</table>
-			{{#if payment}}
-				<!-- Something here??-->
-			{{else}}
-				<button type="button" class="btn btn-success float-right" id="pay">{{_ "ap-uf-pay"}}</button>
-			{{/if}}
+			<div class="row m-0 text-left text-md-center">
+				<div class="col my-1">
+					{{#if payment}}
+						<!-- Something here??-->
+					{{else}}
+						<button type="button" class="btn btn-success fw-3 fs-2 f-inherit" id="pay">{{_ "ap-uf-pay"}}</button>
+					{{/if}}
+				</div>
+				<div class="col my-1">
+					{{#if admin}}
+						<button type="button" class="btn btn-danger fw-3 fs-2 f-inherit" id="not-admin">{{_ "ap-uf-not-admin"}}</button>
+					{{else}}
+						<button type="button" class="btn btn-warning fw-3 fs-2 f-inherit" id="make-admin">{{_ "ap-uf-admin"}}</button>
+					{{/if}}
+						
+				</div>
+				<div class="spacer-8"></div>
+			</div>
 		</div>
 	{{/each}}
 </template>
@@ -286,7 +329,7 @@
 				</tbody>
 			</table>
 		</div>
-		<div class="spacer-2"></div>
+		<div class="spacer-4"></div>
 		{{#if validated}}
 			<!--Something here??-->
 		{{else}}
@@ -296,5 +339,6 @@
 				<p class="fw-3 fs-2">{{_ "ap-tf-notready"}}</p>
 			{{/if}}
 		{{/if}}
+		<div class="spacer-4"></div>
 	{{/each}}
 </template>

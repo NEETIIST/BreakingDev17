@@ -64,6 +64,8 @@
 	"ap-uf-paid": "Payment confirmed.",
 	"ap-uf-pay": "Confirm payment",
 	"ap-uf-payment": "Payment",
+	"ap-uf-admin": "Make Admin",
+	"ap-uf-not-admin": "Remove Admin",
 
 	"ap-tl":"Teams List:",
 	"ap-tl-teamname": "Nome",

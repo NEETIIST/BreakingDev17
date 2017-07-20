@@ -47,6 +47,20 @@ Meteor.methods({
       text: "Olá " + m.username + ".\nEstás a receber este email por seres capitão da equipa " + t.team_name +".\n\nO "+ d.name +" (@"+u.username+') também quer fazer parte da tua equipa. Ele enviou-te a seguinte mensagem:\n\n"'+doc.message+'"\n\nAgora tu é que sabes se queres ou não aceitar mais um membro para a tua equipa.\nSe quiseres aceitar, basta ires a '+ link +" e seguires as instruções.\nSe não quiseres, agradecemos que respondas a este email a explicar as razões. \n\nSe tiveres alguma dúvida envia-nos um email para breakingdev@neeti.tecnico.ulisboa.pt .",
     });
   },
+
+  makeAdmin: function(id){
+    if ( Roles.userIsInRole( this.userId, 'admin') )
+    {
+      Roles.addUsersToRoles(id, 'admin');
+    }
+  },
+
+  removeAdmin: function(id){
+    if ( Roles.userIsInRole( this.userId, 'admin') )
+    {
+      Roles.setUserRoles(id, [], '');
+    }
+  },
   
   upper: function (text) {
     check(text, String);
@@ -59,5 +73,5 @@ Meteor.methods({
 
 /* CHECK IF WORKING AFTER DEPLOYMENT */
 Meteor.users.deny({
-  update() { return true; }
+  //update() { return true; }
 });
