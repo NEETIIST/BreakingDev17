@@ -14,12 +14,13 @@ Devs.allow({
 Schema = new SimpleSchema({
   user: {
     type: String,
-    //autoValue: function(){ return Meteor.userId(); },
+    autoValue: function(){ return undefined },
     autoform: {
         type: "hidden",
         label: false
     },
-    unique: true,
+    //unique: true,
+    optional: true,
   },
   name: {
     type: String,
@@ -80,7 +81,15 @@ Schema = new SimpleSchema({
     optional: true,
   },
   payment: {
-    type: String,
+    type: Boolean,
+    autoform: {
+        type: "hidden",
+        label: false
+    },
+    optional: true,
+  },
+  volunteer: {
+    type: Boolean,
     autoform: {
         type: "hidden",
         label: false

@@ -36,3 +36,5 @@ TAPi18n.setLanguage(getUserLanguage())
   });
 
 T9n.setLanguage(getUserLanguageT9n());
+
+SimpleSchema.debug = true;

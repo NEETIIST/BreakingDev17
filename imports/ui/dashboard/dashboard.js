@@ -39,7 +39,12 @@ Template.dashboard.events({
 		Session.set("dash_last","dash_slack");
 		let last = Session.get("dash_last");
 		BlazeLayout.render('base', {main:"dashboard",dash_small:last}); 
-	}
+	},
+	"click #volunteer": function(){
+		Session.set("dash_last","dash_volunteer");
+		let last = Session.get("dash_last");
+		BlazeLayout.render('base', {main:"dashboard",dash_small:last}); 
+	},
 });
 
 Template.dashboard.helpers({
@@ -52,6 +57,14 @@ Template.dashboard.helpers({
   	teamName: function(){
   		return Teams.findOne({}).team_name ;
   	},
+  	volunteer: function(){
+  		if( Devs.findOne({}).volunteer == true)
+  		{
+  			return true;
+  		}
+  		else
+  			return false;
+  	}
 });
 
 

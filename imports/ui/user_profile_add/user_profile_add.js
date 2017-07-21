@@ -7,7 +7,7 @@ Template.user_profile_add.onRendered(function() {
         if (err) {
             console.log(err);
         } else {
-        	console.log(result);
+        	//console.log(result);
             if (result === true) {
                 FlowRouter.go("/u_/edit");
             }
@@ -29,8 +29,7 @@ Template.user_profile_add.events({
 
 AutoForm.addHooks(['addUserProfile'],{
     onSuccess: function(formType, result) {
-    	//alert("Dados atualizados");
-        Meteor.call('setUpDev', function(error, result) {});
+        Meteor.call('setUpDev', result);
       	FlowRouter.go("/dash");
     }
 });

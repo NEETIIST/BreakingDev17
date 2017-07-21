@@ -65,6 +65,7 @@
 			<div class="col-10 col-md-2">
 				<div class="row justify-content-center align-items-center">
 					<div class="col-12 col-md-12">
+						<!--
 						<div class="row align-items-center text-left hvr-items cp">
 							<div class="col-3">
 								<i class="fa fs-4 py-2 fa-calendar fa-fw" aria-hidden="true"></i>
@@ -73,6 +74,7 @@
 								<span class="fw-3 fs-2 flh-2">{{_ "ud_schedule"}}</span>
 							</div>
 						</div>
+						-->
 						<div class="row align-items-center text-left hvr-items cp" id="edit_profile">
 							<div class="col-3">
 								<i class="fa fs-4 py-2 fa-pencil fa-fw" aria-hidden="true"></i>
@@ -81,17 +83,29 @@
 								<span class="fw-3 fs-2 flh-2">{{_ "ud_profile"}}</span>
 							</div>
 						</div>
-						<div class="row align-items-center text-left hvr-items cp" id="edit_team">
-							<div class="col-3">
-								<i class="fa fs-4 py-2 fa-users fa-fw" aria-hidden="true"></i>
+						{{#unless volunteer}}
+							<div class="row align-items-center text-left hvr-items cp" id="edit_team">
+								<div class="col-3">
+									<i class="fa fs-4 py-2 fa-users fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col-9">
+									<span class="fw-3 fs-2 flh-2">{{_ "ud_team"}}</span>
+								</div>
 							</div>
-							<div class="col-9">
-								<span class="fw-3 fs-2 flh-2">{{_ "ud_team"}}</span>
+						{{/unless}}
+						{{#unless inTeam}}
+							<div class="row align-items-center text-left hvr-items cp" id="volunteer">
+								<div class="col-3">
+									<i class="fa fs-4 py-2 fa-child fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col-9">
+									<span class="fw-3 fs-2 flh-2">{{_ "ud_volunteer"}}</span>
+								</div>
 							</div>
-						</div>
+						{{/unless}}
 						<div class="row align-items-center text-left hvr-items cp" id="slack">
 							<div class="col-3">
-								<i class="fa fs-4 py-2 fa-comments-o fa-fw" aria-hidden="true"></i>
+								<i class="fa fs-4 py-2 fa-slack fa-fw" aria-hidden="true"></i>
 							</div>
 							<div class="col-9">
 								<span class="fw-3 fs-2 flh-2">{{_ "ud_slack"}}</span>
@@ -125,6 +139,7 @@
 		<div class="row justify-content-center align-items-start f-black m-0 py-3 white vh-55 hidden-lg-up" id="nav-mid">
 			<div class="col-10 px-0">
 				<div class="row justify-content-center align-items-center my-3 mx-0">
+					<!--
 					<div class="col-4 my-1">
 						<div class="row justify-content-center align-items-center text-center">
 							<div class="col-3 px-0">
@@ -135,6 +150,7 @@
 							</div>
 						</div>
 					</div>
+					-->
 					<div class="col-4">
 						<div class="row justify-content-center align-items-center text-center" id="edit_profile">
 							<div class="col-3 px-0">
@@ -145,20 +161,34 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-4">
-						<div class="row justify-content-center align-items-center text-center" id="edit_team">
-							<div class="col-3 px-0">
-								<i class="fa fs-4 py-2 fa-users fa-fw" aria-hidden="true"></i>
-							</div>
-							<div class="col-9 px-0">
-								<span class="fw-3 fs-3 flh-2">{{_ "ud_team"}}</span>
+					{{#unless volunteer}}
+						<div class="col-4">
+							<div class="row justify-content-center align-items-center text-center" id="edit_team">
+								<div class="col-3 px-0">
+									<i class="fa fs-4 py-2 fa-users fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col-9 px-0">
+									<span class="fw-3 fs-3 flh-2">{{_ "ud_team"}}</span>
+								</div>
 							</div>
 						</div>
-					</div>
+					{{/unless}}
+					{{#unless inTeam}}
+						<div class="col-4">
+							<div class="row justify-content-center align-items-center text-center" id="volunteer">
+								<div class="col-3 px-0">
+									<i class="fa fs-4 py-2 fa-child fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col-9 px-0">
+									<span class="fw-3 fs-3 flh-2">{{_ "ud_volunteer"}}</span>
+								</div>
+							</div>
+						</div>
+					{{/unless}}
 					<div class="col-4">
 						<div class="row justify-content-center align-items-center text-center" id="slack">
 							<div class="col-3 px-0">
-								<i class="fa fs-4 py-2 fa-comments-o fa-fw" aria-hidden="true"></i>
+								<i class="fa fs-4 py-2 fa-slack fa-fw" aria-hidden="true"></i>
 							</div>
 							<div class="col-9 px-0">
 								<span class="fw-3 fs-3 flh-2">{{_ "ud_slack"}}</span>
@@ -279,6 +309,14 @@
 			{{/transition}}
 			-->
 		{{/if}}
+	</div>
+</template>
+
+<template name="dash_volunteer">
+	<div class="row justify-content-center align-items-center text-justify my-0">
+		<div class="col-12">
+			<p class="fw-3 fs-2 flh-2">{{_ "ud_volunteer_long"}}</p>
+		</div>
 	</div>
 </template>
 

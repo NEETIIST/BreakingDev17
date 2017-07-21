@@ -8,10 +8,12 @@ Meteor.methods({
 	setUpDev: function(id){
 		let username = this.userId;
 		if ( Devs.findOne({"_id":id}).user === undefined )
-		{
-			Devs.update({"user":username},{$set:{"user":username}})
-			Devs.update({"user":username},{$set:{"inTeam":false}})
-			Devs.update({"user":username},{$set:{"payment":false}})
+		{	
+			// In need of better testing
+			Devs.update({"_id":id},{$set:{"user":username}})
+			Devs.update({"_id":id},{$set:{"inTeam":false}})
+			Devs.update({"_id":id},{$set:{"payment":false}})
+			Devs.update({"_id":id},{$set:{"volunteer":false}})
 		}
 	},
 
