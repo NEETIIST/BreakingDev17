@@ -11,3 +11,6 @@ import '../../api/teams/server/publications.js';
 
 import '../../api/devs/methods.js';
 import '../../api/devs/server/publications.js';
+
+import '../../api/alerts/methods.js';
+import '../../api/alerts/server/publications.js';

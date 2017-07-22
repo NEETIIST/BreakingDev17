@@ -5,3 +5,31 @@ th, td, tr
 
 .f-green{ color: #1e7a1a; };
 .f-red{ color: #b51b1b ; };
+
+.small-input
+{
+	color: inherit;
+	font: inherit ;
+	font-weight: inherit;
+	width: 100% ;
+	border: none;
+    border-bottom: 1px solid #1c1c1c;
+    background: none;
+    padding: 0.05em;
+    margin-bottom: 0.1em ;
+}
+
+.small-input:focus
+{
+	border: none;
+    border-bottom: 1px solid #41516b;
+    background: none;
+    outline:none;
+    padding: 0.05em;
+}
+
+.no-button
+{
+    background:none;
+    border:none;
+}

@@ -86,6 +86,11 @@
 	"ap-stats-2": "Equipas",
 	"ap-stats-3": "Voluntários",
 
+	"ap-alerts": "Alertas",
+	"ap-al-text": "Mensagem",
+	"ap-al-icon": "Ícone",
+	"ap-al-url": "Link",
+
 	//User Profile
 	"user_bio": "Bio:",
 	"user_skills": "Skills:",
@@ -109,6 +114,7 @@
 	"ud_dash_slack": "Junta-te a nós no canal oficial do Slack para o BreakingDev. Vamos estar a responder a questões, lançar desafios e fazer anuncios por lá durante todo o fim-de-semana.",
 	"ud_null": "Usa as opções para veres mais informações.",
 	"ud_volunteer": "Voluntários",
+	"ud_no-alerts": "Novidades em breve",
 
 	"ud_profile_manage": "Gere o teu perfil",
 	"ud_profile_edit": "Edita os teus dados",
@@ -192,6 +198,24 @@
 			"skills": {
 				"label": "Skills",
 				"placeholder": "Diz-nos algumas das ferramentas e/ou linguagens que vão usar"	
+			}
+		},
+		"alerts":
+		{
+			"text_pt":{
+				"label": "Texto em Português"
+			},
+			"text_en":{
+				"label": "Texto em Inglês"
+			},
+			"url":{
+				"label": "Link"
+			},
+			"icon":{
+				"label": "Ícone"
+			},
+			"display":{
+				"label": "Visível"
 			}
 		}
   	},

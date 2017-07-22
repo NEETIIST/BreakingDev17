@@ -15,4 +15,5 @@ window.Devs = Devs ;
 import { Teams } from '/imports/api/teams/teams.js';
 window.Teams = Teams ;
 
-
+import { Alerts } from '/imports/api/alerts/alerts.js';
+window.Alerts = Alerts ;

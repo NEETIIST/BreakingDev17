@@ -24,39 +24,43 @@
 		<div class="row justify-content-center align-items-center f-white m-0 py-3 black vh-32" id="nav-mid">
 			<div class="col-10">
 				<div class="row justify-content-center align-items-center text-center">
-					<div class="col-12 col-md-5 mx-3 my-2">
-						<div class="row justify-content-center align-items-center text-center py-1 task cp hvr-tasks">
-							<div class="col-1">
-								<i class="fa fa-chevron-right f-orange hvr-forward" aria-hidden="true"></i>
+					{{#each alert}}
+						<div class="col-12 col-md-5 mx-3 my-2">
+							<a href="{{url}}">
+							<div class="row justify-content-center align-items-center text-center py-1 task cp hvr-tasks" id="task-team">
+								<div class="col-1">
+									<i class="fa fa-chevron-right f-orange hvr-forward" aria-hidden="true"></i>
+								</div>
+								<div class="col-2">
+									<i class="fa fs-5 py-2 {{icon}} fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col-7 col-md-8 text-center">
+									{{#if equals lang "pt"}}
+										<span>{{text_pt}}</span>
+									{{else}}
+										<span>{{text_en}}</span>
+									{{/if}}
+								</div>
+								<div class="col-1"></div>
 							</div>
-							<div class="col-2">
-								<i class="fa fs-5 py-2 fa-envelope-o fa-fw" aria-hidden="true"></i>
-							</div>
-							<div class="col-7 col-md-8 text-center">
-								<span>Confirma o teu email</span>
-							</div>
-							<div class="col-1">
-								<i class="fa fa-times f-white hvr-task-delete" aria-hidden="true"></i>
+							</a>
+						</div>
+					{{else}}
+						<div class="col-12 col-md-5 mx-3 my-2">
+							<div class="row justify-content-center align-items-center text-center py-1 task cp hvr-tasks" id="task-team">
+								<div class="col-1">
+									<i class="fa fa-chevron-right f-orange hvr-forward" aria-hidden="true"></i>
+								</div>
+								<div class="col-2">
+									<i class="fa fs-5 py-2 fa-exclamation-triangle fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col-7 col-md-8 text-center">
+									<span>{{_ "ud_no-alerts"}}</span>
+								</div>
+								<div class="col-1"></div>
 							</div>
 						</div>
-					</div>
-					<div class="col-12 col-md-5 mx-3 my-2">
-						<div class="row justify-content-center align-items-center text-center py-1 task cp hvr-tasks">
-							<div class="col-1">
-								<i class="fa fa-chevron-right f-orange hvr-forward" aria-hidden="true"></i>
-							</div>
-							<div class="col-2">
-								<i class="fa fs-5 py-2 fa-pencil-square-o fa-fw" aria-hidden="true"></i>
-							</div>
-							<div class="col-7 col-md-8 text-center">
-								<span>Edita o teu perfil</span>
-							</div>
-							<div class="col-1">
-								<i class="fa fa-times f-white hvr-task-delete" aria-hidden="true"></i>
-							</div>
-						</div>
-					</div>
-					
+					{{/each}}
 				</div>
 			</div>
 		</div>	

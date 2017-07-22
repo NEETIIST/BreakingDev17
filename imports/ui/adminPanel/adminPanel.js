@@ -2,6 +2,7 @@ import './adminPanel.html';
 import { Accounts } from 'meteor/accounts-base';
 import { Devs } from '/imports/api/devs/devs.js';
 import { Teams } from '/imports/api/teams/teams.js';
+import { Alerts } from '/imports/api/alerts/alerts.js';
 
 Template.adminPanel.onRendered(function() {
 
@@ -12,6 +13,7 @@ Template.adminPanel.onRendered(function() {
 			self.subscribe("devs.all",Meteor.userId());
 			self.subscribe("teams.all",Meteor.userId());
 			self.subscribe("users.all", Meteor.userId());
+			self.subscribe("alerts.all", Meteor.userId());
 			Session.set("focus", null);
 		}
 		else
@@ -33,6 +35,9 @@ Template.adminPanel.events({
 	},
 	"click #ap_stats": function(){
 		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_stats"}); 
+	},
+	"click #ap_alerts": function(){
+		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_alerts"}); 
 	},
 });
 
@@ -157,4 +162,37 @@ Template.ap_team_focus.events({
 		Session.set("focus",d._id);
 		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_user_focus"}); 	
 	},
+});
+
+Template.ap_alerts.helpers({
+	Alerts(){
+    	return Alerts;
+  	},
+	alert: function(){
+		return Alerts.find();
+	},
+	lang: function(){
+		return TAPi18n.getLanguage() ;
+	},
+});
+
+Template.ap_alerts.events({
+	"click #deleteAlert": function(){
+		let t = confirm("Remover alerta?");
+		if ( t )
+			Alerts.remove(this._id);
+	},
+	"click #toggleAlert": function(){
+		Alerts.update({"_id":this._id},{
+			$set: { "display" : ! this.display },
+		}) ;
+	},
+
+});
+
+
+AutoForm.addHooks(['addAlert'],{
+    onSuccess: function(formType, result) {
+        Meteor.call('setUpAlert', result);
+    }
 });

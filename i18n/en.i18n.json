@@ -86,6 +86,11 @@
 	"ap-stats-2": "Teams",
 	"ap-stats-3": "Volunteers",
 
+	"ap-alerts": "Alertas",
+	"ap-al-text": "Mensagem",
+	"ap-al-icon": "Ícone",
+	"ap-al-url": "Link",
+
 	//User Profile
 	"user_bio": "Bio:",
 	"user_skills": "Skills:",
@@ -109,6 +114,7 @@
 	"ud_dash_slack": "Join us on the official Slack Channel for the event. We will be answering question, posting challenges and making anouncements over there.",
 	"ud_null": "Use the options to see more information.",
 	"ud_volunteer": "Volunteer",
+	"ud_no-alerts": "News coming soon",
 
 	"ud_profile_manage": "Manage your profile",
 	"ud_profile_edit": "Edit your informations",
@@ -192,6 +198,24 @@
 			"skills": {
 				"label": "Skills",
 				"placeholder": "Tell us some of the frameworks and/or languages that you're going to use"	
+			}
+		},
+		"alerts":
+		{
+			"text_pt":{
+				"label": "Text in Portuguese"
+			},
+			"text_en":{
+				"label": "Text in English"
+			},
+			"url":{
+				"label": "Link"
+			},
+			"icon":{
+				"label": "Icon"
+			},
+			"display":{
+				"label": "Visible"
 			}
 		}
   	},

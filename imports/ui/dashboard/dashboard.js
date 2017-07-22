@@ -2,6 +2,7 @@ import './dashboard.html';
 import { Accounts } from 'meteor/accounts-base';
 import { Devs } from '/imports/api/devs/devs.js';
 import { Teams } from '/imports/api/teams/teams.js';
+import { Alerts } from '/imports/api/alerts/alerts.js';
 
 Template.dashboard.onRendered(function() {
 
@@ -13,8 +14,10 @@ Template.dashboard.onRendered(function() {
 		}
 		else
 		{
+			// These subscriptions should be reviewed
 			self.subscribe('devs.single', Meteor.userId());
-			self.subscribe('singleTeamName.logged', Meteor.userId());			
+			self.subscribe('singleTeamName.logged', Meteor.userId());	
+			self.subscribe('alerts.visible');
 		}
 	});
 });
@@ -64,7 +67,20 @@ Template.dashboard.helpers({
   		}
   		else
   			return false;
-  	}
+  	},
+  	verified: function(){
+  		return Meteor.user().emails[0].verified ;
+  	},
+  	hasProfile: function(){
+  		return Devs.find({}).count() > 0 ;
+  	},
+  	alert: function()
+  	{
+  		return Alerts.find();
+  	},
+  	lang: function(){
+		return TAPi18n.getLanguage() ;
+	},
 });
 
 

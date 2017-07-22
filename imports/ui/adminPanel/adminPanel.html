@@ -31,6 +31,14 @@
 									<span class="fw-3 fs-2 flh-2">{{_ "ap_team-list"}}</span>
 								</div>
 							</div>
+							<div class="row align-items-center text-left hvr-items cp" id="ap_alerts">
+								<div class="col-3">
+									<i class="fa fs-4 py-2 fa-exclamation fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col-9">
+									<span class="fw-3 fs-2 flh-2">{{_ "ap-alerts"}}</span>
+								</div>
+							</div>
 							<div class="row align-items-center text-left hvr-items cp" id="logout">
 								<div class="col-3">
 									<i class="fa fs-4 py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
@@ -62,6 +70,9 @@
 								</div>
 								<div class="col" id="ap_team-list">
 									<i class="fa fs-5 py-2 fa-users fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col" id="ap_alerts">
+									<i class="fa fs-5 py-2 fa-exclamation fa-fw" aria-hidden="true"></i>
 								</div>
 								<div class="col" id="logout">
 									<i class="fa fs-5 py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
@@ -341,4 +352,87 @@
 		{{/if}}
 		<div class="spacer-4"></div>
 	{{/each}}
+</template>
+
+<template name="ap_alerts">
+	<p>{{_ "ap-alerts"}}</p>
+	<div class="table-responsive">
+		<table class="table table-hover table-sm fw-3 fs-2">
+			<thead>
+				<tr>
+					<th>{{_ "ap-al-text"}}</th>
+					<th class="text-center">{{_ "ap-al-icon"}}</th>
+					<th>{{_ "ap-al-url"}}</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each alert}}
+					<tr>
+						<td>
+							{{#if equals lang "pt"}}
+								{{text_pt}}
+							{{else}}
+								{{text_en}}
+							{{/if}}
+						</td>
+						<td class="text-center"><i class="fa fa-fw {{icon}}" aria-hidden="true" title="{{icon}}"></i></td>
+						<td>{{url}}</td>
+						<td class="text-center">
+							{{#if display}}
+								<i class="fa fa-toggle-on f-green cp" aria-hidden="true" id="toggleAlert" title="Visível"></i>
+							{{else}}
+								<i class="fa fa-toggle-off f-red cp" aria-hidden="true" id="toggleAlert" title="Escondido"></i>
+							{{/if}}
+						</td>
+						<td class="text-center"><i class="fa fa-trash f-red cp" aria-hidden="true" id="deleteAlert" title="Apagar Alerta"></i></td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+	<hr class="orange my-3">
+	<div class="row mx-0">
+		<div class="col-12 col-md-6 mx-0">
+			<p class="fw-3 fs-3 mb-1">Adicionar Alerta</p>
+			{{#autoForm collection=Alerts id="addAlert" type="insert"}}
+				<div class="row mx-0">
+					<div class="col-12 mx-0 px-0">
+						{{> afFieldInput name='text_pt' placeholder="schemaLabel" autocomplete="off"}}
+					</div>
+				</div>
+				<div class="row mx-0">
+					<div class="col-12 mx-0 px-0">
+						{{> afFieldInput name='text_en' placeholder="schemaLabel" autocomplete="off"}}
+					</div>
+				</div>
+				<div class="row mx-0">
+					<div class="col-11 mx-0 px-0">
+						{{> afFieldInput name='icon' placeholder="schemaLabel" autocomplete="off"}}
+					</div>
+					<div class="col-1 mx-0 px-0 text-center">
+						<a href="http://fontawesome.io/icons/" target="_blank"><i class="fa fs-2 fa-question cp" aria-hidden="true" title="Escrever o código do ícone, clique para a lista (ex: 'fa-check')" id="icon-list"></i></a>
+					</div>
+				</div>
+				<div class="row mx-0">
+					<div class="col-11 mx-0 px-0">
+						{{> afFieldInput name='url' placeholder="schemaLabel" autocomplete="off"}}
+					</div>
+					<div class="col-1 mx-0 px-0 text-center">
+						<i class="fa fs-2 fa-question cp" aria-hidden="true" title="Link para onde o alerta deve redirecionar, pode não ter nada"></i>
+					</div>
+				</div>
+				<div class="row mx-0 justify-content-end">
+					<div class="col-1 mx-0 px-0 text-center">
+						<button type="submit" class="no-button"><i class="fa fa-check f-green cp" aria-hidden="true" title="Adicionar"></i></button>
+					</div>
+				</div>
+			{{/autoForm}}
+		</div>
+		<div class="col-12 col-md-6">
+			<span></span>
+		</div>
+	</div>
+
 </template>

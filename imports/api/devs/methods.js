@@ -39,6 +39,6 @@ Meteor.methods({
 	userHasProfile: function(){
 		let u = Meteor.users.findOne({'_id': this.userId});
 		return Devs.findOne({'user':this.userId}) ? true : false ;
-	}
+	},
 
 });
