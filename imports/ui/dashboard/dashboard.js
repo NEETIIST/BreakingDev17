@@ -99,6 +99,14 @@ Template.dash_profile.helpers({
 	hasProfile: function(){
   		return Devs.find({}).count() > 0 ;
   	},
+  	paymentDone: function(){
+  		return Devs.findOne({}).payment ;
+  	},
+  	//Payment only available if user is on a validated team and has a verified email
+  	paymentReady: function(){
+  		let t = Devs.findOne({}).team ;
+  		return Meteor.user().emails[0].verified && Teams.findOne({"_id":t}).validated ;
+  	},
 });
 
 Template.dash_team.helpers({
@@ -111,8 +119,18 @@ Template.dash_team.helpers({
   	teamName: function(){
   		return Teams.findOne({}).team_name ;
   	},
+  	teamValidated: function(){
+  		return Teams.findOne({}).validated;
+  	},
+  	teamPending: function(){	
+  		return Teams.findOne({}).pending ;
+  	},
   	noProfile: function(){
   		return Devs.find({}).count() == 0 ;
+  	},
+  	readyValidate: function(){
+  		let t = Teams.findOne({"captain":Meteor.userId()});
+  		return Meteor.user().emails[0].verified && t.members.length>=1 && t.members.length<4 && (! t.pending);
   	},
 });
 
@@ -131,5 +149,15 @@ Template.dash_team.events({
 	},
 	"click #dash_team_find": function(){
 		FlowRouter.go("/t_/find");
+	},
+	"click #dash_team_validate": function(){
+		let c = confirm(TAPi18n.__("ud_team_pending_1"));
+		if (c)
+		{
+			let t = Teams.findOne({});
+			Teams.update({"_id":t._id},{$set:{"pending":true}});
+			Teams.update({"_id":t._id},{$set:{"registration":new Date()}});
+			alert(TAPi18n.__("ud_team_pending_2"));
+		}
 	},
 });

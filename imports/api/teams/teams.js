@@ -78,6 +78,22 @@ Schema = new SimpleSchema({
     },
     optional: true,
   },
+  pending: {
+    type: Boolean,
+    autoform: {
+        type: "hidden",
+        label: false
+    },
+    optional: true,
+  },
+  registration: {
+    type: Date,
+    autoform: {
+        type: "hidden",
+        label: false
+    },
+    optional: true,
+  }
 });
 
 Schema.i18n("schemas.teams");

@@ -63,6 +63,9 @@
 	"ap-uf-email": "Email",
 	"ap-uf-paid": "Pagamento confirmado.",
 	"ap-uf-pay": "Confirmar pagamento",
+	"ap-uf-not-pay": "Cancelar pagamento",
+	"ap-uf-not-pay-sure": "Tem a certeza que quer cancelar o pagamento?",
+	"ap-uf-not-pay-confirm": "Pagamento cancelado",
 	"ap-uf-payment": "Pagamento",
 	"ap-uf-admin": "Tornar Administrador",
 	"ap-uf-not-admin": "Remover Administrador",
@@ -79,6 +82,9 @@
 	"ap-tf-validate": "Validar a inscrição",
 	"ap-tf-notready": "Esta equipa ainda não pode ser validada. Podem estar a faltar membros, ou o capitão de equipa não validou o seu email.",
 	"ap-tf-validated": "Equipa validada com sucesso!",
+	"ap-tf-not-validate": "Cancelar inscrição",
+	"ap-tf-not-validate-sure": "Tem a certeza que pretende cancelar a ĩnscrição?",
+	"ap-tf-not-validate-confirm": "Inscrição cancelada.",
 
 	"ap-stats": "Estatísticas",
 	"ap-stats-1": "Participantes",
@@ -90,6 +96,7 @@
 	"ap-al-text": "Mensagem",
 	"ap-al-icon": "Ícone",
 	"ap-al-url": "Link",
+	"ap-al-add": "Adicionar Alerta",
 
 	//User Profile
 	"user_bio": "Bio:",
@@ -120,6 +127,9 @@
 	"ud_profile_edit": "Edita os teus dados",
 	"ud_profile_view": "Vê a tua página de perfil",
 
+	"ud_payment_true": "Inscrição Confirmada",
+	"ud_payment_false": "Confirma a tua inscrição",
+
 	"ud_team_captain": "És o capitão da equipa %s",
 	"ud_team_member": "Fazes parte da equipa %s",
 	"ud_team_none": "Ainda não fazes parte de nenhuma equipa.",
@@ -130,6 +140,12 @@
 	"ud_team_edit": "Edita as informações da tua equipa",
 	"ud_team_invite": "Convida os teus amigos para a tua equipa",
 	"ud_team_noprofile": "Não te podes juntar a uma equipa antes de preencheres o teu perfil",
+	"ud_team_validated": "A tua equipa está confirmada!",
+	"ud_team_validate": "Confirmar inscrição",
+	"ud_team_validate_info": "Quando tiverem todos os membros e os dados preenchidos",
+	"ud_team_pending": "Estamos a verificar a tua inscrição, espera pela confirmação.",
+	"ud_team_pending_1": "Tens a certeza que queres confirmar a tua inscrição?\nJá não vais poder editar os dados da tua equipa, nem adicionar novos membros.",
+	"ud_team_pending_2": "Vamos rever os teus dados e da tua equipa, fica atento ao teu email porque vais receber uma confirmação em breve.",
 
 	//User Profile
 	"up_edit": "Edita os teus dados",

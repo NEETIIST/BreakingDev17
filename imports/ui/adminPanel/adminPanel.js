@@ -99,6 +99,14 @@ Template.ap_user_focus.events({
 		Devs.update(this._id,{$set:{"payment":true}});
 		alert(TAPi18n.__("ap-uf-paid"));
 	},
+	"click #not-pay": function(){
+		let c = confirm(TAPi18n.__("ap-uf-not-pay-sure"));
+		if ( c )
+		{
+			Devs.update(this._id,{$set:{"payment":false}});
+			alert(TAPi18n.__("ap-uf-not-pay-confirm"));
+		}
+	},
 	"click #make-admin": function(){
 		Meteor.call("makeAdmin", this.user);
 	},
@@ -145,17 +153,31 @@ Template.ap_team_focus.helpers({
 		return Meteor.users.findOne({"_id":String(this)}).username;	
 	},
 	readyToValidate: function(){
-		if ( Meteor.users.findOne({"_id":this.captain}).emails[0].verified && this.members.length>1 && this.members.length<4 )
+		if ( Meteor.users.findOne({"_id":this.captain}).emails[0].verified && this.members.length>=1 && this.members.length<4 )
 			return true;
 		else
 			return false;
 	},
+	registrationTime: function(){
+		//return this.registration.getDate() + ", " + this.registration.getMonth();
+		return this.registration.toDateString();
+	}
 });
 
 Template.ap_team_focus.events({
 	"click #validate": function(){
 		Teams.update(this._id,{$set:{"validated":true}});
+		Teams.update(this._id,{$set:{"pending":false}});
 		alert(TAPi18n.__("ap-tf-validated"));
+	},
+	"click #not-validate": function(){
+		let c = confirm(TAPi18n.__("ap-tf-not-validate-sure"));
+		if ( c )
+		{
+			Teams.update(this._id,{$set:{"validated":false}});
+			Teams.update({"_id":t._id},{$set:{"registration":null}});
+			alert(TAPi18n.__("ap-tf-not-validate-confirm"));
+		}
 	},
 	"click .focus": function(){
 		let d = Devs.findOne({"user":String(this)})

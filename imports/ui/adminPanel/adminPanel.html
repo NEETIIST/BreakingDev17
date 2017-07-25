@@ -224,7 +224,7 @@
 			<div class="row m-0 text-left text-md-center">
 				<div class="col my-1">
 					{{#if payment}}
-						<!-- Something here??-->
+						<button type="button" class="btn btn-danger fw-3 fs-2 f-inherit" id="not-pay">{{_ "ap-uf-not-pay"}}</button>
 					{{else}}
 						<button type="button" class="btn btn-success fw-3 fs-2 f-inherit" id="pay">{{_ "ap-uf-pay"}}</button>
 					{{/if}}
@@ -271,6 +271,9 @@
 								<i class="fa fa-check fa-fw f-green" aria-hidden="true"></i>
 							{{else}}	
 								<i class="fa fa-times fa-fw f-red" aria-hidden="true"></i>
+							{{/if}}
+							{{#if pending}}
+								<i class="fa fa-exclamation-triangle fa-fw f-yellow" aria-hidden="true"></i>
 							{{/if}}
 						</td>
 						<td>
@@ -334,18 +337,22 @@
 								<i class="fa fa-check fa-fw f-green" aria-hidden="true"></i>
 							{{else}}	
 								<i class="fa fa-times fa-fw f-red" aria-hidden="true"></i>
+								{{#if pending}}
+									<i class="fa fa-exclamation-triangle fa-fw f-yellow" aria-hidden="true"></i>
+								{{/if}}
 							{{/if}}
+							<span> - {{registrationTime}}</span>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
-		<div class="spacer-4"></div>
+		<div class="spacer-2"></div>
 		{{#if validated}}
-			<!--Something here??-->
+			<button type="button" class="btn btn-danger fw-3 fs-2 f-inherit" id="not-validate">{{_ "ap-tf-not-validate"}}</button>
 		{{else}}
 			{{#if readyToValidate}}
-				<button type="button" class="btn btn-success float-right" id="validate">{{_ "ap-tf-validate"}}</button>
+				<button type="button" class="btn btn-success fw-3 fs-2 f-inherit" id="validate">{{_ "ap-tf-validate"}}</button>
 			{{else}}
 				<p class="fw-3 fs-2">{{_ "ap-tf-notready"}}</p>
 			{{/if}}
@@ -395,7 +402,7 @@
 	<hr class="orange my-3">
 	<div class="row mx-0">
 		<div class="col-12 col-md-6 mx-0">
-			<p class="fw-3 fs-3 mb-1">Adicionar Alerta</p>
+			<p class="fw-3 fs-3 mb-1">{{_ "ap-al-add"}}</p>
 			{{#autoForm collection=Alerts id="addAlert" type="insert"}}
 				<div class="row mx-0">
 					<div class="col-12 mx-0 px-0">

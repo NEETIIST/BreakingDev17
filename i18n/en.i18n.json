@@ -63,6 +63,9 @@
 	"ap-uf-email": "Email",
 	"ap-uf-paid": "Payment confirmed.",
 	"ap-uf-pay": "Confirm payment",
+	"ap-uf-not-pay": "Cancel payment",
+	"ap-uf-not-pay-sure": "Are you sure you want to cancel the payment?",
+	"ap-uf-not-pay-confirm": "Payment canceled",
 	"ap-uf-payment": "Payment",
 	"ap-uf-admin": "Make Admin",
 	"ap-uf-not-admin": "Remove Admin",
@@ -76,9 +79,12 @@
 	"ap-tl-validated": "Validated",
 	"ap-tf-skills": "Skills",
 	"ap-tf-project": "Description",
-	"ap-tf-validate": "Validate Team",
-	"ap-tf-notready": "This team cannot be validated yet. There might be missing members or the captain's email is not confirmed.",
-	"ap-tf-validated": "Team successfully validated!",
+	"ap-tf-validate": "Registrate Team",
+	"ap-tf-notready": "This team cannot be registered yet. There might be missing members or the captain's email is not confirmed.",
+	"ap-tf-validated": "Team successfully registered!",
+	"ap-tf-not-validate": "Cancel Registration",
+	"ap-tf-not-validate-sure": "Are you sure you want to cancel this teams registration?",
+	"ap-tf-not-validate-confirm": "Registration canceled",
 
 	"ap-stats": "Statistics",
 	"ap-stats-1": "Contestants",
@@ -86,10 +92,11 @@
 	"ap-stats-2": "Teams",
 	"ap-stats-3": "Volunteers",
 
-	"ap-alerts": "Alertas",
-	"ap-al-text": "Mensagem",
-	"ap-al-icon": "Ícone",
+	"ap-alerts": "Alerts",
+	"ap-al-text": "Message",
+	"ap-al-icon": "Icon",
 	"ap-al-url": "Link",
+	"ap-al-add": "Add Alert",
 
 	//User Profile
 	"user_bio": "Bio:",
@@ -130,6 +137,8 @@
 	"ud_team_edit": "Edit your teams information",
 	"ud_team_invite": "Invite your friends for your team",
 	"ud_team_noprofile": "You can't join a team before filling your profile",
+	"ud_team_validated": "Your team is confirmed!",
+	"ud_team_validate": "Confirm registration",
 
 	//User Profile
 	"up_edit": "Change your information",

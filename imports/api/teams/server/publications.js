@@ -25,7 +25,7 @@ Meteor.publish('singleTeamName.user', function(id){
 })
 
 Meteor.publish('singleTeamName.logged', function(id){
-	return Teams.find({$or:[{'captain':id},{'members':id}]},{fields: {'team_name': 1,'captain':1}});
+	return Teams.find({$or:[{'captain':id},{'members':id}]},{fields: {'team_name': 1,'captain':1,"validated":1,"members":1,"pending":1}});
 })
 
 Meteor.publish('singleTeamMembers',function(id){
