@@ -86,6 +86,13 @@ Template.dashboard.helpers({
   	lang: function(){
 		return TAPi18n.getLanguage() ;
 	},
+	clickable: function(){
+		return (this.url !== undefined);
+	},
+	clickableHover: function(){
+		if (this.url !== undefined)
+			return "cp";
+	},
 });
 
 
