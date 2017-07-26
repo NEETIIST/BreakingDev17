@@ -122,6 +122,7 @@
 	"ud_null": "Use the options to see more information.",
 	"ud_volunteer": "Volunteer",
 	"ud_no-alerts": "News coming soon",
+	"ud_venue": "Don't get lost on the way here.",
 
 	"ud_profile_manage": "Manage your profile",
 	"ud_profile_edit": "Edit your informations",
@@ -139,6 +140,9 @@
 	"ud_team_noprofile": "You can't join a team before filling your profile",
 	"ud_team_validated": "Your team is confirmed!",
 	"ud_team_validate": "Confirm registration",
+
+	"ud_volunteer_noprofile": "Fill in your data before applying to be a volunteer.",
+	"ud_volunteer_long": "Aplications to be a volunteer are open from August 17th to September 1st.",
 
 	//User Profile
 	"up_edit": "Change your information",

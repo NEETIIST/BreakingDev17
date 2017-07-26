@@ -122,6 +122,7 @@
 	"ud_null": "Usa as opções para veres mais informações.",
 	"ud_volunteer": "Voluntários",
 	"ud_no-alerts": "Novidades em breve",
+	"ud_venue": "Não te percas no caminho até cá.",
 
 	"ud_profile_manage": "Gere o teu perfil",
 	"ud_profile_edit": "Edita os teus dados",
@@ -146,6 +147,9 @@
 	"ud_team_pending": "Estamos a verificar a tua inscrição, espera pela confirmação.",
 	"ud_team_pending_1": "Tens a certeza que queres confirmar a tua inscrição?\nJá não vais poder editar os dados da tua equipa, nem adicionar novos membros.",
 	"ud_team_pending_2": "Vamos rever os teus dados e da tua equipa, fica atento ao teu email porque vais receber uma confirmação em breve.",
+
+	"ud_volunteer_noprofile": "Preenche os teus dados antes de te candidatares a voluntário.",
+	"ud_volunteer_long": "As inscrições para voluntário decorrem de 17 de Agosto a 1 de Setembro. Fica atento.",
 
 	//User Profile
 	"up_edit": "Edita os teus dados",

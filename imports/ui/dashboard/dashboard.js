@@ -48,6 +48,11 @@ Template.dashboard.events({
 		let last = Session.get("dash_last");
 		BlazeLayout.render('base', {main:"dashboard",dash_small:last}); 
 	},
+	"click #venue": function(){
+		Session.set("dash_last","dash_venue");
+		let last = Session.get("dash_last");
+		BlazeLayout.render('base', {main:"dashboard",dash_small:last}); 
+	},
 });
 
 Template.dashboard.helpers({
@@ -160,4 +165,10 @@ Template.dash_team.events({
 			alert(TAPi18n.__("ud_team_pending_2"));
 		}
 	},
+});
+
+Template.dash_volunteer.helpers({
+	noProfile: function(){
+  		return Devs.find({}).count() == 0 ;
+  	},
 });
