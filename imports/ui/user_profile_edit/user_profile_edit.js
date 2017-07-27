@@ -4,8 +4,8 @@ import { Devs } from '/imports/api/devs/devs.js';
 Template.user_profile_edit.onRendered(function() {
 	var self = this;
 	self.autorun(function(){
-		let u = Meteor.userId();
-		self.subscribe('devs.single', u);
+		self.subscribe('devs.single');
+		self.subscribe('profile.image', Meteor.userId());
 	});
 
 	Meteor.call('userHasProfile', function (err, result) {

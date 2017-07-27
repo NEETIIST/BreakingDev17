@@ -9,6 +9,7 @@ Template.user.onRendered(function() {
 		self.subscribe('singleUserVisitor',u);
 		self.subscribe('devs.single.alt', u);
 		self.subscribe('singleTeamName.user',u);
+		self.subscribe('profile.image.user',u);
 	});
 });
 
@@ -24,6 +25,10 @@ Template.user.helpers({
 	},
 	team: function(){
 		return Teams.findOne().team_name;
+	},
+	profilePic: function(){
+		console.log(Images.findOne().link());
+		return Images.findOne().link();
 	}
 })
 

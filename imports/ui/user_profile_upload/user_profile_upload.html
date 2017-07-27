@@ -1,0 +1,22 @@
+<template name="user_profile_upload">
+	
+	
+	
+</template>
+
+<template name="uploadForm">
+	{{#with currentUpload}}
+		{{#if hasUploaded}}
+			<p>{{_ "upload_sucess"}} {{file.name}}</p>
+		{{else}}
+			{{_ "uploading"}} <b>{{file.name}}</b>:
+			<span id="progress">{{progress.get}}%</span>
+		{{/if}}
+	{{else}}
+		{{#with justUploaded}}
+			
+		{{else}}
+			<input id="fileInput" data-files-collection-upload class="form-control af-file-upload-capture" type="file" />
+		{{/with}}
+	{{/with}}
+</template>

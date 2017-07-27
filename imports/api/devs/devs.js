@@ -11,6 +11,7 @@ Devs.allow({
   },
 });
 
+
 Schema = new SimpleSchema({
   user: {
     type: String,
@@ -96,6 +97,18 @@ Schema = new SimpleSchema({
     },
     optional: true,
   },
+  picture: {
+    type: String,
+    //optional: true,
+    autoform: {
+      afFieldInput: {
+        type: 'fileUpload',
+        collection: 'Images',
+        uploadTemplate: 'uploadForm', // <- Optional
+        //previewTemplate: 'uploadedFiles', // <- Optional
+      },
+    }
+  }
 });
 
 Schema.i18n("schemas.devs");

@@ -14,3 +14,6 @@ import '../../api/devs/server/publications.js';
 
 import '../../api/alerts/methods.js';
 import '../../api/alerts/server/publications.js';
+
+import '../../api/images/methods.js';
+import '../../api/images/server/publications.js';

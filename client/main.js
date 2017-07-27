@@ -17,3 +17,6 @@ window.Teams = Teams ;
 
 import { Alerts } from '/imports/api/alerts/alerts.js';
 window.Alerts = Alerts ;
+
+import { Images } from '/imports/api/images/images.js';
+window.Images = Images ;

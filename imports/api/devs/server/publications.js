@@ -1,7 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import { Devs } from '../devs.js';
 
-Meteor.publish('devs.single', function(id){
+Meteor.publish('devs.single', function(){
+	var id = this.userId ;
 	return Devs.find({'user':id});
 });
 
@@ -24,4 +25,8 @@ Meteor.publish('devs.all', function(){
 		return Devs.find();
 	else
 		return 0 ;
+});
+
+Meteor.publish('devs.all.test', function(){
+	return Devs.find();
 });
