@@ -40,8 +40,6 @@ Meteor.methods({
 			Teams.update({"_id":team_id},{ $push: { members: Meteor.userId() } });
 			Meteor.call('userInTeam');
 		}
-		// STILL TO DO HERE:
-		// - Add way to contact team captain to join
 	},
 
 	userHasTeam: function()	{

@@ -101,6 +101,15 @@
 	"ap-al-url": "Link",
 	"ap-al-add": "Add Alert",
 
+	"ap-payments": "Payments",
+	"ap-pay-proof": "Proof",
+	"ap-pay-state": "State",
+	"ap-pay-state-true": "Paid",
+	"ap-pay-state-false": "Not paid",
+	"ap-pay-actions": "Actions",
+	"ap-pay-user": "See user",
+	"ap-pay-date": "Date of submission",
+
 	//User Profile
 	"user_bio": "Bio:",
 	"user_skills": "Skills:",
@@ -146,6 +155,11 @@
 
 	"ud_volunteer_noprofile": "Fill in your data before applying to be a volunteer.",
 	"ud_volunteer_long": "Aplications to be a volunteer are open from August 17th to September 1st.",
+
+	"ud_payment_1": "To make the payment, make a transfer of %s euros, to the following account:",
+	"ud_payment_nib": "PT50 0036 0106 99100060511 42 - NUC EST ENG TELECOMUNICAÇÕES IST",
+	"ud_payment_2": "Submit a picture of your transfer receipt and we will confirm the transfer. As soon as possible, you should receive an email confirming the payment, and a warning on your profile.",
+	"ud_payment_3": "If you have any question, send us an email for breakingdev@neeti.tecnico.ulisboa.pt .",
 
 	//User Profile
 	"up_edit": "Change your information",

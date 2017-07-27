@@ -23,7 +23,7 @@
 							<p class="fw-2 fs-2 mb-1">{{memberCount this}} {{_ "ft_members"}}</p>
 							<i class="fa fa-search fa-fw f-black mb-3 cp" aria-hidden="true" title="{{i18n_profile}}" id="goProfile"></i>
 							{{#if notInTeam}}
-								{{#if notFull this}}
+								{{#if joinable this}}
 									<i class="fa fa-paper-plane-o fa-fw f-black mb-3 cp" aria-hidden="true" title="{{i18n_captain}}" id="goApply"></i>
 									<i class="fa fa-user-plus fa-fw f-black ml-1 mb-3 cp" aria-hidden="true" title="{{i18n_join}}" id="goJoin"></i>
 								{{/if}}

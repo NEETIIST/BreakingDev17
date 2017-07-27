@@ -3,6 +3,8 @@ import { Accounts } from 'meteor/accounts-base';
 import { Devs } from '/imports/api/devs/devs.js';
 import { Teams } from '/imports/api/teams/teams.js';
 import { Alerts } from '/imports/api/alerts/alerts.js';
+import { Payments } from '/imports/api/payments/payments.js';
+import '/imports/api/images/images.js';
 
 Template.adminPanel.onRendered(function() {
 
@@ -14,6 +16,8 @@ Template.adminPanel.onRendered(function() {
 			self.subscribe("teams.all",Meteor.userId());
 			self.subscribe("users.all", Meteor.userId());
 			self.subscribe("alerts.all", Meteor.userId());
+			self.subscribe("payments.all", Meteor.userId());
+			self.subscribe("files.images.all", Meteor.userId());
 			Session.set("focus", null);
 		}
 		else
@@ -38,6 +42,9 @@ Template.adminPanel.events({
 	},
 	"click #ap_alerts": function(){
 		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_alerts"}); 
+	},
+	"click #ap_payments": function(){
+		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_payments"}); 
 	},
 });
 
@@ -212,9 +219,44 @@ Template.ap_alerts.events({
 
 });
 
+Template.ap_payments.helpers({
+	payment: function(){
+		return Payments.find();
+	},
+	username: function(){
+		let u = Meteor.users.findOne({"_id":this.user});
+		return u.username ;
+	},
+	picLink: function(){
+		let pic = Images.findOne({"_id":this.picture});
+		return pic.link();
+	},
+	state: function(){
+		let d = Devs.findOne({"user":this.user});
+		return d.payment ;
+	},
+	date: function(){
+		return this.date.toDateString();
+	}
+});
+
+Template.ap_payments.events({
+	"click .focus": function(){
+		let d = Devs.findOne({"user":this.user});
+		Session.set("focus",d._id);
+		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_user_focus"}); 	
+	},
+	"click #pay": function(){
+		let d = Devs.findOne({"user":this.user});
+		Devs.update(d._id,{$set:{"payment":true}});
+		alert(TAPi18n.__("ap-uf-paid"));
+	},
+});
+
 
 AutoForm.addHooks(['addAlert'],{
     onSuccess: function(formType, result) {
         Meteor.call('setUpAlert', result);
     }
 });
+

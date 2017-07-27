@@ -1,0 +1,25 @@
+<template name="payment">
+	
+	<div class="row justify-content-center align-items-center m-0 vh-100 light-orange f-white">
+		<div class="col-10 py-3">
+			<span class="cp" id="goDash"><i class="fa fa-angle-double-left fa-fw f-white mr-2" aria-hidden="true"></i>{{_ "up_godash"}}</span>
+			<hr class="orange">
+			{{#if Template.subscriptionsReady}}
+				{{#if readyPayment}}
+					<p class="text-left fw-3 fs-3">{{_ "ud_payment_1" price}}</p>
+					<p class="text-left fw-3 fs-3">{{_ "ud_payment_nib"}}</p>
+					<p class="text-left fw-3 fs-2">{{_ "ud_payment_2"}}</p>
+					<p class="text-left fw-3 fs-2">{{_ "ud_payment_3"}}</p>
+					{{> quickForm collection=Payments id="addPayment" type="insert" buttonClasses="at-btn submit"}}
+				{{else}}
+					<p class="text-left fw-3 fs-3">{{_ "ud_payment_toosoon"}}</p>
+				{{/if}}
+			{{else}}
+				<div class="text-center">
+					<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw f-white"></i>
+				</div>
+			{{/if}}
+		</div>
+	</div>
+
+</template>

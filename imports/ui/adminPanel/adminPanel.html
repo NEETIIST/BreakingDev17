@@ -31,6 +31,14 @@
 									<span class="fw-3 fs-2 flh-2">{{_ "ap_team-list"}}</span>
 								</div>
 							</div>
+							<div class="row align-items-center text-left hvr-items cp" id="ap_payments">
+								<div class="col-3">
+									<i class="fa fs-4 py-2 fa-credit-card fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col-9">
+									<span class="fw-3 fs-2 flh-2">{{_ "ap-payments"}}</span>
+								</div>
+							</div>
 							<div class="row align-items-center text-left hvr-items cp" id="ap_alerts">
 								<div class="col-3">
 									<i class="fa fs-4 py-2 fa-exclamation fa-fw" aria-hidden="true"></i>
@@ -70,6 +78,9 @@
 								</div>
 								<div class="col" id="ap_team-list">
 									<i class="fa fs-5 py-2 fa-users fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col" id="ap_payments">
+									<i class="fa fs-5 py-2 fa-credit-card fa-fw" aria-hidden="true"></i>
 								</div>
 								<div class="col" id="ap_alerts">
 									<i class="fa fs-5 py-2 fa-exclamation fa-fw" aria-hidden="true"></i>
@@ -442,4 +453,43 @@
 		</div>
 	</div>
 
+</template>
+
+<template name="ap_payments">
+	<p>{{_ "ap-payments"}}</p>
+	<div class="table-responsive">
+		<table class="table table-hover table-sm fw-3 fs-2">
+			<thead>
+				<tr>
+					<th>{{_ "ap-ul-username"}}</th>
+					<th></th>
+					<th class="text-center">{{_ "ap-pay-date"}}</th>
+					<th class="text-center">{{_ "ap-pay-state"}}</th>
+					<th class="text-center">{{_ "ap-pay-actions"}}</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each payment}}		
+					<tr>
+						<td>@{{username}}</td>
+						<td><a href="{{picLink}}" target="_blank">{{_ "ap-pay-proof"}}</a></td>
+						<td class="text-center">{{date}}</td>
+						<td class="text-center">
+							{{#if state}}
+								<i class="fa fa-check fa-fw f-green" aria-hidden="true" title="{{_ 'ap-pay-state-true'}}"></i>
+							{{else}}
+								<i class="fa fa-times fa-fw f-red" aria-hidden="true" title="{{_ 'ap-pay-state-false'}}"></i>
+							{{/if}}
+						</td>
+						<td class="text-center">
+							{{#unless state}}
+								<i class="fa fa-check-square-o fa-fw f-green cp" aria-hidden="true" title="{{_ 'ap-uf-pay'}}" id="pay"></i>
+							{{/unless}}
+							<i class="fa fa-search fa-fw f-black cp focus" aria-hidden="true" title="{{_ 'ap-pay-user'}}"></i>
+						</td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
 </template>

@@ -101,6 +101,15 @@
 	"ap-al-url": "Link",
 	"ap-al-add": "Adicionar Alerta",
 
+	"ap-payments": "Pagamentos",
+	"ap-pay-proof": "Comprovativo",
+	"ap-pay-state": "Estado",
+	"ap-pay-state-true": "Pago",
+	"ap-pay-state-false": "Por pagar",
+	"ap-pay-actions": "Ações",
+	"ap-pay-user": "Ver utilizador",
+	"ap-pay-date": "Data de submissão",
+
 	//User Profile
 	"user_bio": "Bio:",
 	"user_skills": "Skills:",
@@ -153,6 +162,11 @@
 
 	"ud_volunteer_noprofile": "Preenche os teus dados antes de te candidatares a voluntário.",
 	"ud_volunteer_long": "As inscrições para voluntário decorrem de 17 de Agosto a 1 de Setembro. Fica atento.",
+
+	"ud_payment_1": "Para efetuares o pagamento, efetua uma transferência no valor de %s euros, para o seguinte NIB:",
+	"ud_payment_nib": "PT50 0036 0106 99100060511 42 - NUC EST ENG TELECOMUNICAÇÕES IST",
+	"ud_payment_2": "Submete uma fotografia do teu comprovativo de transferência abaixo, e nós vamos confirmar o pagamento. Assim que possível, deverás receber um email da nossa parte, e ver um aviso no teu perfil.",
+	"ud_payment_3": "Caso tenhas alguma dúvida, envia-nos um email para breakingdev@neeti.tecnico.ulisboa.pt .",
 
 	//User Profile
 	"up_edit": "Edita os teus dados",

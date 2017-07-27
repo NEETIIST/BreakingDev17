@@ -17,3 +17,6 @@ import '../../api/alerts/server/publications.js';
 
 import '../../api/images/methods.js';
 import '../../api/images/server/publications.js';
+
+import '../../api/payments/methods.js';
+import '../../api/payments/server/publications.js';

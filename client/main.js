@@ -20,3 +20,6 @@ window.Alerts = Alerts ;
 
 import { Images } from '/imports/api/images/images.js';
 window.Images = Images ;
+
+import { Payments } from '/imports/api/payments/payments.js';
+window.Payments = Payments ;

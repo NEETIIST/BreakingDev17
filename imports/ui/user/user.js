@@ -27,8 +27,11 @@ Template.user.helpers({
 		return Teams.findOne().team_name;
 	},
 	profilePic: function(){
-		console.log(Images.findOne().link());
-		return Images.findOne().link();
+		let pic = Images.findOne()
+		if( pic === undefined )
+			return "/profile.png";
+		else
+			return pic.link();
 	}
 })
 

@@ -28,6 +28,9 @@ Template.team_find.helpers({
 	notFull:function(t){
 		return t.members.length <= 3 ;
 	},
+	joinable: function(t){
+		return t.members.length <= 3 && ( ! t.pending ) && ( ! t.validated ) ;
+	},
 
 
 	i18n_name: function(){
