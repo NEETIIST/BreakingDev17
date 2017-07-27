@@ -194,6 +194,9 @@
 			},
 			"linkedin": {
 				"label": "Username do LinkedIn"
+			},
+			"picture": {
+				"label": "Fotografia"
 			}
 		},
 		"teams": {
@@ -301,6 +304,9 @@
 
   	//Misc
   	"loading": "A carregar...",
+  	"uploading": "A fazer upload",
+  	"upload_sucess": "Upload concluído com sucesso do ficheiro: ",
+  	"upload_toobig": "Por favor usa um ficheiro de imagem com menos de 3 MB.",
 
 	//Testing
 	"lorem": "Lorem ipsum",

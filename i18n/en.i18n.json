@@ -187,6 +187,9 @@
 			},
 			"linkedin": {
 				"label": "LinkedIn Username"
+			},
+			"picture": {
+				"label": "Picture"
 			}
 		},
 		"teams": {
@@ -294,7 +297,10 @@
   	"2k16_intro": "The best pictures of Lisbon's first university students hackathon",
 
   	//Misc
-  	"loading": "A carregar...",
+  	"loading": "Loading...",
+  	"uploading": "Uploading",
+  	"upload_sucess": "Sucessfull uploaded the file: ",
+  	"upload_toobig": "Please use a image file under 3MB.",
 
 	//Testing
 	"lorem": "Lorem ipsum",
