@@ -128,7 +128,7 @@ Template.dash_profile.events({
 		Session.set("dash_last","dash_profile");
 		FlowRouter.go("/u/"+Meteor.user().username);
 	},
-	"click #dash_profile_profile": function(){
+	"click #dash_profile_payment": function(){
 		Session.set("dash_last","dash_profile");
 		FlowRouter.go("/payment");
 	},
