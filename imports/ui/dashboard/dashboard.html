@@ -250,6 +250,10 @@
 				{{_ "ud_profile_manage"}}
 				{{#if paymentDone}}
 					<i class="fa fs-3 fa-check-circle f-green fa-fw" aria-hidden="true" title='{{_ "ud_payment_true"}}'></i>
+				{{else}}
+					{{#if paymentPending}}
+						<i class="fa fs-3 fa-check-circle f-yellow fa-fw" aria-hidden="true" title='{{_ "ud_payment_pending"}}'></i>
+					{{/if}}
 				{{/if}}
 			</p>
 		</div>
@@ -263,12 +267,14 @@
 				<p class="fw-3 fs-2 flh-2">{{_ "ud_profile_view"}}</p>
 			</div>
 			{{#unless paymentDone}}
-				{{#if paymentReady}}
-					<div class="col-4 hvr-items cp">
-						<i class="fa fs-6 my-3 fa-credit-card fa-fw" aria-hidden="true"></i>
-						<p class="fw-3 fs-2 flh-2">{{_ "ud_payment_false"}}</p>
-					</div>
-				{{/if}}
+				{{#unless paymentPending}}
+					{{#if paymentReady}}
+						<div class="col-4 hvr-items cp" id="dash_profile_payment">
+							<i class="fa fs-6 my-3 fa-credit-card fa-fw" aria-hidden="true"></i>
+							<p class="fw-3 fs-2 flh-2">{{_ "ud_payment_false"}}</p>
+						</div>
+					{{/if}}
+				{{/unless}}
 			{{/unless}}
 		{{/if}}
 	</div>

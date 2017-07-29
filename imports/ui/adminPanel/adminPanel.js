@@ -251,6 +251,15 @@ Template.ap_payments.events({
 		Devs.update(d._id,{$set:{"payment":true}});
 		alert(TAPi18n.__("ap-uf-paid"));
 	},
+	"click #delete": function(){
+		let p = Payments.findOne({"user":this.user});
+		if ( p === undefined)
+		{
+			let d = Devs.findOne({"user":this.user});
+			Devs.update(d._id,{$set:{"payment":true}});	
+		}
+		Payments.remove({"_id":this._id});
+	},
 });
 
 

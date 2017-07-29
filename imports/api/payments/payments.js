@@ -10,6 +10,12 @@ Payments.allow({
 	update: function(){	
 		return false;
 	},
+	remove: function(){
+		if (Roles.userIsInRole( Meteor.user()._id,'admin'))
+			return true;
+		else
+			return false ;
+	},
 });
 
 Payments.attachSchema(new SimpleSchema({

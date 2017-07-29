@@ -34,3 +34,10 @@ Template.payment.events({
 		FlowRouter.go("/dash");	
 	},
 });
+
+
+AutoForm.addHooks(['addPayment'],{
+    onSuccess: function(formType, result) {
+    	FlowRouter.go("/dash");
+    }
+});

@@ -20,6 +20,10 @@
 	"home_chal1_long": "Este desafio irá premiar o projeto que mais influencie a comunidade académica. Ou seja, o júri irá decidir qual a ideia que influencia os estudantes e/ou professores de uma forma mais positiva, que os ajude no seu dia a dia a resolver problemas ou ultrapassar dificuldades.",
 	"home_chal2": "Crowd Award",
 	"home_chal2_long": "Não queremos que este fim de semana seja só programar. Queremos que as equipas se ajudem e se divirtam. Assim, queremos descobrir quem é a equipa de quem os participantes mais gostam, quer seja pelo mérito do seu trabalho ou simplesmente pela forma positiva como contribuíram para o evento. ",
+	"home_chal3": "Innovation Award",
+	"home_chal3_long": "Innovation Award Desc",
+	"home_chal4": "Social?? Award",
+	"home_chal4_long": "Social?? Award Desc",
 	"home_venue": "Vem conhecer o Campus do Taguspark do Instituto Superior Técnico",
 	"home_venue_long": "Localizado em Oeiras, no Pólo Tecnológico do concelho, este é o espaço onde vai decorrer o BreakingDev. O Campus tem apenas 16 anos e vamos aproveitar o átrio Central para este fim de semana memorável. Para não te perderes no caminho, podes ver onde fica exatamente no",
 	"home_about_social": "Vai sabendo mais através das nossas redes sociais",
@@ -109,6 +113,7 @@
 	"ap-pay-actions": "Ações",
 	"ap-pay-user": "Ver utilizador",
 	"ap-pay-date": "Data de submissão",
+	"ap-pay-delete": "Apagar",
 
 	//User Profile
 	"user_bio": "Bio:",
@@ -140,7 +145,8 @@
 	"ud_profile_edit": "Edita os teus dados",
 	"ud_profile_view": "Vê a tua página de perfil",
 
-	"ud_payment_true": "Inscrição Confirmada",
+	"ud_payment_true": "Pagamento Confirmado",
+	"ud_payment_pending": "Pagamento Pendente",
 	"ud_payment_false": "Confirma a tua inscrição",
 
 	"ud_team_captain": "És o capitão da equipa %s",

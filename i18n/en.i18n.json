@@ -20,6 +20,10 @@
 	"home_chal1_long": "This challenge will award the project that impacts the academic community the most. The judge will pick the project that impacts teachers and students in a positive way that helps them solve problems or overcome difficulties.",
 	"home_chal2": "Crowd Award",
 	"home_chal2_long": "We don't want this weekend to be just code. We want the teams to help each other and have fun. So, we will reward which team the participants like best, whether by merit of their work or simply by the positive way they contributed to the event. ",
+	"home_chal3": "Innovation Award",
+	"home_chal3_long": "Innovation Award Desc",
+	"home_chal4": "Social?? Award",
+	"home_chal4_long": "Social?? Award Desc",
 	"home_venue": "Meet the Taguspark Campus of Técnico Lisbon.",
 	"home_venue_long": "Located in Oeiras, in the county's tecnological campus, this is the venue for BreakingDev. We will use the main atrium for this unforgetable event. If you don't want to get lost, look it up on",
 	"home_about_social": "Keep up to date with our social networks",
@@ -109,6 +113,7 @@
 	"ap-pay-actions": "Actions",
 	"ap-pay-user": "See user",
 	"ap-pay-date": "Date of submission",
+	"ap-pay-delete": "Delete",
 
 	//User Profile
 	"user_bio": "Bio:",
@@ -139,6 +144,10 @@
 	"ud_profile_manage": "Manage your profile",
 	"ud_profile_edit": "Edit your informations",
 	"ud_profile_view": "Check out your profile page",
+
+	"ud_payment_true": "Payment Confirmed",
+	"ud_payment_pending": "Payment Pending",
+	"ud_payment_false": "Confirm your registration",
 
 	"ud_team_captain": "You are the captain of team %s",
 	"ud_team_member": "You are a member of team %s",

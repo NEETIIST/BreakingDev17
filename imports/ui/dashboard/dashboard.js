@@ -3,6 +3,7 @@ import { Accounts } from 'meteor/accounts-base';
 import { Devs } from '/imports/api/devs/devs.js';
 import { Teams } from '/imports/api/teams/teams.js';
 import { Alerts } from '/imports/api/alerts/alerts.js';
+import { Payments } from '/imports/api/payments/payments.js';
 
 Template.dashboard.onRendered(function() {
 
@@ -18,6 +19,7 @@ Template.dashboard.onRendered(function() {
 			self.subscribe('devs.single', Meteor.userId());
 			self.subscribe('singleTeamName.logged', Meteor.userId());	
 			self.subscribe('alerts.visible');
+			self.subscribe('user.payments', Meteor.userId());
 		}
 	});
 });
@@ -95,6 +97,27 @@ Template.dashboard.helpers({
 	},
 });
 
+Template.dash_profile.helpers({
+	hasProfile: function(){
+  		return Devs.find({}).count() > 0 ;
+  	},
+  	//Payment done or pending
+  	paymentDone: function(){
+  		return Devs.findOne({}).payment ;
+  	},
+  	//Payment only available if user is on a validated team and has a verified email
+  	paymentReady: function(){
+  		let t = Devs.findOne({}).team ;
+  		return Meteor.user().emails[0].verified && Teams.findOne({"_id":t}).validated ;
+  	},
+  	paymentPending: function(){
+  		let p = Payments.findOne({"user":Meteor.userId()});
+  		if (p!==undefined)
+  			return true;
+  		else
+  			return false;
+  	},
+});
 
 Template.dash_profile.events({
 	"click #dash_profile_edit": function(){
@@ -105,20 +128,10 @@ Template.dash_profile.events({
 		Session.set("dash_last","dash_profile");
 		FlowRouter.go("/u/"+Meteor.user().username);
 	},
-});
-
-Template.dash_profile.helpers({
-	hasProfile: function(){
-  		return Devs.find({}).count() > 0 ;
-  	},
-  	paymentDone: function(){
-  		return Devs.findOne({}).payment ;
-  	},
-  	//Payment only available if user is on a validated team and has a verified email
-  	paymentReady: function(){
-  		let t = Devs.findOne({}).team ;
-  		return Meteor.user().emails[0].verified && Teams.findOne({"_id":t}).validated ;
-  	},
+	"click #dash_profile_profile": function(){
+		Session.set("dash_last","dash_profile");
+		FlowRouter.go("/payment");
+	},
 });
 
 Template.dash_team.helpers({
