@@ -99,12 +99,12 @@ Schema = new SimpleSchema({
   },
   picture: {
     type: String,
-    //optional: true,
+    optional: true,
     autoform: {
       afFieldInput: {
         type: 'fileUpload',
         collection: 'Images',
-        uploadTemplate: 'uploadForm', // <- Optional
+        uploadTemplate: 'uploadForm',
         //previewTemplate: 'uploadedFiles', // <- Optional
       },
     }
