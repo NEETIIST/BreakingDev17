@@ -38,6 +38,7 @@
 	"home_beasponsor": "Seja um patrocinador",
 	"home_github": "Source-code no Github",
 	"home_tools": "Feito com ",
+	"home_reg": "Consulta o regulamento neste ",
 
 	//Sponsor
 	"home_sponsor_intro": "Uma oportunidade de estar envolvido nos projetos dos alunos das melhores universidades do país.",
@@ -141,6 +142,7 @@
 	"ud_volunteer": "Voluntários",
 	"ud_no-alerts": "Novidades em breve",
 	"ud_venue": "Não te percas no caminho até cá.",
+	"ud_reg": "Vê o regulamento completo do BreakingDev neste ",
 
 	"ud_profile_manage": "Gere o teu perfil",
 	"ud_profile_edit": "Edita os teus dados",

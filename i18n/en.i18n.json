@@ -38,6 +38,7 @@
 	"home_beasponsor": "Be a sponsor",
 	"home_github": "Source-code @ GitHub",
 	"home_tools": "Made with ",
+	"home_reg": "Check the rule book in this ",
 
 	//Sponsor
 	"home_sponsor_intro": "A chance to be involved in projects made by students from the best portuguese universities.",
@@ -141,6 +142,7 @@
 	"ud_volunteer": "Volunteer",
 	"ud_no-alerts": "News coming soon",
 	"ud_venue": "Don't get lost on the way here.",
+	"ud_reg": "Check the rule book in this ",
 
 	"ud_profile_manage": "Manage your profile",
 	"ud_profile_edit": "Edit your informations",
