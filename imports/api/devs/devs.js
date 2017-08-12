@@ -4,9 +4,12 @@ export const Devs = new Mongo.Collection("devs");
 
 Devs.allow({
   insert: function(){
+    //You should only be able to insert devs once
     return true ;
   },
   update: function(){
+    //You should only be able to update your own documents
+    //and only editable fields
     return true ;
   },
 });

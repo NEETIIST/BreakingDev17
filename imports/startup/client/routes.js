@@ -42,7 +42,6 @@ FlowRouter.route('/', {
 FlowRouter.route('/sponsor', {
   name: 'home_sponsor',
   action() {
-    analytics.page("Sponsor");
     BlazeLayout.render('base', {main: 'home_sponsor'});
     window.scrollTo(0,0);
     Session.set("nav", false);
@@ -81,7 +80,6 @@ FlowRouter.route('/login',{
     }
     else
     {
-      analytics.page("Login");
       window.scrollTo(0,0);
       Session.set("nav", false);
       Session.set("tab", "menu_login");
@@ -122,7 +120,6 @@ FlowRouter.route('/dash',{
     }
     else
     {
-      analytics.page("Dashboard");
       window.scrollTo(0,0);
       Session.set("nav", false);
       Session.set("tab", "menu_login");

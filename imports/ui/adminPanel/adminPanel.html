@@ -70,22 +70,22 @@
 						<div class="col-12">
 							<div class="spacer-2"></div>
 							<div class="row text-center f-black">
-								<div class="col" id="ap_stats">
+								<div class="col px-1" id="ap_stats">
 									<i class="fa fs-5 py-2 fa-bar-chart fa-fw" aria-hidden="true"></i>
 								</div>
-								<div class="col" id="ap_user-list">
+								<div class="col px-1" id="ap_user-list">
 									<i class="fa fs-5 py-2 fa-user fa-fw" aria-hidden="true"></i>
 								</div>
-								<div class="col" id="ap_team-list">
+								<div class="col px-1" id="ap_team-list">
 									<i class="fa fs-5 py-2 fa-users fa-fw" aria-hidden="true"></i>
 								</div>
-								<div class="col" id="ap_payments">
+								<div class="col px-1" id="ap_payments">
 									<i class="fa fs-5 py-2 fa-credit-card fa-fw" aria-hidden="true"></i>
 								</div>
-								<div class="col" id="ap_alerts">
+								<div class="col px-1" id="ap_alerts">
 									<i class="fa fs-5 py-2 fa-exclamation fa-fw" aria-hidden="true"></i>
 								</div>
-								<div class="col" id="logout">
+								<div class="col px-1" id="logout">
 									<i class="fa fs-5 py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
 								</div>
 							</div>
@@ -169,7 +169,7 @@
 
 <template name="ap_user_focus">
 	{{#each focus}}
-		<img src="/profile.png" alt="Profile Picture" class="user-pic">
+		<img src="{{profilePic}}" alt="Profile Picture" class="user-pic">
 		<div class="spacer-4"></div>
 		<div class="table-responsive">
 			<table class="table table-sm fw-3 fs-2">

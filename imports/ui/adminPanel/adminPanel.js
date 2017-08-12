@@ -98,6 +98,13 @@ Template.ap_user_focus.helpers({
 	},
 	admin: function(){
 		return Roles.userIsInRole( this.user, 'admin');
+	},
+	profilePic: function(){
+		let pic = Images.findOne({"_id":this.picture});
+		if( pic === undefined )
+			return "/profile.png";
+		else
+			return pic.link();
 	}
 });
 
