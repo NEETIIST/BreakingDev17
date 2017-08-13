@@ -116,6 +116,8 @@
 	"ap-pay-date": "Data de submissão",
 	"ap-pay-delete": "Apagar",
 
+	"ap-volunteers": "Voluntários",
+
 	//User Profile
 	"user_bio": "Bio:",
 	"user_skills": "Skills:",
@@ -171,6 +173,12 @@
 
 	"ud_volunteer_noprofile": "Preenche os teus dados antes de te candidatares a voluntário.",
 	"ud_volunteer_long": "As inscrições para voluntário decorrem de 17 de Agosto a 1 de Setembro. Fica atento.",
+	"ud_volunteer": "Voluntários",
+	"ud_volunteer_short": "Equipa de Voluntários",
+	"ud_vol_approved": "Candidatura Aceite!",
+	"ud_vol_pending": "Candidatura em análise",
+	"ud_vol_edit": "Edita a tua candidatura",
+	"ud_vol_apply": "Candidata-te a voluntário",
 
 	"ud_payment_1": "Para efetuares o pagamento, efetua uma transferência no valor de %s euros, para o seguinte NIB:",
 	"ud_payment_nib": "PT50 0036 0106 99100060511 42 - NUC EST ENG TELECOMUNICAÇÕES IST",
@@ -266,6 +274,17 @@
 			"display":{
 				"label": "Visível"
 			}
+		},
+		"volunteers":
+		{
+			"experience":{
+				"label": "Experiências Anteriores",
+				"placeholder": "Conta-nos um pouco sobre a tua experiência com voluntariado."
+			},
+			"motivation":{
+				"label": "Motivação",
+				"placeholder": "Porque é que te queres juntar à nossa equipa de voluntários?"
+			}
 		}
   	},
 
@@ -316,6 +335,10 @@
   	"mt_desc":"Diz algumas das ferramentas ou linguagens de programação que dominas, e o que é que podes acrescentar à equipa.",
   	"mt_send":"Enviar",
   	"mt_back":"Lista de Equipas",
+
+  	//Volunteering
+  	"vol_add": "Fala-nos mais um pouco sobre ti",
+  	"vol_edit": "Edita as tuas informações",
 
   	//404
   	"404-1": "Parece que viraste onde não devias, esta página não existe.",

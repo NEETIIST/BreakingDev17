@@ -364,13 +364,43 @@
 
 <template name="dash_volunteer">
 	<div class="row justify-content-center align-items-center text-justify my-0">
-		<div class="col-12">
-			{{#if noProfile}}
-				<p class="fw-3 fs-3 flh-2">{{_ "ud_volunteer_noprofile"}}</p>
-			{{else}}
-				<p class="fw-3 fs-3 flh-2">{{_ "ud_volunteer_long"}}</p>	
-			{{/if}}
-		</div>
+			{{#if Template.subscriptionsReady}}
+				{{#if noProfile}}
+					<div class="col-12">
+						<p class="fw-3 fs-3 flh-2">{{_ "ud_volunteer_noprofile"}}</p>
+					</div>
+				{{else}}
+					<div class="col-12">
+						<p class="fw-3 fs-3 flh-2 text-center">
+							{{_ "ud_volunteer_short"}}
+							{{#if volApproved}}
+								<i class="fa fs-3 fa-check-circle f-green fa-fw" aria-hidden="true" title='{{_ "ud_vol_approved"}}'></i>
+							{{/if}}
+							{{#if volPending}}
+								<i class="fa fs-3 fa-exclamation-triangle f-yellow fa-fw" aria-hidden="true" title='{{_ "ud_vol_pending"}}'></i>
+							{{/if}}
+						</p>
+					</div>
+					{{#if volPending}}
+						<div class="col-4 hvr-items cp text-center" id="dash_vol_edit">
+							<i class="fa fs-6 my-3 fa-pencil-square-o fa-fw" aria-hidden="true"></i>
+							<p class="fw-3 fs-2 flh-2">{{_ "ud_vol_edit"}}</p>
+						</div>
+					{{else}}
+						<div class="col-4 hvr-items cp text-center" id="dash_vol_add">
+							<i class="fa fs-6 my-3 fa-pencil fa-fw" aria-hidden="true"></i>
+							<p class="fw-3 fs-2 flh-2">{{_ "ud_vol_apply"}}</p>
+						</div>
+					{{/if}}
+					{{#if volApproved}}
+						<div class="col-4 hvr-items cp text-center" id="dash_vol_shift">
+							<i class="fa fs-6 my-3 fa-calendar fa-fw" aria-hidden="true"></i>
+							<p class="fw-3 fs-2 flh-2">{{_ "ud_vol_apply"}}</p>
+						</div>
+					{{/if}}
+
+				{{/if}}
+			 {{/if}}
 	</div>
 </template>
 

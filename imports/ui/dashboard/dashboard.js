@@ -4,6 +4,7 @@ import { Devs } from '/imports/api/devs/devs.js';
 import { Teams } from '/imports/api/teams/teams.js';
 import { Alerts } from '/imports/api/alerts/alerts.js';
 import { Payments } from '/imports/api/payments/payments.js';
+import { Volunteers } from '/imports/api/volunteers/volunteers.js';
 
 Template.dashboard.onRendered(function() {
 
@@ -20,6 +21,7 @@ Template.dashboard.onRendered(function() {
 			self.subscribe('singleTeamName.logged', Meteor.userId());	
 			self.subscribe('alerts.visible');
 			self.subscribe('user.payments', Meteor.userId());
+			self.subscribe('volunteer.logged');
 		}
 	});
 });
@@ -191,4 +193,22 @@ Template.dash_volunteer.helpers({
 	noProfile: function(){
   		return Devs.find({}).count() == 0 ;
   	},
+  	volPending: function(){
+  		return Volunteers.findOne().status == "Pending" ;
+  	},
+  	volApproved: function(){
+  		return Volunteers.findOne().status == "Approved" ;
+  	},
+  	volRejected: function(){
+  		return Volunteers.findOne().status == "Rejected" ;
+  	},
+});
+
+Template.dash_volunteer.events({
+	"click #dash_vol_add": function(){
+		FlowRouter.go("/volunteer/add");
+	},
+	"click #dash_vol_edit": function(){
+		FlowRouter.go("/volunteer/edit");
+	},
 });

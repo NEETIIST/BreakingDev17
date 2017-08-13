@@ -4,6 +4,7 @@ import { Devs } from '/imports/api/devs/devs.js';
 import { Teams } from '/imports/api/teams/teams.js';
 import { Alerts } from '/imports/api/alerts/alerts.js';
 import { Payments } from '/imports/api/payments/payments.js';
+import { Volunteers } from '/imports/api/volunteers/volunteers.js';
 import '/imports/api/images/images.js';
 
 Template.adminPanel.onRendered(function() {
@@ -18,6 +19,7 @@ Template.adminPanel.onRendered(function() {
 			self.subscribe("alerts.all", Meteor.userId());
 			self.subscribe("payments.all", Meteor.userId());
 			self.subscribe("files.images.all", Meteor.userId());
+			self.subscribe("volunteers.all", Meteor.userId());
 			Session.set("focus", null);
 		}
 		else
@@ -39,6 +41,9 @@ Template.adminPanel.events({
 	},
 	"click #ap_stats": function(){
 		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_stats"}); 
+	},
+	"click #ap_volunteers": function(){
+		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_volunteers"}); 
 	},
 	"click #ap_alerts": function(){
 		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_alerts"}); 

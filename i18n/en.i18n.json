@@ -116,6 +116,9 @@
 	"ap-pay-date": "Date of submission",
 	"ap-pay-delete": "Delete",
 
+	"ap-volunteers": "Volunteers",
+
+
 	//User Profile
 	"user_bio": "Bio:",
 	"user_skills": "Skills:",
@@ -167,6 +170,12 @@
 
 	"ud_volunteer_noprofile": "Fill in your data before applying to be a volunteer.",
 	"ud_volunteer_long": "Aplications to be a volunteer are open from August 17th to September 1st.",
+	"ud_volunteer": "Volunteers",
+	"ud_volunteer_short": "Volunteers Team",
+	"ud_vol_approved": "Application Accepted!",
+	"ud_vol_pending": "Application Pending",
+	"ud_vol_edit": "Edit your application",
+	"ud_vol_apply": "Apply to be a volunteer",
 
 	"ud_payment_1": "To make the payment, make a transfer of %s euros, to the following account:",
 	"ud_payment_nib": "PT50 0036 0106 99100060511 42 - NUC EST ENG TELECOMUNICAÇÕES IST",
@@ -261,6 +270,17 @@
 			},
 			"display":{
 				"label": "Visible"
+			}
+		},
+		"volunteers":
+		{
+			"experience":{
+				"label": "Previous Experiences",
+				"placeholder": "Tell us about some of your previous volunteering work."
+			},
+			"motivation":{
+				"label": "Motivation",
+				"placeholder": "Why do you want to join our team of volunteers?"
 			}
 		}
   	},

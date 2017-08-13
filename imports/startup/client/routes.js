@@ -26,6 +26,8 @@ import '../../ui/team_join/team_join.js'
 import '../../ui/team_edit/team_edit.js'
 import '../../ui/team_find/team_find.js'
 import '../../ui/team_apply/team_apply.js'
+import '../../ui/volunteer_add/volunteer_add.js'
+import '../../ui/volunteer_edit/volunteer_edit.js'
 
 
 // Set up all routes in the app
@@ -221,16 +223,30 @@ FlowRouter.route('/t/:teamname/pass',{
 });
 
 FlowRouter.route('/t/:teamname/join',{
-  name: 'team_pass',
+  name: 'team_join',
   action() {
     BlazeLayout.render('base', {main: 'team_join'});
   }
 });
 
 FlowRouter.route('/t/:teamname/join/:pin',{
-  name: 'team_pass',
+  name: 'team_join_pin',
   action() {
     BlazeLayout.render('base', {main: 'team_join'});
+  }
+});
+
+FlowRouter.route('/volunteer/add',{
+  name: 'volunteer_add',
+  action() {
+    BlazeLayout.render('base', {main: 'volunteer_add'});
+  }
+});
+
+FlowRouter.route('/volunteer/edit',{
+  name: 'volunteer_edit',
+  action() {
+    BlazeLayout.render('base', {main: 'volunteer_edit'});
   }
 });
 

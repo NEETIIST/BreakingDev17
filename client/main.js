@@ -23,3 +23,6 @@ window.Images = Images ;
 
 import { Payments } from '/imports/api/payments/payments.js';
 window.Payments = Payments ;
+
+import { Volunteers } from '/imports/api/volunteers/volunteers.js';
+window.Volunteers = Volunteers ;

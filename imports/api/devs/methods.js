@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 import { Devs } from './devs.js';
 import { Teams } from '../teams/teams.js';
+import { Volunteers } from '../volunteers/volunteers.js';
 
 Meteor.methods({
 
@@ -40,5 +41,10 @@ Meteor.methods({
 		let u = Meteor.users.findOne({'_id': this.userId});
 		return Devs.findOne({'user':this.userId}) ? true : false ;
 	},
+
+	devIsVolunteer: function(id){
+		let u = Volunteers.findOne({"_id":id}).user;
+		Devs.update({"user":u},{$set:{"volunteer":true}})
+	}
 
 });

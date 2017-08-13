@@ -1,0 +1,18 @@
+<template name="volunteer_edit">
+
+	<div class="row justify-content-center align-items-center m-0 vh-100 light-orange f-white">
+		<div class="col-10 py-3">
+			<span class="cp" id="goDash"><i class="fa fa-angle-double-left fa-fw f-white mr-2" aria-hidden="true"></i>{{_ "up_godash"}}</span>
+			<hr class="orange">
+			<p class="text-center">{{_ "vol_edit"}}</p>
+			{{#if Template.subscriptionsReady}}
+				{{> quickForm collection=Volunteers doc=volProfile id="editVolunteer" type="update" buttonClasses="at-btn submit" autocomplete="off"}}
+			{{else}}
+				<div class="text-center">
+					<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw f-white"></i>
+				</div>
+			{{/if}}
+		</div>
+	</div>
+
+</template>

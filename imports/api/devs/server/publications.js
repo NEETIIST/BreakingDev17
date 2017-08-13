@@ -26,7 +26,3 @@ Meteor.publish('devs.all', function(){
 	else
 		return 0 ;
 });
-
-Meteor.publish('devs.all.test', function(){
-	return Devs.find();
-});
