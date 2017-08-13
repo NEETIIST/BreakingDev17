@@ -202,6 +202,9 @@ Template.dash_volunteer.helpers({
   	volRejected: function(){
   		return Volunteers.findOne().status == "Rejected" ;
   	},
+  	firstTime: function(){
+  		return ! Devs.findOne().volunteer ;	
+  	}
 });
 
 Template.dash_volunteer.events({

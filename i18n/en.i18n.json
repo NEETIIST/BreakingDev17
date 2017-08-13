@@ -55,6 +55,9 @@
 	"menu_login": "Login",
 	"menu_logout": "Logout",
 
+	//User Page
+	"up_volunteer": "Volunteer",
+
 	//Admin
 	"ap_user-list": "Users",
 	"ap_team-list": "Teams",
@@ -77,6 +80,11 @@
 	"ap-uf-payment": "Payment",
 	"ap-uf-admin": "Make Admin",
 	"ap-uf-not-admin": "Remove Admin",
+	"ap-ul-volunteer": "Volunteer",
+	"ap-uf-vol-true": "Accept Aplication",
+	"ap-uf-vol-false": "Refuse Aplication",
+	"ap-uf-vol-motiv": "Motivation",
+	"ap-uf-vol-exp": "Experience",
 
 	"ap-tl":"Teams List:",
 	"ap-tl-teamname": "Nome",
@@ -176,6 +184,8 @@
 	"ud_vol_pending": "Application Pending",
 	"ud_vol_edit": "Edit your application",
 	"ud_vol_apply": "Apply to be a volunteer",
+	"ud_vol_rejected": "We're sorry but your application was not accepted. Thank you for your availability.",
+	"ud_vol_closed": "Volunteer applications are not available right now. Check our Facebook for more information.",
 
 	"ud_payment_1": "To make the payment, make a transfer of %s euros, to the following account:",
 	"ud_payment_nib": "PT50 0036 0106 99100060511 42 - NUC EST ENG TELECOMUNICAÇÕES IST",

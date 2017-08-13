@@ -5,11 +5,8 @@ import { Volunteers } from './volunteers.js';
 Meteor.methods({
 
 	setUpVolunteer: function(id){
-		let v = Volunteers.findOne({"_id":id});
-		if ( v.user == this.userId )
-		{
-			Volunteers.update({"_id":id},{$set:{"status":"Pending"}})
-		}
+		Volunteers.update({"_id":id},{$set:{"user":this.userId}});
+		Volunteers.update({"_id":id},{$set:{"status":"Pending"}});
 	},
 
 	approveVolunteer: function(status){

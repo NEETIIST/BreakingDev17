@@ -20,6 +20,10 @@ Volunteers.allow({
         */
         return true;
     },
+    update: function(){
+        if (Roles.userIsInRole( Meteor.user()._id, 'admin'))
+            return true;
+    },
 });
 
 Schema = new SimpleSchema({
@@ -37,13 +41,11 @@ Schema = new SimpleSchema({
     },
     user: {
         type: String,
-        autoValue: function(){ return Meteor.userId() },
         autoform: {
             type: "hidden",
             label: false
         },
-        //unique: true,
-        //optional: true,
+        optional: true,
     },
     status: {
         type: String,

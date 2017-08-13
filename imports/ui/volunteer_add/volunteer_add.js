@@ -29,8 +29,8 @@ Template.volunteer_add.events({
 
 AutoForm.addHooks(['addVolunteer'],{
     onSuccess: function(formType, result) {
-        Meteor.call('devIsVolunteer', result);
         Meteor.call('setUpVolunteer', result);
+        Meteor.call('devIsVolunteer', result);
       	FlowRouter.go("/dash");
     }
 });

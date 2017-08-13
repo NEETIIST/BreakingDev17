@@ -18,6 +18,11 @@
 						<i class="fa fa-users f-white fa-fw mr-2" aria-hidden="true"></i>{{team}}
 					</p>
 				{{/if}}
+				{{#if isVolunteer}}
+					<p class="fw-2 fs-2 flh-2 f-white mb-2">
+						<i class="fa fa-child f-white fa-fw mr-2" aria-hidden="true"></i>{{_ "up_volunteer"}}
+					</p>
+				{{/if}}
 				<p class="fw-2 fs-2 flh-2 f-white mb-1">
 					<i class="fa fa-graduation-cap fa-fw f-white mr-2" aria-hidden="true"></i>{{userData.college}}
 				</p>

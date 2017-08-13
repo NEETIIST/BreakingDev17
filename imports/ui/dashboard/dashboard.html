@@ -386,7 +386,8 @@
 							<i class="fa fs-6 my-3 fa-pencil-square-o fa-fw" aria-hidden="true"></i>
 							<p class="fw-3 fs-2 flh-2">{{_ "ud_vol_edit"}}</p>
 						</div>
-					{{else}}
+					{{/if}}
+					{{#if firstTime}}
 						<div class="col-4 hvr-items cp text-center" id="dash_vol_add">
 							<i class="fa fs-6 my-3 fa-pencil fa-fw" aria-hidden="true"></i>
 							<p class="fw-3 fs-2 flh-2">{{_ "ud_vol_apply"}}</p>
@@ -395,10 +396,14 @@
 					{{#if volApproved}}
 						<div class="col-4 hvr-items cp text-center" id="dash_vol_shift">
 							<i class="fa fs-6 my-3 fa-calendar fa-fw" aria-hidden="true"></i>
-							<p class="fw-3 fs-2 flh-2">{{_ "ud_vol_apply"}}</p>
+							<p class="fw-3 fs-2 flh-2">{{_ "ud_vol_shifts"}}</p>
 						</div>
 					{{/if}}
-
+					{{#if volRejected}}
+						<div class="col-12 text-left">
+							<p class="fw-3 fs-2 flh-2">{{_ "ud_vol_rejected"}}</p>
+						</div>
+					{{/if}}
 				{{/if}}
 			 {{/if}}
 	</div>

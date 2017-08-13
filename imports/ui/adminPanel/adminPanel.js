@@ -55,10 +55,13 @@ Template.adminPanel.events({
 
 Template.ap_stats.helpers({
 	devsTotal: function(){
-		return Devs.find({"inTeam":true}).count();
+		return Devs.find().count();
 	},
 	teamsTotal: function(){
-		return Teams.find({}).count();
+		return Teams.find().count();
+	},
+	volTotal: function(){
+		return Devs.find({"volunteer":true}).count();
 	},
 });
 
@@ -110,7 +113,22 @@ Template.ap_user_focus.helpers({
 			return "/profile.png";
 		else
 			return pic.link();
-	}
+	},
+	accepted: function(){
+		return Volunteers.findOne({"user":this.user}).status == "Approved";
+	},
+	refused: function(){
+		return Volunteers.findOne({"user":this.user}).status == "Rejected";
+	},
+	pending: function(){
+		return Volunteers.findOne({"user":this.user}).status == "Pending";
+	},
+	motivation: function(){
+		return Volunteers.findOne({"user":this.user}).motivation;
+	},
+	experience: function(){
+		return Volunteers.findOne({"user":this.user}).experience;
+	},
 });
 
 Template.ap_user_focus.events({
@@ -131,6 +149,14 @@ Template.ap_user_focus.events({
 	},
 	"click #not-admin": function(){
 		Meteor.call("removeAdmin", this.user);
+	},
+	"click #volunteer-true": function(){
+		let v = Volunteers.findOne({"user":this.user});
+		Volunteers.update({"_id":v._id},{$set:{"status":"Approved"}})
+	},
+	"click #volunteer-false": function(){
+		let v = Volunteers.findOne({"user":this.user});
+		Volunteers.update({"_id":v._id},{$set:{"status":"Rejected"}})
 	},
 });
 
@@ -274,6 +300,37 @@ Template.ap_payments.events({
 	},
 });
 
+Template.ap_volunteers.helpers({
+	volunteer: function(){
+		return Devs.find({"volunteer":true});
+	},
+	username: function(){
+		return Meteor.users.findOne({"_id":this.user}).username;		
+	},
+	approved: function(){
+		let v = Volunteers.findOne({"user":this.user});
+		if ( v.status == "Approved" )
+			return v.status;
+	},
+	pending: function(){
+		let v = Volunteers.findOne({"user":this.user});
+		if ( v.status == "Pending" )
+			return v.status;
+	},
+	rejected: function(){
+		let v = Volunteers.findOne({"user":this.user});
+		if ( v.status == "Rejected" )
+			return v.status;
+	},
+});
+
+Template.ap_volunteers.events({
+	"click .focus": function(){
+		let d = Devs.findOne({"user":this.user});
+		Session.set("focus",d._id);
+		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_user_focus"}); 	
+	},
+});
 
 AutoForm.addHooks(['addAlert'],{
     onSuccess: function(formType, result) {

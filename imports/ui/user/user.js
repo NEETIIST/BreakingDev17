@@ -32,6 +32,9 @@ Template.user.helpers({
 			return "/profile.png";
 		else
 			return pic.link();
+	},
+	isVolunteer: function(){
+		return Devs.findOne().volunteer;
 	}
 })
 

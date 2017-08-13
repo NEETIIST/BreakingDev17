@@ -55,6 +55,9 @@
 	"menu_login": "Login",
 	"menu_logout": "Logout",
 
+	//User Page
+	"up_volunteer": "Voluntário",
+
 	//Admin
 	"ap_user-list": "Utilizadores",
 	"ap_team-list": "Equipas",
@@ -77,6 +80,11 @@
 	"ap-uf-payment": "Pagamento",
 	"ap-uf-admin": "Tornar Administrador",
 	"ap-uf-not-admin": "Remover Administrador",
+	"ap-ul-volunteer": "Voluntário",
+	"ap-uf-vol-true": "Aceitar candidatura",
+	"ap-uf-vol-false": "Recusar candidatura",
+	"ap-uf-vol-motiv": "Motivação",
+	"ap-uf-vol-exp": "Experiência",
 
 	"ap-tl":"Lista de Equipas:",
 	"ap-tl-teamname": "Nome",
@@ -179,6 +187,8 @@
 	"ud_vol_pending": "Candidatura em análise",
 	"ud_vol_edit": "Edita a tua candidatura",
 	"ud_vol_apply": "Candidata-te a voluntário",
+	"ud_vol_rejected": "Infelizmente a tua candidatura não foi aceite. Obrigado pela tua disponibilidade.",
+	"ud_vol_closed": "As candidaturas para voluntários não estão disponiveis, procura o nosso Facebook para mais informações.",
 
 	"ud_payment_1": "Para efetuares o pagamento, efetua uma transferência no valor de %s euros, para o seguinte NIB:",
 	"ud_payment_nib": "PT50 0036 0106 99100060511 42 - NUC EST ENG TELECOMUNICAÇÕES IST",

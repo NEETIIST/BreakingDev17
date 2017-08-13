@@ -135,7 +135,7 @@
 		</div>
 		<div class="col-10 col-md-4 hvr-items">
 			<span class="fw-3 fs-3">{{_ "ap-stats-3"}}</span>
-			<p class="fw-3 fs-6">0</p>
+			<p class="fw-3 fs-6">{{volTotal}}</p>
 		</div>
 	</div>
 </template>
@@ -158,10 +158,14 @@
 					<tr>
 						<td>@{{username}}</td>
 						<td>{{name}}</td>
-						{{#if inTeam}}
-							<td>{{teamName}}</td>
+						{{#if volunteer}}
+							<td>{{_ "ap-ul-volunteer"}}</td>
 						{{else}}
-							<td>-</td>
+							{{#if inTeam}}
+								<td>{{teamName}}</td>
+							{{else}}
+								<td>-</td>
+							{{/if}}
 						{{/if}}
 						<td>
 							{{#if validated}}
@@ -211,10 +215,25 @@
 					</tr>
 					<tr>
 						<td class="vwf-20">{{_ "ap-ul-team"}}</td>
-						{{#if inTeam}}
-							<td>{{teamName}}</td>
+						{{#if volunteer}}
+							<td>
+								{{_ "ap-ul-volunteer"}}
+								{{#if pending}}
+									<i class="fa fs-3 fa-exclamation-triangle f-yellow fa-fw" aria-hidden="true"></i>
+								{{/if}}
+								{{#if accepted}}
+									<i class="fa fs-3 fa-check-circle f-green fa-fw" aria-hidden="true"></i>
+								{{/if}}
+								{{#if refused}}
+									<i class="fa fs-3 fa-times-circle f-red fa-fw" aria-hidden="true"></i>
+								{{/if}}
+							</td>
 						{{else}}
-							<td>-</td>
+							{{#if inTeam}}
+								<td>{{teamName}}</td>
+							{{else}}
+								<td>-</td>
+							{{/if}}
 						{{/if}}
 					</tr>
 					<tr>
@@ -241,23 +260,45 @@
 							{{/if}}
 						</td>
 					</tr>
+					{{#if volunteer}}
+						<tr>
+							<td class="vwf-20">{{_ "ap-uf-vol-motiv"}}</td>
+							<td>{{motivation}}</td>
+						</tr>
+						<tr>
+							<td class="vwf-20">{{_ "ap-uf-vol-exp"}}</td>
+							<td>{{experience}}</td>
+						</tr>
+					{{/if}}
 				</tbody>
 			</table>
 			<div class="row m-0 text-left text-md-center">
-				<div class="col my-1">
-					{{#if payment}}
-						<button type="button" class="btn btn-danger fw-3 fs-2 f-inherit" id="not-pay">{{_ "ap-uf-not-pay"}}</button>
+				<div class="col my-1 px-0">
+					{{#if volunteer}}
+						{{#if pending}}
+							<button type="button" class="btn btn-success fw-3 fs-2 f-inherit my-1" id="volunteer-true">{{_ "ap-uf-vol-true"}}</button>
+							<button type="button" class="btn btn-danger fw-3 fs-2 f-inherit my-1" id="volunteer-false">{{_ "ap-uf-vol-false"}}</button>
+						{{/if}}
+						{{#if accepted}}
+							<button type="button" class="btn btn-danger fw-3 fs-2 f-inherit my-1" id="volunteer-false">{{_ "ap-uf-vol-false"}}</button>
+						{{/if}}
+						{{#if refused}}
+							<button type="button" class="btn btn-success fw-3 fs-2 f-inherit my-1" id="volunteer-true">{{_ "ap-uf-vol-true"}}</button>
+						{{/if}}
 					{{else}}
-						<button type="button" class="btn btn-success fw-3 fs-2 f-inherit" id="pay">{{_ "ap-uf-pay"}}</button>
+						{{#if payment}}
+							<button type="button" class="btn btn-danger fw-3 fs-2 f-inherit my-1" id="not-pay">{{_ "ap-uf-not-pay"}}</button>
+						{{else}}
+							<button type="button" class="btn btn-success fw-3 fs-2 f-inherit my-1" id="pay">{{_ "ap-uf-pay"}}</button>
+						{{/if}}
 					{{/if}}
 				</div>
-				<div class="col my-1">
+				<div class="col my-1 px-0">
 					{{#if admin}}
-						<button type="button" class="btn btn-danger fw-3 fs-2 f-inherit" id="not-admin">{{_ "ap-uf-not-admin"}}</button>
+						<button type="button" class="btn btn-danger fw-3 fs-2 f-inherit my-1" id="not-admin">{{_ "ap-uf-not-admin"}}</button>
 					{{else}}
-						<button type="button" class="btn btn-warning fw-3 fs-2 f-inherit" id="make-admin">{{_ "ap-uf-admin"}}</button>
+						<button type="button" class="btn btn-warning fw-3 fs-2 f-inherit my-1" id="make-admin">{{_ "ap-uf-admin"}}</button>
 					{{/if}}
-						
 				</div>
 				<div class="spacer-8"></div>
 			</div>
@@ -507,5 +548,40 @@
 </template>
 
 <template name="ap_volunteers">
-	
+	<p>{{_ "ap-volunteers"}}</p>
+	<div class="table-responsive">
+		<table class="table table-hover table-sm fw-3 fs-2">
+			<thead>
+				<tr>
+					<th>{{_ "ap-ul-username"}}</th>
+					<th>{{_ "ap-ul-name"}}</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each volunteer}}		
+					<tr>
+						<td>@{{username}}</td>
+						<td>{{name}}</td>
+						<td>
+							{{#if approved}}
+								<i class="fa fa-check fa-fw f-green" aria-hidden="true"></i>
+							{{/if}}
+							{{#if pending}}
+								<i class="fa fa-exclamation-triangle fa-fw f-yellow" aria-hidden="true"></i>
+							{{/if}}
+							{{#if rejected}}
+								<i class="fa fa-times fa-fw f-red" aria-hidden="true"></i>
+							{{/if}}
+							
+						</td>
+						<td>
+							<i class="fa fa-search fa-fw f-black cp focus" aria-hidden="true"></i>
+						</td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
 </template>
