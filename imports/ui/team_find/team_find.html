@@ -12,10 +12,10 @@
 						{{#each allTeams}}
 						<div class="col-12 col-md-4 text-center mb-3 hvr-items">
 							{{#if equals category "Web"}}
-								<img src="/icons/WebAlt.png" alt="{{_ 'team_webdesc'}}" class="team-cat">
+								<img src="/icons/WebAlt.png" alt="{{_ 'team_webdesc'}}" title="{{_ 'team_webdesc'}}" class="team-cat">
 							{{/if}}
 							{{#if equals category "Gaming"}}
-								<img src="/icons/JogosAlt.png" alt="{{_ 'team_gamesdesc'}}" class="team-cat">
+								<img src="/icons/JogosAlt.png" alt="{{_ 'team_gamesdesc'}}" title="{{_ 'team_gamesdesc'}}" class="team-cat">
 							{{/if}}
 							<p class="fw-3 fs-3 mb-0" title="{{i18n_name}}">{{team_name}}</p>
 							<p class="fw-3 fs-3 mb-0" title="{{i18n_idea}}">"{{project_name}}"</p>

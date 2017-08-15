@@ -363,10 +363,10 @@
 <template name="ap_team_focus">
 	{{#each focus}}
 		{{#if equals category "Web"}}
-				<img src="/icons/WebAlt.png" alt="{{_ 'team_webdesc'}}" class="category-pic">
+				<img src="/icons/WebAlt.png" alt="{{_ 'team_webdesc'}}" title="{{_ 'team_webdesc'}}" class="category-pic">
 		{{/if}}
 		{{#if equals category "Gaming"}}
-			<img src="/icons/JogosAlt.png" alt="{{_ 'team_gamesdesc'}}" class="category-pic">
+			<img src="/icons/JogosAlt.png" alt="{{_ 'team_gamesdesc'}}" title="{{_ 'team_gamesdesc'}}" class="category-pic">
 		{{/if}}
 		<div class="spacer-4"></div>
 		<div class="table-responsive">
@@ -374,7 +374,10 @@
 				<tbody>
 					<tr>
 						<td class="vwf-20">{{_ "ap-tl-teamname"}}</td>
-						<td>{{team_name}}</td>
+						<td>
+							{{team_name}}
+							<i class="fa fa-search fa-fw px-1 f-black cp" aria-hidden="true" id="goTeamPage"></i>
+						</td>
 					</tr>
 					<tr>
 						<td class="vwf-20">{{_ "ap-tl-category"}}</td>

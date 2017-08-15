@@ -234,6 +234,9 @@ Template.ap_team_focus.events({
 		Session.set("focus",d._id);
 		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_user_focus"}); 	
 	},
+	"click #goTeamPage": function(){
+		FlowRouter.go("/t/"+this._id);
+	},
 });
 
 Template.ap_alerts.helpers({

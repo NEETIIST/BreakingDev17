@@ -35,7 +35,10 @@ Template.user.helpers({
 	},
 	isVolunteer: function(){
 		return Devs.findOne().volunteer;
-	}
+	},
+	isStaff: function(){
+		return Roles.userIsInRole( Meteor.userId(),'admin');
+	},
 })
 
 Template.user.events({
