@@ -125,6 +125,17 @@
 	"ap-pay-delete": "Apagar",
 
 	"ap-volunteers": "Voluntários",
+	"ap-shifts": "Turnos",
+	"ap-shifts-add": "Adicionar turno",
+	"ap-shifts-day": "Dia",
+	"ap-shifts-available": "Voluntários disponíveis para este turno:",
+	"ap-shifts-none": "Não há voluntários disponíveis para este turno.",
+	"ap-shifts-delete": "Apagar",
+	"ap-shifts-unlock": "Desbloquear",
+	"ap-shifts-lock": "Bloquear",
+	"ap-shifts-unassign": "Remover voluntário",
+	"ap-shifts-assign": "Designar para este turno",
+	"ap-shifts-number": "Voluntários disponíveis para este turno",
 
 	//User Profile
 	"user_bio": "Bio:",
@@ -189,6 +200,19 @@
 	"ud_vol_apply": "Candidata-te a voluntário",
 	"ud_vol_rejected": "Infelizmente a tua candidatura não foi aceite. Obrigado pela tua disponibilidade.",
 	"ud_vol_closed": "As candidaturas para voluntários não estão disponiveis, procura o nosso Facebook para mais informações.",
+	"ud_vol_noprofile": "Preenche os teus dados antes de te candidatares a voluntário",
+	"ud_vol_shifts": "Escolher Turnos",
+	
+	"ud_shifts_intro": "Turnos de Voluntários",
+	"ud_shifts_long": "Aqui podes dizer-nos em que alturas estás disponivel para estar presente no BreakingDev como voluntário. Há várias opções possíveis e não tens nenhuma quantidade miníma de turnos para fazer. Marca em cada turno a tua disponibilidade, e quando possível os turnos são atribuídos. Se vires um turno 'Atribuído' significa que te foi dado e é o período em que contamos contigo! Um turno 'Em Aberto' ainda não foi decidido e podemos precisar de ti se tiveres disponibilidade.",
+	"ud_shifts_day": "Dia %s de Setembro",
+	"ud_shifts_assigned": "Atribuído",
+	"ud_shifts_closed": "Não necessário",
+	"ud_shifts_pending": "Em aberto",
+	"ud_shifts_possible": "Tenho disponibilidade",
+	"ud_shifts_impossible": "Não tenho disponibilidade",
+	"ud_shifts_yours": "Este turno foi-te atribuído!",
+	"ud_shifts_cancel": "Este turno já te foi atribuído portanto não podes cancelar a tua disponibilidade.",
 
 	"ud_payment_1": "Para efetuares o pagamento, efetua uma transferência no valor de %s euros, para o seguinte NIB:",
 	"ud_payment_nib": "PT50 0036 0106 99100060511 42 - NUC EST ENG TELECOMUNICAÇÕES IST",
@@ -294,6 +318,18 @@
 			"motivation":{
 				"label": "Motivação",
 				"placeholder": "Porque é que te queres juntar à nossa equipa de voluntários?"
+			}
+		},
+		"shifts":
+		{
+			"start":{
+				"label": "Início"
+			},
+			"end":{
+				"label": "Final"
+			},
+			"day":{
+				"label": "Dia"
 			}
 		}
   	},

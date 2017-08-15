@@ -28,6 +28,7 @@ import '../../ui/team_find/team_find.js'
 import '../../ui/team_apply/team_apply.js'
 import '../../ui/volunteer_add/volunteer_add.js'
 import '../../ui/volunteer_edit/volunteer_edit.js'
+import '../../ui/volunteer_shifts/volunteer_shifts.js'
 
 
 // Set up all routes in the app
@@ -247,6 +248,13 @@ FlowRouter.route('/volunteer/edit',{
   name: 'volunteer_edit',
   action() {
     BlazeLayout.render('base', {main: 'volunteer_edit'});
+  }
+});
+
+FlowRouter.route('/volunteer/shifts',{
+  name: 'volunteer_shifts',
+  action() {
+    BlazeLayout.render('base', {main: 'volunteer_shifts'});
   }
 });
 

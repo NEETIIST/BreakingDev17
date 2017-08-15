@@ -6,23 +6,16 @@ var whitelist = ["experience", "motivation"];
 
 Volunteers.allow({
     insert: function(){
-        //console.log(this);
-        //console.log(Volunteers.find({"user":this.userId}).count());
         return true ;
     },
     update: function(userId, doc, fields, modifier){
-        // Pending Underscore Package
-        /*
-        if ( userId && doc.user === userId _.difference(fields, whitelist).length === 0)
+        if ( userId && doc.user === userId )
         {
             return true ;            
         }
-        */
-        return true;
-    },
-    update: function(){
         if (Roles.userIsInRole( Meteor.user()._id, 'admin'))
             return true;
+        return false;
     },
 });
 

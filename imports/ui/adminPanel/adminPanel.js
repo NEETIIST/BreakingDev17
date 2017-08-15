@@ -5,6 +5,7 @@ import { Teams } from '/imports/api/teams/teams.js';
 import { Alerts } from '/imports/api/alerts/alerts.js';
 import { Payments } from '/imports/api/payments/payments.js';
 import { Volunteers } from '/imports/api/volunteers/volunteers.js';
+import { Shifts } from '/imports/api/shifts/shifts.js';
 import '/imports/api/images/images.js';
 
 Template.adminPanel.onRendered(function() {
@@ -20,6 +21,7 @@ Template.adminPanel.onRendered(function() {
 			self.subscribe("payments.all", Meteor.userId());
 			self.subscribe("files.images.all", Meteor.userId());
 			self.subscribe("volunteers.all", Meteor.userId());
+			self.subscribe("shifts.all");
 			Session.set("focus", null);
 		}
 		else
@@ -50,6 +52,9 @@ Template.adminPanel.events({
 	},
 	"click #ap_payments": function(){
 		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_payments"}); 
+	},
+	"click #ap_shifts": function(){
+		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_shifts"}); 
 	},
 });
 
@@ -254,7 +259,6 @@ Template.ap_alerts.events({
 			$set: { "display" : ! this.display },
 		}) ;
 	},
-
 });
 
 Template.ap_payments.helpers({
@@ -332,9 +336,91 @@ Template.ap_volunteers.events({
 	},
 });
 
+Template.ap_shifts.helpers({
+	Shifts(){
+    	return Shifts;
+  	},
+  	day(){
+  		let d = Session.get('currentDay') ;
+  		return Shifts.find({"day":d});
+  	},
+  	days:function(){
+  		return distinct(Shifts,"day");
+  	},
+  	isCurrentDay: function(d){
+  		if ( d == Session.get('currentDay') )
+  			return "activeDay";
+  	},
+  	currentShift: function(){
+  		let s = Session.get('currentShift')._id;
+  		return Shifts.findOne({"_id":s});
+  	},
+  	isCurrentShift: function(s){
+  		//Review to reduce console warnings
+  		if ( s._id == Session.get('currentShift')._id )
+  			return "activeDay";
+  	},
+  	selectedShift: function(){
+  		if (Session.get('currentShift') !== undefined )
+  			return true;
+  	},
+  	vols: function(){
+  		console.log(this);
+  		return this.available.length;
+  	},
+  	username: function(id){
+  		return Meteor.users.findOne({"_id":id}).username;
+  	}
+});
+
+Template.ap_shifts.events({
+	"click #deleteShift": function(){
+		let t = confirm("Remover turno?");
+		if ( t )
+			Shifts.remove(this._id);
+	},
+	"click #toggleShift": function(){
+		Shifts.update({"_id":this._id},{
+			$set: { "full" : ! this.full },
+		}) ;
+	},
+	"click .change_day": function(e,t){
+		Session.set('currentDay', e.currentTarget.id);
+		Session.set('currentShift', undefined);
+	},
+	"click #addVolunteer": function(){
+		Session.set('currentShift', this);
+	},
+	"click #assign": function(){
+		let v = String(this);
+		let s = Session.get('currentShift');
+		Shifts.update({"_id":s._id},{$push:{"assigned":v}});
+		Shifts.update({"_id":s._id},{$pull:{"available":v}});
+		Session.set('currentShift', Shifts.findOne({"_id":s._id}));
+	},
+	"click #not-assign": function(){
+		let v = String(this);
+		let s = Session.get('currentShift');
+		Shifts.update({"_id":s._id},{$pull:{"assigned":v}});
+		Shifts.update({"_id":s._id},{$push:{"available":v}});
+		Session.set('currentShift', Shifts.findOne({"_id":s._id}));
+	},
+});
+
 AutoForm.addHooks(['addAlert'],{
     onSuccess: function(formType, result) {
         Meteor.call('setUpAlert', result);
     }
 });
 
+AutoForm.addHooks(['addShift'],{
+    onSuccess: function(formType, result) {
+        Meteor.call('setUpShift',result);
+    }
+});
+
+function distinct(collection, field) {
+  return _.uniq(collection.find({}, {
+    sort: {[field]: 1}, fields: {[field]: 1}
+  }).map(x => x[field]), true);
+}

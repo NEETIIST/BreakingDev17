@@ -26,3 +26,6 @@ window.Payments = Payments ;
 
 import { Volunteers } from '/imports/api/volunteers/volunteers.js';
 window.Volunteers = Volunteers ;
+
+import { Shifts } from '/imports/api/volunteers/volunteers.js';
+window.Shifts = Shifts ;

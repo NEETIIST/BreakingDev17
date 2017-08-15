@@ -1,0 +1,55 @@
+<template name="volunteer_shifts">
+
+	<div class="row justify-content-center align-items-start m-0 vh-30 light-orange f-white user-top-black">
+		<div class="col-10 my-3 text-left">
+			<span class="cp" id="goDash"><i class="fa fa-angle-double-left fa-fw f-white mr-2" aria-hidden="true"></i>{{_ "up_godash"}}</span>
+			<hr class="orange">
+			<p class="fw-3 fs-3 my-1">{{_ "ud_shifts_intro"}}</p>
+			<p class="fw-3 fs-2 my-1 flh-2">{{_ "ud_shifts_long"}}</p>
+		</div>
+	</div>
+	<div class="row justify-content-center align-items-start m-0 vh-70 white f-black">
+		<div class="col-10 my-3">
+			{{#if Template.subscriptionsReady}}
+				{{#if noVolunteer}}
+					<p class="fw-3 fs-3 my-1">{{_ "ud_vol_noprofile"}}</p>
+				{{else}}
+					{{#if notApproved}}
+						<p class="fw-3 fs-2 my-1">{{_ "ud_vol_rejected"}}</p>
+					{{else}}
+						{{#each days}}
+							<div class="row mx-0">
+								<div class="col-12">
+									<p class="fw-3 fs-2 my-1">{{_ "ud_shifts_day" this}}</p>
+								</div>
+								{{#each day this}}
+									<div class="col-4 col-md-2 text-center">
+										<span class="fw-3 fs-2">{{this.start}}-{{this.end}}</span>
+										<hr class="orange my-0">
+										{{#if assigned}}
+											<p class="fw-3 fs-1 my-1">
+												<i class="fa fs-3 px-1 f-blue fa-exclamation" aria-hidden="true" title="{{_ 'ud_shifts_yours'}}"></i>
+												{{_ "ud_shifts_assigned"}}
+											</p>
+										{{else}}
+											{{#if full}}
+												<p class="fw-3 fs-1 my-1">{{_ "ud_shifts_closed"}}</p>
+											{{else}}
+												<p class="fw-3 fs-1 my-1">{{_ "ud_shifts_pending"}}</p>
+											{{/if}}
+										{{/if}}
+										<hr class="orange my-0">
+										<i class="fa fs-2 px-1 fa-check f-green hvr-opc {{available}} cp" aria-hidden="true" id="makeAvailable" title="{{_ 'ud_shifts_possible'}}"></i>
+										<i class="fa fs-2 px-1 fa-times f-red hvr-opc {{unavailable}} cp" aria-hidden="true" id="makeUnavailable" title="{{_ 'ud_shifts_impossible'}}"></i>
+									</div>
+								{{/each}}
+								<div class="col-12"><div class="spacer-2"></div></div>
+							</div>
+						{{/each}}
+					{{/if}}
+				{{/if}}
+			{{/if}}	
+		</div>
+	</div>
+	
+</template>

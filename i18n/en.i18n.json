@@ -125,7 +125,17 @@
 	"ap-pay-delete": "Delete",
 
 	"ap-volunteers": "Volunteers",
-
+	"ap-shifts": "Shifts",
+	"ap-shifts-add": "Add Shift",
+	"ap-shifts-day": "Day",
+	"ap-shifts-available": "Volunteers available for this shift:",
+	"ap-shifts-none": "There's no volunteers available for this shift.",
+	"ap-shifts-delete": "Delete Shift",
+	"ap-shifts-unlock": "Unlock",
+	"ap-shifts-lock": "Lock",
+	"ap-shifts-unassign": "Unassign volunteer",
+	"ap-shifts-assign": "Assign to this shift",
+	"ap-shifts-number": "Volunteers available for this shift",
 
 	//User Profile
 	"user_bio": "Bio:",
@@ -186,6 +196,20 @@
 	"ud_vol_apply": "Apply to be a volunteer",
 	"ud_vol_rejected": "We're sorry but your application was not accepted. Thank you for your availability.",
 	"ud_vol_closed": "Volunteer applications are not available right now. Check our Facebook for more information.",
+	"ud_vol_noprofile": "Fill in your data before applying to be a volunteer.",
+	"ud_vol_shifts": "Pick Shifts",
+	
+	"ud_shifts_intro": "Volunteer Shifts",
+	"ud_shifts_long": "Aqui podes dizer-nos em que alturas estás disponivel para estar presente no BreakingDev como voluntário. Há várias opções possíveis e não tens nenhuma quantidade miníma de turnos para fazer. Marca em cada turno a tua disponibilidade, e quando possível os turnos são atribuídos. Se vires um turno 'Atribuído' significa que te foi dado e é o período em que contamos contigo! Um turno 'Em Aberto' ainda não foi decidido e podemos precisar de ti se tiveres disponibilidade.",
+	"ud_shifts_long": "Here you can tell us the best time for you to be at BreakingDev as a volunteer. There are several options and you don't a have a minimum number of shifts. Check your availability in each shift and as soon as possible they will be assigned. If you see a shift 'Assigned', it means it was assigned to you, and those are the hours we are counting on you at the venue. An 'Open' shift means we are still assigning volunteers and we may need you if possible.",
+	"ud_shifts_day": "Day %s / September",
+	"ud_shifts_assigned": "Assigned",
+	"ud_shifts_closed": "Not necessary",
+	"ud_shifts_pending": "Open",
+	"ud_shifts_possible": "I'm available",
+	"ud_shifts_impossible": "Can't do it",
+	"ud_shifts_yours": "This shift was assigned to you!",
+	"ud_shifts_cancel": "This shift was assigned to you. So you can't cancel it.",
 
 	"ud_payment_1": "To make the payment, make a transfer of %s euros, to the following account:",
 	"ud_payment_nib": "PT50 0036 0106 99100060511 42 - NUC EST ENG TELECOMUNICAÇÕES IST",
@@ -291,6 +315,18 @@
 			"motivation":{
 				"label": "Motivation",
 				"placeholder": "Why do you want to join our team of volunteers?"
+			}
+		},
+		"shifts":
+		{
+			"start":{
+				"label": "Start"
+			},
+			"end":{
+				"label": "End"
+			},
+			"day":{
+				"label": "Day"
 			}
 		}
   	},

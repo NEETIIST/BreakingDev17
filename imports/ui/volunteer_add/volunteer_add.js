@@ -9,7 +9,7 @@ Template.volunteer_add.onRendered(function() {
         // Users must have a profile and not be on a team
         if ( Volunteers.find().count() > 0 )
         {
-            //FlowRouter.go("/volunteer/edit");
+            FlowRouter.go("/volunteer/edit");
         }
     });
 

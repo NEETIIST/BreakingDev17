@@ -23,3 +23,6 @@ import '../../api/payments/server/publications.js';
 
 import '../../api/volunteers/methods.js';
 import '../../api/volunteers/server/publications.js';
+
+import '../../api/shifts/methods.js';
+import '../../api/shifts/server/publications.js';

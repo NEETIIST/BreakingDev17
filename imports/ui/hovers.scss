@@ -84,3 +84,14 @@
   -webkit-transform: translateX(8px);
   transform: translateX(8px);
 }
+
+.hvr-opc
+{
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    opacity: 0.4;
+}
+.hvr-opc:hover
+{
+    opacity: 1;
+}

@@ -47,6 +47,14 @@
 									<span class="fw-3 fs-2 flh-2">{{_ "ap-volunteers"}}</span>
 								</div>
 							</div>
+							<div class="row align-items-center text-left hvr-items cp" id="ap_shifts">
+								<div class="col-3">
+									<i class="fa fs-4 py-2 fa-calendar fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col-9">
+									<span class="fw-3 fs-2 flh-2">{{_ "ap-shifts"}}</span>
+								</div>
+							</div>
 							<div class="row align-items-center text-left hvr-items cp" id="ap_alerts">
 								<div class="col-3">
 									<i class="fa fs-4 py-2 fa-exclamation fa-fw" aria-hidden="true"></i>
@@ -92,6 +100,9 @@
 								</div>
 								<div class="col px-1" id="ap_volunteers">
 									<i class="fa fs-5 py-2 fa-child fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col px-1" id="ap_shifts">
+									<i class="fa fs-5 py-2 fa-calendar fa-fw" aria-hidden="true"></i>
 								</div>
 								<div class="col px-1" id="ap_alerts">
 									<i class="fa fs-5 py-2 fa-exclamation fa-fw" aria-hidden="true"></i>
@@ -584,4 +595,84 @@
 			</tbody>
 		</table>
 	</div>
+</template>
+
+<template name="ap_shifts">
+	<div class="row mx-0">
+		<div class="col-12">
+			<p class="fw-3 fs-2 mb-1 pl-3">{{_ "ap-shifts-add"}}</p>
+			{{#autoForm collection=Shifts id="addShift" type="insert"}}
+				<div class="row mx-0">
+					<div class="col-6 col-md-3">
+						{{> afFieldInput name='start' placeholder="schemaLabel" autocomplete="off"}}
+					</div>
+					<div class="col-6 col-md-3">
+						{{> afFieldInput name='end' placeholder="schemaLabel" autocomplete="off"}}
+					</div>
+					<div class="col-10 col-md-3">
+						{{> afFieldInput name='day' placeholder="schemaLabel" autocomplete="off"}}
+					</div>
+					<div class="col-1 text-center">
+						<button type="submit" class="no-button"><i class="fa fa-check f-green cp" aria-hidden="true" title="{{_ 'ap-shifts-add'}}"></i></button>
+					</div>
+				</div>
+			{{/autoForm}}
+		</div>
+	</div>
+	<hr class="orange">
+	<div class="row mx-0 justify-content-center">
+		{{#each days}}
+			<div class="col-3 col-md-2 text-center hvr-items cp change_day {{isCurrentDay this}}" id={{this}}>
+				<span class="fw-2 fs-2 py-2">{{_ "ap-shifts-day"}} {{this}}</span>
+			</div>
+		{{/each}}
+	</div>
+	<div class="spacer-4"></div>
+	<div class="row mx-0 justify-content-start">
+		{{#each day}}
+			<div class="col-md-2 col-6 text-center" id="addVolunteer">
+				<span class="fw-2 fs-1 py-1 cp {{isCurrentShift this}}">{{start}}-{{end}}</span>
+				<span class="fw-4 fs-1 px-1 volNotification" title="{{_ 'ap-shifts-number'}}">{{vols}}</span>
+				<hr class="orange my-0">
+				{{#each assigned}}
+					<p class="fw-2 fs-1 my-1">
+						{{username this}}
+						<i class="fa fs-2 px-1 fa-minus f-red cp" aria-hidden="true" id="not-assign" title="{{_ 'ap-shifts-unassign'}}"></i>
+					</p>
+				{{else}}
+					<p class="fw-2 fs-1 my-1">-</p>
+				{{/each}}
+				<hr class="orange my-0">
+				<i class="fa fa-times f-red px-1 fs-2 cp" aria-hidden="true" id="deleteShift" title="{{_ 'ap-shifts-delete'}}"></i>
+				{{#if full}}
+					<i class="fa fs-2 px-1 fa-toggle-off f-red cp" aria-hidden="true" id="toggleShift" title="{{_ 'ap-shifts-unlock'}}"></i>
+				{{else}}
+					<i class="fa fs-2 px-1 fa-toggle-on f-green cp" aria-hidden="true" id="toggleShift" title="{{_ 'ap-shifts-lock'}}"></i>
+				{{/if}}
+			</div>
+		{{/each}}
+	</div>
+	<div class="spacer-4"></div>
+	<div class="row mx-0">
+		<div class="col-12">
+			{{#if selectedShift}}
+				<p class="fw-3 fs-2 mb-1">{{_ "ap-shifts-available"}}</p>
+				<div class="row mx-0">
+					{{#with currentShift}}
+						{{#each available}}
+							<div class="col-5 col-md-3">
+								<p class="fw-3 fs-1 mb-1">
+									<i class="fa fs-2 px-1 fa-plus f-green cp" aria-hidden="true" id="assign" title="{{_ 'ap-shifts-assign'}}"></i>
+									{{username this}}
+								</p>
+							</div>
+						{{else}}
+							<p class="fw-3 fs-1 mb-1">{{_ "ap-shifts-none"}}</p>
+						{{/each}}
+					{{/with}}
+				</div>
+			{{/if}}
+		</div>
+	</div>
+	
 </template>
