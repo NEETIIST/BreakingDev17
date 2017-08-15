@@ -37,7 +37,7 @@ Meteor.publish('singleTeamMembers',function(id){
 		t.members.forEach(function(m){
 			list.push(m);
 		});
-		return Meteor.users.find({'_id':{ $in : list }},{'username':1});
+		return Meteor.users.find({'_id':{ $in : list }},{fields:{'username':1}});
 	}
 })
 

@@ -1,6 +1,7 @@
 import './team.html'
 import { Accounts } from 'meteor/accounts-base';
 import { Teams } from '/imports/api/teams/teams.js';
+import { Devs } from '/imports/api/devs/devs.js';
 
 Template.team.onRendered(function() {
 	var self = this;
@@ -8,6 +9,8 @@ Template.team.onRendered(function() {
 		let t = FlowRouter.getParam('teamname');
 		self.subscribe('singleTeamVisitor',t);
 		self.subscribe('singleTeamMembers', t);
+		self.subscribe('devs.team', t);
+		self.subscribe('profile.image.team',t);
 	});
 });
 
@@ -24,6 +27,16 @@ Template.team.helpers({
 			list.push(Meteor.users.findOne({"_id":m}));
 		});
 		return list;
+	},
+	userPic: function(){
+		let d = Devs.findOne({"user":this._id});
+		let img = Images.findOne({"_id":d.picture});
+		if ( img != undefined )
+		{
+			return img.link();
+		}
+		else
+			return "/profile.png";
 	},
 })
 

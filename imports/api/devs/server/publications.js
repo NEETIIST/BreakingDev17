@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Devs } from '../devs.js';
+import { Teams } from '../../teams/teams.js';
 
 Meteor.publish('devs.single', function(){
 	var id = this.userId ;
@@ -17,6 +18,19 @@ Meteor.publish('devs.single.inTeam', function(id){
 
 Meteor.publish('devs.single.username', function(id){
 	return Devs.find({'user':id},{fields: {'user':1}});
+});
+
+Meteor.publish('devs.team', function(id){
+	let t = Teams.findOne({'_id':id});
+	if ( t !== undefined )
+	{
+		let list = [];
+		list.push(t.captain);
+		t.members.forEach(function(m){
+			list.push(m);
+		});
+		return Devs.find({'user':{ $in : list }},{fields:{'user':1,'name':1,'picture':1}});
+	}
 });
 
 //Admin Use
