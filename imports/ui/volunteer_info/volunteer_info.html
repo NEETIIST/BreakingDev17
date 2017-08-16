@@ -1,0 +1,16 @@
+<template name="volunteer_info">
+
+	<div class="row justify-content-center align-items-start m-0 vh-100 light-orange f-white">
+		<div class="col-10 py-3">
+			{{#if logged}}
+				<span class="cp" id="goDash"><i class="fa fa-angle-double-left fa-fw f-white mr-2" aria-hidden="true"></i>{{_ "up_godash"}}</span>
+				<hr class="orange">
+			{{/if}}
+			<p class="fw-4 fs-3 my-1 text-center">{{_ "vol_faq_1"}}</p>
+			<p class="fw-3 fs-2 my-1">{{_ "vol_faq_2"}}</p>
+			<p class="fw-3 fs-2 my-1">{{_ "vol_faq_3"}}</p>
+			<p class="fw-3 fs-2 my-1">{{_ "vol_faq_4"}}</p>
+		</div>
+	</div>
+
+</template>

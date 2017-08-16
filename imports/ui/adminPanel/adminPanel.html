@@ -4,7 +4,9 @@
 		{{#if Template.subscriptionsReady}}
 
 			<div class="row justify-content-center align-items-center f-black m-0 py-3 white vh-100 hidden-md-down" id="nav-mid">
-				<div class="col-10 col-md-2">
+				<div class="col-10 col-md-2 align-self-start">
+					<div class="spacer-8"></div>
+					<div class="spacer-8"></div>
 					<div class="row justify-content-center align-items-center">
 						<div class="col-12 col-md-12">
 							<div class="row align-items-center text-left hvr-items cp" id="ap_stats">
@@ -626,7 +628,7 @@
 	<div class="row mx-0 justify-content-center">
 		{{#each days}}
 			<div class="col-3 col-md-2 text-center hvr-items cp change_day {{isCurrentDay this}}" id={{this}}>
-				<span class="fw-2 fs-2 py-2">{{_ "ap-shifts-day"}} {{this}}</span>
+				<span class="fw-3 fs-2 py-2">{{_ "ap-shifts-day"}} {{this}}</span>
 			</div>
 		{{/each}}
 	</div>
@@ -634,16 +636,16 @@
 	<div class="row mx-0 justify-content-start">
 		{{#each day}}
 			<div class="col-md-2 col-6 text-center" id="addVolunteer">
-				<span class="fw-2 fs-1 py-1 cp {{isCurrentShift this}}">{{start}}-{{end}}</span>
+				<span class="fw-3 fs-1 py-1 cp {{isCurrentShift this}}">{{start}}-{{end}}</span>
 				<span class="fw-4 fs-1 px-1 volNotification" title="{{_ 'ap-shifts-number'}}">{{vols}}</span>
 				<hr class="orange my-0">
 				{{#each assigned}}
-					<p class="fw-2 fs-1 my-1">
+					<p class="fw-3 fs-1 my-1">
 						{{username this}}
 						<i class="fa fs-2 px-1 fa-minus f-red cp" aria-hidden="true" id="not-assign" title="{{_ 'ap-shifts-unassign'}}"></i>
 					</p>
 				{{else}}
-					<p class="fw-2 fs-1 my-1">-</p>
+					<p class="fw-3 fs-1 my-1">-</p>
 				{{/each}}
 				<hr class="orange my-0">
 				<i class="fa fa-times f-red px-1 fs-2 cp" aria-hidden="true" id="deleteShift" title="{{_ 'ap-shifts-delete'}}"></i>

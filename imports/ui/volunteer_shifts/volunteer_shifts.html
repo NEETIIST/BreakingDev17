@@ -1,7 +1,7 @@
 <template name="volunteer_shifts">
 
 	<div class="row justify-content-center align-items-start m-0 vh-30 light-orange f-white user-top-black">
-		<div class="col-10 my-3 text-left">
+		<div class="col-11 col-md-10 my-3 text-left">
 			<span class="cp" id="goDash"><i class="fa fa-angle-double-left fa-fw f-white mr-2" aria-hidden="true"></i>{{_ "up_godash"}}</span>
 			<hr class="orange">
 			<p class="fw-3 fs-3 my-1">{{_ "ud_shifts_intro"}}</p>
@@ -9,7 +9,7 @@
 		</div>
 	</div>
 	<div class="row justify-content-center align-items-start m-0 vh-70 white f-black">
-		<div class="col-10 my-3">
+		<div class="col-11 col-md-10 my-3">
 			{{#if Template.subscriptionsReady}}
 				{{#if noVolunteer}}
 					<p class="fw-3 fs-3 my-1">{{_ "ud_vol_noprofile"}}</p>
@@ -23,7 +23,7 @@
 									<p class="fw-3 fs-2 my-1">{{_ "ud_shifts_day" this}}</p>
 								</div>
 								{{#each day this}}
-									<div class="col-4 col-md-2 text-center">
+									<div class="col-6 col-md-2 text-center">
 										<span class="fw-3 fs-2">{{this.start}}-{{this.end}}</span>
 										<hr class="orange my-0">
 										{{#if assigned}}

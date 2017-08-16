@@ -217,4 +217,7 @@ Template.dash_volunteer.events({
 	"click #dash_vol_shifts": function(){
 		FlowRouter.go("/volunteer/shifts");
 	},
+	"click #dash_vol_faq": function(){
+		FlowRouter.go("/volunteer/faq");
+	},
 });

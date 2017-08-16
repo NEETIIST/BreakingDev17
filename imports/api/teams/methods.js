@@ -57,5 +57,19 @@ Meteor.methods({
 		{
 			return Teams.findOne({"_id":team_id}).pincode ;
 		}
+	},
+
+	regenerateTeam: function(team_id){
+		if ( Roles.userIsInRole( this.userId, 'admin') )
+	    {
+	    	let pin = (Random.hexString(4));
+			let t = Teams.findOne({"_id":team_id});
+	    	if ( t.pincode == undefined )
+				Teams.update({"_id":team_id},{$set:{"pincode":pin}});
+			if ( t.validated == undefined )
+				Teams.update({"_id":team_id},{$set:{"validated":false}});
+			if ( t.pending == undefined )
+				Teams.update({"_id":team_id},{$set:{"pending":false}});
+	    }
 	}
 });

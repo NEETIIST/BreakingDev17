@@ -60,7 +60,7 @@ Template.adminPanel.events({
 
 Template.ap_stats.helpers({
 	devsTotal: function(){
-		return Devs.find().count();
+		return Devs.find({"inTeam":true}).count();
 	},
 	teamsTotal: function(){
 		return Teams.find().count();
