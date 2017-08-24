@@ -211,10 +211,31 @@
 	"ud_vol_faq":"FAQ's",
 
 	//Volunteer FAQs
-	"vol_faq_1": "",
-	"vol_faq_2": "",
-	"vol_faq_3": "",
-	"vol_faq_4": "",
+	"vol_faq_1": "As perguntas mais frequentes sobre o voluntariado no BreakingDev",
+	"vol_faq_2_q": "O porquê de haver voluntariado no BreakingDev?",
+	"vol_faq_2_a": "Existem duas razões principais: em primeiro lugar existem pessoas que gostariam de fazer parte de um hackathon mas por diversas razões não podem/querem participar numa equipa. Deste modo damos oportunidade a essas pessoas de entrarem no espírito de um evento deste género. A segunda razão prende-se com o facto de muitas vezes a organização precisar de ajuda para determinadas tarefas e esta, venha de onde vier, é sempre bem-vinda.",
+	"vol_faq_3_q": "Como faço para me candidatar a ser voluntário do BreakingDev?",
+	"vol_faq_3_a": "Para te inscreveres cria uma conta no nosso site e candidata-te como voluntário.",
+	"vol_faq_4_q": "Quais são as tarefas do voluntário do BreakingDev?",
+	"vol_faq_4_a_1": "- Orientação dos participantes no recinto do evento,",
+	"vol_faq_4_a_2": "- Anúncios/avisos que sejam necessários a cada uma das equipas,",
+	"vol_faq_4_a_3": "- Preparação e distribuição da comida nas zonas indicadas para as refeições,",
+	"vol_faq_4_a_4": "- Limpezas que possam ter de ser feitas, não só na zona reservada a refeições, como no recinto principal do evento,",
+	"vol_faq_4_a_5": "- Responder a eventuais dúvidas que os participantes coloquem durante o decorrer do evento,",
+	"vol_faq_4_a_6": "- Divertirem-se, conhecerem novas pessoas, conhecerem o campus (para quem não conhece) e conhecer as empresas que marcarão presença no evento.",
+	"vol_faq_5_q": "A que tenho direito enquanto voluntário?",
+	"vol_faq_5_a": "Todos os voluntários têm direito a todas as refeições no dia em que estiverem ativos em pelo menos um turno. Para além disso têm ainda direito a uma T-Shirt que deverão usar enquanto estiverem no evento e ainda a um certificado de participação enquanto voluntário assinado pelo presidente do NEETI (Núcleo de Estudantes de Engenharia de Telecomunicações e Informática).",
+	"vol_faq_6_q": "Preciso de estar no BreakingDev as 48h?",
+	"vol_faq_6_a": "Os voluntários vão estar distribuídos por turnos, cada voluntário ao inscrever-se terá de indicar a sua disponibilidade mediante estes turnos e quando o período de inscrições terminar a organização irá atribuir os turnos a todos os candidatos tendo em conta a disponibilidade de cada um.",
+	"vol_faq_7_q": "E se eu quiser ficar no BreakingDev as 48h mesmo que só me seja atribuído um turno?",
+	"vol_faq_7_a": "Todos os voluntários podem ficar o tempo que quiserem no evento desde que estejam ativos num dos turnos.",
+	"vol_faq_8_q": "Candidatei-me a um turno mas não tenho a certeza se consigo ficar todo o tempo. O que devo fazer?",
+	"vol_faq_8_a": "Esse assunto terá de ser tratado com o coordenador dos voluntários que se irá apresentar assim que o período de candidatura do voluntariado terminar.",
+	"vol_faq_9_q": "Existe mais alguma coisa que seja importante eu saber?",
+	"vol_faq_9_a": "Sim. Durante o último turno (Domingo das 15h às 20h) decorrerão as apresentações das equipas, a entrega de prémios e, por fim, a arrumação/limpeza do recinto. Apelamos a todos os voluntários que se candidatarem para se mostrarem disponíveis a comparecer a este turno para que possam participar em todas estas atividades, bem como para que o processo de arrumação/limpeza seja o mais rápido possível e ainda para um jantar de equipa que será feito no final de tudo estar terminado.",
+	"vol_faq_10_q": "Tenho uma dúvida que não está neste FAQ!",
+	"vol_faq_10_a": "Caso surjam outras dúvidas basta enviar um mail para breakingdev@neeti.tecnico.ulisboa.pt .",
+	
 	
 	"ud_shifts_intro": "Turnos de Voluntários",
 	"ud_shifts_long": "Aqui podes dizer-nos em que alturas estás disponivel para estar presente no BreakingDev como voluntário. Há várias opções possíveis e não tens nenhuma quantidade miníma de turnos para fazer. Marca em cada turno a tua disponibilidade, e quando possível os turnos são atribuídos. Se vires um turno 'Atribuído' significa que te foi dado e é o período em que contamos contigo! Um turno 'Em Aberto' ainda não foi decidido e podemos precisar de ti se tiveres disponibilidade.",
@@ -417,3 +438,4 @@
 	"lorem": "Lorem ipsum",
 	"lorem_ipsum" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 }
+
