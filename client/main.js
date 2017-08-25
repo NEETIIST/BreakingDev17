@@ -27,5 +27,8 @@ window.Payments = Payments ;
 import { Volunteers } from '/imports/api/volunteers/volunteers.js';
 window.Volunteers = Volunteers ;
 
-import { Shifts } from '/imports/api/volunteers/volunteers.js';
+import { Shifts } from '/imports/api/shifts/shifts.js';
 window.Shifts = Shifts ;
+
+import { Sponsors } from '/imports/api/sponsors/sponsors.js';
+window.Sponsors = Sponsors ;

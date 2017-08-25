@@ -142,6 +142,21 @@
 	"ap-shifts-assign": "Assign to this shift",
 	"ap-shifts-number": "Volunteers available for this shift",
 
+	"ap-sponsors": "Companies",
+	"ap-sponsor-add": "Add Company",
+	"ap-sponsor-short": "Short Form",
+	"ap-sponsor-name": "Name",
+	"ap-sponsor-codes": "Codes",
+	"ap-sponsor-nocode": "No codes",
+	"ap-sponsor-generate": "Generate Access Code",
+	"ap-sponsor-remove": "Remove Company",
+	"ap-sponsor-remove-sure": "Are you sure you want to remove this company?",
+	"ap-sponsor-focus": "See Company",
+	"ap-sponsor-hide": "Hide Codes",
+	"ap-sponsor-show": "Show Codes",
+	"ap-sponsor-remove-code": "Remove Code",
+	"ap-sponsor-remove-code-sure": "This code will be unusable by the users, are you sure you want to remove it?",
+
 	//User Profile
 	"user_bio": "Bio:",
 	"user_skills": "Skills:",
@@ -340,6 +355,29 @@
 			},
 			"day":{
 				"label": "Day"
+			}
+		},
+		"sponsors":
+		{
+			"name":{
+				"label": "Name",
+				"placeholder": "Name"
+			},
+			"short":{
+				"label": "Short Form",
+				"placeholder": "Short name"
+			},
+			"work":{
+				"label": "Work Expertise",
+				"placeholder": "A small description of the work the company develops and its areas of influence"
+			},
+			"search":{
+				"label": "Looking for:",
+				"placeholder": "The kind of skills and capacities your company is looking for in potential employees"
+			},
+			"category":{
+				"label": "Sizing",
+				"placeholder": "Whats the size of the company? (ex: Multinational, Startup, ...)"
 			}
 		}
   	},

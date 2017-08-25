@@ -65,6 +65,14 @@
 									<span class="fw-3 fs-2 flh-2">{{_ "ap-alerts"}}</span>
 								</div>
 							</div>
+							<div class="row align-items-center text-left hvr-items cp" id="ap_sponsors">
+								<div class="col-3">
+									<i class="fa fs-4 py-2 fa-building-o fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col-9">
+									<span class="fw-3 fs-2 flh-2">{{_ "ap-sponsors"}}</span>
+								</div>
+							</div>
 							<div class="row align-items-center text-left hvr-items cp" id="logout">
 								<div class="col-3">
 									<i class="fa fs-4 py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
@@ -108,6 +116,9 @@
 								</div>
 								<div class="col px-1" id="ap_alerts">
 									<i class="fa fs-5 py-2 fa-exclamation fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col px-1" id="ap_sponsors">
+									<i class="fa fs-5 py-2 fa-building-o fa-fw" aria-hidden="true"></i>
 								</div>
 								<div class="col px-1" id="logout">
 									<i class="fa fs-5 py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
@@ -680,4 +691,88 @@
 		</div>
 	</div>
 	
+</template>
+
+<template name="ap_sponsors">
+	<div class="row mx-0">
+		<div class="col-12">
+			<p class="fw-3 fs-2 mb-1 pl-3">{{_ "ap-sponsor-add"}}</p>
+			{{#autoForm collection=Sponsors id="addSponsor" type="insert"}}
+				<div class="row mx-0">
+					<div class="col-6 col-md-3">
+						{{> afFieldInput name='short' placeholder="schemaLabel" autocomplete="off" class="fs-2 fw-2 small-input"}}
+					</div>
+					<div class="col-6 col-md-3">
+						{{> afFieldInput name='name' placeholder="schemaLabel" autocomplete="off" class="fs-2 fw-2 small-input"}}
+					</div>
+					<div class="col-1 text-center">
+						<button type="submit" class="no-button"><i class="fa fa-check f-green cp" aria-hidden="true" title="{{_ 'ap-sponsor-add'}}"></i></button>
+					</div>
+				</div>
+			{{/autoForm}}
+		</div>
+	</div>
+	<hr class="orange">
+	<div class="table-responsive">
+		<table class="table table-hover table-sm fw-3 fs-2">
+			<thead>
+				<tr>
+					<th>{{_ "ap-sponsor-short"}}</th>
+					<th>{{_ "ap-sponsor-name"}}</th>
+					<th class="tc-20 text-center">{{_ "ap-sponsor-codes"}}</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each sponsor}}		
+					<tr>
+						<td>{{short}}</td>
+						<td>{{name}}</td>
+						<td class="tc-20 text-center">
+							{{#if displayCodes}}
+								{{#each codes}}
+									<p class="mb-0">
+										<i class="fa fs-1 fa-times fa-fw f-red cp" id="removeCode" title="{{_ 'ap-sponsor-remove-code'}}" aria-hidden="true"></i>
+										{{this}}
+									</p>
+								{{else}}
+									<p class="mb-0">{{_ "ap-sponsor-nocode"}}</p>
+								{{/each}}
+							{{else}}
+								<span class="f-grey">********</span>
+							{{/if}}
+						</td>
+						<td class="tc-10 text-left">
+							{{#if displayCodes}}
+								<i class="fa fa-eye-slash fa-fw f-black cp" id="hideCodes" aria-hidden="true" title="{{_ 'ap-sponsor-hide'}}"></i>
+							{{else}}
+								<i class="fa fa-eye fa-fw f-black cp" id="showCodes" aria-hidden="true" title="{{_ 'ap-sponsor-show'}}"></i>
+							{{/if}}
+						</td>
+						<td class="text-right">
+							<i class="fa fa-key fa-fw f-black cp" id="generateCode" aria-hidden="true" title="{{_ 'ap-sponsor-generate'}}"></i>
+							<i class="fa fa-trash fa-fw f-red cp" id="removeSponsor" aria-hidden="true" title="{{_ 'ap-sponsor-remove'}}"></i>
+							<i class="fa fa-search fa-fw f-black cp focus" aria-hidden="true" title="{{_ 'ap-sponsor-focus'}}"></i>
+						</td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+</template>
+
+<template name="ap_sponsor_focus">
+	{{#each focus}}
+		<div class="row mx-0">
+			<div class="col-12">
+				<p class="fw-3 fs-3 mb-1 pl-3">
+					{{name}} 
+					<span class="f-grey">({{short}})</span>
+				</p>
+				<p class="fw-3 fs-2 mb-1 pl-3">{{work}}</p>
+				<p class="fw-3 fs-2 mb-1 pl-3">{{search}}</p>
+			</div>
+		</div>
+	{{/each}}
 </template>

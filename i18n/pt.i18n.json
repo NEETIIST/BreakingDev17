@@ -142,6 +142,21 @@
 	"ap-shifts-assign": "Designar para este turno",
 	"ap-shifts-number": "Voluntários disponíveis para este turno",
 
+	"ap-sponsors": "Empresas",
+	"ap-sponsor-add": "Adicionar Empresa",
+	"ap-sponsor-short": "Abreviatura",
+	"ap-sponsor-name": "Nome",
+	"ap-sponsor-codes": "Códigos",
+	"ap-sponsor-nocode": "Sem códigos",
+	"ap-sponsor-generate": "Gerar código de acesso",
+	"ap-sponsor-remove": "Remover Empresa",
+	"ap-sponsor-remove-sure": "Tem a certeza que quer apagar esta empresa?",
+	"ap-sponsor-focus": "Ver Empresa",
+	"ap-sponsor-hide": "Esconder Códigos",
+	"ap-sponsor-show": "Mostrar Códigos",
+	"ap-sponsor-remove-code": "Apagar Código",
+	"ap-sponsor-remove-code-sure": "Este código vai ficar inutilizável pelos utilizadores, tem a certeza que o quer remover?",
+
 	//User Profile
 	"user_bio": "Bio:",
 	"user_skills": "Skills:",
@@ -364,6 +379,29 @@
 			},
 			"day":{
 				"label": "Dia"
+			}
+		},
+		"sponsors":
+		{
+			"name":{
+				"label": "Nome",
+				"placeholder": "Nome"
+			},
+			"short":{
+				"label": "Abreviatura",
+				"placeholder": "Abreviatura"
+			},
+			"work":{
+				"label": "Área de Trabalho",
+				"placeholder": "Uma pequena descrição sobre o trabalho que a empresa desenvolve"
+			},
+			"search":{
+				"label": "À procura de:",
+				"placeholder": "Uma pequena descrição do tipo de capacidades que estão à procura em novos colaboradores"
+			},
+			"category":{
+				"label": "Dimensão",
+				"placeholder": "Qual a dimensão da empresa? (ex: Multinacional, Startup, ...)"
 			}
 		}
   	},

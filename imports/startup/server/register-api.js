@@ -26,3 +26,6 @@ import '../../api/volunteers/server/publications.js';
 
 import '../../api/shifts/methods.js';
 import '../../api/shifts/server/publications.js';
+
+import '../../api/sponsors/methods.js';
+import '../../api/sponsors/server/publications.js';

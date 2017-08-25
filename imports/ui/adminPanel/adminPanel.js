@@ -6,6 +6,7 @@ import { Alerts } from '/imports/api/alerts/alerts.js';
 import { Payments } from '/imports/api/payments/payments.js';
 import { Volunteers } from '/imports/api/volunteers/volunteers.js';
 import { Shifts } from '/imports/api/shifts/shifts.js';
+import { Sponsors } from '/imports/api/sponsors/sponsors.js';
 import '/imports/api/images/images.js';
 
 Template.adminPanel.onRendered(function() {
@@ -22,7 +23,9 @@ Template.adminPanel.onRendered(function() {
 			self.subscribe("files.images.all", Meteor.userId());
 			self.subscribe("volunteers.all", Meteor.userId());
 			self.subscribe("shifts.all");
+			self.subscribe("sponsors.all");
 			Session.set("focus", null);
+			Session.set("codesToDisplay", true);
 		}
 		else
 		{
@@ -55,6 +58,9 @@ Template.adminPanel.events({
 	},
 	"click #ap_shifts": function(){
 		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_shifts"}); 
+	},
+	"click #ap_sponsors": function(){
+		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_sponsors"}); 
 	},
 });
 
@@ -410,6 +416,63 @@ Template.ap_shifts.events({
 	},
 });
 
+Template.ap_sponsors.helpers({
+	Sponsors: function(){
+		return Sponsors;
+	},
+	sponsor: function(){
+		return Sponsors.find();
+	},
+	displayCodes: function(){
+		let c = Session.get('codesToDisplay');
+		if ( this.short == c )
+			return true ;
+		else
+			return false;
+	}
+});
+
+Template.ap_sponsors.events({
+	"click #generateCode": function(){
+		Meteor.call('generateAccessCode', this._id, function(err, res){
+			if (err){
+				console.log(err); }
+			else
+			{
+				alert("Código de acesso gerado: "+res);
+			}
+		} )
+	},
+	"click #showCodes": function(){
+		Session.set("codesToDisplay", this.short);
+	},
+	"click #hideCodes": function(){
+		Session.set("codesToDisplay", null);
+	},
+	"click #removeSponsor": function(){
+		let c = confirm(TAPi18n.__("ap-sponsor-remove-sure"));
+		if ( c )
+			Sponsors.remove({"_id":this._id});
+	},
+	"click #removeCode": function(){
+		let c = confirm(TAPi18n.__("ap-sponsor-remove-code-sure"));
+		if ( c )
+			Meteor.call('removeAccessCode', String(this));
+	},
+	"click .focus": function(){
+		Session.set("focus",this._id);
+		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_sponsor_focus"}); 	
+	},
+});
+
+Template.ap_sponsor_focus.helpers({
+	focus: function(){
+		let d = Session.get("focus");
+		return Sponsors.find({"_id":d});
+	},
+});
+
+
 AutoForm.addHooks(['addAlert'],{
     onSuccess: function(formType, result) {
         Meteor.call('setUpAlert', result);
@@ -419,6 +482,12 @@ AutoForm.addHooks(['addAlert'],{
 AutoForm.addHooks(['addShift'],{
     onSuccess: function(formType, result) {
         Meteor.call('setUpShift',result);
+    }
+});
+
+AutoForm.addHooks(['addSponsor'],{
+    onSuccess: function(formType, result) {
+        Meteor.call('setUpSponsor',result);
     }
 });
 
