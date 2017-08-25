@@ -439,7 +439,7 @@ Template.ap_sponsors.events({
 				console.log(err); }
 			else
 			{
-				alert("Código de acesso gerado: "+res);
+				alert(TAPi18n.__("ap-sponsor-generated-code")+res);
 			}
 		} )
 	},
@@ -452,7 +452,7 @@ Template.ap_sponsors.events({
 	"click #removeSponsor": function(){
 		let c = confirm(TAPi18n.__("ap-sponsor-remove-sure"));
 		if ( c )
-			Sponsors.remove({"_id":this._id});
+			Meteor.call('removeSponsor',this._id);
 	},
 	"click #removeCode": function(){
 		let c = confirm(TAPi18n.__("ap-sponsor-remove-code-sure"));

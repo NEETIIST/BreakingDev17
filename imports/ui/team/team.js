@@ -19,7 +19,6 @@ Template.team.helpers({
 		return Teams.findOne();
 	},
 	members: function(){
-		// BUG! Is also listing the logged user as a member
 		let members = Teams.findOne({}).members;
 		members.unshift(Teams.findOne({}).captain);
 		let list = [];

@@ -30,6 +30,7 @@ import '../../ui/volunteer_add/volunteer_add.js'
 import '../../ui/volunteer_edit/volunteer_edit.js'
 import '../../ui/volunteer_shifts/volunteer_shifts.js'
 import '../../ui/volunteer_info/volunteer_info.js'
+import '../../ui/sponsor_access/sponsor_access.js'
 
 
 // Set up all routes in the app
@@ -263,6 +264,14 @@ FlowRouter.route('/volunteer/faq',{
   name: 'volunteer_info',
   action() {
     BlazeLayout.render('base', {main: 'volunteer_info'});
+  }
+});
+
+//Sponsors
+FlowRouter.route('/sponsors/',{
+  name: 'sponsor_access',
+  action() {
+    BlazeLayout.render('base', {main: 'sponsor_access'});
   }
 });
 

@@ -23,3 +23,22 @@ label
 }
 
 .vwf-20 { width: 20vw; }
+
+.text-input-alt
+{
+	color: inherit;
+	font: inherit ;
+	font-weight: inherit;
+	width: 100% ;
+	border: none;
+    border-bottom: 1px solid #1c1c1c;
+    background: none;	
+}
+
+.text-input-alt:focus
+{
+	border: none;
+    border-bottom: 1px solid #f47d3d;
+    background: none;
+    outline:none;
+}

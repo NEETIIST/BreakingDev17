@@ -156,6 +156,7 @@
 	"ap-sponsor-show": "Show Codes",
 	"ap-sponsor-remove-code": "Remove Code",
 	"ap-sponsor-remove-code-sure": "This code will be unusable by the users, are you sure you want to remove it?",
+	"ap-sponsor-generated-code": "This code can only be used once by one user that will gain access to edit this company's info. Be carefull handling these.\n\nGenerated code: ",
 
 	//User Profile
 	"user_bio": "Bio:",
