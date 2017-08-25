@@ -44,7 +44,6 @@ Schema = new SimpleSchema({
     },
     members: {
         type: [String],
-        maxCount: 4,
         autoform: {
             label: false,
             type: "hidden"

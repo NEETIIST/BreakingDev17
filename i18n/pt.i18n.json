@@ -459,6 +459,26 @@
   	"vol_add": "Fala-nos mais um pouco sobre ti",
   	"vol_edit": "Edita as tuas informações",
 
+  	//Sponsors
+  	"sponsor-already":"Já está registado numa empresa, não se pode registar noutra.",
+  	"sponsor-godash":"Avançe para o Dashboard",
+  	"sponsor-access-1":"Bem-vindo ao BreakingDev",
+  	"sponsor-access-2":"Esta é a nossa plataforma de informação, que acolhe participantes e outros intervenientes no nosso evento. A inscrição de participantes e equipas também foi processada por aqui, bem como outros processos necessários à organização. Está neste momento a fazer a sua insrição como convidado empresarial.",
+  	"sponsor-access-3":"Após o seu registo, pedimos que preencha alguns breves dados pessoais e informações sobre a empresa que representa. Depois será possível ver dados completos sobre cada participante, bem como o projeto que cada equipa está a desenvolver. Também será possível marcar favoritos e fazer outros apontamentos.",
+  	"sponsor-access-4":"Foi-lhe atribuído pela organização um código único de acesso à nossa plataforma. Insira-o no campo em baixo.",
+  	"sponsor-access-code":"Código de Acesso",
+  	"sponsor-access-confirm":"Avançar",
+  	"sponsor-code-invalid":"Este código é inválido",
+  	"sponsor-code-unrecognized":"Este código não foi reconhecido",
+  	"sponsor-code-used":"Este código já foi utilizado previamente. Solicite um novo à organização.",
+  	"sponsor-code-success":"Foi corretamente registado como membro empresarial. Irá agora ser redirecionado para o dashboard onde pode alterar as suas informações e da sua empresa.",
+
+  	//Reset Password
+  	"rp_form": "Recuperar Password",
+  	"rp_password": "Nova Password",
+  	"rp_password_again": "Nova Password (outra vez)",
+  	"rp_reset": "Confirmar",
+
   	//404
   	"404-1": "Parece que viraste onde não devias, esta página não existe.",
   	"404-2": "Carrega em baixo para voltares à homepage.",

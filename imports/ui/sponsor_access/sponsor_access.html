@@ -5,21 +5,23 @@
 			<div class="col-10 py-3">
 				<div class="spacer-4"></div>
 				{{#if alreadySponsor}}
+					<div class="spacer-4"></div>
 					<p class="fw-3 fs-3 text-center">{{_ "sponsor-already"}}</p>
+					<p class="cp text-center" id="goDash">{{_ "sponsor-godash"}}<i class="fa fa-angle-double-right fa-fw ml-2" aria-hidden="true"></i></p>
 				{{else}}
 					<p class="fw-3 fs-3 text-center">{{_ "sponsor-access-1"}}</p>
-					<p class="fw-3 fs-2 mb-1">{{_ "sponsor-access-2"}}</p>
-					<p class="fw-3 fs-2">{{_ "sponsor-access-3"}}</p>
+					<p class="fw-3 fs-2 flh-3">{{_ "sponsor-access-2"}}</p>
+					<p class="fw-3 fs-2 flh-3">{{_ "sponsor-access-3"}}</p>
 					<hr class="orange">
-					<p class="fw-3 fs-2 mb-1 text-center">{{_ "sponsor-access-2"}}</p>
-					<div class="spacer-4"></div>
+					<p class="fw-3 fs-2 mb-1 text-center">{{_ "sponsor-access-4"}}</p>
+					<div class="spacer-2"></div>
 					<form class="input-pin mx-auto" id="sponsor_code">
 						<div class="row justify-content-center mx-0">
 							<div class="col-10 col-md-4 text-right">
 				        		<input type="password" class="text-input-alt text-center" name="pin" placeholder="{{_ 'sponsor-access-code'}}" />
 				        	</div>
 				        	<div class="col-2 text-left">
-				        		<button type="submit" class="no-button"><i class="fa fa-angle-double-right cp" aria-hidden="true" title="{{_ 'ap-sponsor-add'}}"></i></button>
+				        		<button type="submit" class="no-button"><i class="fa fa-angle-double-right cp" aria-hidden="true" title="{{_ 'sponsor-access-confirm'}}"></i></button>
 				        	</div>
 			        	</div>
 			    	</form>

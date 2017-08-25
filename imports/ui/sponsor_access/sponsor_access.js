@@ -7,6 +7,9 @@ Template.sponsor_access.helpers({
 })
 
 Template.sponsor_access.events({
+	"click #goDash":function(){
+		FlowRouter.go("/dash");	
+	},
 	"submit #sponsor_code":function(event){
 		event.preventDefault();
 		let pin = event.target.pin.value;
@@ -14,19 +17,22 @@ Template.sponsor_access.events({
 			if (err)
 			{
 				if ( err.error == "not-valid-code" )
-					alert("código inválido");
+					alert(TAPi18n.__("sponsor-code-invalid"));
 				if ( err.error == "not-recognized-code" )
-					alert("código não reconhecido");
+					alert(TAPi18n.__("sponsor-code-unrecognized"));
 				if ( err.error == "used-code" )
-					alert("código já utilizado previamente");
+					alert(TAPi18n.__("sponsor-code-used"));
 				else
 					console.log(err);
 			}
 			else
 			{
-				console.log(res);
+				if ( res )
+				{
+					alert(TAPi18n.__("sponsor-code-success"));
+					FlowRouter.go("/dash");
+				}
 			}
-
 		});
 	},
 });

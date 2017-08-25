@@ -7,6 +7,7 @@ import { Payments } from '/imports/api/payments/payments.js';
 import { Volunteers } from '/imports/api/volunteers/volunteers.js';
 import { Shifts } from '/imports/api/shifts/shifts.js';
 import { Sponsors } from '/imports/api/sponsors/sponsors.js';
+import { Visitors } from '/imports/api/visitors/visitors.js';
 import '/imports/api/images/images.js';
 
 Template.adminPanel.onRendered(function() {
@@ -24,6 +25,7 @@ Template.adminPanel.onRendered(function() {
 			self.subscribe("volunteers.all", Meteor.userId());
 			self.subscribe("shifts.all");
 			self.subscribe("sponsors.all");
+			self.subscribe("visitors.all");
 			Session.set("focus", null);
 			Session.set("codesToDisplay", true);
 		}

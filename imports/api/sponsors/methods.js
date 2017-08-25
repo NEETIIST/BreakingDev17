@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 import { Random } from 'meteor/random'
 import { Sponsors } from './sponsors.js';
+import { Visitors } from '../visitors/visitors.js';
 
 Meteor.methods({
 
@@ -18,8 +19,8 @@ Meteor.methods({
 		if ( Roles.userIsInRole( this.userId, 'admin') )
 	    {
 	    	let m = Sponsors.findOne({"_id":id}).members;
-	    	console.log(m);
 	    	m.forEach(function(u){
+	    		Visitors.update({"user":u},{$set:{"company":null}});
  	  			Roles.removeUsersFromRoles(u,'sponsor');
 			});
 			Sponsors.remove({"_id":id});
@@ -59,8 +60,21 @@ Meteor.methods({
 			Sponsors.update({"_id":s._id},{$push:{"usedCodes":code}});
 			Sponsors.update({"_id":s._id},{$push:{"members":this.userId}});
 			Roles.addUsersToRoles(this.userId, 'sponsor');
-			//SponsorProfileUpdates
-			return s.short;
+			//If user doesn't have visitor profiles, creates one, user can only edit missing info
+			let v = Visitors.findOne({"user":this.userId});
+			if ( v === undefined )
+			{
+				Visitors.insert({
+					"user":this.userId,
+					"company": s.short,
+				});
+				Visitors.update({"user":this.userId},{$set:{"favourite":[]}});
+			}
+			else
+			{
+				Visitors.update({"user":this.userId},{$set:{"company":s.short}});
+			}
+			return true;
 		}
 		else if ( u != undefined )
 			throw new Meteor.Error("used-code", 'Invalid Code');

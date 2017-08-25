@@ -426,6 +426,24 @@
   	"mt_send":"Send",
   	"mt_back":"Team List",
 
+  	//Volunteering
+  	"vol_add": "Tell us a bit about yourself",
+  	"vol_edit": "Edit your information",
+
+  	//Sponsors
+  	"sponsor-already":"You are already registered as company member, you can't register again.",
+  	"sponsor-godash":"Go to dashboard",
+  	"sponsor-access-1":"Welcome to BreakingDev",
+  	"sponsor-access-2":"This is our online platform that hosts contestants and other people related to the event. You are now registering as a corporate guest.",
+  	"sponsor-access-3":"After signing up, we ask you to fill a form we some personal data and information about your company. Afterwards you will be able to see details about contestants and teams.",
+  	"sponsor-access-4":"The organization assigned you a unique access code. Enter it in the field below.",
+  	"sponsor-access-code":"Access code",
+  	"sponsor-access-confirm":"Enter code",
+  	"sponsor-code-invalid":"This code is not valid.",
+  	"sponsor-code-unrecognized":"This code is unrecognized",
+  	"sponsor-code-used":"This code was already used. Ask the staff for a new one.",
+  	"sponsor-code-success":"You were successfully registered as a corporate guest. You can now access the dashboard and update your information.",
+
   	//Reset Password
   	"rp_form": "Recover Password",
   	"rp_password": "New Password",

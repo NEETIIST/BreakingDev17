@@ -29,3 +29,6 @@ import '../../api/shifts/server/publications.js';
 
 import '../../api/sponsors/methods.js';
 import '../../api/sponsors/server/publications.js';
+
+import '../../api/visitors/methods.js';
+import '../../api/visitors/server/publications.js';
