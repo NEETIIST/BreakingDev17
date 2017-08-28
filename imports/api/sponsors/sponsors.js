@@ -27,20 +27,31 @@ Schema = new SimpleSchema({
     work: {
         type: String,
         autoform: {
-            rows: 2
+            rows: 3
         },
         optional: true,
     },
     search: {
         type: String,
         autoform: {
-            rows: 2
+            rows: 3
         },
         optional: true,
     },
     category: {
         type: String,
         optional: true,
+    },
+    picture: {
+        type: String,
+        optional: true,
+        autoform: {
+            afFieldInput: {
+                type: 'fileUpload',
+                collection: 'Images',
+                uploadTemplate: 'uploadForm',
+            },
+        }
     },
     members: {
         type: [String],

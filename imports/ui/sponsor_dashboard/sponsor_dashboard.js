@@ -10,8 +10,9 @@ Template.sponsor_dashboard.onRendered(function() {
 		{
 			//Subscriptions	
 			self.subscribe("visitors.logged");
-			self.subscribe("sponsors.logged");
 			self.subscribe('visitor.image');
+			self.subscribe("sponsors.logged");
+			self.subscribe('sponsor.image');
 		}
 		else
 		{
@@ -41,8 +42,8 @@ Template.sponsor_dashboard.events({
 		let last = Session.get("dash_last");
 		BlazeLayout.render('base', {main:"sponsor_dashboard",dash_small:last});
 	},
-	"click #sd-2": function(){
-		Session.set("dash_last","sd_2");
+	"click #sd-sponsor": function(){
+		Session.set("dash_last","sd_sponsor");
 		let last = Session.get("dash_last");
 		BlazeLayout.render('base', {main:"sponsor_dashboard",dash_small:last}); 
 	},
@@ -69,6 +70,22 @@ Template.sd_profile.helpers({
 	reload: function(){
 		return Session.get('reload_profile');
 	},
+});
+
+Template.sd_sponsor.helpers({
+	Sponsors: function(){
+		return Sponsors;
+	},
+	sponsorProfile: function(){
+		return Sponsors.findOne({"members":Meteor.userId()});
+	},
+	sponsorPic: function(){
+		let p = Sponsors.findOne({}).picture;
+		return Images.findOne({"_id":p}).link();
+	},
+	sponsorName: function(){
+		return Sponsors.findOne({"members":Meteor.userId()}).name;	
+	}
 });
 
 AutoForm.addHooks(['editVisitor'],{

@@ -67,7 +67,7 @@
 							</div>
 							<div class="row align-items-center text-left hvr-items cp" id="ap_sponsors">
 								<div class="col-3">
-									<i class="fa fs-4 py-2 fa-building-o fa-fw" aria-hidden="true"></i>
+									<i class="fa fs-4 py-2 fa-institution fa-fw" aria-hidden="true"></i>
 								</div>
 								<div class="col-9">
 									<span class="fw-3 fs-2 flh-2">{{_ "ap-sponsors"}}</span>
@@ -118,7 +118,7 @@
 									<i class="fa fs-5 py-2 fa-exclamation fa-fw" aria-hidden="true"></i>
 								</div>
 								<div class="col px-1" id="ap_sponsors">
-									<i class="fa fs-5 py-2 fa-building-o fa-fw" aria-hidden="true"></i>
+									<i class="fa fs-5 py-2 fa-institution fa-fw" aria-hidden="true"></i>
 								</div>
 								<div class="col px-1" id="logout">
 									<i class="fa fs-5 py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
@@ -704,6 +704,9 @@
 					</div>
 					<div class="col-6 col-md-3">
 						{{> afFieldInput name='name' placeholder="schemaLabel" autocomplete="off" class="fs-2 fw-2 small-input"}}
+					</div>
+					<div class="col-6 col-md-3">
+						{{> afFieldInput name='picture' placeholder="schemaLabel"}}
 					</div>
 					<div class="col-1 text-center">
 						<button type="submit" class="no-button"><i class="fa fa-check f-green cp" aria-hidden="true" title="{{_ 'ap-sponsor-add'}}"></i></button>

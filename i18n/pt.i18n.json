@@ -403,6 +403,9 @@
 			"category":{
 				"label": "Dimensão",
 				"placeholder": "Qual a dimensão da empresa? (ex: Multinacional, Startup, ...)"
+			},
+			"picture":{
+				"label": "Fotografia"
 			}
 		},
 		"visitors":
@@ -496,12 +499,17 @@
   	"sponsor-code-success":"Foi corretamente registado como membro empresarial. Irá agora ser redirecionado para o dashboard onde pode alterar as suas informações e da sua empresa.",
 
   	"sd-profile": "Perfil",
-
   	"sd-profile-edit": "Editar informações de perfil",
   	"sd-profile-bio": "Biografia",
   	"sd-profile-picture": "Fotografia",
   	"sd-profile-submit": "Confirmar",
   	"sd-profile-success": "Dados alterados com sucesso",
+
+  	"sd-sponsor": "Empresa",
+  	"sd-sponsor-edit": "Editar dados da empresa",
+  	"sd-sponsor-work": "Área de Trabalho",
+  	"sd-sponsor-search": "Recrutamento",
+  	"sd-sponsor-category": "Dimensão da empresa",
 
   	//Reset Password
   	"rp_form": "Recuperar Password",

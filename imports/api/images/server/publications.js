@@ -3,6 +3,7 @@ import '../images.js';
 import { Devs } from '../../devs/devs.js';
 import { Teams } from '../../teams/teams.js';
 import { Visitors } from '../../visitors/visitors.js';
+import { Sponsors } from '../../sponsors/sponsors.js';
 
 Meteor.publish('profile.image', function(id){
 	let d = Devs.findOne({"user":id});
@@ -37,6 +38,16 @@ Meteor.publish('visitor.image', function(){
 	let d = Visitors.findOne({"user":this.userId});
 	if ( d !== undefined )
 		return Images.find({"_id":d.picture}).cursor;
+});
+
+Meteor.publish('sponsor.image', function(){
+	let v = Visitors.findOne({"user":this.userId});
+	if ( v !== undefined )
+	{
+		let s = Sponsors.findOne({"short":v.company});
+		if ( s !== undefined )
+			return Images.find({"_id":s.picture}).cursor;
+	}
 });
 
 //Admin Use

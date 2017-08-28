@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Sponsors } from '../sponsors.js';
 
 Meteor.publish('sponsors.logged', function(){
-	return Sponsors.find({"members":this.userId},{fields:{"name":1,"short":1,"members":1}});
+	return Sponsors.find({"members":this.userId},{fields:{"codes":0, "usedCodes":0}});
 })
 
 //Admin use
