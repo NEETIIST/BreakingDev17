@@ -380,6 +380,28 @@
 				"label": "Sizing",
 				"placeholder": "Whats the size of the company? (ex: Multinational, Startup, ...)"
 			}
+		},
+		"visitors":
+		{
+			"name":{
+				"label": "Name",
+				"placeholder": "Name"
+			},
+			"company":{
+				"label": "Company",
+				"placeholder": "Company"
+			},
+			"job":{
+				"label": "Job",
+				"placeholder": "Position in the company"
+			},
+			"info":{
+				"label": "Biography",
+				"placeholder": "Two lines about yourself"
+			},
+			"picture": {
+				"label":"Picture"
+			}
 		}
   	},
 
@@ -443,6 +465,14 @@
   	"sponsor-code-unrecognized":"This code is unrecognized",
   	"sponsor-code-used":"This code was already used. Ask the staff for a new one.",
   	"sponsor-code-success":"You were successfully registered as a corporate guest. You can now access the dashboard and update your information.",
+
+  	"sd-profile": "Profile",
+
+  	"sd-profile-edit": "Edit profile info",
+  	"sd-profile-bio": "Biography",
+  	"sd-profile-picture": "Picture",
+  	"sd-profile-submit": "Submit",
+  	"sd-profile-success": "Profile info successfully updated",
 
   	//Reset Password
   	"rp_form": "Recover Password",

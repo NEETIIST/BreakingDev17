@@ -29,14 +29,17 @@ Schema = new SimpleSchema({
 	},
 	company: {
 		type: String,
-		autoform: {
-			label: false,
-			type: "hidden"
-		},
 		optional: true,
 	},
 	job: {
 		type: String,
+		optional: true,
+	},
+	info: {
+		type: String,
+		autoform: {
+			rows: 2
+		},
 		optional: true,
 	},
 	picture: {

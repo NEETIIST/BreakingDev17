@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import '../images.js';
 import { Devs } from '../../devs/devs.js';
 import { Teams } from '../../teams/teams.js';
+import { Visitors } from '../../visitors/visitors.js';
 
 Meteor.publish('profile.image', function(id){
 	let d = Devs.findOne({"user":id});
@@ -32,7 +33,14 @@ Meteor.publish('profile.image.team', function(id){
 	}
 });
 
+Meteor.publish('visitor.image', function(){
+	let d = Visitors.findOne({"user":this.userId});
+	if ( d !== undefined )
+		return Images.find({"_id":d.picture}).cursor;
+});
+
 //Admin Use
 Meteor.publish('files.images.all', function () {
 	return Images.find().cursor;
 });
+

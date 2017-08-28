@@ -34,6 +34,7 @@ th, td, tr
 {
     background:none;
     border:none;
+    font: inherit;
 }
 
 .activeDay
@@ -47,4 +48,9 @@ th, td, tr
     color: white;
     border-radius: 1em;
     padding: 0.1em;
+}
+
+.activeTab
+{
+    border-bottom: 1px solid #f47d3d;
 }

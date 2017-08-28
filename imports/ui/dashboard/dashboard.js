@@ -14,6 +14,10 @@ Template.dashboard.onRendered(function() {
 		{
 			FlowRouter.go("/admin");
 		}
+		else if ( Roles.userIsInRole( Meteor.userId(), 'sponsor'))
+		{
+			FlowRouter.go("/sponsors/dash");
+		}
 		else
 		{
 			// These subscriptions should be reviewed
