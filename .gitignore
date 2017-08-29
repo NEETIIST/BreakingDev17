@@ -1,5 +1,5 @@
 node_modules/
-.meteor/
+.meteor/local
 settings.json
 imports/startup/server/keys.js
 
