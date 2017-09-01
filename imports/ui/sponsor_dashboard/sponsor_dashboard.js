@@ -88,6 +88,12 @@ Template.sd_sponsor.helpers({
 	}
 });
 
+AutoForm.addHooks(['editSponsor'],{
+    onSuccess: function(formType, result) {
+        alert(TAPi18n.__("sd-profile-success"));
+    }
+});
+
 AutoForm.addHooks(['editVisitor'],{
     onSuccess: function(formType, result) {
         alert(TAPi18n.__("sd-profile-success"));
