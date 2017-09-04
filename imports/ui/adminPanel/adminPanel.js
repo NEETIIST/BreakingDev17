@@ -61,6 +61,9 @@ Template.adminPanel.events({
 	"click #ap_shifts": function(){
 		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_shifts"}); 
 	},
+	"click #ap_reader": function(){
+		BlazeLayout.render('base', {main:"code_reader"}); 
+	},
 	"click #ap_sponsors": function(){
 		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_sponsors"}); 
 	},
