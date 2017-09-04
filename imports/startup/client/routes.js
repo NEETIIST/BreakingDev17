@@ -1,6 +1,6 @@
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
-import { analytics } from "meteor/okgrow:analytics";
+//import { analytics } from "meteor/okgrow:analytics";
 
 // Import needed templates
 import '../../ui/404/404.js'
