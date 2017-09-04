@@ -1,3 +1,5 @@
 cordova-plugin-camera@1.2.0
+cordova-plugin-device@1.1.5
 cordova.plugins.diagnostic@3.0.2
 phonegap-plugin-barcodescanner@4.0.2
+phonegap-plugin-push@1.5.2
