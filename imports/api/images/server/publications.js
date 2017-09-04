@@ -39,6 +39,26 @@ Meteor.publish('visitor.image', function(){
 		return Images.find({"_id":d.picture}).cursor;
 });
 
+Meteor.publish('sponsors.members.image', function(name){
+	let s = Sponsors.findOne({'short':name});
+	if ( s !== undefined )
+	{
+		let list = [];
+		s.members.forEach(function(m){
+			let v = Visitors.findOne({"user":m});
+			if ( v.picture !== undefined )
+				list.push(v.picture);
+		});
+		return Images.find({'_id':{ $in : list }}).cursor;
+	}
+});
+
+Meteor.publish('sponsors.single.image', function(name){
+	let s = Sponsors.findOne({"short":name});
+	if ( s !== undefined )
+		return Images.find({"_id":s.picture}).cursor;
+});
+
 Meteor.publish('sponsor.image', function(){
 	let v = Visitors.findOne({"user":this.userId});
 	if ( v !== undefined )
