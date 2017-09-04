@@ -16,9 +16,9 @@ Template.sponsor_dashboard.onRendered(function() {
 			self.subscribe("sponsors.logged");
 			self.subscribe('sponsor.image');
 			self.subscribe('teams.sponsor');
-			//self.subscribe('devs.sponsor');
+			self.subscribe('devs.sponsor');
 			self.subscribe('users.sponsor');
-			self.subscribe('alldevs.image');
+			//self.subscribe('alldevs.image');
 		}
 		else
 		{
