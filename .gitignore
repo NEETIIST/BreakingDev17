@@ -1,4 +1,3 @@
-node_modules/
 .meteor/local
 settings.json
 imports/startup/server/keys.js
