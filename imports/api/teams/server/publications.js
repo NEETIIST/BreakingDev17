@@ -41,6 +41,14 @@ Meteor.publish('singleTeamMembers',function(id){
 	}
 })
 
+//Sponsor User
+Meteor.publish('teams.sponsor', function () {
+  	if (Roles.userIsInRole( this.userId, 'sponsor'))
+		return Teams.find({},{fields:{'pincode':0,'setup':0,'pending':0}});
+	else
+		return 0 ;
+});
+
 //Admin use
 Meteor.publish('teams.all', function () {
   	if (Roles.userIsInRole( this.userId, 'admin'))

@@ -33,6 +33,14 @@ Meteor.publish('devs.team', function(id){
 	}
 });
 
+//Sponsor User
+Meteor.publish('devs.sponsor', function(){
+	if (Roles.userIsInRole( this.userId, 'sponsor'))
+		return Devs.find({},{fields:{"payment":0}});
+	else
+		return 0 ;
+});
+
 //Admin Use
 Meteor.publish('devs.all', function(){
 	if (Roles.userIsInRole( this.userId, 'admin'))

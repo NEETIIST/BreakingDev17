@@ -1,0 +1,13 @@
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=jwLEzg5yAG">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=jwLEzg5yAG">
+<link rel="icon" type="image/png" sizes="194x194" href="/favicon-194x194.png?v=jwLEzg5yAG">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png?v=jwLEzg5yAG">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=jwLEzg5yAG">
+<link rel="manifest" href="/manifest.json?v=jwLEzg5yAG">
+<link rel="mask-icon" href="/safari-pinned-tab.svg?v=jwLEzg5yAG" color="#1c1c1c">
+<link rel="shortcut icon" href="/favicon.ico?v=jwLEzg5yAG">
+<meta name="apple-mobile-web-app-title" content="BreakingDev">
+<meta name="application-name" content="BreakingDev">
+<meta name="msapplication-TileColor" content="#1c1c1c">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png?v=jwLEzg5yAG">
+<meta name="theme-color" content="#1c1c1c">

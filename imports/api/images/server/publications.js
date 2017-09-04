@@ -50,6 +50,12 @@ Meteor.publish('sponsor.image', function(){
 	}
 });
 
+Meteor.publish('alldevs.image', function(){
+	//let d = Devs.find({ "picture": { $exists: true, $ne: null } });
+	//console.log(Devs.find({ "picture": { $exists: true, $ne: null } }).cursor);
+	return Images.find().cursor;
+});
+
 //Admin Use
 Meteor.publish('files.images.all', function () {
 	return Images.find().cursor;

@@ -24,6 +24,22 @@
 								<span class="fw-3 fs-2 flh-2">{{_ "sd-sponsor"}}</span>
 							</div>
 						</div>
+						<div class="row align-items-center text-left hvr-items cp {{active 'sd_users'}}" id="sd-users">
+							<div class="col-3">
+								<i class="fa fs-4 py-2 fa-user fa-fw" aria-hidden="true"></i>
+							</div>
+							<div class="col-9">
+								<span class="fw-3 fs-2 flh-2">{{_ "sd-users"}}</span>
+							</div>
+						</div>
+						<div class="row align-items-center text-left hvr-items cp {{active 'sd_teams'}}" id="sd-teams">
+							<div class="col-3">
+								<i class="fa fs-4 py-2 fa-users fa-fw" aria-hidden="true"></i>
+							</div>
+							<div class="col-9">
+								<span class="fw-3 fs-2 flh-2">{{_ "sd-teams"}}</span>
+							</div>
+						</div>
 						<div class="row align-items-center text-left hvr-items cp" id="logout">
 							<div class="col-3">
 								<i class="fa fs-4 py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
@@ -38,7 +54,7 @@
 			<div class="col-10 col-md-1 white"></div>
 			<div class="col-10 col-md-8 align-self-start">
 				<div class="spacer-4"></div>
-				{{> Template.dynamic template=dash_small}}
+				{{> Template.dynamic template=sd_small}}
 			</div>
 		</div>
 		<div class="row justify-content-center align-items-start f-black m-0 py-3 white vh-100 hidden-lg-up" id="nav-mid">
@@ -53,6 +69,12 @@
 							<div class="col px-1 {{active 'sd_sponsor'}}" id="sd-sponsor">
 								<i class="fa fs-5 py-2 fa-institution fa-fw" aria-hidden="true"></i>
 							</div>
+							<div class="col px-1 {{active 'sd_users'}}" id="sd-users">
+								<i class="fa fs-5 py-2 fa-users fa-fw" aria-hidden="true"></i>
+							</div>
+							<div class="col px-1 {{active 'sd_teams'}}" id="sd-teams">
+								<i class="fa fs-5 py-2 fa-users fa-fw" aria-hidden="true"></i>
+							</div>
 							<div class="col px-1" id="logout">
 								<i class="fa fs-5 py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
 							</div>
@@ -62,7 +84,7 @@
 				</div>
 				<div class="row justify-content-center align-items-start m-0">
 					<div class="col-12 col-md-8 align-self-start">
-						<div class="spacer-4"></div>
+						<div class="spacer-4 hidden-md-down"></div>
 						{{> Template.dynamic template=dash_small}}
 					</div>
 				</div>
@@ -168,6 +190,182 @@
 				{{/autoForm}}
 			</div>
 		</div>
+</template>
+
+<template name="sd_teams">
+	<div class="row justify-content-start align-items-start text-center my-0">
+		<div class="col-12">
+			{{#each team}}
+				<div class="row align-items-center justify-content-center my-1 my-md-3 hvr-items">
+					<div class="col-6 text-center col-md-2 text-md-left mx-0 py-2">
+						{{#if equals category "Web"}}
+							<img src="/icons/WebAlt.png" alt="{{_ 'team_webdesc'}}" title="{{_ 'team_webdesc'}}" class="team-cat-side">
+						{{/if}}
+						{{#if equals category "Gaming"}}
+							<img src="/icons/JogosAlt.png" alt="{{_ 'team_gamesdesc'}}" title="{{_ 'team_gamesdesc'}}" class="team-cat-side">
+						{{/if}}
+					</div>
+					<div class="col-12 text-center col-md-9 text-md-left">
+						<p class="fw-3 fs-3 flh-2 mb-2">
+							"{{project_name}}" - 
+							<span class="f-orange">{{team_name}}</span>
+						</p>
+						<p class="fw-3 fs-2 flh-1 mb-1">{{project}}</p>
+						<p class="fw-3 fs-2 flh-1 mb-1 mb-md-0">{{skills}}</p>
+					</div>
+					<div class="col-12 col-md-1 mx-0">
+						<i class="fa fs-4 fa-search cp p-1 focus" aria-hidden="true"></i>
+						<i class="fa fs-4 fa-star-o f-yellow cp p-1" aria-hidden="true"></i>
+					</div>
+				</div>
+				<hr class="orange hidden-lg-up">
+			{{/each}}
+		</div>
+	</div>
+</template>
+
+<template name="sd_teams_focus">
+	{{#each focus}}
+		{{#if equals category "Web"}}
+				<img src="/icons/WebAlt.png" alt="{{_ 'team_webdesc'}}" title="{{_ 'team_webdesc'}}" class="category-pic">
+		{{/if}}
+		{{#if equals category "Gaming"}}
+			<img src="/icons/JogosAlt.png" alt="{{_ 'team_gamesdesc'}}" title="{{_ 'team_gamesdesc'}}" class="category-pic">
+		{{/if}}
+		<div class="spacer-4"></div>
+		<div class="table-responsive">
+			<table class="table table-sm fw-3 fs-2">
+				<tbody>
+					<tr>
+						<td class="vwf-20">{{_ "ap-tl-teamname"}}</td>
+						<td>
+							{{team_name}}
+							<i class="fa fa-search fa-fw px-1 f-black cp" aria-hidden="true" id="goTeamPage"></i>
+						</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">{{_ "ap-tl-category"}}</td>
+						<td>{{category}}</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">{{_ "ap-tl-projectname"}}</td>
+						<td>"{{project_name}}"</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">{{_ "ap-tf-project"}}</td>
+						<td>{{project}}</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">{{_ "ap-tf-skills"}}</td>
+						<td>{{skills}}</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">{{_ "ap-tl-captain"}}</td>
+						<td>@
+							<span class="focusCaptain cp">{{captainUser}}</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">{{_ "ap-tl-members"}}</td>
+						<td>
+							{{#each memberList}}
+								<span class="focus cp">@{{memberUser}} - </span>
+							{{/each}}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	{{/each}}
+</template>
+
+<template name="sd_users">
+	<p>{{_ "ap-ul"}}</p>
+	<div class="table-responsive">
+		<table class="table table-hover table-sm fw-3 fs-2">
+			<thead>
+				<tr>
+					<th>{{_ "ap-ul-name"}}</th>
+					<th>Curso</th>
+					<th>Idade</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each devs}}		
+					<tr>
+						<td>{{name}}</td>
+						<td>{{course}}</td>
+						<td>{{age}}</td>
+						<td><i class="fa fa-search fa-fw f-black cp focus" aria-hidden="true"></i></td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+</template>
+
+<template name="sd_user_focus">
+	{{#each focus}}
+		<img src="{{profilePic}}" alt="Profile Picture" class="user-pic">
+		<div class="spacer-4"></div>
+		<div class="table-responsive">
+			<table class="table table-sm fw-3 fs-2">
+				<tbody>
+					<tr>
+						<td class="vwf-20">{{_ "ap-ul-username"}}</td>
+						<td>@{{username}}</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">{{_ "ap-ul-name"}}</td>
+						<td>{{name}}</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">{{_ "ap-uf-age"}}</td>
+						<td>{{age}}</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">{{_ "ap-uf-college"}}</td>
+						<td>{{college}}</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">{{_ "ap-uf-course"}}</td>
+						<td>{{course}}</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">{{_ "ap-uf-skills"}}</td>
+						<td>{{skills}}</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">{{_ "ap-uf-bio"}}</td>
+						<td>{{bio}}</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">{{_ "ap-uf-interests"}}</td>
+						<td>{{interest}}</td>
+					</tr>
+					<tr>
+						<td class="vwf-20">{{_ "ap-ul-team"}}</td>
+						{{#if volunteer}}
+							<td>
+								{{_ "ap-ul-volunteer"}}
+							</td>
+						{{else}}
+							{{#if inTeam}}
+								<td><span class="focus cp">{{teamName}}</span></td>
+							{{else}}
+								<td>-</td>
+							{{/if}}
+						{{/if}}
+					</tr>
+					<tr>
+						<td class="vwf-20">{{_ "ap-uf-email"}}</td>
+						<td>{{email}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	{{/each}}
 </template>
 
 <template name="sd_null">
