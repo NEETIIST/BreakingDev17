@@ -57,4 +57,5 @@ dynamic-import@0.1.1
 ostrio:files@=1.7.13
 ostrio:autoform-files
 ostrio:meteor-root
-okgrow:analytics
+
+#okgrow:analytics@2.1.3

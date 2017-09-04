@@ -2,6 +2,8 @@
 settings.json
 imports/startup/server/keys.js
 
+node_modules/
+
 bots/
 
 \.idea/

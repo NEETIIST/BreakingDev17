@@ -5,11 +5,7 @@
     "start": "meteor run"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "babel-runtime": "^6.20.0",
-=======
     "babel-runtime": "^6.26.0",
->>>>>>> master
     "bcrypt": "^1.0.3",
     "bcrypt-nodejs": "0.0.3",
     "bootstrap": "^4.0.0-alpha.6",
