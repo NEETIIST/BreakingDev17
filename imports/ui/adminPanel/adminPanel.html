@@ -99,28 +99,28 @@
 								<div class="col px-1" id="ap_stats">
 									<i class="fa fs-5 py-2 fa-bar-chart fa-fw" aria-hidden="true"></i>
 								</div>
-								<div class="col px-1" id="ap_user-list">
+								<div class="col-4 px-1" id="ap_user-list">
 									<i class="fa fs-5 py-2 fa-user fa-fw" aria-hidden="true"></i>
 								</div>
-								<div class="col px-1" id="ap_team-list">
+								<div class="col-4 px-1" id="ap_team-list">
 									<i class="fa fs-5 py-2 fa-users fa-fw" aria-hidden="true"></i>
 								</div>
-								<div class="col px-1" id="ap_payments">
+								<div class="col-4 px-1" id="ap_payments">
 									<i class="fa fs-5 py-2 fa-credit-card fa-fw" aria-hidden="true"></i>
 								</div>
-								<div class="col px-1" id="ap_volunteers">
+								<div class="col-4 px-1" id="ap_volunteers">
 									<i class="fa fs-5 py-2 fa-child fa-fw" aria-hidden="true"></i>
 								</div>
-								<div class="col px-1" id="ap_shifts">
+								<div class="col-4 px-1" id="ap_shifts">
 									<i class="fa fs-5 py-2 fa-calendar fa-fw" aria-hidden="true"></i>
 								</div>
-								<div class="col px-1" id="ap_alerts">
+								<div class="col-4 px-1" id="ap_alerts">
 									<i class="fa fs-5 py-2 fa-exclamation fa-fw" aria-hidden="true"></i>
 								</div>
-								<div class="col px-1" id="ap_sponsors">
+								<div class="col-4 px-1" id="ap_sponsors">
 									<i class="fa fs-5 py-2 fa-institution fa-fw" aria-hidden="true"></i>
 								</div>
-								<div class="col px-1" id="logout">
+								<div class="col-4 px-1" id="logout">
 									<i class="fa fs-5 py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
 								</div>
 							</div>
@@ -339,7 +339,7 @@
 					<th>{{_ "ap-tl-category"}}</th>
 					<th>{{_ "ap-tl-teamname"}}</th>
 					<th>{{_ "ap-tl-projectname"}}</th>
-					<th>{{_ "ap-tl-captain"}}</th>
+					<th class="hidden-md-down">{{_ "ap-tl-captain"}}</th>
 					<th>{{_ "ap-tl-members"}}</th>
 					<th>{{_ "ap-tl-validated"}}</th>
 					<th></th>
@@ -351,7 +351,7 @@
 						<td>{{category}}</td>
 						<td>{{team_name}}</td>
 						<td>"{{project_name}}"</td>
-						<td>@{{captainUser}}</td>
+						<td class="hidden-md-down">@{{captainUser}}</td>
 						<td>{{memberCount}}</td>
 						<td>
 							{{#if validated}}
@@ -699,13 +699,13 @@
 			<p class="fw-3 fs-2 mb-1 pl-3">{{_ "ap-sponsor-add"}}</p>
 			{{#autoForm collection=Sponsors id="addSponsor" type="insert"}}
 				<div class="row mx-0">
-					<div class="col-6 col-md-3">
+					<div class="col-12 col-md-3 my-1 my-md-0">
 						{{> afFieldInput name='short' placeholder="schemaLabel" autocomplete="off" class="fs-2 fw-2 small-input"}}
 					</div>
-					<div class="col-6 col-md-3">
+					<div class="col-12 col-md-3 my-1 my-md-0">
 						{{> afFieldInput name='name' placeholder="schemaLabel" autocomplete="off" class="fs-2 fw-2 small-input"}}
 					</div>
-					<div class="col-6 col-md-3">
+					<div class="col-12 col-md-3 my-1 my-md-0">
 						{{> afFieldInput name='picture' placeholder="schemaLabel"}}
 					</div>
 					<div class="col-1 text-center">
