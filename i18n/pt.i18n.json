@@ -91,6 +91,8 @@
 	"ap-uf-vol-false": "Recusar candidatura",
 	"ap-uf-vol-motiv": "Motivação",
 	"ap-uf-vol-exp": "Experiência",
+	"ap-uf-bio": "Biografia",
+	"ap-uf-interests": "Interesses",
 
 	"ap-tl":"Lista de Equipas:",
 	"ap-tl-teamname": "Nome",
@@ -511,6 +513,18 @@
   	"sd-sponsor-work": "Área de Trabalho",
   	"sd-sponsor-search": "Recrutamento",
   	"sd-sponsor-category": "Dimensão da empresa",
+
+  	"sd-users": "Participantes",
+  	"sd-teams": "Equipas",
+  	"sd-null": "Utilize o menu para ver mais informações",
+
+  	"sd-ul": "Lista de Participantes",
+  	"sd-tl-projectdesc": "Descrição da Ideia",
+  	"sd-tl-teamname": "Nome da Equipa",
+  	"sd-tl-projectname": "Nome do Projeto",
+  	"sd-tl-skills": "Skills",
+  	"sd-tl-seemore": "Ver mais informações",
+  	"sd-tl-favourite": "Marcar como favorita",
 
   	//Reset Password
   	"rp_form": "Recuperar Password",

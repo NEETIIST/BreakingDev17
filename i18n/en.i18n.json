@@ -91,6 +91,8 @@
 	"ap-uf-vol-false": "Refuse Aplication",
 	"ap-uf-vol-motiv": "Motivation",
 	"ap-uf-vol-exp": "Experience",
+	"ap-uf-bio": "Biography",
+	"ap-uf-interests": "Interests",
 
 	"ap-tl":"Teams List:",
 	"ap-tl-teamname": "Nome",
@@ -502,6 +504,12 @@
   	"sd-sponsor-work": "Work Expertise",
   	"sd-sponsor-search": "Recruitment",
   	"sd-sponsor-category": "Company Size",
+
+  	"sd-users": "Contestants",
+  	"sd-teams": "Teams",
+  	"sd-null": "Use the icons to see more information",
+
+  	"sd-ul": "Contestants list",
 
   	//Reset Password
   	"rp_form": "Recover Password",

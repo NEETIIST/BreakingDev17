@@ -70,7 +70,7 @@
 								<i class="fa fs-5 py-2 fa-institution fa-fw" aria-hidden="true"></i>
 							</div>
 							<div class="col px-1 {{active 'sd_users'}}" id="sd-users">
-								<i class="fa fs-5 py-2 fa-users fa-fw" aria-hidden="true"></i>
+								<i class="fa fs-5 py-2 fa-user fa-fw" aria-hidden="true"></i>
 							</div>
 							<div class="col px-1 {{active 'sd_teams'}}" id="sd-teams">
 								<i class="fa fs-5 py-2 fa-users fa-fw" aria-hidden="true"></i>
@@ -85,7 +85,7 @@
 				<div class="row justify-content-center align-items-start m-0">
 					<div class="col-12 col-md-8 align-self-start">
 						<div class="spacer-4 hidden-md-down"></div>
-						{{> Template.dynamic template=dash_small}}
+						{{> Template.dynamic template=sd_small}}
 					</div>
 				</div>
 			</div>
@@ -206,16 +206,16 @@
 						{{/if}}
 					</div>
 					<div class="col-12 text-center col-md-9 text-md-left">
-						<p class="fw-3 fs-3 flh-2 mb-2">
+						<p class="fw-3 fs-3 flh-2 mb-2" title="{{_'sd-tl-projectname'}}">
 							"{{project_name}}" - 
-							<span class="f-orange">{{team_name}}</span>
+							<span class="f-orange" title="{{_'sd-tl-teamname'}}">{{team_name}}</span>
 						</p>
-						<p class="fw-3 fs-2 flh-1 mb-1">{{project}}</p>
-						<p class="fw-3 fs-2 flh-1 mb-1 mb-md-0">{{skills}}</p>
+						<p class="fw-3 fs-2 flh-1 mb-1" title="{{_'sd-tl-projectdesc'}}">{{project}}</p>
+						<p class="fw-3 fs-2 flh-1 mb-1 mb-md-0" title="{{_'sd-tl-skills'}}">{{skills}}</p>
 					</div>
 					<div class="col-12 col-md-1 mx-0">
-						<i class="fa fs-4 fa-search cp p-1 focus" aria-hidden="true"></i>
-						<i class="fa fs-4 fa-star-o f-yellow cp p-1" aria-hidden="true"></i>
+						<i class="fa fs-4 fa-search cp p-1 focus" aria-hidden="true" title="{{_'sd-tl-seemore'}}"></i>
+						<i class="fa fs-4 fa-star-o f-yellow cp p-1" aria-hidden="true" title="{{_'sd-tl-favourite'}}"></i>
 					</div>
 				</div>
 				<hr class="orange hidden-lg-up">
@@ -261,8 +261,8 @@
 					</tr>
 					<tr>
 						<td class="vwf-20">{{_ "ap-tl-captain"}}</td>
-						<td>@
-							<span class="focusCaptain cp">{{captainUser}}</span>
+						<td>
+							<span class="focusCaptain cp">@{{captainUser}}</span>
 						</td>
 					</tr>
 					<tr>
@@ -280,7 +280,7 @@
 </template>
 
 <template name="sd_users">
-	<p>{{_ "ap-ul"}}</p>
+	<p>{{_ "sd-ul"}}</p>
 	<div class="table-responsive">
 		<table class="table table-hover table-sm fw-3 fs-2">
 			<thead>
@@ -371,7 +371,7 @@
 <template name="sd_null">
 	<div class="row justify-content-center align-items-center text-center my-0">
 		<div class="col-12">
-			<p class="fw-3 fs-3 flh-2">{{_ "sd_null"}}</p>
+			<p class="fw-3 fs-3 flh-2">{{_ "sd-null"}}</p>
 		</div>
 	</div>
 </template>
