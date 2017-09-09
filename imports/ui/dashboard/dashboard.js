@@ -18,6 +18,10 @@ Template.dashboard.onRendered(function() {
 		{
 			FlowRouter.go("/sponsors/dash");
 		}
+		else if ( Session.get('isSponsor') )
+		{
+			FlowRouter.go("/sponsors");
+		}
 		else
 		{
 			// These subscriptions should be reviewed

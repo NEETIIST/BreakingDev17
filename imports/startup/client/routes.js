@@ -95,6 +95,23 @@ FlowRouter.route('/login',{
   },
 });
 
+FlowRouter.route('/login/:s',{
+  name: 'login',
+  action(){
+    if (Meteor.userId()!==null)
+    {
+      FlowRouter.redirect('/dash');
+    }
+    else
+    {
+      window.scrollTo(0,0);
+      Session.set("nav", false);
+      Session.set("tab", "menu_login");
+      BlazeLayout.render('base', {main: 'login'});
+    }
+  },
+});
+
 FlowRouter.route('/logout',{
   name: 'logout',
   action(){

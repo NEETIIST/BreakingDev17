@@ -105,4 +105,5 @@ Accounts.onLogin(function(){
 Accounts.onLogout(function(){
 	//let log = Links.findOne({"name":"menu_logout"});
 	//Links.update(log._id, {$set: { "isNavbar": false },})
+	Session.set('isSponsor',false);
 })

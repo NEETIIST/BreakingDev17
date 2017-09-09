@@ -3,6 +3,11 @@ import './login.html';
 Template.atForm.onRendered(function() {
 	form = document.getElementById("at-pwd-form");
 	form.setAttribute( "autocomplete", "off" );
+  let s = FlowRouter.getParam('s');
+  if ( s == "sponsors" )
+    Session.set('isSponsor',true);
+  else
+    Session.set('isSponsor',false);
 });
 
 Template.resetpassword.onRendered(function() {

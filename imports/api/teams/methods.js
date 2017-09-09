@@ -20,7 +20,7 @@ Meteor.methods({
 			Teams.update({"_id":team_id},{$set:{"setup":true}});
 			Teams.update({"_id":team_id},{$set:{"members":[]}});
 			Teams.update({"_id":team_id},{$set:{"pending":false}});
-			Teams.update({"_id":team_id},{$set:{"registration":undefined}});
+			Teams.update({"_id":team_id},{$set:{"registration":null}});
 		}
 	},
 
