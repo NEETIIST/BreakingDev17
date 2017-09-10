@@ -409,6 +409,14 @@
 			},
 			"picture":{
 				"label": "Fotografia"
+			},
+			"website":{
+				"label": "Website",
+				"placeholder": "Página web da empresa"
+			},
+			"email":{
+				"label": "E-mail",
+				"placeholder": "E-mail para contactos por parte dos participantes"
 			}
 		},
 		"visitors":
@@ -500,6 +508,7 @@
   	"sponsor-code-unrecognized":"Este código não foi reconhecido",
   	"sponsor-code-used":"Este código já foi utilizado previamente. Solicite um novo à organização.",
   	"sponsor-code-success":"Foi corretamente registado como membro empresarial. Irá agora ser redirecionado para o dashboard onde pode alterar as suas informações e da sua empresa.",
+  	"sponsor-findus": "Encontra-nos no BreakingDev!",
 
   	"sd-profile": "Perfil",
   	"sd-profile-edit": "Editar informações de perfil",
@@ -513,6 +522,8 @@
   	"sd-sponsor-work": "Área de Trabalho",
   	"sd-sponsor-search": "Recrutamento",
   	"sd-sponsor-category": "Dimensão da empresa",
+  	"sd-sponsor-website": "Website",
+  	"sd-sponsor-email": "E-mail",
 
   	"sd-users": "Participantes",
   	"sd-teams": "Equipas",

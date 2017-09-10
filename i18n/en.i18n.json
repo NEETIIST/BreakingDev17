@@ -405,6 +405,14 @@
 			},
 			"picture":{
 				"label": "Fotografia"
+			},
+			"website":{
+				"label": "Website",
+				"placeholder": "Company's webpage"
+			},
+			"email":{
+				"label": "E-mail",
+				"placeholder": "E-mail for contacts from the contestants"
 			}
 		},
 		"visitors":
@@ -491,6 +499,7 @@
   	"sponsor-code-unrecognized":"This code is unrecognized",
   	"sponsor-code-used":"This code was already used. Ask the staff for a new one.",
   	"sponsor-code-success":"You were successfully registered as a corporate guest. You can now access the dashboard and update your information.",
+  	"sponsor-findus": "Find us at BreakingDev!",
 
   	"sd-profile": "Profile",
   	"sd-profile-edit": "Edit profile info",
@@ -504,6 +513,8 @@
   	"sd-sponsor-work": "Work Expertise",
   	"sd-sponsor-search": "Recruitment",
   	"sd-sponsor-category": "Company Size",
+  	"sd-sponsor-website": "Website",
+  	"sd-sponsor-email": "E-mail",
 
   	"sd-users": "Contestants",
   	"sd-teams": "Teams",

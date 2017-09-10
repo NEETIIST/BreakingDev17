@@ -1,3 +1,55 @@
 <template name="sponsor">
-	
+
+	{{#if Template.subscriptionsReady}}
+		<div class="row justify-content-center align-items-center mx-0 my-3 my-md-0 pt-3 white f-black">
+			<div class="col-10 col-md-5 text-center text-md-left">
+				<img class="logos" src="{{sponsorPic}}" title="{{sponsorData.name}}">
+			</div>
+			<div class="col-10 col-md-5 my-3 my-md-0">
+				<p class="fw-2 fs-6 flh-2 mb-1">{{sponsorData.name}}</p>
+				<p class="fw-2 fs-3 flh-2 mb-1">{{sponsorData.category}}</p>
+				<a href="{{sponsorData.website}}" target="_blank">
+					<p class="fw-2 fs-3 flh-2 mb-1">{{sponsorData.website}}</p>
+				</a>
+				<a href="mailto:{{sponsorData.email}}" target="_blank">
+					<p class="fw-2 fs-3 flh-2 mb-0">{{sponsorData.email}}</p>
+				</a>
+			</div>
+		</div>
+		<div class="row justify-content-center align-items-start m-0 white f-black">
+			<div class="col-10">
+				<hr class="orange">
+				<div class="spacer-2"></div>
+				<p class="fw-4 fs-3 flh-2">{{sponsorData.work}}</p>
+				<p class="fw-4 fs-3 flh-2">{{sponsorData.search}}</p>
+			</div>
+		</div>
+		<div class="row justify-content-center align-items-start m-0 white f-black">
+			<div class="col-10">
+				<div class="spacer-2"></div>
+				<p class="fw-2 fs-3 flh-2">{{_ "sponsor-findus"}}</p>
+				{{#each sponsorMembers}}
+					<div class="row justify-content-center align-items-start m-0">
+						<div class="col-12 col-md-4 text-center">
+							<img src="{{memberPic}}" alt="Profile Picture" class="img-thumbnail">
+							<p class="fw-4 fs-2 flh-2 my-1">{{name}}</p>
+							<p class="fw-4 fs-2 flh-2 my-1">{{job}}</p>
+							<p class="fw-4 fs-2 flh-2 my-1">"{{info}}"</p>
+						</div>
+					</div>
+				{{/each}}
+				<div class="spacer-8"></div>
+			</div>
+		</div>
+	{{else}}
+		<div class="row justify-content-center align-items-center m-0 py-3 vh-100 white f-black">
+			<div class="col">
+				<div class="text-center">
+					<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+					<p>{{_ "loading"}}</p>
+				</div>
+			</div>
+		</div>
+	{{/if}}
+
 </template>

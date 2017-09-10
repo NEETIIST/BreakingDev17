@@ -42,6 +42,14 @@ Schema = new SimpleSchema({
         type: String,
         optional: true,
     },
+    website: {
+        type: String,
+        optional: true,
+    },
+    email: {
+        type: String,
+        optional: true,
+    },
     picture: {
         type: String,
         optional: true,
