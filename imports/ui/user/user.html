@@ -1,89 +1,96 @@
 <template name="user">		
 
 	{{#if Template.subscriptionsReady}}
-		<div class="row justify-content-md-center align-items-center m-0 py-3 vh-40 black user-top">
-			<div class="col-1 col-md-2 text-center">
-				
-			</div>
-			<div class="col-10 col-md-3 push-md-6 my-3 text-center">
-				<div class="">
-					<img src="{{profilePic}}" alt="Profile Picture" class="user-pic">
-				</div>
-			</div>
-			<div class="col-10 offset-1 col-md-6 pull-md-4">
-				<p class="fw-2 fs-6 flh-2 f-white mb-0">{{userData.name}}</p>
-				<p class="fw-2 fs-2 flh-2 f-white">@{{username}}</p>
-				{{#if inTeam}}
-					<p class="fw-2 fs-2 flh-2 f-white mb-2 cp" id="goTeam">
-						<i class="fa fa-users f-white fa-fw mr-2" aria-hidden="true"></i>{{team}}
-					</p>
-				{{/if}}
-				{{#if isVolunteer}}
-					<p class="fw-2 fs-2 flh-2 f-white mb-2">
-						<i class="fa fa-child f-white fa-fw mr-2" aria-hidden="true"></i>{{_ "up_volunteer"}}
-					</p>
-				{{/if}}
-				<p class="fw-2 fs-2 flh-2 f-white mb-1">
-					<i class="fa fa-graduation-cap fa-fw f-white mr-2" aria-hidden="true"></i>{{userData.college}}
-				</p>
-				<p class="fw-2 fs-2 flh-2 f-white mb-2">
-					<i class="fa fa-graduation-cap fa-fw f-black mr-2" aria-hidden="true"></i>{{userData.course}}
-				</p>
-				<!-- #if Empresa is true -->
-				<!--<p class="fw-2 fs-2 flh-2 f-white mb-2">
-					<i class="fa fa-briefcase f-white fa-fw mr-2" aria-hidden="true"></i>Empresa Lorem Ipsum Bacon Pork
-				</p>-->
-				<!-- /if -->			
-			</div>
+
+	<div class="row justify-content-center align-items-center vh-30 mx-0 pt-3 mb-3 f-black">
+		<div class="col-10 col-md-3 text-center mb-3 mb-md-0">
+			<img src="{{profilePic}}" alt="Profile Picture" class="user-pic">
 		</div>
-		<div class="row justify-content-center align-items-start m-0 vh-60 orange">
-			<div class="col-10 col-md-8 my-3">
-				<p class="fw-4 fs-2 flh-2 f-white mb-1">{{_ "user_bio"}}</p>
-				<p class="fw-2 fs-2 flh-2 f-white">{{userData.bio}}</p>
-				<p class="fw-4 fs-2 flh-2 f-white mb-1">{{_ "user_skills"}}</p>
-				<p class="fw-2 fs-2 flh-2 f-white">{{userData.skills}}</p>
-				<p class="fw-4 fs-2 flh-2 f-white mb-1">{{_ "user_interests"}}</p>
-				<p class="fw-2 fs-2 flh-2 f-white">{{userData.interest}}</p>
-				<hr class="white mx-0">
-				<p class="fw-4 fs-2 flh-2 f-white mb-2">{{_ "user_social"}}</p>
-				<div class="row">
-					{{#if userData.github}}
-						<div class="col-4">
+		<div class="col-4 col-md-4 text-left text-md-center">
+			<p class="fw-2 fs-6 flh-2 mb-0">{{userData.name}}</p>
+			<p class="fw-2 fs-3 flh-2 ">@{{username}}</p>
+		</div>
+		<div class="col-4 col-md-3 text-right">
+			{{#if inTeam}}
+				<p class="fw-4 fs-3 flh-2 mb-2 cp" id="goTeam">
+					{{team}}
+					<i class="fa fa-users fa-fw ml-2" aria-hidden="true"></i>
+				</p>
+			{{/if}}
+			{{#if isVolunteer}}
+				<p class="fw-4 fs-3 flh-2 mb-2">
+					{{_ "up_volunteer"}}
+					<i class="fa fa-child fa-fw ml-2" aria-hidden="true"></i>
+				</p>
+			{{/if}}
+			<p class="fw-4 fs-3 flh-2 mb-1">
+				{{userData.college}}
+				<i class="fa fa-graduation-cap fa-fw ml-2" aria-hidden="true"></i>
+			</p>
+			<p class="fw-2 fs-3 flh-2 mb-2">
+				{{userData.course}}
+				<i class="fa fa-graduation-cap fa-fw f-white ml-2" aria-hidden="true"></i>
+			</p>
+		</div>
+	</div>
+
+	<div class="row justify-content-center align-items-start m-0 f-black">
+		<div class="col-10">
+			<hr class="orange mt-0">
+			<p class="fw-4 fs-3 flh-2 mb-1">{{_ "user_bio"}}</p>
+			<p class="fw-2 fs-3 flh-2">{{userData.bio}}</p>
+			<p class="fw-4 fs-3 flh-2 mb-1">{{_ "user_skills"}}</p>
+			<p class="fw-2 fs-3 flh-2">{{userData.skills}}</p>
+			<p class="fw-4 fs-3 flh-2 mb-1">{{_ "user_interests"}}</p>
+			<p class="fw-2 fs-3 flh-2 ">{{userData.interest}}</p>
+		</div>
+	</div>
+
+	<div class="row justify-content-center align-items-start m-0 f-black">
+		<div class="col-10">
+			<hr class="orange mt-0">
+			{{#if userData.github}}
+						<div class="col-4 text-center">
 							<a target="_blank" href="https://www.github.com/{{userData.github}}">
-								<p class="fw-2 fs-2 flh-2 f-white mb-1">
-									<i class="fa fa-github fa-fw f-white mr-2" aria-hidden="true"></i>
+								<p class="fw-2 fs-3 flh-2 mb-1">
+									<i class="fa fa-github fa-fw fs-3 mr-2" aria-hidden="true"></i>
 									{{userData.github}}
 								</p>
 							</a>
 						</div>
 					{{/if}}
 					{{#if userData.twitter}}
-						<div class="col-4">
+						<div class="col-4 text-center">
 							<a target="_blank" href="https://www.twitter.com/{{userData.twitter}}">
-								<p class="fw-2 fs-2 flh-2 f-white mb-1">
-									<i class="fa fa-twitter fa-fw f-white mr-2" aria-hidden="true"></i>
+								<p class="fw-2 fs-3 flh-2 mb-1">
+									<i class="fa fa-twitter fa-fw fs-3 mr-2" aria-hidden="true"></i>
 									{{userData.twitter}}
 								</p>
 							</a>
 						</div>
 					{{/if}}
 					{{#if userData.linkedin}}
-						<div class="col-4">
+						<div class="col-4 text-center">
 							<a target="_blank" href="https://www.linkedin.com/in/{{userData.linkedin}}">
-								<p class="fw-2 fs-2 flh-2 f-white mb-1">
-									<i class="fa fa-linkedin fa-fw f-white mr-2" aria-hidden="true"></i>
+								<p class="fw-2 fs-3 flh-2 mb-1">
+									<i class="fa fa-linkedin fa-fw fs-3 mr-2" aria-hidden="true"></i>
 									{{userData.linkedin}}
 								</p>
 							</a>
 						</div>
 					{{/if}}
+		</div>
+	</div>
+
+	{{else}}
+		<div class="row justify-content-center align-items-center m-0 vh-100 py-3 f-black">
+			<div class="col">
+				<div class="text-center">
+					<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+					<p>{{_ "loading"}}</p>
 				</div>
 			</div>
 		</div>
-	{{else}}
-		<div class="text-center">
-			<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw f-white"></i>
-		</div>
-	{{/if}}	
+	{{/if}}
 
 </template>
