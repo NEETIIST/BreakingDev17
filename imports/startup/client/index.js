@@ -2,6 +2,7 @@
 
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import './routes.js';
+import './cordova.js';
 
 AutoForm.addHooks(['contactForm'],{
     onSuccess: function(formType, result) {
