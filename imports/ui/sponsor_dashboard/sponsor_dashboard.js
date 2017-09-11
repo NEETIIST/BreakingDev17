@@ -63,6 +63,11 @@ Template.sponsor_dashboard.events({
 		let last = Session.get("dash_last");
 		BlazeLayout.render('base', {main:"sponsor_dashboard",sd_small:last});
 	},
+	"click #sd-favourites": function(){
+		Session.set("dash_last","sd_favourites");
+		let last = Session.get("dash_last");
+		BlazeLayout.render('base', {main:"sponsor_dashboard",sd_small:last});
+	},
 });
 
 Template.sd_profile.onRendered(function() {
@@ -151,6 +156,14 @@ Template.sd_teams_focus.helpers({
 	memberUser: function(){
 		return Meteor.users.findOne({"_id":String(this)}).username;	
 	},
+	isFavourite: function () {
+		let t = this._id;
+		let f = Visitors.findOne().favourite;
+		if ( f.indexOf(t) != -1 )
+			return true;
+		else
+			return false;
+	},
 });
 
 Template.sd_teams_focus.events({
@@ -167,6 +180,14 @@ Template.sd_teams_focus.events({
 		Session.set("focus",String(this));
 		BlazeLayout.render('base', {main:"sponsor_dashboard",sd_small:"sd_user_focus"});
 	},
+	"click #makeFavourite":function(){
+		let t = this._id;
+		Meteor.call('addToFavourite',t);
+	},
+	"click #removeFavourite":function(){
+		let t = this._id;
+		Meteor.call('removeFromFavourite',t);
+	},
 });
 
 Template.sd_users.helpers({
@@ -179,12 +200,28 @@ Template.sd_users.helpers({
 	teamName: function(){
 		return Teams.findOne({"_id":this.team}).team_name;
 	},
+	isFavourite: function () {
+		let t = this.user;
+		let f = Visitors.findOne().favourite;
+		if ( f.indexOf(t) != -1 )
+			return true;
+		else
+			return false;
+	},
 });
 
 Template.sd_users.events({
 	"click .focus": function(){
 		Session.set("focus",this.user);
 		BlazeLayout.render('base', {main:"sponsor_dashboard",sd_small:"sd_user_focus"}); 	
+	},
+	"click #makeFavourite":function(){
+		let t = this.user;
+		Meteor.call('addToFavourite',t);
+	},
+	"click #removeFavourite":function(){
+		let t = this.user;
+		Meteor.call('removeFromFavourite',t);
 	},
 });
 
@@ -215,12 +252,99 @@ Template.sd_user_focus.helpers({
 		else
 			return pic.link();
 	},
+	isFavourite: function () {
+		let t = this.user;
+		let f = Visitors.findOne().favourite;
+		if ( f.indexOf(t) != -1 )
+			return true;
+		else
+			return false;
+	},
 });
 
 Template.sd_user_focus.events({
 	"click .focus": function(){
 		Session.set("focus",this.team);
 		BlazeLayout.render('base', {main:"sponsor_dashboard",sd_small:"sd_teams_focus"}); 	
+	},
+	"click #makeFavourite":function(){
+		let t = this.user;
+		Meteor.call('addToFavourite',t);
+	},
+	"click #removeFavourite":function(){
+		let t = this.user;
+		Meteor.call('removeFromFavourite',t);
+	},
+	"click #goUserPage":function(){
+		let u = Meteor.users.findOne({"_id":this.user});
+		FlowRouter.go("/u/"+u.username);
+	},
+});
+
+Template.sd_favourites.helpers({
+	devs: function(){
+		let list = Visitors.findOne().favourite;
+		return Devs.find({'user':{ $in : list }});
+	},
+	teams: function(){
+		let list = Visitors.findOne().favourite;
+		return Teams.find({'_id':{ $in : list }});
+	},
+	isFavouriteUser: function () {
+		let t = this.user;
+		let f = Visitors.findOne().favourite;
+		if ( f.indexOf(t) != -1 )
+			return true;
+		else
+			return false;
+	},
+	isFavouriteTeam: function () {
+		let t = this._id;
+		let f = Visitors.findOne().favourite;
+		if ( f.indexOf(t) != -1 )
+			return true;
+		else
+			return false;
+	},
+	email: function(){
+		return Meteor.users.findOne({"_id":this.user}).emails[0].address;
+	},
+	profilePic: function(){
+		let pic = Images.findOne({"_id":this.picture});
+		if( pic === undefined )
+			return "/profile.png";
+		else
+			return pic.link();
+	},
+	username: function(){
+		return Meteor.users.findOne({"_id":this.user}).username;
+	},
+});
+
+Template.sd_favourites.events({
+	"click .focusUser": function(){
+		Session.set("focus",this.user);
+		BlazeLayout.render('base', {main:"sponsor_dashboard",sd_small:"sd_user_focus"}); 	
+	},
+	"click .focusTeam": function(){
+		Session.set("focus",this._id);
+		BlazeLayout.render('base', {main:"sponsor_dashboard",sd_small:"sd_teams_focus"}); 	
+	},
+	"click #makeFavouriteUser":function(){
+		let t = this.user;
+		Meteor.call('addToFavourite',t);
+	},
+	"click #removeFavouriteUser":function(){
+		let t = this.user;
+		Meteor.call('removeFromFavourite',t);
+	},
+	"click #makeFavouriteTeam":function(){
+		let t = this._id;
+		Meteor.call('addToFavourite',t);
+	},
+	"click #removeFavouriteTeam":function(){
+		let t = this._id;
+		Meteor.call('removeFromFavourite',t);
 	},
 });
 

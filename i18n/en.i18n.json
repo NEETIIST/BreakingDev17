@@ -93,6 +93,7 @@
 	"ap-uf-vol-exp": "Experience",
 	"ap-uf-bio": "Biography",
 	"ap-uf-interests": "Interests",
+	"ap-ul-seepage": "See user page",
 
 	"ap-tl":"Teams List:",
 	"ap-tl-teamname": "Nome",
@@ -109,6 +110,7 @@
 	"ap-tf-not-validate": "Cancel Registration",
 	"ap-tf-not-validate-sure": "Are you sure you want to cancel this teams registration?",
 	"ap-tf-not-validate-confirm": "Registration canceled",
+	"ap-tl-seepage": "See Team Page",
 
 	"ap-stats": "Statistics",
 	"ap-stats-1": "Contestants",
@@ -528,6 +530,10 @@
   	"sd-tl-seemore": "See more info",
   	"sd-tl-favourite": "Mark as favourite",
   	"sd-tl-unfavourite": "Unmark as favourite",
+
+  	"sd-favourites": "Favourites",
+  	"sd-fav-users" : "Favourite Users",
+  	"sd-fav-teams" : "Favourite Teams",
 
   	//Reset Password
   	"rp_form": "Recover Password",

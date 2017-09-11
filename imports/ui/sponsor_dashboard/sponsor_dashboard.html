@@ -40,6 +40,14 @@
 								<span class="fw-3 fs-2 flh-2">{{_ "sd-teams"}}</span>
 							</div>
 						</div>
+						<div class="row align-items-center text-left hvr-items cp {{active 'sd_favourites'}}" id="sd-favourites">
+							<div class="col-3">
+								<i class="fa fs-4 py-2 fa-star fa-fw" aria-hidden="true"></i>
+							</div>
+							<div class="col-9">
+								<span class="fw-3 fs-2 flh-2">{{_ "sd-favourites"}}</span>
+							</div>
+						</div>
 						<div class="row align-items-center text-left hvr-items cp" id="logout">
 							<div class="col-3">
 								<i class="fa fs-4 py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
@@ -74,6 +82,9 @@
 							</div>
 							<div class="col px-1 {{active 'sd_teams'}}" id="sd-teams">
 								<i class="fa fs-5 py-2 fa-users fa-fw" aria-hidden="true"></i>
+							</div>
+							<div class="col px-1 {{active 'sd_favourites'}}" id="sd-favourites">
+								<i class="fa fs-5 py-2 fa-star fa-fw" aria-hidden="true"></i>
 							</div>
 							<div class="col px-1" id="logout">
 								<i class="fa fs-5 py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
@@ -242,12 +253,25 @@
 
 <template name="sd_teams_focus">
 	{{#each focus}}
-		{{#if equals category "Web"}}
-				<img src="/icons/WebAlt.png" alt="{{_ 'team_webdesc'}}" title="{{_ 'team_webdesc'}}" class="category-pic">
-		{{/if}}
-		{{#if equals category "Gaming"}}
-			<img src="/icons/JogosAlt.png" alt="{{_ 'team_gamesdesc'}}" title="{{_ 'team_gamesdesc'}}" class="category-pic">
-		{{/if}}
+		<div class="row m-0 align-items-center">
+			<div class="col-2 text-center">
+				<i class="fa fa-search fs-4 fa-fw px-1 f-black cp" aria-hidden="true" id="goTeamPage" title="{{_ 'ap-tl-seepage'}}"></i>
+				<br>
+				{{#if isFavourite}}
+					<i class="fa fs-4 fa-star f-yellow cp p-1" aria-hidden="true" title="{{_'sd-tl-unfavourite'}}" id="removeFavourite"></i>
+				{{else}}
+					<i class="fa fs-4 fa-star-o f-yellow cp p-1" aria-hidden="true" title="{{_'sd-tl-favourite'}}" id="makeFavourite"></i>
+				{{/if}}
+			</div>
+			<div class="col-3 text-center text-md-left">
+				{{#if equals category "Web"}}
+						<img src="/icons/WebAlt.png" alt="{{_ 'team_webdesc'}}" title="{{_ 'team_webdesc'}}" class="category-pic">
+				{{/if}}
+				{{#if equals category "Gaming"}}
+					<img src="/icons/JogosAlt.png" alt="{{_ 'team_gamesdesc'}}" title="{{_ 'team_gamesdesc'}}" class="category-pic">
+				{{/if}}
+			</div>
+		</div>
 		<div class="spacer-4"></div>
 		<div class="table-responsive">
 			<table class="table table-sm fw-3 fs-2">
@@ -256,7 +280,6 @@
 						<td class="vwf-20">{{_ "ap-tl-teamname"}}</td>
 						<td>
 							{{team_name}}
-							<i class="fa fa-search fa-fw px-1 f-black cp" aria-hidden="true" id="goTeamPage"></i>
 						</td>
 					</tr>
 					<tr>
@@ -313,7 +336,14 @@
 						<td>{{name}}</td>
 						<td>{{course}}</td>
 						<td>{{age}}</td>
-						<td><i class="fa fa-search fa-fw f-black cp focus" aria-hidden="true"></i></td>
+						<td class="text-right">
+							<i class="fa fa-search fs-4 fa-fw f-black cp focus" aria-hidden="true"></i>
+							{{#if isFavourite}}
+								<i class="fa fs-4 fa-star f-yellow cp p-1" aria-hidden="true" title="{{_'sd-tl-unfavourite'}}" id="removeFavourite"></i>
+							{{else}}
+								<i class="fa fs-4 fa-star-o f-yellow cp p-1" aria-hidden="true" title="{{_'sd-tl-favourite'}}" id="makeFavourite"></i>
+							{{/if}}
+						</td>
 					</tr>
 				{{/each}}
 			</tbody>
@@ -323,7 +353,20 @@
 
 <template name="sd_user_focus">
 	{{#each focus}}
-		<img src="{{profilePic}}" alt="Profile Picture" class="user-pic">
+		<div class="row m-0 align-items-center">
+			<div class="col-2 text-center">
+				<i class="fa fa-search fs-4 fa-fw px-1 f-black cp" aria-hidden="true" id="goUserPage" title="{{_ 'ap-ul-seepage'}}"></i>
+				<br>
+				{{#if isFavourite}}
+					<i class="fa fs-4 fa-star f-yellow cp p-1" aria-hidden="true" title="{{_'sd-tl-unfavourite'}}" id="removeFavourite"></i>
+				{{else}}
+					<i class="fa fs-4 fa-star-o f-yellow cp p-1" aria-hidden="true" title="{{_'sd-tl-favourite'}}" id="makeFavourite"></i>
+				{{/if}}
+			</div>
+			<div class="col-3 text-center text-md-left">
+				<img src="{{profilePic}}" alt="Profile Picture" class="user-pic">
+			</div>
+		</div>
 		<div class="spacer-4"></div>
 		<div class="table-responsive">
 			<table class="table table-sm fw-3 fs-2">
@@ -382,6 +425,64 @@
 			</table>
 		</div>
 	{{/each}}
+</template>
+
+<template name="sd_favourites">
+	<p class="fw-4 fs-3 flh-2 mb-2">{{_ "sd-fav-users"}}</p>
+	<div class="row justify-content-center align-items-center m-0">
+		{{#each devs}}
+			<div class="col-10 col-md-6 hvr-items">	
+				<div class="row m-0 py-2 justify-content-center align-items-center">
+					<div class="col-6 text-center">
+						<img src="{{profilePic}}" alt="Profile Picture" class="user-pic hidden-md-down">
+						<img src="{{profilePic}}" alt="Profile Picture" class="user-pic-mobile hidden-lg-up">
+					</div>
+					<div class="col-6 text-center px-1">
+						<p class="fw-4 fs-3 flh-2 mb-2">{{name}}</p>
+						<p class="fw-2 fs-3 flh-2 mb-2">@{{username}}</p>
+						<i class="fa fs-4 fa-search cp p-1 focusUser" aria-hidden="true" title="{{_'sd-tl-seemore'}}"></i>
+						{{#if isFavouriteUser}}
+							<i class="fa fs-4 fa-star f-yellow cp p-1" aria-hidden="true" title="{{_'sd-tl-unfavourite'}}" id="removeFavouriteUser"></i>
+						{{else}}
+							<i class="fa fs-4 fa-star-o f-yellow cp p-1" aria-hidden="true" title="{{_'sd-tl-favourite'}}" id="makeFavouriteUser"></i>
+						{{/if}}
+					</div>
+				</div>
+			</div>
+		{{/each}}
+	</div>
+	<div class="spacer-4"></div>
+	<p class="fw-4 fs-3 flh-2 mb-2">{{_ "sd-fav-teams"}}</p>
+	{{#each teams}}
+		<div class="row align-items-center justify-content-center my-1 my-md-3 hvr-items">
+			<div class="col-6 text-center col-md-2 text-md-left mx-0 py-2">
+				{{#if equals category "Web"}}
+					<img src="/icons/WebAlt.png" alt="{{_ 'team_webdesc'}}" title="{{_ 'team_webdesc'}}" class="team-cat-side">
+				{{/if}}
+				{{#if equals category "Gaming"}}
+					<img src="/icons/JogosAlt.png" alt="{{_ 'team_gamesdesc'}}" title="{{_ 'team_gamesdesc'}}" class="team-cat-side">
+				{{/if}}
+			</div>
+			<div class="col-12 text-center col-md-9 text-md-left">
+				<p class="fw-3 fs-3 flh-2 mb-2" title="{{_'sd-tl-projectname'}}">
+					"{{project_name}}" - 
+					<span class="f-orange" title="{{_'sd-tl-teamname'}}">{{team_name}}</span>
+				</p>
+				<p class="fw-3 fs-2 flh-1 mb-1" title="{{_'sd-tl-projectdesc'}}">{{project}}</p>
+				<p class="fw-3 fs-2 flh-1 mb-1 mb-md-0" title="{{_'sd-tl-skills'}}">{{skills}}</p>
+			</div>
+			<div class="col-12 col-md-1 mx-0 text-center">
+				<i class="fa fs-4 fa-search cp p-1 focusTeam" aria-hidden="true" title="{{_'sd-tl-seemore'}}"></i>
+				{{#if isFavouriteTeam}}
+					<i class="fa fs-4 fa-star f-yellow cp p-1" aria-hidden="true" title="{{_'sd-tl-unfavourite'}}" id="removeFavouriteTeam"></i>
+				{{else}}
+					<i class="fa fs-4 fa-star-o f-yellow cp p-1" aria-hidden="true" title="{{_'sd-tl-favourite'}}" id="makeFavouriteTeam"></i>
+				{{/if}}
+			</div>
+		</div>
+		<hr class="orange hidden-lg-up">
+	{{/each}}
+	
 </template>
 
 <template name="sd_null">

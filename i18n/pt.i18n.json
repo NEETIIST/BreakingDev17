@@ -93,6 +93,7 @@
 	"ap-uf-vol-exp": "Experiência",
 	"ap-uf-bio": "Biografia",
 	"ap-uf-interests": "Interesses",
+	"ap-ul-seepage": "Ver página de utilizador",
 
 	"ap-tl":"Lista de Equipas:",
 	"ap-tl-teamname": "Nome",
@@ -109,6 +110,7 @@
 	"ap-tf-not-validate": "Cancelar inscrição",
 	"ap-tf-not-validate-sure": "Tem a certeza que pretende cancelar a ĩnscrição?",
 	"ap-tf-not-validate-confirm": "Inscrição cancelada.",
+	"ap-tl-seepage": "Ver página da equipa",
 
 	"ap-stats": "Estatísticas",
 	"ap-stats-1": "Participantes",
@@ -537,6 +539,10 @@
   	"sd-tl-seemore": "Ver mais informações",
   	"sd-tl-favourite": "Marcar como favorita",
   	"sd-tl-unfavourite": "Remover dos favoritos",
+
+  	"sd-favourites": "Favoritos",
+  	"sd-fav-users" : "Utilizadores Favoritos",
+  	"sd-fav-teams" : "Equipas Favoritas",
 
   	//Reset Password
   	"rp_form": "Recuperar Password",
