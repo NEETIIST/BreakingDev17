@@ -91,6 +91,8 @@
 	"ap-uf-vol-false": "Recusar candidatura",
 	"ap-uf-vol-motiv": "Motivação",
 	"ap-uf-vol-exp": "Experiência",
+	"ap-uf-bio": "Biografia",
+	"ap-uf-interests": "Interesses",
 
 	"ap-tl":"Lista de Equipas:",
 	"ap-tl-teamname": "Nome",
@@ -407,6 +409,14 @@
 			},
 			"picture":{
 				"label": "Fotografia"
+			},
+			"website":{
+				"label": "Website",
+				"placeholder": "Página web da empresa"
+			},
+			"email":{
+				"label": "E-mail",
+				"placeholder": "E-mail para contactos por parte dos participantes"
 			}
 		},
 		"visitors":
@@ -498,6 +508,7 @@
   	"sponsor-code-unrecognized":"Este código não foi reconhecido",
   	"sponsor-code-used":"Este código já foi utilizado previamente. Solicite um novo à organização.",
   	"sponsor-code-success":"Foi corretamente registado como membro empresarial. Irá agora ser redirecionado para o dashboard onde pode alterar as suas informações e da sua empresa.",
+  	"sponsor-findus": "Encontra-nos no BreakingDev!",
 
   	"sd-profile": "Perfil",
   	"sd-profile-edit": "Editar informações de perfil",
@@ -511,6 +522,21 @@
   	"sd-sponsor-work": "Área de Trabalho",
   	"sd-sponsor-search": "Recrutamento",
   	"sd-sponsor-category": "Dimensão da empresa",
+  	"sd-sponsor-website": "Website",
+  	"sd-sponsor-email": "E-mail",
+
+  	"sd-users": "Participantes",
+  	"sd-teams": "Equipas",
+  	"sd-null": "Utilize o menu para ver mais informações",
+
+  	"sd-ul": "Lista de Participantes",
+  	"sd-tl-projectdesc": "Descrição da Ideia",
+  	"sd-tl-teamname": "Nome da Equipa",
+  	"sd-tl-projectname": "Nome do Projeto",
+  	"sd-tl-skills": "Skills",
+  	"sd-tl-seemore": "Ver mais informações",
+  	"sd-tl-favourite": "Marcar como favorita",
+  	"sd-tl-unfavourite": "Remover dos favoritos",
 
   	//Reset Password
   	"rp_form": "Recuperar Password",

@@ -18,7 +18,7 @@ Template.sponsor_dashboard.onRendered(function() {
 			self.subscribe('teams.sponsor');
 			self.subscribe('devs.sponsor');
 			self.subscribe('users.sponsor');
-			//self.subscribe('alldevs.image');
+			self.subscribe('alldevs.image');
 		}
 		else
 		{
@@ -108,12 +108,28 @@ Template.sd_teams.helpers({
 	team: function(){
 		return Teams.find({"validated":true});
 	},
+	isFavourite: function () {
+		let t = this._id ;
+		let f = Visitors.findOne().favourite;
+		if ( f.indexOf(t) != -1 )
+			return true;
+		else
+			return false;
+	}
 });
 
 Template.sd_teams.events({
 	"click .focus": function(){
 		Session.set("focus",this._id);
 		BlazeLayout.render('base', {main:"sponsor_dashboard",sd_small:"sd_teams_focus"});
+	},
+	"click #makeFavourite":function(){
+		let t = this._id ;
+		Meteor.call('addToFavourite',t);
+	},
+	"click #removeFavourite":function(){
+		let t = this._id ;
+		Meteor.call('removeFromFavourite',t);
 	},
 });
 
@@ -142,10 +158,12 @@ Template.sd_teams_focus.events({
 		FlowRouter.go("/t/"+this._id);
 	},
 	"click .focusCaptain": function(){
+		Session.set("dash_last","sd_users");
 		Session.set("focus",this.captain);
 		BlazeLayout.render('base', {main:"sponsor_dashboard",sd_small:"sd_user_focus"});
 	},
 	"click .focus": function(){
+		Session.set("dash_last","sd_users");
 		Session.set("focus",String(this));
 		BlazeLayout.render('base', {main:"sponsor_dashboard",sd_small:"sd_user_focus"});
 	},

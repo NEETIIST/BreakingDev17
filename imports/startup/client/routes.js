@@ -32,6 +32,7 @@ import '../../ui/volunteer_shifts/volunteer_shifts.js'
 import '../../ui/volunteer_info/volunteer_info.js'
 import '../../ui/sponsor_access/sponsor_access.js'
 import '../../ui/sponsor_dashboard/sponsor_dashboard.js'
+import '../../ui/sponsor/sponsor.js'
 import '../../ui/code_reader/code_reader.js'
 
 
@@ -79,6 +80,23 @@ FlowRouter.route( '/reset-password/:token', {
 });
 
 FlowRouter.route('/login',{
+  name: 'login',
+  action(){
+    if (Meteor.userId()!==null)
+    {
+      FlowRouter.redirect('/dash');
+    }
+    else
+    {
+      window.scrollTo(0,0);
+      Session.set("nav", false);
+      Session.set("tab", "menu_login");
+      BlazeLayout.render('base', {main: 'login'});
+    }
+  },
+});
+
+FlowRouter.route('/login/:s',{
   name: 'login',
   action(){
     if (Meteor.userId()!==null)
@@ -281,6 +299,13 @@ FlowRouter.route('/sponsors/dash',{
   name: 'sponsor_dashboard',
   action() {
     BlazeLayout.render('base', {main: 'sponsor_dashboard'});
+  }
+});
+
+FlowRouter.route('/s/:shortname/',{
+  name: 'sponsor_page',
+  action() {
+    BlazeLayout.render('base', {main: 'sponsor'});
   }
 });
 
