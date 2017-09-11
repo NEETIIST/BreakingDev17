@@ -108,12 +108,28 @@ Template.sd_teams.helpers({
 	team: function(){
 		return Teams.find({"validated":true});
 	},
+	isFavourite: function () {
+		let t = this._id ;
+		let f = Visitors.findOne().favourite;
+		if ( f.indexOf(t) != -1 )
+			return true;
+		else
+			return false;
+	}
 });
 
 Template.sd_teams.events({
 	"click .focus": function(){
 		Session.set("focus",this._id);
 		BlazeLayout.render('base', {main:"sponsor_dashboard",sd_small:"sd_teams_focus"});
+	},
+	"click #makeFavourite":function(){
+		let t = this._id ;
+		Meteor.call('addToFavourite',t);
+	},
+	"click #removeFavourite":function(){
+		let t = this._id ;
+		Meteor.call('removeFromFavourite',t);
 	},
 });
 

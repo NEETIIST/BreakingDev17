@@ -8,10 +8,17 @@
 
 .user-pic-small
 {
-	border: 0.2em solid white;
+	border: 0.1em solid #f47d3d;
 	border-radius: 100%;
 	max-width: 120%;
 	max-height: 30vh ;
+}
+
+.user-pic-mobile
+{
+	border: 0.1em solid #f47d3d;
+	max-width: 100%;
+	max-height: 20vh ;
 }
 
 .team-top

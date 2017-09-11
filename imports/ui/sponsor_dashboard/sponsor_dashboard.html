@@ -227,7 +227,11 @@
 					</div>
 					<div class="col-12 col-md-1 mx-0">
 						<i class="fa fs-4 fa-search cp p-1 focus" aria-hidden="true" title="{{_'sd-tl-seemore'}}"></i>
-						<i class="fa fs-4 fa-star-o f-yellow cp p-1" aria-hidden="true" title="{{_'sd-tl-favourite'}}"></i>
+						{{#if isFavourite}}
+							<i class="fa fs-4 fa-star f-yellow cp p-1" aria-hidden="true" title="{{_'sd-tl-unfavourite'}}" id="removeFavourite"></i>
+						{{else}}
+							<i class="fa fs-4 fa-star-o f-yellow cp p-1" aria-hidden="true" title="{{_'sd-tl-favourite'}}" id="makeFavourite"></i>
+						{{/if}}
 					</div>
 				</div>
 				<hr class="orange hidden-lg-up">

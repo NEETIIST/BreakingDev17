@@ -521,6 +521,13 @@
   	"sd-null": "Use the icons to see more information",
 
   	"sd-ul": "Contestants list",
+  	"sd-tl-projectdesc": "Idea description",
+  	"sd-tl-teamname": "Name of the team",
+  	"sd-tl-projectname": "Name of the project",
+  	"sd-tl-skills": "Skills",
+  	"sd-tl-seemore": "See more info",
+  	"sd-tl-favourite": "Mark as favourite",
+  	"sd-tl-unfavourite": "Unmark as favourite",
 
   	//Reset Password
   	"rp_form": "Recover Password",

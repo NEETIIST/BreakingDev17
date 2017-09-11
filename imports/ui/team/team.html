@@ -2,64 +2,76 @@
 
 	{{#if Template.subscriptionsReady}}
 
-	<div class="row justify-content-md-center align-items-center m-0 py-3 vh-30 black team-top">
-		<div class="col-10 offset-1 col-md-3 push-md-7 my-3">
+	<div class="row justify-content-center align-items-center vh-30 mx-0 pt-3 mb-3 f-black">
+		<div class="col-12 col-md-2 text-center text-md-left">
 			{{#if equals teamData.category "Web"}}
-				<img src="/icons/Web.png" alt="{{_ 'team_webdesc'}}" class="category-pic">
+				<img src="/icons/WebAlt.png" alt="{{_ 'team_webdesc'}}" class="category-pic">
 			{{/if}}
 			{{#if equals teamData.category "Gaming"}}
-				<img src="/icons/Jogos.png" alt="{{_ 'team_gamesdesc'}}" class="category-pic">
+				<img src="/icons/JogosAlt.png" alt="{{_ 'team_gamesdesc'}}" class="category-pic">
 			{{/if}}
 		</div>
-		<div class="col-10 offset-1 col-md-7 offset-md-0 pull-md-3">
-			<p class="fw-2 fs-6 flh-2 f-white mb-0">{{teamData.team_name}}</p>
-			<p class="fw-2 fs-4 flh-2 f-white mb-0">{{teamData.project_name}}</p>
+		
+		<div class="col-6 offset-2 col-md-6 offset-md-0 text-center">
+			<p class="fw-2 fs-6 flh-2 mb-1">{{teamData.team_name}}</p>
+			<p class="fw-2 fs-3 flh-2 mb-1">"{{teamData.project_name}}"</p>
+		</div>
+		<div class="col-2 col-md-2 text-center text-md-right">
+			{{#if isSponsor}}
+				{{#if isFavourite}}
+					<i class="fa fs-5 fa-star f-yellow cp p-1" aria-hidden="true" title="{{_'sd-tl-unfavourite'}}" id="removeFavourite"></i>
+				{{else}}
+					<i class="fa fs-5 fa-star-o f-yellow cp p-1" aria-hidden="true" title="{{_'sd-tl-favourite'}}" id="makeFavourite"></i>
+				{{/if}}
+			{{/if}}
 		</div>
 	</div>
 
-	<div class="row justify-content-center align-items-start m-0 orange">
-		<div class="col-10 col-md-9 mt-3">
-			<p class="fw-4 fs-2 flh-2 f-white mb-1">{{_ "team_idea"}}</p>
-			<p class="fw-2 fs-2 flh-2 f-white">{{teamData.project}}</p>
-			<p class="fw-4 fs-2 flh-2 f-white mb-1">{{_ "team_tools"}}</p>
-			<p class="fw-2 fs-2 flh-2 f-white">{{teamData.skills}}</p>
+	<div class="row justify-content-center align-items-start m-0 f-black">
+		<div class="col-10">
+			<hr class="orange mt-0">
+			<p class="fw-4 fs-3 flh-3 mb-1">{{_ "team_idea"}}</p>
+			<p class="fw-4 fs-2 flh-2">{{teamData.project}}</p>
+			<p class="fw-4 fs-3 flh-3 mb-1">{{_ "team_tools"}}</p>
+			<p class="fw-4 fs-2 flh-2">{{teamData.skills}}</p>
 		</div>
 	</div>
 
-	<div class="row mx-0 py-3 orange justify-content-center align-items-center text-center">
-		<div class="col-md-1"></div> 	<!-- Better way to do this? -->
-		{{#each members}}
-			<div class="col-10 col-md">
-				<div class="row align-items-center mb-3">
-					<div class="col-3 col-md-12">	
-						<img src="{{userPic}}" alt="User Picture" class="user-pic-small px-0">
-					</div>
-					<div class="col-9 col-md-12 my-2 mx-0 text-center">	
-						<p class="fw-2 fs-2 flh-2 f-white mb-1">@{{this.username}}</p>
-						<!--
-						<p class="fw-2 fs-2 flh-2 f-white mb-2">
-							<i class="fa fa-terminal fa-fw f-white mr-2" aria-hidden="true"></i>Programmer
-						</p>
-						-->
-					</div>
+	<div class="row justify-content-center align-items-start m-0 f-black">
+		<div class="col-10">
+			<!-- Desktop -->
+			<div class="row m-0 hidden-md-down">
+				{{#each members}}
+				<div class="col text-center cp" id="goUser">
+					<img src="{{userPic}}" alt="User Picture" class="user-pic-small px-0">
+					<p class="fw-4 fs-3 flh-2 mt-2 mb-1">{{name this}}</p>
+					<p class="fw-4 fs-2 flh-2 my-1">@{{this.username}}</p>
+				</div>
+				{{/each}}
+			</div>
+			<!-- Mobile -->
+			{{#each members}}
+			<div class="spacer-4 hidden-lg-up"></div>
+			<div class="row hidden-lg-up my-1 justify-content-center align-items-center cp" id="goUser">
+				<div class="col-5 text-center">
+					<img src="{{userPic}}" alt="User Picture" class="user-pic-mobile px-0">
+				</div>
+				<div class="col-7 text-center">
+					<p class="fw-4 fs-3 flh-2 my-1">{{name this}}</p>
+					<p class="fw-4 fs-2 flh-2 my-1">@{{this.username}}</p>
 				</div>
 			</div>
-		{{/each}}
-		<div class="col-md-1"></div>
+			{{/each}}
+			<div class="spacer-8"></div>
+		</div>
 	</div>
 
 	{{else}}
-		<div class="row justify-content-md-center align-items-center m-0 py-3 vh-30 black team-top">
+		<div class="row justify-content-center align-items-center m-0 vh-100 py-3 f-black">
 			<div class="col">
 				<div class="text-center">
-					<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw f-white"></i>
-				</div>
-			</div>
-		</div>
-		<div class="row mx-0 py-3 orange justify-content-center align-items-center text-center vh-100">
-			<div class="col">
-				<div class="text-center">
-					<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw f-white"></i>
+					<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+					<p>{{_ "loading"}}</p>
 				</div>
 			</div>
 		</div>
