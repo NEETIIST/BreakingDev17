@@ -199,6 +199,7 @@
 	"ud_payment_true": "Pagamento Confirmado",
 	"ud_payment_pending": "Pagamento Pendente",
 	"ud_payment_false": "Confirma a tua inscrição",
+	"ud_payment_toosoon": "Ainda não é possível efetuares o teu pagamento",
 
 	"ud_team_captain": "És o capitão da equipa %s",
 	"ud_team_member": "Fazes parte da equipa %s",
@@ -530,6 +531,7 @@
   	"sd-users": "Participantes",
   	"sd-teams": "Equipas",
   	"sd-null": "Utilize o menu para ver mais informações",
+  	"sd-reader" : "Leitor",
 
   	"sd-ul": "Lista de Participantes",
   	"sd-tl-projectdesc": "Descrição da Ideia",
@@ -543,6 +545,12 @@
   	"sd-favourites": "Favoritos",
   	"sd-fav-users" : "Utilizadores Favoritos",
   	"sd-fav-teams" : "Equipas Favoritas",
+
+  	//Code Reader
+  	"reader-info": "Cada participante tem na sua credencial um código de barras que dá acesso à página pessoal com algumas informações, e é possível marcar os participantes como 'favoritos' caso se destaquem.",
+  	"reader-start": "Utilizar o leitor",
+  	"reader-permission": "(requer permissão de acesso à câmara do telemóvel)",
+  	"reader-apponly": "Esta funcionalidade apenas pode ser acedida através da nossa aplicação móvel para Android, que vai estar disponível muito em breve.",
 
   	//Reset Password
   	"rp_form": "Recuperar Password",

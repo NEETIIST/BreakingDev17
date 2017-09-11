@@ -68,6 +68,11 @@ Template.sponsor_dashboard.events({
 		let last = Session.get("dash_last");
 		BlazeLayout.render('base', {main:"sponsor_dashboard",sd_small:last});
 	},
+	"click #sd-reader": function(){
+		Session.set("dash_last","code_reader");
+		let last = Session.get("dash_last");
+		BlazeLayout.render('base', {main:"sponsor_dashboard",sd_small:last});
+	},
 });
 
 Template.sd_profile.onRendered(function() {

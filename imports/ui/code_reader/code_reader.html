@@ -1,4 +1,20 @@
 <template name="code_reader">
-	<p>Reader</p>
-	<button>Scan</button>
+
+	<div class="row justify-content-center align-items-start align-items-md-center m-0 vh-70">
+		<div class="col-10 text-center">
+			<div class="spacer-8 hidden-lg-up"></div>
+			<p class="fw-4 fs-3 flh-2 mb-1 text-left text-md-center">{{_ "reader-info"}}</p>
+			<hr class="orange">
+			{{#if isApp}}
+				<div class="cp" id="startReader">
+					<i class="fa fa-search f-orange fa-3x mb-3" aria-hidden="true" ></i>
+					<p class="fw-4 fs-3 flh-2 mb-1">{{_ "reader-start"}}</p>
+					<p class="fw-2 fs-2 flh-2 mb-1">{{_ "reader-permission"}}</p>
+				</div>
+			{{else}}
+				<p class="fw-4 fs-3 flh-2 mb-1 text-left text-md-center">{{_ "reader-apponly"}}</p>
+			{{/if}}
+		</div>
+	</div>
+	
 </template>

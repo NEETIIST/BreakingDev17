@@ -199,6 +199,7 @@
 	"ud_payment_true": "Payment Confirmed",
 	"ud_payment_pending": "Payment Pending",
 	"ud_payment_false": "Confirm your registration",
+	"ud_payment_toosoon": "You can't confirm your payment yet.",
 
 	"ud_team_captain": "You are the captain of team %s",
 	"ud_team_member": "You are a member of team %s",
@@ -521,6 +522,7 @@
   	"sd-users": "Contestants",
   	"sd-teams": "Teams",
   	"sd-null": "Use the icons to see more information",
+  	"sd-reader" : "Reader",
 
   	"sd-ul": "Contestants list",
   	"sd-tl-projectdesc": "Idea description",
@@ -540,6 +542,12 @@
   	"rp_password": "New Password",
   	"rp_password_again": "New Password (again)",
   	"rp_reset": "Confirm",
+
+  	//Code Reader
+  	"reader-info": "Each contestant has a barcode in it's crendential, you can use this reader to be redirected to his or hers personal page, and if that's the case, mark him as a 'favourite'.",
+  	"reader-start": "Start the reader",
+  	"reader-permission": "(requires permission to access the phone camera)",
+  	"reader-apponly": "This reader is only accessible through our Android Mobile App, that will be released very soon.",
 
   	//404
   	"404-1": "It seem you took a wrong turn somewhere. We're sorry for that.",

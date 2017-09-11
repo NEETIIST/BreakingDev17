@@ -8,7 +8,14 @@
 		</div>
 		<div class="col-4 col-md-4 text-left text-md-center">
 			<p class="fw-2 fs-6 flh-2 mb-0">{{userData.name}}</p>
-			<p class="fw-2 fs-3 flh-2 ">@{{username}}</p>
+			<p class="fw-2 fs-3 flh-2 mb-1">@{{username}}</p>
+			{{#if isSponsor}}
+				{{#if isFavourite}}
+					<i class="fa fs-4 fa-star f-yellow cp p-1" aria-hidden="true" title="{{_'sd-tl-unfavourite'}}" id="removeFavourite"></i>
+				{{else}}
+					<i class="fa fs-4 fa-star-o f-yellow cp p-1" aria-hidden="true" title="{{_'sd-tl-favourite'}}" id="makeFavourite"></i>
+				{{/if}}
+			{{/if}}
 		</div>
 		<div class="col-4 col-md-3 text-right">
 			{{#if inTeam}}

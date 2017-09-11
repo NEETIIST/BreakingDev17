@@ -17,7 +17,7 @@ Template.payment.helpers({
   	},
   	price: function(){
   		var today = new Date();
-		var dateEnd = new Date(2017,07,16);
+		var dateEnd = new Date(2017,09,14);
 		if( Date.parse(today) > Date.parse(dateEnd)){
    			return "10";
 		}

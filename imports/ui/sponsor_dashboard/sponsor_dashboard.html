@@ -48,6 +48,14 @@
 								<span class="fw-3 fs-2 flh-2">{{_ "sd-favourites"}}</span>
 							</div>
 						</div>
+						<div class="row align-items-center text-left hvr-items cp {{active 'sd_reader'}}" id="sd-reader">
+							<div class="col-3">
+								<i class="fa fs-4 py-2 fa-barcode fa-fw" aria-hidden="true"></i>
+							</div>
+							<div class="col-9">
+								<span class="fw-3 fs-2 flh-2">{{_ "sd-reader"}}</span>
+							</div>
+						</div>
 						<div class="row align-items-center text-left hvr-items cp" id="logout">
 							<div class="col-3">
 								<i class="fa fs-4 py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
@@ -86,9 +94,13 @@
 							<div class="col px-1 {{active 'sd_favourites'}}" id="sd-favourites">
 								<i class="fa fs-5 py-2 fa-star fa-fw" aria-hidden="true"></i>
 							</div>
+							<div class="col px-1 {{active 'sd_reader'}}" id="sd-reader">
+								<i class="fa fs-5 py-2 fa-barcode fa-fw" aria-hidden="true"></i>
+							</div>
 							<div class="col px-1" id="logout">
 								<i class="fa fs-5 py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
 							</div>
+							<div class="col-1 px-1"></div>
 						</div>
 						<hr class="orange">
 					</div>

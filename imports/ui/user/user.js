@@ -1,6 +1,7 @@
 import './user.html';
 import { Devs } from '/imports/api/devs/devs.js';
 import { Teams } from '/imports/api/teams/teams.js';
+import { Visitors } from '/imports/api/visitors/visitors.js';
 
 Template.user.onRendered(function() {
 	var self = this;
@@ -10,6 +11,8 @@ Template.user.onRendered(function() {
 		self.subscribe('devs.single.alt', u);
 		self.subscribe('singleTeamName.user',u);
 		self.subscribe('profile.image.user',u);
+		if (Roles.userIsInRole( Meteor.userId(), 'sponsor') )
+			self.subscribe('visitors.logged');
 	});
 });
 
@@ -36,6 +39,21 @@ Template.user.helpers({
 	isVolunteer: function(){
 		return Devs.findOne().volunteer;
 	},
+	isSponsor: function () {
+		if ( Roles.userIsInRole( Meteor.userId(), 'sponsor'))
+			return true;
+		else
+			return false;
+	},
+	isFavourite: function () {
+		let u = FlowRouter.getParam('username').toLowerCase() ;
+		let t = Meteor.users.findOne({"username": u })._id ;
+		let f = Visitors.findOne().favourite;
+		if ( f.indexOf(t) != -1 )
+			return true;
+		else
+			return false;
+	},
 })
 
 Template.user.events({
@@ -51,5 +69,15 @@ Template.user.events({
 	},
 	"click #goTeam":function(){
 		FlowRouter.go("/t/"+Teams.findOne()._id);	
+	},
+	"click #makeFavourite":function(){
+		let u = FlowRouter.getParam('username').toLowerCase() ;
+		let t = Meteor.users.findOne({"username": u })._id ;
+		Meteor.call('addToFavourite',t);
+	},
+	"click #removeFavourite":function(){
+		let u = FlowRouter.getParam('username').toLowerCase() ;
+		let t = Meteor.users.findOne({"username": u })._id ;
+		Meteor.call('removeFromFavourite',t);
 	},
 });
