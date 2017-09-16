@@ -17,12 +17,14 @@ Template.payment.helpers({
   	},
   	price: function(){
   		var today = new Date();
-		var dateEnd = new Date(2017,09,14);
-		if( Date.parse(today) > Date.parse(dateEnd)){
+		var dateEnd = new Date(2017,09,13);
+		/*if( Date.parse(today) >= Date.parse(dateEnd)){
    			return "10";
 		}
 		else
 			return "5";
+		*/
+		return "10";
   	},
   	readyPayment: function(){
   		return Teams.findOne({}).validated ;

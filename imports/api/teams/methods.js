@@ -70,6 +70,8 @@ Meteor.methods({
 				Teams.update({"_id":team_id},{$set:{"validated":false}});
 			if ( t.pending == undefined )
 				Teams.update({"_id":team_id},{$set:{"pending":false}});
+			if ( t.members == undefined )
+				Teams.update({"_id":team_id},{$set:{"members":[]}});
 	    }
 	}
 });
