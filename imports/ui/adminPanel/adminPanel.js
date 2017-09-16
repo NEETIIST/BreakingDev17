@@ -8,6 +8,8 @@ import { Volunteers } from '/imports/api/volunteers/volunteers.js';
 import { Shifts } from '/imports/api/shifts/shifts.js';
 import { Sponsors } from '/imports/api/sponsors/sponsors.js';
 import { Visitors } from '/imports/api/visitors/visitors.js';
+import { Wallet } from '/imports/api/wallet/wallet.js';
+import { Products } from '/imports/api/products/products.js';
 import '/imports/api/images/images.js';
 
 Template.adminPanel.onRendered(function() {
@@ -26,6 +28,8 @@ Template.adminPanel.onRendered(function() {
 			self.subscribe("shifts.all");
 			self.subscribe("sponsors.all");
 			self.subscribe("visitors.all");
+			self.subscribe("wallet.all");
+			self.subscribe("products.all");
 			Session.set("focus", null);
 			Session.set("codesToDisplay", true);
 		}
@@ -63,6 +67,9 @@ Template.adminPanel.events({
 	},
 	"click #ap_sponsors": function(){
 		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_sponsors"}); 
+	},
+	"click #ap_products": function(){
+		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_products"}); 
 	},
 });
 
@@ -474,6 +481,25 @@ Template.ap_sponsor_focus.helpers({
 	},
 });
 
+Template.ap_products.helpers({
+	Products: function(){
+		return Products;
+	},
+	product: function(){
+		return Products.find();
+	},
+	productPic: function(){
+		let pic = Images.findOne({"_id":this.picture});
+		if( pic === undefined )
+			return "/profile.png";
+		else
+			return pic.link();
+	},
+});
+
+Template.ap_products.events({
+	
+});
 
 AutoForm.addHooks(['addAlert'],{
     onSuccess: function(formType, result) {
@@ -490,6 +516,12 @@ AutoForm.addHooks(['addShift'],{
 AutoForm.addHooks(['addSponsor'],{
     onSuccess: function(formType, result) {
         Meteor.call('setUpSponsor',result);
+    }
+});
+
+AutoForm.addHooks(['addProduct'],{
+    onSuccess: function(formType, result) {
+        //Meteor.call('setUpProduct',result);
     }
 });
 

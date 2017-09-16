@@ -6,7 +6,6 @@
 			<div class="row justify-content-center align-items-center f-black m-0 py-3 white vh-100 hidden-md-down" id="nav-mid">
 				<div class="col-10 col-md-2 align-self-start">
 					<div class="spacer-8"></div>
-					<div class="spacer-8"></div>
 					<div class="row justify-content-center align-items-center">
 						<div class="col-12 col-md-12">
 							<div class="row align-items-center text-left hvr-items cp" id="ap_stats">
@@ -73,6 +72,14 @@
 									<span class="fw-3 fs-2 flh-2">{{_ "ap-sponsors"}}</span>
 								</div>
 							</div>
+							<div class="row align-items-center text-left hvr-items cp" id="ap_products">
+								<div class="col-3">
+									<i class="fa fs-4 py-2 fa-shopping-cart fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col-9">
+									<span class="fw-3 fs-2 flh-2">{{_ "ap-products"}}</span>
+								</div>
+							</div>
 							<div class="row align-items-center text-left hvr-items cp" id="logout">
 								<div class="col-3">
 									<i class="fa fs-4 py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
@@ -119,6 +126,9 @@
 								</div>
 								<div class="col-4 px-1" id="ap_sponsors">
 									<i class="fa fs-5 py-2 fa-institution fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col-4 px-1" id="ap_products">
+									<i class="fa fs-5 py-2 fa-shopping-cart fa-fw" aria-hidden="true"></i>
 								</div>
 								<div class="col-4 px-1" id="logout">
 									<i class="fa fs-5 py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
@@ -778,4 +788,56 @@
 			</div>
 		</div>
 	{{/each}}
+</template>
+
+<template name="ap_products">
+	<div class="row justify-content-center align-items-center m-0">
+		<div class="col-12">
+			<p class="fw-3 fs-2 mb-1 pl-3">{{_ "ap-product-add"}}</p>
+			{{#autoForm collection=Products id="addProduct" type="insert"}}
+				<div class="row mx-0">
+					<div class="col-12 my-1">
+						{{> afFieldInput name='name' placeholder="schemaLabel" autocomplete="off" class="fs-2 fw-2 small-input"}}
+					</div>
+					<div class="col-12 my-1">
+						{{> afFieldInput name='desc' placeholder="schemaLabel" autocomplete="off" class="fs-2 fw-2 small-input"}}
+					</div>
+					<div class="col-12 col-md-5 my-1">
+						{{> afFieldInput name='cost' placeholder="schemaLabel" autocomplete="off" class="fs-2 fw-2 small-input"}}
+					</div>
+					<div class="col-12 col-md-5 my-1 my-md-0">
+						{{> afFieldInput name='picture' placeholder="schemaLabel"}}
+					</div>
+					<div class="col-1 text-right text-md-center my-1">
+						<button type="submit" class="no-button"><i class="fa fa-check f-green cp" aria-hidden="true" title="{{_ 'ap-product-add'}}"></i></button>
+					</div>
+				</div>
+			{{/autoForm}}
+		</div>
+	</div>
+	<hr class="orange">
+	<div class="row justify-content-center align-items-center m-0">
+		{{#each product}}
+			<div class="col-12 col-md-6">
+				<div class="row justify-content-center align-items-center mx-0 my-1 hvr-blocks">
+					<div class="col-3 px-0">
+						<img src="{{productPic}}" class="user-pic-mobile">
+					</div>
+					<div class="col-8 px-2">
+						<p class="fw-4 fs-2 mb-0">{{name}}</p>
+						<p class="fw-2 fs-2 mb-0 flh-2">{{desc}}</p>
+						<p class="fw-2 fs-2 mb-0">{{cost}}</p>
+					</div>
+					<div class="col-1 px-0 text-center">
+						<i class="fa fa-search fa-fw cp focus" aria-hidden="true" title="{{_ ''}}"></i>
+						<i class="fa fa-trash f-red fa-fw cp " aria-hidden="true" title="{{_ ''}}"></i>
+					</div>
+				</div>
+			</div>
+		{{/each}}
+	</div>
+</template>
+
+<template name="ap_products_focus">
+	
 </template>

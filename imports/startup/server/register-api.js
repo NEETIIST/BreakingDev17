@@ -32,3 +32,9 @@ import '../../api/sponsors/server/publications.js';
 
 import '../../api/visitors/methods.js';
 import '../../api/visitors/server/publications.js';
+
+import '../../api/wallet/methods.js';
+import '../../api/wallet/server/publications.js';
+
+import '../../api/products/methods.js';
+import '../../api/products/server/publications.js';

@@ -32,3 +32,9 @@ window.Shifts = Shifts ;
 
 import { Sponsors } from '/imports/api/sponsors/sponsors.js';
 window.Sponsors = Sponsors ;
+
+import { Wallet } from '/imports/api/wallet/wallter.js';
+window.Wallet = Wallet ;
+
+import { Products } from '/imports/api/products/products.js';
+window.Products = Products ;
