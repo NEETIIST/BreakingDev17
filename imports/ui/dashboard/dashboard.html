@@ -8,18 +8,16 @@
 				<i class="fa fa-id-card-o mx-3 fa-fw" aria-hidden="true"></i>
 				<span>{{loggedUser}}</span>
 			</div>
-			<!--
-			<div class="col">
-				<i class="fa fa-code-fork mx-3 fa-fw" aria-hidden="true"></i>
-				<span>12345</span>
-			</div>
-			-->
 			{{#if inTeam}}
 				<div class="col cp" id="edit_team">
 					<i class="fa fa-users mx-3 fa-fw" aria-hidden="true"></i>
 					<span>{{teamName}}</span>
 				</div>
 			{{/if}}
+			<div class="col cp" id="shop">
+				<i class="fa fa-money mx-3 fa-fw" aria-hidden="true"></i>
+				<span>{{coins}}</span>
+			</div>
 			<div class="col-1 col-md-1"></div>
 		</div>
 
@@ -127,6 +125,14 @@
 								<span class="fw-3 fs-2 flh-2">{{_ "ud_tagus"}}</span>
 							</div>
 						</div>
+						<div class="row align-items-center text-left hvr-items cp" id="shop">
+							<div class="col-3">
+								<i class="fa fs-4 py-2 fa-shopping-cart fa-fw" aria-hidden="true"></i>
+							</div>
+							<div class="col-9">
+								<span class="fw-3 fs-2 flh-2">{{_ "ud_shop"}}</span>
+							</div>
+						</div>
 						<div class="row align-items-center text-left hvr-items cp" id="logout">
 							<div class="col-3">
 								<i class="fa fs-4 py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
@@ -210,6 +216,16 @@
 							</div>
 							<div class="col-9 px-0">
 								<span class="fw-3 fs-3 flh-2">{{_ "ud_tagus"}}</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="row justify-content-center align-items-center text-center" id="shop">
+							<div class="col-3 px-0">
+								<i class="fa fs-4 py-2 fa-shopping-cart fa-fw" aria-hidden="true"></i>
+							</div>
+							<div class="col-9 px-0">
+								<span class="fw-3 fs-3 flh-2">{{_ "ud_shop"}}</span>
 							</div>
 						</div>
 					</div>
@@ -433,6 +449,22 @@
 		<div class="col-12">
 			<p class="fw-3 fs-2 flh-2">{{_ "ud_venue"}}</p>
 			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2772.607678616116!2d-9.30491580292081!3d38.737391739215326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1ecef46471ad41%3A0x928a2fedee483006!2sInstituto+Superior+T%C3%A9cnico+-+Taguspark!5e0!3m2!1sen!2spt!4v1501037455713" width="600" height="200" frameborder="0" style="border:0"></iframe>
+		</div>
+	</div>
+</template>
+
+<template name="dash_shop">
+	<div class="row align-items-center justify-content-center m-0">
+		<div class="col-12 text-center">
+			<p class="fw-4 fs-2 flh-2">{{_ "ud_shop"}}</p>
+		</div>
+		<div class="col-4 hvr-items cp text-center" id="dash_shop_">
+			<i class="fa fs-6 my-3 fa-cart-plus fa-fw" aria-hidden="true"></i>
+			<p class="fw-3 fs-2 flh-2">{{_ "ud_shop"}}</p>
+		</div>
+		<div class="col-4 hvr-items cp text-center" id="dash_shop_">
+			<i class="fa fs-6 my-3 fa-shopping-bag fa-fw" aria-hidden="true"></i>
+			<p class="fw-3 fs-2 flh-2">{{_ "ud_shop"}}</p>
 		</div>
 	</div>
 </template>

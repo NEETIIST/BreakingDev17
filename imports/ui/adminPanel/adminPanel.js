@@ -71,6 +71,9 @@ Template.adminPanel.events({
 	"click #ap_products": function(){
 		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_products"}); 
 	},
+	"click #ap_orders": function(){
+		BlazeLayout.render('base', {main:"adminPanel",dash_small:"ap_products_orders"}); 
+	},
 });
 
 Template.ap_stats.helpers({
@@ -498,7 +501,33 @@ Template.ap_products.helpers({
 });
 
 Template.ap_products.events({
-	
+	"click #removeProduct": function(){
+		let c = confirm(TAPi18n.__(""));
+		if ( c ) 
+			Meteor.call("deleteProduct",this._id);
+	},
+});
+
+Template.ap_products_orders.helpers({
+	wallet: function(){
+		return Wallet.find({"orders":{ $exists: true, $not: {$size: 0}}});
+	},
+	username: function () {
+		return Meteor.users.findOne({"_id":this.user}).username;
+	},
+	productName: function() {
+		let p = Products.findOne({"_id":String(this)});
+		return p.name ;
+	},
+	userOrder: function(arg) {
+		return arg.user ;
+	}
+});
+
+Template.ap_products_orders.events({
+	"click .serveOrder": function(e){
+		Meteor.call('serveOrder',String(this),e.target.id);
+	},
 });
 
 AutoForm.addHooks(['addAlert'],{
@@ -530,3 +559,4 @@ function distinct(collection, field) {
     sort: {[field]: 1}, fields: {[field]: 1}
   }).map(x => x[field]), true);
 }
+

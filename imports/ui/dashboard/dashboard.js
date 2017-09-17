@@ -5,6 +5,7 @@ import { Teams } from '/imports/api/teams/teams.js';
 import { Alerts } from '/imports/api/alerts/alerts.js';
 import { Payments } from '/imports/api/payments/payments.js';
 import { Volunteers } from '/imports/api/volunteers/volunteers.js';
+import { Wallet } from '/imports/api/wallet/wallet.js';
 
 Template.dashboard.onRendered(function() {
 
@@ -30,6 +31,7 @@ Template.dashboard.onRendered(function() {
 			self.subscribe('alerts.visible');
 			self.subscribe('user.payments', Meteor.userId());
 			self.subscribe('volunteer.logged');
+			self.subscribe('wallet.logged');
 		}
 	});
 });
@@ -62,6 +64,11 @@ Template.dashboard.events({
 	},
 	"click #venue": function(){
 		Session.set("dash_last","dash_venue");
+		let last = Session.get("dash_last");
+		BlazeLayout.render('base', {main:"dashboard",dash_small:last}); 
+	},
+	"click #shop": function(){
+		Session.set("dash_last","dash_shop");
 		let last = Session.get("dash_last");
 		BlazeLayout.render('base', {main:"dashboard",dash_small:last}); 
 	},
@@ -105,6 +112,13 @@ Template.dashboard.helpers({
 		if (this.url !== undefined)
 			return "cp";
 	},
+	coins: function() {
+		let w = Wallet.findOne({"user":Meteor.userId()});
+		if ( w === undefined )
+			return "100";
+		else
+			return w.coins ;
+	}
 });
 
 Template.dash_profile.helpers({

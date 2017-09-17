@@ -5,7 +5,6 @@
 
 			<div class="row justify-content-center align-items-center f-black m-0 py-3 white vh-100 hidden-md-down" id="nav-mid">
 				<div class="col-10 col-md-2 align-self-start">
-					<div class="spacer-8"></div>
 					<div class="row justify-content-center align-items-center">
 						<div class="col-12 col-md-12">
 							<div class="row align-items-center text-left hvr-items cp" id="ap_stats">
@@ -80,6 +79,14 @@
 									<span class="fw-3 fs-2 flh-2">{{_ "ap-products"}}</span>
 								</div>
 							</div>
+							<div class="row align-items-center text-left hvr-items cp" id="ap_orders">
+								<div class="col-3">
+									<i class="fa fs-4 py-2 fa-shopping-bag fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col-9">
+									<span class="fw-3 fs-2 flh-2">{{_ "ap-orders"}}</span>
+								</div>
+							</div>
 							<div class="row align-items-center text-left hvr-items cp" id="logout">
 								<div class="col-3">
 									<i class="fa fs-4 py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
@@ -129,6 +136,9 @@
 								</div>
 								<div class="col-4 px-1" id="ap_products">
 									<i class="fa fs-5 py-2 fa-shopping-cart fa-fw" aria-hidden="true"></i>
+								</div>
+								<div class="col-4 px-1" id="ap_products">
+									<i class="fa fs-5 py-2 fa-shopping-bag fa-fw" aria-hidden="true"></i>
 								</div>
 								<div class="col-4 px-1" id="logout">
 									<i class="fa fs-5 py-2 fa-sign-out fa-fw" aria-hidden="true"></i>
@@ -829,8 +839,7 @@
 						<p class="fw-2 fs-2 mb-0">{{cost}}</p>
 					</div>
 					<div class="col-1 px-0 text-center">
-						<i class="fa fa-search fa-fw cp focus" aria-hidden="true" title="{{_ ''}}"></i>
-						<i class="fa fa-trash f-red fa-fw cp " aria-hidden="true" title="{{_ ''}}"></i>
+						<i class="fa fa-trash f-red fa-fw cp" id="removeProduct" aria-hidden="true" title="{{_ 'ap-product-remove'}}"></i>
 					</div>
 				</div>
 			</div>
@@ -838,6 +847,30 @@
 	</div>
 </template>
 
-<template name="ap_products_focus">
-	
+<template name="ap_products_orders">
+	<div class="table-responsive">
+		<table class="table table-hover table-sm fw-3 fs-2">
+			<thead>
+				<tr>
+					<th>User</th>
+					<th>Product</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each wallet}}
+					<tr>
+						<td><p class="fw-4 fs-3 mb-1">{{username}}</p></td>
+						<td>
+							{{#each orders}}
+								<p class="fw-4 fs-3 mb-1">
+									{{productName}}
+									<i class="fa fa-check f-green fa-fw cp serveOrder" id="{{userOrder ..}}" aria-hidden="true" title="{{_ 'ap-product-serve'}}"></i>
+								</p>
+							{{/each}}
+						</td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
 </template>
