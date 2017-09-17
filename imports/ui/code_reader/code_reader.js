@@ -14,7 +14,7 @@ if (Meteor.isCordova) {
 					"Format: " + result.format + "\n" +
 					"Cancelled: " + result.cancelled);
 					*/
-					FlowRouter.go("/u/"+result);
+					FlowRouter.go("/u/"+result.text);
 				}, 
 				function (error) {
 					alert("Scanning failed: " + error);
