@@ -34,6 +34,7 @@ import '../../ui/sponsor_access/sponsor_access.js'
 import '../../ui/sponsor_dashboard/sponsor_dashboard.js'
 import '../../ui/sponsor/sponsor.js'
 import '../../ui/code_reader/code_reader.js'
+import '../../ui/shop/shop.js'
 
 
 // Set up all routes in the app
@@ -314,6 +315,13 @@ FlowRouter.route('/reader',{
   name: 'code_reader',
   action() {
     BlazeLayout.render('base', {main: 'code_reader'});
+  }
+});
+
+FlowRouter.route('/shop', {
+  name: 'shop',
+  action() {
+    BlazeLayout.render('base', {main: 'shop'});
   }
 });
 
