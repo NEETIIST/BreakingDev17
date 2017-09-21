@@ -272,7 +272,7 @@
 
 	"ud_payment_1": "Para efetuares o pagamento, efetua uma transferência no valor de %s euros, para o seguinte NIB:",
 	"ud_payment_nib": "PT50 0036 0106 99100060511 42 - NUC EST ENG TELECOMUNICAÇÕES IST",
-	"ud_payment_2": "Submete uma fotografia do teu comprovativo de transferência abaixo, e nós vamos confirmar o pagamento. Assim que possível, deverás receber um email da nossa parte, e ver um aviso no teu perfil.",
+	"ud_payment_2": "Submete uma fotografia do teu comprovativo de transferência abaixo (.png ou .jpg), e nós vamos confirmar o pagamento. Assim que possível, deverás receber um email da nossa parte, e ver um aviso no teu perfil.",
 	"ud_payment_3": "Caso tenhas alguma dúvida, envia-nos um email para breakingdev@neeti.tecnico.ulisboa.pt .",
 
 	//User Profile

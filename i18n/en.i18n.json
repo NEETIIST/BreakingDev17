@@ -268,7 +268,7 @@
 
 	"ud_payment_1": "To make the payment, make a transfer of %s euros, to the following account:",
 	"ud_payment_nib": "PT50 0036 0106 99100060511 42 - NUC EST ENG TELECOMUNICAÇÕES IST",
-	"ud_payment_2": "Submit a picture of your transfer receipt and we will confirm the transfer. As soon as possible, you should receive an email confirming the payment, and a warning on your profile.",
+	"ud_payment_2": "Submit a picture of your transfer receipt (.png or .jpg) and we will confirm the transfer. As soon as possible, you should receive an email confirming the payment, and a warning on your profile.",
 	"ud_payment_3": "If you have any question, send us an email for breakingdev@neeti.tecnico.ulisboa.pt .",
 
 	//User Profile

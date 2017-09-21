@@ -324,6 +324,9 @@
 						<button type="button" class="btn btn-warning fw-3 fs-2 f-inherit my-1" id="make-admin">{{_ "ap-uf-admin"}}</button>
 					{{/if}}
 				</div>
+				{{#unless validated}}
+					<button type="button" class="btn btn-success fw-3 fs-2 f-inherit my-1" id="email">Verificar email</button>
+				{{/unless}}
 				<div class="spacer-8"></div>
 			</div>
 		</div>
