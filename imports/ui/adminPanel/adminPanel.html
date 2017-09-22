@@ -344,6 +344,9 @@
 						<button type="button" class="btn btn-warning fw-3 fs-2 f-inherit my-1" id="make-admin">{{_ "ap-uf-admin"}}</button>
 					{{/if}}
 				</div>
+				{{#unless validated}}
+					<button type="button" class="btn btn-success fw-3 fs-2 f-inherit my-1" id="email">Verificar email</button>
+				{{/unless}}
 				<div class="col my-1 px-0">
 					<button type="button" class="btn btn-success fw-3 fs-2 f-inherit my-1" id="addCoins">{{_ "shop-addCoins"}}</button>
 					<button type="button" class="btn btn-danger fw-3 fs-2 f-inherit my-1" id="subCoins">{{_ "shop-subCoins"}}</button>

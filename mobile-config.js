@@ -4,6 +4,8 @@ App.info({
   id: 'pt.utl.ist.neeti.breakingdev',
   name: 'BreakingDev',
   description: 'BreakingDev official app',
+  version: '0.2.3',
+  buildNumber: '7',
   author: 'NEETI-IST',
   email: 'geral@neeti.tecnico.ulisboa.pt',
   website: 'http://neeti.ist.utl.pt'
@@ -35,5 +37,7 @@ App.launchScreens({
 });
 
 // Set PhoneGap/Cordova preferences
+App.setPreference('AutoHideSplashScreen' ,'true');
+App.setPreference('SplashShowOnlyFirstTime', 'false');
 App.setPreference('BackgroundColor', '0xff0000ff');
 App.setPreference('HideKeyboardFormAccessoryBar', true);

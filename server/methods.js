@@ -68,6 +68,10 @@ Meteor.methods({
     return text.toUpperCase();
   },
 
+  forceVerifyEmail: function(id) {
+    Meteor.users.update({"_id":id},{$set:{"emails.0.verified":true}});
+  }
+
 });
 
 

@@ -181,6 +181,9 @@ Template.ap_user_focus.events({
 		let v = Volunteers.findOne({"user":this.user});
 		Volunteers.update({"_id":v._id},{$set:{"status":"Rejected"}})
 	},
+	"click #email": function(){
+		Meteor.call('forceVerifyEmail',this.user);
+	},
 	"click #addCoins": function(){
 		var ammount = prompt("Please enter ammount", 100);
 		let u = Meteor.users.findOne({"_id":this.user});
