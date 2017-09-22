@@ -549,6 +549,22 @@
   	"reader-permission": "(requires permission to access the phone camera)",
   	"reader-apponly": "This reader is only accessible through our Android Mobile App, that will be released very soon.",
 
+  	//Shop
+  	"ud_shop": "Shop",
+  	"ud_shop_buy": "Buy Products",
+  	"ud_shop_orders": "See Orders",
+  	"shop": "Shop",
+  	"shop-buy": "Buy",
+  	"shop-long": "Use your devs on our special products",
+  	"shop-seeorders": "See orders",
+  	"shop-seeproducts": "See Products",
+  	"shop-confirm": "Order confirmed, go the helpdesk to claim your product",
+  	"ap-product-add": "Add Product",
+  	"ap-products":"Products",
+  	"ap-orders":"Orders",
+  	"ap-product-remove":"Delete Product",
+  	"ap-product-serve": "Serve Order",
+
   	//404
   	"404-1": "It seem you took a wrong turn somewhere. We're sorry for that.",
   	"404-2": "Click below to go back to the homepage",

@@ -181,6 +181,16 @@ Template.ap_user_focus.events({
 		let v = Volunteers.findOne({"user":this.user});
 		Volunteers.update({"_id":v._id},{$set:{"status":"Rejected"}})
 	},
+	"click #addCoins": function(){
+		var ammount = prompt("Please enter ammount", 100);
+		let u = Meteor.users.findOne({"_id":this.user});
+		Meteor.call('addCoins',u.username,parseInt(ammount));
+	},
+	"click #subCoins": function(){
+		var ammount = prompt("Please enter ammount", 100);
+		let u = Meteor.users.findOne({"_id":this.user});
+		Meteor.call('subCoins',u.username,parseInt(ammount));
+	},
 });
 
 Template.ap_team_list.helpers({

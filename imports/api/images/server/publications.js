@@ -4,6 +4,7 @@ import { Devs } from '../../devs/devs.js';
 import { Teams } from '../../teams/teams.js';
 import { Visitors } from '../../visitors/visitors.js';
 import { Sponsors } from '../../sponsors/sponsors.js';
+import { Products } from '../../products/products.js';
 
 Meteor.publish('profile.image', function(id){
 	let d = Devs.findOne({"user":id});
@@ -80,6 +81,18 @@ Meteor.publish('alldevs.image', function(){
 		});
 		return Images.find({'_id':{ $in : list }}).cursor;
 		//return Images.find({}).cursor;
+	}
+});
+
+Meteor.publish('products.images', function(){
+	let p = Products.find({"picture":{"$exists":true}});
+	if ( p !== undefined )
+	{
+		let list = [];
+		p.forEach(function(m){
+			list.push(m.picture);
+		});
+		return Images.find({'_id':{ $in : list }}).cursor;
 	}
 });
 

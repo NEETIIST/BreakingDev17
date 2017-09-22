@@ -19,7 +19,7 @@ Meteor.methods({
 		{
 			let u = Meteor.users.findOne({"username":username});
 			let w = Wallet.findOne({"user":u._id});
-			let c = w.coins += ammount ;
+			let c = w.coins + ammount ;
 			Wallet.update({"user":u._id},{$set:{"coins":c}});
 		}
 	},
@@ -28,7 +28,7 @@ Meteor.methods({
 		{
 			let u = Meteor.users.findOne({"username":username});
 			let w = Wallet.findOne({"user":u._id});
-			let c = w.coins -= ammount ;
+			let c = w.coins - ammount ;
 			if ( c<0 )
 				c=0;
 			Wallet.update({"user":u._id},{$set:{"coins":c}});

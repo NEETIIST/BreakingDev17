@@ -1,3 +1,78 @@
 <template name="shop">
-	<p>Shop</p>
+	<div class="row justify-content-center align-items-center m-0 f-black">
+		<div class="col-10 m-0"><div class="spacer-4"></div></div>
+		<div class="col-10 col-md-6 text-center">
+			<p class="fw-2 fs-6 flh-2 mb-1">{{_ "shop"}}</p>
+			<p class="fw-2 fs-3 flh-2 mb-0">{{_ "shop-long"}}</p>
+		</div>
+		<div class="col-10 col-md-4 text-center">
+			<p class="fw-2 fs-4 flh-2 mb-1">{{coins}} Devs</p>
+			{{#if seeOrders}}
+				<p class="fw-2 fs-3 flh-2 mb-0 cp" id="seeProducts">
+					{{_ "shop-seeproducts"}}
+					<i class="fa fs-3 fa-search p-1 " aria-hidden="true" title="{{_'sd'}}"></i>
+				</p>
+			{{else}}
+				<p class="fw-2 fs-3 flh-2 mb-0 cp" id="seeOrders">
+					{{_ "shop-seeorders"}}
+					<i class="fa fs-3 fa-search p-1 " aria-hidden="true" title="{{_'sd'}}"></i>
+				</p>
+			{{/if}}
+		</div>
+		<div class="col-10 m-0">
+			<hr class="orange">
+		</div>
+	</div>
+	<div class="row justify-content-center align-items-center m-0 f-black">
+		{{#if seeOrders}}
+			<div class="col-10">
+				<div class="table-responsive">
+					<table class="table table-hover table-sm fw-3 fs-2">
+						<thead>
+							<tr>
+								<th>Product</th>
+								<th>Quantidade</th>
+							</tr>
+						</thead>
+						<tbody>
+							{{#with wallet}}
+								{{#each entry}}
+									<tr>
+										<td>
+											<p class="fw-4 fs-3 mb-1">
+												{{productName}}
+											</p>
+										</td>
+										<td>
+											<p class="fw-4 fs-3 mb-1">
+												{{quant}}
+											</p>
+										</td>
+									</tr>
+								{{/each}}
+							{{/with}}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		{{else}}
+			{{#each products}}
+				<div class="col-10 col-md-5 hvr-blocks">	
+					<div class="row m-0 py-2 justify-content-center align-items-center">
+						<div class="col-4 text-center">
+							<img src="{{productPic}}" alt="Product Picture" class="user-pic-mobile">
+						</div>
+						<div class="col-6 text-left px-1">
+							<p class="fw-4 fs-2 flh-2 mb-2">{{name}}</p>
+							<p class="fw-2 fs-2 flh-2 mb-2">{{desc}}</p>
+						</div>
+						<div class="col-2 text-center px-1">
+							<p class="fw-4 fs-2 flh-2 mb-2">{{cost}}</p>
+							<i class="fa fs-4 fa-shopping-cart cp p-1" aria-hidden="true" title="{{_'shop-buy'}}" id="placeOrder"></i>
+						</div>
+					</div>
+				</div>
+			{{/each}}
+		{{/if}}
+	</div>
 </template>

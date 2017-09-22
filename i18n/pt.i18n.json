@@ -566,6 +566,24 @@
   	"2k16_short": "BreakingDev 2016",
   	"2k16_intro": "Os melhores momentos do primeiro hackathon universitário de Lisboa.",
 
+  	//Shop
+  	"ud_shop": "Loja",
+  	"ud_shop_buy": "Comprar Produtos",
+  	"ud_shop_orders": "Ver Encomendas",
+  	"shop": "Loja",
+  	"shop-buy": "Comprar",
+  	"shop-long": "Usa os teus Devs em alguns dos nossos produtos especiais",
+  	"shop-seeorders": "Ver Encomendas",
+  	"shop-seeproducts": "Ver Produtos",
+  	"shop-confirm": "Encomenda confirmada, vai ao Helpdesk levantar o teu pedido",
+  	"ap-product-add": "Adicionar Produto",
+  	"ap-products":"Produtos",
+  	"ap-orders":"Encomendas",
+  	"ap-product-remove":"Apagar Produto",
+  	"ap-product-serve": "Servir Encomenda",
+  	"shop-addCoins": "Dar Moedas",
+  	"shop-subCoins": "Tirar Moedas",
+
   	//Misc
   	"loading": "A carregar...",
   	"uploading": "A fazer upload",

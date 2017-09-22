@@ -344,6 +344,10 @@
 						<button type="button" class="btn btn-warning fw-3 fs-2 f-inherit my-1" id="make-admin">{{_ "ap-uf-admin"}}</button>
 					{{/if}}
 				</div>
+				<div class="col my-1 px-0">
+					<button type="button" class="btn btn-success fw-3 fs-2 f-inherit my-1" id="addCoins">{{_ "shop-addCoins"}}</button>
+					<button type="button" class="btn btn-danger fw-3 fs-2 f-inherit my-1" id="subCoins">{{_ "shop-subCoins"}}</button>
+				</div>
 				<div class="spacer-8"></div>
 			</div>
 		</div>
@@ -864,7 +868,7 @@
 							{{#each orders}}
 								<p class="fw-4 fs-3 mb-1">
 									{{productName}}
-									<i class="fa fa-check f-green fa-fw cp serveOrder" id="{{userOrder ..}}" aria-hidden="true" title="{{_ 'ap-product-serve'}}"></i>
+									<i class="fa fa-check f-green fa-fw cp serveOrder ml-3" id="{{userOrder ..}}" aria-hidden="true" title="{{_ 'ap-product-serve'}}"></i>
 								</p>
 							{{/each}}
 						</td>

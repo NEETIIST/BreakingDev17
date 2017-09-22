@@ -243,3 +243,14 @@ Template.dash_volunteer.events({
 		FlowRouter.go("/volunteer/faq");
 	},
 });
+
+Template.dash_shop.events({
+	"click #dash_shop_buy": function(){
+		Session.set("seeOrders",false);
+		FlowRouter.go("/shop");
+	},
+	"click #dash_shop_orders": function(){
+		Session.set("seeOrders",true);
+		FlowRouter.go("/shop");
+	},
+});
