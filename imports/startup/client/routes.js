@@ -35,6 +35,7 @@ import '../../ui/sponsor_dashboard/sponsor_dashboard.js'
 import '../../ui/sponsor/sponsor.js'
 import '../../ui/code_reader/code_reader.js'
 import '../../ui/shop/shop.js'
+import '../../ui/qr/qr.js'
 
 
 // Set up all routes in the app
@@ -338,3 +339,51 @@ FlowRouter.notFound = {
   },
 };
 
+FlowRouter.route('/qr/aefsdvxwagrszvf', {
+  name: 'qr',
+  action() {
+    BlazeLayout.render('base', {main: 'qr1'});
+  }
+});
+
+FlowRouter.route('/qr/egaroijger', {
+  name: 'qr',
+  action() {
+    BlazeLayout.render('base', {main: 'qr2'});
+  }
+});
+
+FlowRouter.route('/qr/fwsvjoiwasgoizjf', {
+  name: 'qr',
+  action() {
+    BlazeLayout.render('base', {main: 'qr3'});
+  }
+});
+
+FlowRouter.route('/qr/gdfwgrszvfxc', {
+  name: 'qr',
+  action() {
+    BlazeLayout.render('base', {main: 'qr4'});
+  }
+});
+
+FlowRouter.route('/qr/qrefasdzvxgsrzfd', {
+  name: 'qr',
+  action() {
+    BlazeLayout.render('base', {main: 'qr5'});
+  }
+});
+
+FlowRouter.route('/qr/wgeszfesgdf', {
+  name: 'qr',
+  action() {
+    BlazeLayout.render('base', {main: 'qr6'});
+  }
+});
+
+FlowRouter.route('/qr/wgrszvfgszvd', {
+  name: 'qr',
+  action() {
+    BlazeLayout.render('base', {main: 'qr7'});
+  }
+});

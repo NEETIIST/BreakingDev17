@@ -1,0 +1,2 @@
+import './qr.html'
+

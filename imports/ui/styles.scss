@@ -1,5 +1,5 @@
-//Fonts
-@import url('https://fonts.googleapis.com/css?family=Raleway:200,400,600');
+/*Fonts */
+@import url('https:/*fonts.googleapis.com/css?family=Raleway:200,400,600');
 body { font-family: 'Raleway', sans-serif; }
 html { font-size: 14px; }
 @include media-breakpoint-up(sm) { html { font-size: 18px; } }
@@ -23,18 +23,18 @@ html { font-size: 14px; }
 .flh-1 { line-height: 1em; }
 .flh-2 { line-height: 1.1em; }
 .flh-3 { line-height: 1.2em; }
-//.f-nb { word-wrap: break-word; }
+/*.f-nb { word-wrap: break-word; } */
 .f-inherit { font-family: inherit !important; }
 
-//Icons
+/*Icons */
 
 
-//Links
+/*Links */
 a {	text-decoration: none ; color:inherit ; }
 a:hover { text-decoration: none ; color:inherit ; }
 a:visited { text-decoration: none ; color:inherit ; }
 
-//Viewports
+/*Viewports */
 .vh-100 { min-height: 100vh ; }
 .vh-90 { min-height: 90vh ; }
 .vh-80 { min-height: 80vh ; }
@@ -51,23 +51,34 @@ a:visited { text-decoration: none ; color:inherit ; }
 .vw-20 { min-width: 20vw ; }
 .vw-10 { min-width: 10vw ; }
 
-//Spacers
+/*Spacers */
 .spacer-2 { min-height: 2vh; }
 .spacer-4 { min-height: 4vh; }
 .spacer-6 { min-height: 6vh; }
 .spacer-8 { min-height: 8vh; }
 
-// Testing
+/* Palette */
+.dark-primary-color    { background: #D32F2F; }
+.default-primary-color { background: #F44336; }
+.light-primary-color   { background: #FFCDD2; }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #9E9E9E; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #757575; }
+.divider-color         { border-color: #BDBDBD; }
+
+
+/* Testing */
 .black { background-color: #1c1c1c; }
 .orange { background-color: #f47d3d; }
 .light-orange { background-color: #f2874d; }
 .white { background-color: white; }
 .blue { background-color: #41516b; }
 
-//Cursors
+/*Cursors */
 .cp { cursor: pointer; }
 .cd { cursor: no-drop; }
 
-//Tables
+/*Tables */
 .tc-20 { width: 10%; }
 .tc-20 { width: 20%; }
